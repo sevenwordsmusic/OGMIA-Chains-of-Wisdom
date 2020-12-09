@@ -11,7 +11,7 @@ public class LevelController : MonoBehaviour
     [HideInInspector] public int currentRoomAmount = 0;
     [Range(0, 1)] public float levelShape = 0.5f;
     [Range(0, 1)] public float interconectivity = 0.2f;
-    [Range(0.01f, 2)] public float generationTime = 0.3f;
+    [Range(0.03f, 2)] public float generationTime = 0.3f;
 
     [Header("Room Settings")]
     public GameObject initRoom;
@@ -20,7 +20,7 @@ public class LevelController : MonoBehaviour
     //[HideInInspector] public HashSet<Vector2Int> ocupiedSpaces = new HashSet<Vector2Int>(new spaceComparer());
     [HideInInspector] public Dictionary<Vector2Int, int> ocupiedSpaces = new Dictionary<Vector2Int, int>(new spaceComparer());
     [HideInInspector] public GameObject[] roomArray;
-    [HideInInspector] public int[,] adjacencyMatrix;
+    [HideInInspector] public int[,] debugMatrix;            //DEBUG
     //[HideInInspector] public int[,] spaceMatrix;
     Vector2Int spaceMatrixMidPoint;
 
@@ -82,14 +82,16 @@ public class LevelController : MonoBehaviour
 
         spaceMatrixMidPoint = new Vector2Int(roomAmount-1, roomAmount-1);
 
-        adjacencyMatrix = new int[roomAmount, roomAmount];
+        //DEBUG
+        debugMatrix = new int[roomAmount, roomAmount];
         for(int i=0; i<roomAmount; i++)
         {
             for(int j=0; j<roomAmount; j++)
             {
-                adjacencyMatrix[i, j] = 0;
+                debugMatrix[i, j] = 0;
             }
         }
+        //DEBUG
 
         if(roomSeed != -1)
             Random.InitState(roomSeed);
@@ -100,6 +102,7 @@ public class LevelController : MonoBehaviour
 
         var roomAux = Instantiate(initRoom, transform.position, Quaternion.identity, transform);
         roomAux.GetComponent<RoomController>().adjustId();
+        roomAux.GetComponent<RoomController>().levelInitialize();
     }
 
     public void endFirstGenerationWave()
@@ -114,10 +117,10 @@ public class LevelController : MonoBehaviour
         {
             room.GetComponent<RoomController>().secondGeneration();
         }
-        foreach (GameObject room in roomArray)
+        /*foreach (GameObject room in roomArray)
         {
             room.GetComponent<RoomController>().thirdGeneration();
-        }
+        }*/
     }
 
     /*public void setOcupiedSpace(Vector2Int vPos, int roomId)
@@ -154,10 +157,10 @@ public class LevelController : MonoBehaviour
         print("______________________________________________________________________________");
     }*/
 
-    public void createEdge(int idA, int idB, int value)
+    public void debugEdge(int idA, int idB, int value)
     {
-        adjacencyMatrix[idA, idB] = value;
-        adjacencyMatrix[idB, idA] = value;
+        debugMatrix[idA, idB] = value;
+        debugMatrix[idB, idA] = value;
     }
 
     private void OnDrawGizmos()
@@ -169,13 +172,13 @@ public class LevelController : MonoBehaviour
             {
                 for(int j=i+1; j<roomAmount; j++)
                 {
-                    if (adjacencyMatrix[i, j] == 1) {
+                    if (debugMatrix[i, j] == 1) {
 
                         Vector3 aux_i = new Vector3(roomArray[i].transform.position.x, roomArray[i].transform.position.y + debugOffset + nodeSize / 2, roomArray[i].transform.position.z);
                         Vector3 aux_j = new Vector3(roomArray[j].transform.position.x, roomArray[j].transform.position.y + debugOffset + nodeSize / 2, roomArray[j].transform.position.z);
                         Handles.DrawBezier(aux_i, aux_j, aux_i, aux_j, baseLineColor, null, lineWidth);
                     }
-                    else if (adjacencyMatrix[i, j] == 2)
+                    else if (debugMatrix[i, j] == 2)
                     {
                         Vector3 aux_i = new Vector3(roomArray[i].transform.position.x, roomArray[i].transform.position.y + debugOffset + nodeSize / 2, roomArray[i].transform.position.z);
                         Vector3 aux_j = new Vector3(roomArray[j].transform.position.x, roomArray[j].transform.position.y + debugOffset + nodeSize / 2, roomArray[j].transform.position.z);

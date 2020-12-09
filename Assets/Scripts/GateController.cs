@@ -6,7 +6,7 @@ public class GateController : MonoBehaviour
 {
     enum PosibleDir { Up, Down, Right, Left }
     [SerializeField] PosibleDir direction = PosibleDir.Up;
-    public bool isGate = false;
+    [HideInInspector] public bool isGate = false;
     [SerializeField] GameObject gateObj;
     [SerializeField] GameObject wallObj;
 
