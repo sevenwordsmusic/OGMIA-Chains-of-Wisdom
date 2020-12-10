@@ -21,9 +21,13 @@ public class LevelController : MonoBehaviour
     //[HideInInspector] public HashSet<Vector2Int> ocupiedSpaces = new HashSet<Vector2Int>(new spaceComparer());
     [HideInInspector] public Dictionary<Vector2Int, int> ocupiedSpaces = new Dictionary<Vector2Int, int>(new spaceComparer());
     [HideInInspector] public GameObject[] roomArray;
-    [HideInInspector] public int[,] debugMatrix;            //DEBUG
+    [HideInInspector] public int[,] roomMatrix;            //DEBUG
     //[HideInInspector] public int[,] spaceMatrix;
     Vector2Int spaceMatrixMidPoint;
+
+    [Header("Optimization Settings")]
+    public bool optimization = false;
+    public bool showExtraRooms = false;
 
     [Header("Debug Settings")]
     public bool debug = false;
@@ -83,16 +87,14 @@ public class LevelController : MonoBehaviour
 
         spaceMatrixMidPoint = new Vector2Int(roomAmount-1, roomAmount-1);
 
-        //DEBUG
-        debugMatrix = new int[roomAmount, roomAmount];
-        for(int i=0; i<roomAmount; i++)
+        roomMatrix = new int[roomAmount, roomAmount];
+        for (int i = 0; i < roomAmount; i++)
         {
-            for(int j=0; j<roomAmount; j++)
+            for (int j = 0; j < roomAmount; j++)
             {
-                debugMatrix[i, j] = 0;
+                roomMatrix[i, j] = 0;
             }
         }
-        //DEBUG
 
         if(roomSeed != -1)
             Random.InitState(roomSeed);
@@ -122,10 +124,37 @@ public class LevelController : MonoBehaviour
         {
             room.GetComponent<RoomController>().secondGeneration();
         }
+        levelFinished();
         /*foreach (GameObject room in roomArray)
         {
             room.GetComponent<RoomController>().thirdGeneration();
         }*/
+    }
+
+    void levelFinished()
+    {
+        if (optimization)
+        {
+            for(int i=1; i< roomArray.Length; i++)
+            {
+                roomArray[i].SetActive(false);
+            }
+            if (showExtraRooms)
+            {
+                int aux = 0;
+                if (ocupiedSpaces.TryGetValue(new Vector2Int(1, 0), out aux))
+                    roomArray[aux].SetActive(true);
+                aux = 0;
+                if (ocupiedSpaces.TryGetValue(new Vector2Int(-1, 0), out aux))
+                    roomArray[aux].SetActive(true);
+                aux = 0;
+                if (ocupiedSpaces.TryGetValue(new Vector2Int(0, 1), out aux))
+                    roomArray[aux].SetActive(true);
+                aux = 0;
+                if (ocupiedSpaces.TryGetValue(new Vector2Int(0, -1), out aux))
+                    roomArray[aux].SetActive(true);
+            }
+        }
     }
 
     /*public void setOcupiedSpace(Vector2Int vPos, int roomId)
@@ -164,26 +193,26 @@ public class LevelController : MonoBehaviour
 
     public void debugEdge(int idA, int idB, int value)
     {
-        debugMatrix[idA, idB] = value;
-        debugMatrix[idB, idA] = value;
+        roomMatrix[idA, idB] = value;
+        roomMatrix[idB, idA] = value;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = nodeColor;
-        if (debug && Application.isPlaying)
+        if (debug && Application.isPlaying && roomMatrix != null)
         {
             for(int i=0; i<roomAmount; i++)
             {
                 for(int j=i+1; j<roomAmount; j++)
                 {
-                    if (debugMatrix[i, j] == 1) {
+                    if (roomMatrix[i, j] == 1) {
 
                         Vector3 aux_i = new Vector3(roomArray[i].transform.position.x, roomArray[i].transform.position.y + debugOffset + nodeSize / 2, roomArray[i].transform.position.z);
                         Vector3 aux_j = new Vector3(roomArray[j].transform.position.x, roomArray[j].transform.position.y + debugOffset + nodeSize / 2, roomArray[j].transform.position.z);
                         Handles.DrawBezier(aux_i, aux_j, aux_i, aux_j, baseLineColor, null, lineWidth);
                     }
-                    else if (debugMatrix[i, j] == 2)
+                    else if (roomMatrix[i, j] == 2)
                     {
                         Vector3 aux_i = new Vector3(roomArray[i].transform.position.x, roomArray[i].transform.position.y + debugOffset + nodeSize / 2, roomArray[i].transform.position.z);
                         Vector3 aux_j = new Vector3(roomArray[j].transform.position.x, roomArray[j].transform.position.y + debugOffset + nodeSize / 2, roomArray[j].transform.position.z);
