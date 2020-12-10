@@ -96,7 +96,11 @@ public class LevelController : MonoBehaviour
         if(roomSeed != -1)
             Random.InitState(roomSeed);
 
-        ocupiedSpaces.Add(new Vector2Int(0, 0), 0);
+        foreach (Transform centerP in initRoom.GetComponent<RoomController>().getCenterPos())
+        {
+            ocupiedSpaces.Add(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / 20), Mathf.RoundToInt(centerP.transform.position.z / 20)), 0);
+        }
+
         //setOcupiedSpace(new Vector2Int(0, 0), 0);
         currentRoomAmount++;
 

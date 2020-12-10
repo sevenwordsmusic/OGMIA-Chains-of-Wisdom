@@ -1,17 +1,74 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class RoomController : MonoBehaviour
 {
     static int lastId = 0;
     public int id = 0;
     public List<GameObject> gates = new List<GameObject>();
-    public List<Transform> centerPoints = new List<Transform>(); 
+    public List<Transform> centerPoints = new List<Transform>();
+    [SerializeField] bool commitChanges = false;
     //[SerializeField] Vector2Int position = new Vector2Int(0, 0);
     LevelController controller;
     int counter = 0;
     bool firstSpawn = true;
+
+    [CustomEditor(typeof(RoomController))]
+    public class ObjectBuilderEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            DrawDefaultInspector();
+
+            RoomController myScript = (RoomController)target;
+            if (GUILayout.Button("Update Values"))
+            {
+                myScript.updateValues();
+                myScript.commitChanges = false;
+            }
+
+            if (GUILayout.Button("Transparent Tags"))
+            {
+                myScript.transparentTags();
+                myScript.commitChanges = false;
+            }
+        }
+    }
+
+    void updateValues()
+    {
+        gates.Clear();
+        centerPoints.Clear();
+
+        Transform perRoom = transform.Find("PerRoom");
+        foreach(Transform tr in perRoom)
+        {
+            if (tr.tag.Equals("gate"))
+            {
+                gates.Add(tr.gameObject);
+            }
+            if (tr.tag.Equals("centerPoint"))
+            {
+                centerPoints.Add(tr);
+            }
+        }
+    }
+
+    void transparentTags()
+    {
+
+        Transform model = transform.Find("model");
+        foreach (Transform tr in model)
+        {
+            if (tr.tag.Equals("Untagged"))
+            {
+                tr.tag = "transparent";
+            }
+        }
+    }
+
 
     private void Start()
     {
@@ -172,6 +229,11 @@ public class RoomController : MonoBehaviour
         {
             controllerAux.ocupiedSpaces.Add(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / 20), Mathf.RoundToInt(centerP.transform.position.z / 20)), RoomController.lastId);
         }
+    }
+
+    public List<Transform> getCenterPos()
+    {
+        return centerPoints;
     }
 
     void printPoints()
