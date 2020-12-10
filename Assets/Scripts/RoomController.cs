@@ -29,6 +29,12 @@ public class RoomController : MonoBehaviour
                 myScript.commitChanges = false;
             }
 
+            if (GUILayout.Button("Adjust Gates"))
+            {
+                myScript.adjustGates();
+                myScript.commitChanges = false;
+            }
+
             if (GUILayout.Button("Transparent Tags"))
             {
                 myScript.transparentTags();
@@ -53,6 +59,34 @@ public class RoomController : MonoBehaviour
             {
                 centerPoints.Add(tr);
             }
+        }
+    }
+
+    void adjustGates()
+    {
+        foreach (GameObject gateObj in gates)
+        {   
+            if (gateObj.transform.tag.Equals("gate"))
+            {   
+                foreach (Transform cp in centerPoints)
+                {
+                    Vector3 dir = gateObj.transform.position - cp.position;
+                    if (dir.magnitude < 1.1f * LevelController.baseRoomeSize/2)
+                    {
+                        if(dir.magnitude != LevelController.baseRoomeSize/2 || dir.x*dir.y != 0)
+                        {
+                            Debug.LogError("ERROR, puerta (" + gateObj.transform.name + ") o centerPoint (" + cp.name + ") mal posicionado");
+                            goto innerLoop;
+                        }
+                        else
+                        {
+                            dir.Normalize();
+                            gateObj.GetComponent<GateController>().setDirection(new Vector2Int(Mathf.RoundToInt(dir.x), Mathf.RoundToInt(dir.z)));
+                        }
+                    }
+                }
+            }
+            innerLoop:;
         }
     }
 
@@ -137,7 +171,6 @@ public class RoomController : MonoBehaviour
             Vector3 newPos = gate.transform.position + (roomInstance.transform.position - roomInstanceController.gates[nextEntranceGate].transform.position);
             roomInstance.transform.position = newPos;
             //if (roomInstanceController.checkAvailableSpace(controller))
-            //print(new Vector2Int(Mathf.RoundToInt(newPos.x / 20), Mathf.RoundToInt(newPos.z / 20)) - (position + dir));
             if (roomInstanceController.checkAvailableSpace(controller))
             {
                 roomInstanceController.ocupyAvailableSpace(controller);
@@ -208,13 +241,13 @@ public class RoomController : MonoBehaviour
     {
         if(centerPoints.Count < 2)
         {
-            return !controllerAux.ocupiedSpaces.ContainsKey(new Vector2Int(Mathf.RoundToInt(transform.position.x/20), Mathf.RoundToInt(transform.position.z / 20)));
+            return !controllerAux.ocupiedSpaces.ContainsKey(new Vector2Int(Mathf.RoundToInt(transform.position.x/LevelController.baseRoomeSize), Mathf.RoundToInt(transform.position.z / LevelController.baseRoomeSize)));
         }
         else
         {
             foreach (Transform centerP in centerPoints)
             {
-                if (controllerAux.ocupiedSpaces.ContainsKey(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / 20), Mathf.RoundToInt(centerP.transform.position.z / 20))))
+                if (controllerAux.ocupiedSpaces.ContainsKey(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / LevelController.baseRoomeSize), Mathf.RoundToInt(centerP.transform.position.z / LevelController.baseRoomeSize))))
                 {
                     return false;
                 }
@@ -225,9 +258,9 @@ public class RoomController : MonoBehaviour
 
     void ocupyAvailableSpace(LevelController controllerAux)
     {
-        foreach (Transform centerP in centerPoints)
+         foreach (Transform centerP in centerPoints)
         {
-            controllerAux.ocupiedSpaces.Add(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / 20), Mathf.RoundToInt(centerP.transform.position.z / 20)), RoomController.lastId);
+            controllerAux.ocupiedSpaces.Add(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / LevelController.baseRoomeSize), Mathf.RoundToInt(centerP.transform.position.z / LevelController.baseRoomeSize)), RoomController.lastId);
         }
     }
 
@@ -251,7 +284,7 @@ public class RoomController : MonoBehaviour
         {
             GateController gateController = gate.GetComponent<GateController>();
             Vector2Int dirr = gateController.getDirection();
-            Vector2Int key = new Vector2Int(Mathf.RoundToInt(gate.transform.position.x/20 + ((float)dirr.x/2)), Mathf.RoundToInt(gate.transform.position.z / 20 + ((float)dirr.y / 2)));
+            Vector2Int key = new Vector2Int(Mathf.RoundToInt(gate.transform.position.x/LevelController.baseRoomeSize + ((float)dirr.x/2)), Mathf.RoundToInt(gate.transform.position.z / LevelController.baseRoomeSize + ((float)dirr.y / 2)));
             if (controller.ocupiedSpaces.ContainsKey(key))
             {
                 int neighborRoomId = -123123;

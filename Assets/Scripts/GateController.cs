@@ -55,6 +55,30 @@ public class GateController : MonoBehaviour
         return Vector2Int.zero;
     }
 
+    public void setDirection(Vector2Int dirr)
+    {
+        if(dirr.x == 1)
+        {
+            direction = PosibleDir.Right;
+        }
+        else if (dirr.x == -1)
+        {
+            direction = PosibleDir.Left;
+        }
+        else if (dirr.y == 1)
+        {
+            direction = PosibleDir.Up;
+        }
+        else if (dirr.y == -1)
+        {
+            direction = PosibleDir.Down;
+        }
+        else
+        {
+            Debug.LogError("Something went wrong with setDirection()");
+        }
+    }
+
     int vecAngle()
     {
         switch (direction)

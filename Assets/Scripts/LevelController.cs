@@ -14,6 +14,7 @@ public class LevelController : MonoBehaviour
     [Range(0.03f, 2)] public float generationTime = 0.3f;
 
     [Header("Room Settings")]
+    public static int baseRoomeSize = 20;
     public GameObject initRoom;
     public List<GameObject> rooms = new List<GameObject>();
     [HideInInspector] public GameObject lastRoom;
@@ -98,7 +99,7 @@ public class LevelController : MonoBehaviour
 
         foreach (Transform centerP in initRoom.GetComponent<RoomController>().getCenterPos())
         {
-            ocupiedSpaces.Add(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / 20), Mathf.RoundToInt(centerP.transform.position.z / 20)), 0);
+            ocupiedSpaces.Add(new Vector2Int(Mathf.RoundToInt(centerP.transform.position.x / LevelController.baseRoomeSize), Mathf.RoundToInt(centerP.transform.position.z / LevelController.baseRoomeSize)), 0);
         }
 
         //setOcupiedSpace(new Vector2Int(0, 0), 0);
