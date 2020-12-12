@@ -104,7 +104,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4374135067778528648}
   - component: {fileID: 3777940400664371703}
-  - component: {fileID: 3530788634354531052}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: lightComponent
@@ -138,8 +137,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 0, a: 1}
-  m_Intensity: 2.5
-  m_Range: 10
+  m_Intensity: 3
+  m_Range: 9
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -183,23 +182,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 9.18355e-40, z: 8.2652e-40, w: -4.5507783e-27}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 7.34e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &3530788634354531052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2291551890430798077}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ad222b62fbc29a41aa50af0835f3497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 0}
-  minIntensity: 0.3
-  maxIntensity: 1
-  smoothing: 30
