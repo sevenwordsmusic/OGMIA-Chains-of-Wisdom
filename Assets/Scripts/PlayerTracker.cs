@@ -35,6 +35,8 @@ public class PlayerTracker : MonoBehaviour
             if (currentRoom != previousRoom)
             {
                 print("Entered new Room (" + currentRoom + ") with dir: (" + enterDir + ")" + "   prev:  " + previousRoom);
+                controller.roomArray[currentRoom].GetComponent<RoomController>().enteredRoom();
+                controller.roomArray[previousRoom].GetComponent<RoomController>().exitedRoom();
             }
             if (controller.optimization)
             {
@@ -119,6 +121,14 @@ public class PlayerTracker : MonoBehaviour
                 }
             }
         }
+
+
+        if (controller.lightDistanceOptimization)
+        {
+            controller.roomArray[currentRoom].GetComponent<RoomController>().turnOnCloseLights(transform.position);
+        }
+
+
         previousGridPos.x = playerGridPos.x;
         previousGridPos.y = playerGridPos.y;
 

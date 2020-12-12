@@ -28,36 +28,18 @@ public class LevelController : MonoBehaviour
     [Header("Optimization Settings")]
     public bool optimization = false;
     public bool showExtraRooms = false;
+    public bool lightOptimiation = false;
+    public bool lightDistanceOptimization = false;
+    public float lightUpDistance = 10f;
 
     [Header("Debug Settings")]
     public bool debug = false;
-    float nodeSize = 1.5f;
-    Color nodeColor = Color.magenta;
-    float lineWidth = 5;
-    Color baseLineColor = Color.white;
-    Color interconectedLineColor = Color.black;
-    float debugOffset = 2.5f;
-
-    [CustomEditor(typeof(LevelController))]
-    public class MyScriptEditor : Editor
-    {
-        override public void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-            var lvlInspector = target as LevelController;
-
-            if (lvlInspector.debug)
-            {
-                lvlInspector.nodeSize = EditorGUILayout.FloatField("Node Size", lvlInspector.nodeSize);
-                lvlInspector.nodeColor = EditorGUILayout.ColorField("Node Color", lvlInspector.nodeColor);
-                lvlInspector.lineWidth = EditorGUILayout.FloatField("Debug Offset", lvlInspector.lineWidth);
-                lvlInspector.baseLineColor = EditorGUILayout.ColorField("Base Line Color", lvlInspector.baseLineColor);
-                lvlInspector.interconectedLineColor = EditorGUILayout.ColorField("Interconected Line Color", lvlInspector.interconectedLineColor);
-                lvlInspector.debugOffset = EditorGUILayout.FloatField("Debug Offset", lvlInspector.debugOffset);
-            }
-
-        }
-    }
+    [SerializeField] float nodeSize = 1.5f;
+    [SerializeField] Color nodeColor = Color.magenta;
+    [SerializeField] float lineWidth = 5;
+    [SerializeField] Color baseLineColor = Color.white;
+    [SerializeField] Color interconectedLineColor = Color.black;
+    [SerializeField] float debugOffset = 2.5f;
 
     class spaceComparer : IEqualityComparer<Vector2Int> { 
         public bool Equals(Vector2Int a, Vector2Int b)
@@ -157,47 +139,13 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    /*public void setOcupiedSpace(Vector2Int vPos, int roomId)
-    {
-        int normalizedPosX = vPos.x + spaceMatrixMidPoint.x;
-        int normalizedPosY = vPos.y + spaceMatrixMidPoint.y;
-        if((0 < normalizedPosX && normalizedPosX < roomAmount*2-1) && (0 < normalizedPosY && normalizedPosY < roomAmount * 2 - 1))
-            spaceMatrix[normalizedPosY , normalizedPosX] = roomId;
-    }
-
-    public int getOcupiedSpace(Vector2Int vPos)
-    {
-        int normalizedPosX = vPos.x + spaceMatrixMidPoint.x;
-        int normalizedPosY = vPos.y + spaceMatrixMidPoint.y;
-        if ((0 < normalizedPosX && normalizedPosX < roomAmount * 2 - 1) && (0 < normalizedPosY && normalizedPosY < roomAmount * 2 - 1))
-            return spaceMatrix[normalizedPosY, normalizedPosX];
-        else
-            return -2;
-    }
-
-    public void printSpaceMatrix()
-    {
-        print("______________________________________________________________________________");
-        string aux = "";
-        for (int i = 0; i < roomAmount * 2 - 1; i++)
-        {
-            for (int j = 0; j < roomAmount * 2 - 1; j++)
-            {
-                aux += (spaceMatrix[i, j] + "  ");
-            }
-            print(aux);
-            aux = "";
-        }
-        print("______________________________________________________________________________");
-    }*/
-
     public void debugEdge(int idA, int idB, int value)
     {
         roomMatrix[idA, idB] = value;
         roomMatrix[idB, idA] = value;
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = nodeColor;
         if (debug && Application.isPlaying && roomMatrix != null)
@@ -226,5 +174,5 @@ public class LevelController : MonoBehaviour
                     Gizmos.DrawSphere(new Vector3(room.transform.position.x, room.transform.position.y + debugOffset, room.transform.position.z), nodeSize);
             }
         }
-    }
+    }*/
 }

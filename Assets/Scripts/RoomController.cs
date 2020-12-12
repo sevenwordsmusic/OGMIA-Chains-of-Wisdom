@@ -9,6 +9,7 @@ public class RoomController : MonoBehaviour
     public int id = 0;
     public List<GameObject> gates = new List<GameObject>();
     public List<Transform> centerPoints = new List<Transform>();
+    [SerializeField] Transform lightParent;
     [SerializeField] bool commitChanges = false;
     //[SerializeField] Vector2Int position = new Vector2Int(0, 0);
     LevelController controller;
@@ -112,16 +113,16 @@ public class RoomController : MonoBehaviour
             StartCoroutine(roomCoroutine(false));
         else
             StartCoroutine(roomCoroutine(true));
-    }
 
-    void initializeRoom()
-    {
-
+        if (!controller.lightOptimiation)
+        {
+            turnOnLights();
+        }
     }
 
     public void levelInitialize()
     {
-        initializeRoom();
+        turnOnLights();
     }
 
     IEnumerator roomCoroutine(bool end)
@@ -189,7 +190,6 @@ public class RoomController : MonoBehaviour
                 roomInstanceController.gates[nextEntranceGate].GetComponent<GateController>().initializeGate();
 
                 //print("Room: " + id + " (dir="+dir+") --> Room: " + roomAux.GetComponent<RoomController>().id+ " (dir=" + roomAux.GetComponent<RoomController>().gates[nextEntranceGate].GetComponent<GateController>().getDirection() + ")");
-                roomInstanceController.initializeRoom();
             }
             else
             {
@@ -307,6 +307,38 @@ public class RoomController : MonoBehaviour
                     print("something went wrong with tryGet of dictionary");
                 }
             }
+        }
+    }
+
+    public void enteredRoom()
+    {
+        if (controller.lightOptimiation)
+            turnOnLights();
+    }
+    public void exitedRoom()
+    {
+        if (controller.lightOptimiation)
+            turnOffLights();
+    }
+
+    void turnOnLights()
+    {
+        lightParent.gameObject.SetActive(true);
+    }
+
+    void turnOffLights()
+    {
+        lightParent.gameObject.SetActive(false);
+    }
+
+    public void turnOnCloseLights(Vector3 playerPos)
+    {
+        foreach (Transform lightChild in lightParent)
+        {
+            if(Vector3.Distance(lightChild.position, playerPos) <= controller.lightUpDistance)
+                lightChild.gameObject.SetActive(true);
+            else
+                lightChild.gameObject.SetActive(false);
         }
     }
 
