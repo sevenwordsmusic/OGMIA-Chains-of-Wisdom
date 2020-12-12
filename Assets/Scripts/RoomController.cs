@@ -323,12 +323,12 @@ public class RoomController : MonoBehaviour
 
     void turnOnLights()
     {
-        lightParent.gameObject.SetActive(true);
+        //lightParent.gameObject.SetActive(true);
     }
 
     void turnOffLights()
     {
-        lightParent.gameObject.SetActive(false);
+        //lightParent.gameObject.SetActive(false);
     }
 
     public void turnOnCloseLights(Vector3 playerPos)
