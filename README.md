@@ -1,1 +1,1 @@
-# Kithara
+# Project Ogmia
