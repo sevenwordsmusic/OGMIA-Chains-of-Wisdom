@@ -9,12 +9,11 @@ public class RoomController : MonoBehaviour
     public int id = 0;
     public List<GameObject> gates = new List<GameObject>();
     public List<Transform> centerPoints = new List<Transform>();
-    [SerializeField] Transform lightParent;
+    public List<GameObject> lights = new List<GameObject>();
     [SerializeField] bool commitChanges = false;
     //[SerializeField] Vector2Int position = new Vector2Int(0, 0);
     LevelController controller;
-    int counter = 0;
-    bool firstSpawn = true;
+    public bool firstSpawn = true;
 
     [CustomEditor(typeof(RoomController))]
     public class ObjectBuilderEditor : Editor
@@ -36,9 +35,21 @@ public class RoomController : MonoBehaviour
                 myScript.commitChanges = false;
             }
 
-            if (GUILayout.Button("Transparent Tags"))
+            if (GUILayout.Button("Adjust Lights"))
             {
-                myScript.transparentTags();
+                myScript.adjustLightsInit();
+                myScript.commitChanges = false;
+            }
+
+            if (GUILayout.Button("TurnOnLights"))
+            {
+                myScript.turnOnLights();
+                myScript.commitChanges = false;
+            }
+
+            if (GUILayout.Button("TurnOffLights"))
+            {
+                myScript.turnOffLights();
                 myScript.commitChanges = false;
             }
         }
@@ -91,28 +102,35 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    void transparentTags()
+    void adjustLights(Transform t)
     {
-
-        Transform model = transform.Find("model");
-        foreach (Transform tr in model)
+        if (t.tag.Equals("lightComponent"))
         {
-            if (tr.tag.Equals("Untagged"))
+            lights.Add(t.gameObject);
+        }
+        if(t.childCount > 0)
+        {
+            foreach (Transform child in t)
             {
-                tr.tag = "transparent";
+                adjustLights(child);
             }
         }
     }
 
+    void adjustLightsInit()
+    {
+        lights.Clear();
+        Transform t = transform;
+        adjustLights(t);
+    }
 
+    //start
     private void Start()
     {
         controller = transform.parent.gameObject.GetComponent<LevelController>();
         controller.roomArray[id] = this.gameObject;
-        if (id < controller.roomAmount - 1)
-            StartCoroutine(roomCoroutine(false));
-        else
-            StartCoroutine(roomCoroutine(true));
+
+        prepareGates();
 
         if (!controller.lightOptimiation)
         {
@@ -120,91 +138,102 @@ public class RoomController : MonoBehaviour
         }
     }
 
+    //turn lights on
     public void levelInitialize()
     {
         turnOnLights();
     }
 
-    IEnumerator roomCoroutine(bool end)
+    //add gates to room generation queue
+    void prepareGates()
     {
-        yield return new WaitForSeconds(controller.generationTime);
-        if (controller.currentRoomAmount < controller.roomAmount && counter < gates.Count)
+        shuffleGates();
+        for (int i = 0; i < gates.Count; i++)
         {
-            spawnRoom(counter);
-            counter++;
-            StartCoroutine(roomCoroutine(end));
-        }
-        else
-        {
-            for(int i= counter; i< gates.Count; i++)
-            {   
-                 if(!gates[i].GetComponent<GateController>().isGate)
-                    gates[i].GetComponent<GateController>().initializeWall();
-            }
-            if(end)
-                controller.endFirstGenerationWave();
+            controller.addRoomToSpawn(new Vector2Int(id, i));
         }
     }
 
-    void spawnRoom(int gateCounter)
+    //add only gates that havent been yet connected to generation queue
+    public void prepareFreeGates()
+    {
+        for (int i = 0; i < gates.Count; i++)
+        {
+            if (!gates[i].GetComponent<GateController>().isGate)
+                controller.addRoomToSpawn(new Vector2Int(id, i));
+        }
+    }
+
+    //randomize gates list
+    void shuffleGates()
+    {
+        for(int i=0; i<gates.Count; i++)
+        {
+            GameObject aux = gates[i];
+            int randPos = controller.randomInt(0, gates.Count);
+            gates[i] = gates[randPos];
+            gates[randPos] = aux;
+        }
+    }
+
+    public void trySpawnRoom(int gateCounter)
     {
         GateController gate = gates[gateCounter].GetComponent<GateController>();
-        if (Random.value < controller.levelShape/2 || firstSpawn)
+        Vector2Int dir = gate.getDirection();
+       
+        if (gate.spawnAlways || firstSpawn || controller.randomValue() <= controller.levelShape)
         {
-            Vector2Int dir = gate.getDirection();
-
-            GameObject roomPrefab = controller.rooms[Random.Range(0, controller.rooms.Count)];
-            RoomController roomPrefabController = roomPrefab.GetComponent<RoomController>();
-            int nextEntranceGate = Random.Range(0, roomPrefabController.gates.Count);
-
-            var roomInstance = Instantiate(roomPrefab,
-                                      Vector3.zero,
-                                      /*Quaternion.Euler(0, nextRoomAngle, 0), */
-                                      Quaternion.identity,
-                                      transform.parent);
-
-            RoomController roomInstanceController = roomInstance.GetComponent<RoomController>();
-
-            int nextRoomAngle = uVecAngle(-dir, roomInstanceController.gates[nextEntranceGate].GetComponent<GateController>().getDirection());
-            roomInstanceController.adjustRotation(nextRoomAngle);
-
-            //adjusting physical position
-            Vector3 newPos = gate.transform.position + (roomInstance.transform.position - roomInstanceController.gates[nextEntranceGate].transform.position);
-            roomInstance.transform.position = newPos;
-            //if (roomInstanceController.checkAvailableSpace(controller))
-            if (roomInstanceController.checkAvailableSpace(controller))
-            {
-                roomInstanceController.ocupyAvailableSpace(controller);
-
-                firstSpawn = false;
-
-                gate.initializeGate();
-
-                roomInstanceController.adjustId();
-
-                controller.lastRoom = roomInstance;
-                controller.currentRoomAmount++;
-
-                controller.debugEdge(id, roomInstanceController.id, 1);                         //DEBUG
-
-                roomInstanceController.gates[nextEntranceGate].GetComponent<GateController>().initializeGate();
-
-                //print("Room: " + id + " (dir="+dir+") --> Room: " + roomAux.GetComponent<RoomController>().id+ " (dir=" + roomAux.GetComponent<RoomController>().gates[nextEntranceGate].GetComponent<GateController>().getDirection() + ")");
-            }
-            else
-            {
-                Destroy(roomInstance);
-                if(!gate.isGate)
-                    gate.initializeWall();
-            }
-        }
-        else
-        {
-            if (!gate.isGate)
-                gate.initializeWall();
+            GameObject roomPrefab = controller.rooms[controller.randomInt(0, controller.rooms.Count)];
+            spawnRoom(gate, dir, roomPrefab, gate.spawnAlways);
         }
     }
 
+    //create room, after adjusting position and rotation, if it doesnt fit, eliminate it
+    void spawnRoom(GateController gate, Vector2Int dir, GameObject roomPrefab, bool tryAgain)
+    {
+
+        RoomController roomPrefabController = roomPrefab.GetComponent<RoomController>();
+
+        int nextEntranceGate = controller.randomInt(0, roomPrefabController.gates.Count);
+
+        var roomInstance = Instantiate(roomPrefab,
+                                  Vector3.zero,
+                                  /*Quaternion.Euler(0, nextRoomAngle, 0), */
+                                  Quaternion.identity,
+                                  transform.parent);
+
+        RoomController roomInstanceController = roomInstance.GetComponent<RoomController>();
+
+        int nextRoomAngle = uVecAngle(-dir, roomInstanceController.gates[nextEntranceGate].GetComponent<GateController>().getDirection());
+        roomInstanceController.adjustRotation(nextRoomAngle);
+
+        //adjusting physical position
+        Vector3 newPos = gate.transform.position + (roomInstance.transform.position - roomInstanceController.gates[nextEntranceGate].transform.position);
+        roomInstance.transform.position = newPos;
+        //if (roomInstanceController.checkAvailableSpace(controller))
+        if (roomInstanceController.checkAvailableSpace(controller))
+        {
+            roomInstanceController.ocupyAvailableSpace(controller);
+            firstSpawn = false;
+            gate.initializeGate();
+            roomInstanceController.adjustId();
+            controller.lastRoom = roomInstance;
+            controller.currentRoomAmount++;
+            controller.createEdge(id, roomInstanceController.id, 1);         
+            roomInstanceController.gates[nextEntranceGate].GetComponent<GateController>().initializeGate();
+            //print("Room: " + id + " (dir="+dir+") --> Room: " + roomAux.GetComponent<RoomController>().id+ " (dir=" + roomAux.GetComponent<RoomController>().gates[nextEntranceGate].GetComponent<GateController>().getDirection() + ")");
+        }
+        else
+        {
+            Destroy(roomInstance);
+            if (tryAgain)
+            {
+                spawnRoom(gate, dir, controller.basicConector, false);
+            }
+        }
+    }
+
+    //aux methods
     public void adjustId()
     {
         id = RoomController.lastId;
@@ -222,7 +251,7 @@ public class RoomController : MonoBehaviour
 
     public int getRandGate()
     {
-        return (Random.Range(0, gates.Count));
+        return (controller.randomInt(0, gates.Count));
     }
 
     int uVecAngle(Vector2Int a, Vector2Int b)
@@ -278,6 +307,7 @@ public class RoomController : MonoBehaviour
         print("______________________________________");
     }
 
+    //secondary generation, used for aditional interconectivity and creating walls in all non connected gates
     public void secondGeneration()
     {
         foreach(GameObject gate in gates)
@@ -294,9 +324,9 @@ public class RoomController : MonoBehaviour
                     if (!gateController.isGate)
                     {
                         GameObject conectingGate = controller.roomArray[neighborRoomId].GetComponent<RoomController>().findGateInRoom(gate.transform.position, 1);
-                        if (conectingGate != null && Random.value < controller.interconectivity)
+                        if (conectingGate != null && controller.randomValue() < controller.interconectivity)
                         {
-                            controller.debugEdge(id, neighborRoomId, 2);            //DEBUG
+                            controller.createEdge(id, neighborRoomId, 2);            //DEBUG
                             gateController.initializeGate();
                             conectingGate.GetComponent<GateController>().initializeGate();
                         }
@@ -308,7 +338,30 @@ public class RoomController : MonoBehaviour
                 }
             }
         }
+
+        foreach(GameObject gate in gates)
+        {
+            GateController gateController2 = gate.GetComponent<GateController>();
+            if (!gateController2.isGate)
+            {
+                gateController2.initializeWall();
+            }
+        }
     }
+
+    GameObject findGateInRoom(Vector3 pos, float tolerance)
+    {
+        foreach (GameObject gate in gates)
+        {
+            if (Vector3.Distance(gate.transform.position, pos) < tolerance)
+            {
+                return gate;
+            }
+        }
+        return null;
+    }
+
+    //aux methods called from PlayerTracker
 
     public void enteredRoom()
     {
@@ -324,34 +377,29 @@ public class RoomController : MonoBehaviour
     void turnOnLights()
     {
         //lightParent.gameObject.SetActive(true);
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(true);
+        }
     }
 
     void turnOffLights()
     {
-        //lightParent.gameObject.SetActive(false);
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(false);
+        }
     }
 
     public void turnOnCloseLights(Vector3 playerPos)
     {
-        foreach (Transform lightChild in lightParent)
+        foreach (GameObject light in lights)
         {
-            if(Vector3.Distance(lightChild.position, playerPos) <= controller.lightUpDistance)
-                lightChild.gameObject.SetActive(true);
+            if(Vector3.Distance(light.transform.position, playerPos) <= controller.lightUpDistance)
+                light.SetActive(true);
             else
-                lightChild.gameObject.SetActive(false);
+                light.SetActive(false);
         }
-    }
-
-    GameObject findGateInRoom(Vector3 pos, float tolerance)
-    {
-        foreach(GameObject gate in gates)
-        {
-            if(Vector3.Distance(gate.transform.position, pos) < tolerance)
-            {
-                return gate;
-            }
-        }
-        return null;
     }
     
 }

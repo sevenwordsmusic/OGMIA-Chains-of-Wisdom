@@ -1431,13 +1431,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1012c739d9721b74a984f7e3f4644d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomSeed: 7777
-  roomAmount: 77
+  roomSeed: 123
+  roomAmount: 25
   currentRoomAmount: 0
   levelShape: 0.7
-  interconectivity: 0.7
+  interconectivity: 1
   generationTime: 0.03
   initRoom: {fileID: 6561418898872382415, guid: 19e7cf73d1724ce4bb55f0707ad4e722,
+    type: 3}
+  basicConector: {fileID: 6561418898872382415, guid: ac264dd572d830841bba178a2e1eed76,
     type: 3}
   rooms:
   - {fileID: 6561418898872382415, guid: ac264dd572d830841bba178a2e1eed76, type: 3}
@@ -1452,8 +1454,8 @@ MonoBehaviour:
   roomArray: []
   optimization: 1
   showExtraRooms: 1
-  lightOptimiation: 0
-  lightDistanceOptimization: 0
+  lightOptimiation: 1
+  lightDistanceOptimization: 1
   lightUpDistance: 10
   debug: 0
   nodeSize: 1.5
