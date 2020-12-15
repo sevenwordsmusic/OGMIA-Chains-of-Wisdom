@@ -13,15 +13,22 @@ public class PlayerTracker : MonoBehaviour
     int currentRoom;
     int previousRoom;
 
-    void Start()
+    public void initializePlayerTracker(LevelController c, int cRoom, int pRoom)
     {
+        controller = c;
         playerGridPos = new Vector2Int(0, 0);
-        previousGridPos = new Vector2Int(0, 0);
+        previousGridPos = new Vector2Int(167821, 78789212);
         enterDir = new Vector2Int(0, 0);
         activeRooms = new List<int>(4);
-        currentRoom = 0;
-        previousRoom = 0;
+        currentRoom = cRoom;
+        previousRoom = pRoom;
     }
+
+    public int getCurrentId()
+    {
+        return currentRoom;
+    }
+
     void Update()
     {
         playerGridPos.x = Mathf.RoundToInt(transform.position.x / LevelController.baseRoomeSize);

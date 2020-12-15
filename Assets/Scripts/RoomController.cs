@@ -6,14 +6,22 @@ using UnityEditor;
 public class RoomController : MonoBehaviour
 {
     static int lastId = 0;
+
+    public static void resetLastId()
+    {
+        RoomController.lastId = 0;
+    }
+
     public int id = 0;
+    public enum RoomeTypes { Empty, Enemy, Healing, Trap, Start, Fragment, Boss };
+    public RoomeTypes roomType = RoomeTypes.Empty;
     public List<GameObject> gates = new List<GameObject>();
     public List<Transform> centerPoints = new List<Transform>();
     public List<GameObject> lights = new List<GameObject>();
     [SerializeField] bool commitChanges = false;
     //[SerializeField] Vector2Int position = new Vector2Int(0, 0);
     LevelController controller;
-    public bool firstSpawn = true;
+    [HideInInspector] public bool firstSpawn = true;
 
     [CustomEditor(typeof(RoomController))]
     public class ObjectBuilderEditor : Editor
@@ -164,6 +172,96 @@ public class RoomController : MonoBehaviour
         }
     }
 
+    //get random room depending on room type
+    GameObject fetchRoomPrefab()
+    {
+        if(controller.currentRoomAmount == ((int)(controller.roomAmount/3)) || controller.currentRoomAmount == ((int)(2*controller.roomAmount / 3)))
+        {
+            return controller.roomsFragment[controller.randomInt(0, controller.roomsFragment.Count)];
+        }
+        else if(controller.currentRoomAmount == controller.roomAmount-1)
+        {
+            return controller.roomsBoss[controller.randomInt(0, controller.roomsBoss.Count)];
+        }
+        else
+        {
+            float randomValue = controller.randomValue();
+            switch (roomType)
+            {
+                case RoomeTypes.Start:
+                    return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                    break;
+                case RoomeTypes.Fragment:
+                    if (randomValue <= 0.25f)
+                    {
+                        return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
+                    }
+                    else if (randomValue <= 0.5f)
+                    {
+                        return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
+                    }
+                    else if (randomValue <= 0.75f)
+                    {
+                        return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
+                    }
+                    else
+                    {
+                        return controller.roomsHealing[controller.randomInt(0, controller.roomsHealing.Count)];
+                    }
+                    break;
+                case RoomeTypes.Empty:
+                    if (randomValue <= 0.45f)
+                    {
+                        return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
+                    }
+                    else if (randomValue <= 0.9f)
+                    {
+                        return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
+                    }
+                    else
+                    {
+                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                    }
+                    break;
+                case RoomeTypes.Enemy:
+                    if (randomValue <= 0.65f)
+                    {
+                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                    }
+                    else
+                    {
+                        return controller.roomsHealing[controller.randomInt(0, controller.roomsHealing.Count)];
+                    }
+                    break;
+                case RoomeTypes.Trap:
+                    if (randomValue <= 0.65f)
+                    {
+                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                    }
+                    else
+                    {
+                        return controller.roomsHealing[controller.randomInt(0, controller.roomsHealing.Count)];
+                    }
+                    break;
+                case RoomeTypes.Healing:
+                    if (randomValue <= 0.45f)
+                    {
+                        return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
+                    }
+                    else if (randomValue <= 0.9f)
+                    {
+                        return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
+                    }
+                    else
+                    {
+                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                    }
+                    break;
+            }
+        }
+        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+    }
+
     //randomize gates list
     void shuffleGates()
     {
@@ -183,7 +281,7 @@ public class RoomController : MonoBehaviour
        
         if (gate.spawnAlways || firstSpawn || controller.randomValue() <= controller.levelShape)
         {
-            GameObject roomPrefab = controller.rooms[controller.randomInt(0, controller.rooms.Count)];
+            GameObject roomPrefab = fetchRoomPrefab();
             spawnRoom(gate, dir, roomPrefab, gate.spawnAlways);
         }
     }
