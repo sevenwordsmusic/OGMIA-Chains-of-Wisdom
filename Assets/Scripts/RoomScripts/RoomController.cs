@@ -58,13 +58,13 @@ public class RoomController : MonoBehaviour
 
             if (GUILayout.Button("TurnOnLights"))
             {
-                myScript.turnOnLights();
+                myScript.turnOnLightsPrefab();
                 myScript.commitChanges = false;
             }
 
             if (GUILayout.Button("TurnOffLights"))
             {
-                myScript.turnOffLights();
+                myScript.turnOffLightsPrefab();
                 myScript.commitChanges = false;
             }
         }
@@ -467,6 +467,20 @@ public class RoomController : MonoBehaviour
         return null;
     }
 
+    void turnOnLightsPrefab()
+    {
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(true);
+        }
+    }
+    void turnOffLightsPrefab()
+    {
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(false);
+        }
+    }
 
     void turnOnLights()
     {
