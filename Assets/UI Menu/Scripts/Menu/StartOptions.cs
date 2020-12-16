@@ -65,10 +65,9 @@ public class StartOptions : MonoBehaviour {
 			//Call the StartGameInScene function to start game without loading a new scene.
 			StartGameInScene();
 		}
-
 	}
 
-    void OnEnable()
+	void OnEnable()
     {
         SceneManager.sceneLoaded += SceneWasLoaded;
     }
@@ -85,7 +84,7 @@ public class StartOptions : MonoBehaviour {
 		if (menuSettingsData.musicLoopToChangeTo != null)
 		{
 			playMusic.PlayLevelMusic ();
-		}	
+		}
 	}
 
 

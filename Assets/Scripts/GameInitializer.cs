@@ -16,6 +16,7 @@ public class GameInitializer : MonoBehaviour
         DontDestroyOnLoad(gameController);
 
 
-        SceneManager.LoadScene("MidNightsDream");
+        SceneManager.LoadScene("Tutorial");
+
     }
 }
