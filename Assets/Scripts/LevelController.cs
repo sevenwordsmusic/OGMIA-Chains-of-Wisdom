@@ -9,6 +9,8 @@ public class LevelController : MonoBehaviour
     [Tooltip("Seed for random generation")] public int roomSeed = 123;
     int startPlayerId = 0;
     Vector3 startPlayerPos = new Vector3(0, 1.28f, 0);
+    bool firstTime = true;
+    [HideInInspector] public bool[] completedRooms;
     [Tooltip("Amount of rooms to be generated")] public int roomAmount = 20;
     [HideInInspector] public int currentRoomAmount = 0;
     [Tooltip("Shape of level: 0-> Corridor shaped level, each room generates a single room, 1-> Square shaped level, each room generates various rooms")] [Range(0, 1)] public float levelShape = 0.5f;
@@ -73,6 +75,12 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController.readyForInitialization(this);
+    }
+
     //Initialize all values with a leveinfowrapper
     public void initAllLevelValues(GameController.LevelInfoWrapper lvlInfo)
     {
@@ -82,9 +90,11 @@ public class LevelController : MonoBehaviour
 
         initRandValues();
 
+        firstTime = lvlInfo.firstTime;
         roomAmount = lvlInfo.levelRoomsAmount;
         startPlayerId = lvlInfo.playerRoomId;
         startPlayerPos = lvlInfo.playerPos;
+        completedRooms = lvlInfo.completedRooms;
     }
 
     //custom methods for random values
@@ -111,12 +121,6 @@ public class LevelController : MonoBehaviour
         {
             randValues[i] = Random.value;
         }
-    }
-
-    private void Start()
-    {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        gameController.readyForInitialization(this); 
     }
 
     //start generating the level
@@ -148,7 +152,8 @@ public class LevelController : MonoBehaviour
 
         var roomAux = Instantiate(initRoom, transform.position, Quaternion.identity, transform);
         roomAux.GetComponent<RoomController>().adjustId();
-        roomAux.GetComponent<RoomController>().levelInitialize();
+        roomAux.GetComponent<RoomController>().completedBefore = completedRooms[roomAux.GetComponent<RoomController>().id];
+        //roomAux.GetComponent<RoomController>().levelInitialize();
 
         this.enabled = true;
     }
@@ -229,9 +234,13 @@ public class LevelController : MonoBehaviour
         }
 
         RoomController.resetLastId();
-        gameController.initializePlayerWhenReady(startPlayerPos, startPlayerId, startPlayerId);
+        if(firstTime && roomArray[0].GetComponent<RoomController>().startPos != null)
+            gameController.initializePlayerWhenReady(roomArray[0].GetComponent<RoomController>().startPos.position, startPlayerId, startPlayerId);
+        else
+            gameController.initializePlayerWhenReady(startPlayerPos, startPlayerId, startPlayerId);
 
         randValues = null;
+        completedRooms = null;
         //DEBUG -> LIBERAR MEMORIA DE RESTO DE ESTRUCTURAS
     }
 

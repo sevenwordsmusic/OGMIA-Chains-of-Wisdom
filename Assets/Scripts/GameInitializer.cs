@@ -7,6 +7,7 @@ public class GameInitializer : MonoBehaviour
 {
     public GameObject player;
     public GameObject gameController;
+
     void Start()
     {
         player.SetActive(true);

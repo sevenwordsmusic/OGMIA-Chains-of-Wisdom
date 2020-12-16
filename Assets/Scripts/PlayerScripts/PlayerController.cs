@@ -23,6 +23,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider trig)
+    {
+        Transform trigParent = trig.transform.parent;
+        if (trigParent.CompareTag("trap"))
+        {
+            print("Player Damaged: -" + trig.transform.parent.GetComponent<TrapSpikesController>().damage+ "hp");
+        }
+        else if (trigParent.CompareTag("enemy"))
+        {
+            print("enemy");
+            Destroy(trigParent.gameObject);
+        }
+    }
+
     public void goRight()
     {
         moveVec.x = 1;

@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     int currentLevel = -1;
     LevelController currentLvlController;
 
+    [SerializeField] Vector3 startPos;
+
     [CustomEditor(typeof(GameController))]
     public class ObjectBuilderEditor : Editor
     {
@@ -41,7 +43,7 @@ public class GameController : MonoBehaviour
         currentLevel = -1;
         currentLvlController = null;
         player.GetComponent<PlayerTracker>().enabled = false;
-        player.transform.position = new Vector3(0,1.28f,0);
+        player.transform.position = startPos;
         SceneManager.LoadScene("MidNightsDream");
     }
 
@@ -50,7 +52,8 @@ public class GameController : MonoBehaviour
         if(levelInfos[num] == null)
         {
             print("generating new Level " + num);
-            levelInfos[num] = new LevelInfoWrapper();
+            levelInfos[num] = new LevelInfoWrapper(55, true, 25, 0, new Vector3(0, 1.28f, 0));
+            levelInfos[num].printInfo();
         }
         else
         {
@@ -68,8 +71,12 @@ public class GameController : MonoBehaviour
         }
         else
         {
-
-            LevelInfoWrapper levelInfo = new LevelInfoWrapper(currentLvlController.roomSeed, currentLvlController.roomAmount, player.GetComponent<PlayerTracker>().getCurrentId(), player.transform.position);
+            bool[] auxCompletedRooms = new bool[currentLvlController.roomAmount];
+            for(int i=0; i<currentLvlController.roomAmount; i++)
+            {
+                auxCompletedRooms[i] = currentLvlController.roomArray[i].GetComponent<RoomController>().completedBefore;
+            }
+            LevelInfoWrapper levelInfo = new LevelInfoWrapper(currentLvlController.roomSeed, false, currentLvlController.roomAmount, player.GetComponent<PlayerTracker>().getCurrentId(), player.transform.position, auxCompletedRooms);
             levelInfos[num] = levelInfo;
         }
     }
@@ -92,6 +99,7 @@ public class GameController : MonoBehaviour
 
     public class LevelInfoWrapper{
         public int levelSeed;
+        public bool firstTime;
         public int levelRoomsAmount;
         public int playerRoomId;
         public Vector3 playerPos;
@@ -101,9 +109,10 @@ public class GameController : MonoBehaviour
         public LevelInfoWrapper()
         {
             levelSeed = 55;
+            firstTime = true;
             levelRoomsAmount = 25;
             playerRoomId = 0;
-            playerPos = new Vector3(0, 1.28f, 0);
+            playerPos = new Vector3(0,1.28f,0);
             completedRooms = new bool[levelRoomsAmount];
             for(int i=0; i< completedRooms.Length; i++)
             {
@@ -111,9 +120,10 @@ public class GameController : MonoBehaviour
             }
         }
 
-        public LevelInfoWrapper(int lvlS, int lvlRmA, int plRmId, Vector3 pPos)
+        public LevelInfoWrapper(int lvlS, bool fT, int lvlRmA, int plRmId, Vector3 pPos)
         {
             levelSeed = lvlS;
+            firstTime = fT;
             levelRoomsAmount = lvlRmA;
             playerRoomId = plRmId;
             playerPos = pPos;
@@ -124,9 +134,10 @@ public class GameController : MonoBehaviour
             }
         }
 
-        public LevelInfoWrapper(int lvlS, int lvlRmA, int plRmId, Vector3 pPos, bool[] complRms)
+        public LevelInfoWrapper(int lvlS, bool fT, int lvlRmA, int plRmId, Vector3 pPos, bool[] complRms)
         {
             levelSeed = lvlS;
+            firstTime = fT;
             levelRoomsAmount = lvlRmA;
             playerRoomId = plRmId;
             playerPos = pPos;

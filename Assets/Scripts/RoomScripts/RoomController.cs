@@ -13,8 +13,10 @@ public class RoomController : MonoBehaviour
     }
 
     public int id = 0;
+    public bool completedBefore = false;
     public enum RoomeTypes { Empty, Enemy, Healing, Trap, Start, Fragment, Boss };
     public RoomeTypes roomType = RoomeTypes.Empty;
+    public Transform startPos;
     public List<GameObject> gates = new List<GameObject>();
     public List<Transform> centerPoints = new List<Transform>();
     public List<GameObject> lights = new List<GameObject>();
@@ -22,6 +24,11 @@ public class RoomController : MonoBehaviour
     //[SerializeField] Vector2Int position = new Vector2Int(0, 0);
     LevelController controller;
     [HideInInspector] public bool firstSpawn = true;
+
+    public delegate void EnteredRoom();
+    public EnteredRoom enteredRoom;
+    public delegate void ExitedRoom();
+    public ExitedRoom exitedRoom;
 
     [CustomEditor(typeof(RoomController))]
     public class ObjectBuilderEditor : Editor
@@ -43,9 +50,9 @@ public class RoomController : MonoBehaviour
                 myScript.commitChanges = false;
             }
 
-            if (GUILayout.Button("Adjust Lights"))
+            if (GUILayout.Button("Update Lights"))
             {
-                myScript.adjustLightsInit();
+                myScript.updateLightsInit();
                 myScript.commitChanges = false;
             }
 
@@ -110,7 +117,7 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    void adjustLights(Transform t)
+    void updateLights(Transform t)
     {
         if (t.tag.Equals("lightComponent"))
         {
@@ -120,16 +127,16 @@ public class RoomController : MonoBehaviour
         {
             foreach (Transform child in t)
             {
-                adjustLights(child);
+                updateLights(child);
             }
         }
     }
 
-    void adjustLightsInit()
+    void updateLightsInit()
     {
         lights.Clear();
         Transform t = transform;
-        adjustLights(t);
+        updateLights(t);
     }
 
     //start
@@ -144,13 +151,11 @@ public class RoomController : MonoBehaviour
         {
             turnOnLights();
         }
+
+        enteredRoom += turnOnLights;
+        exitedRoom += turnOffLights;
     }
 
-    //turn lights on
-    public void levelInitialize()
-    {
-        turnOnLights();
-    }
 
     //add gates to room generation queue
     void prepareGates()
@@ -194,7 +199,7 @@ public class RoomController : MonoBehaviour
                 case RoomeTypes.Fragment:
                     if (randomValue <= 0.25f)
                     {
-                        return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
+                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
                     }
                     else if (randomValue <= 0.5f)
                     {
@@ -317,6 +322,9 @@ public class RoomController : MonoBehaviour
             roomInstanceController.adjustId();
             controller.lastRoom = roomInstance;
             controller.currentRoomAmount++;
+
+            roomInstanceController.completedBefore = controller.completedRooms[roomInstanceController.id];
+
             controller.createEdge(id, roomInstanceController.id, 1);         
             roomInstanceController.gates[nextEntranceGate].GetComponent<GateController>().initializeGate();
             //print("Room: " + id + " (dir="+dir+") --> Room: " + roomAux.GetComponent<RoomController>().id+ " (dir=" + roomAux.GetComponent<RoomController>().gates[nextEntranceGate].GetComponent<GateController>().getDirection() + ")");
@@ -459,33 +467,27 @@ public class RoomController : MonoBehaviour
         return null;
     }
 
-    //aux methods called from PlayerTracker
-
-    public void enteredRoom()
-    {
-        if (controller.lightOptimiation)
-            turnOnLights();
-    }
-    public void exitedRoom()
-    {
-        if (controller.lightOptimiation)
-            turnOffLights();
-    }
 
     void turnOnLights()
     {
-        //lightParent.gameObject.SetActive(true);
-        foreach (GameObject light in lights)
+        if (controller.lightOptimiation)
         {
-            light.SetActive(true);
+            foreach (GameObject light in lights)
+            {
+                light.SetActive(true);
+            }
         }
     }
 
     void turnOffLights()
     {
-        foreach (GameObject light in lights)
+
+        if (controller.lightOptimiation)
         {
-            light.SetActive(false);
+            foreach (GameObject light in lights)
+            {
+                light.SetActive(false);
+            }
         }
     }
 

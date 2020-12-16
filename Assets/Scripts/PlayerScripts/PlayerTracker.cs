@@ -42,8 +42,8 @@ public class PlayerTracker : MonoBehaviour
             if (currentRoom != previousRoom)
             {
                 print("Entered new Room (" + currentRoom + ") with dir: (" + enterDir + ")" + "   prev:  " + previousRoom);
-                controller.roomArray[currentRoom].GetComponent<RoomController>().enteredRoom();
-                controller.roomArray[previousRoom].GetComponent<RoomController>().exitedRoom();
+                controller.roomArray[currentRoom].GetComponent<RoomController>().enteredRoom?.Invoke();
+                controller.roomArray[previousRoom].GetComponent<RoomController>().exitedRoom?.Invoke();
             }
             if (controller.optimization)
             {
