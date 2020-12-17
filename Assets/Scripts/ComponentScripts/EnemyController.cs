@@ -22,7 +22,9 @@ public class EnemyController : MonoBehaviour
 
     public void enemyDefeated()
     {
-        controller.enemyDefeated();
+        if(controller!= null){
+            controller.enemyDefeated();
+        }
         Destroy(gameObject);
     }
     void Update()
