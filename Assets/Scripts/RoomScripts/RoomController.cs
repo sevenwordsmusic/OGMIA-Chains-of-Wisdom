@@ -482,6 +482,21 @@ public class RoomController : MonoBehaviour
         }
     }
 
+    void turnOnLightsPrefab()
+    {
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(true);
+        }
+    }
+    void turnOffLightsPrefab()
+    {
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(false);
+        }
+    }
+
     void turnOnLights()
     {
         if (controller.lightOptimiation)
