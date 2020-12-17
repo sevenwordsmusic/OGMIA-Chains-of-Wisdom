@@ -41,6 +41,10 @@ public class PlayerController : MonoBehaviour
             print("teleporting");
             pController.teleport();
         }
+        else if (trigParent.CompareTag("trapActivator"))
+        {
+            trigParent.GetComponent<RoomCloseDoors>().activateTrapDoors();
+        }
     }
 
     public void goRight()

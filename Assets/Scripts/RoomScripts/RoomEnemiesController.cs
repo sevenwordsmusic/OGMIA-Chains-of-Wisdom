@@ -19,7 +19,6 @@ public class RoomEnemiesController : MonoBehaviour
         if (!GetComponent<RoomController>().completedBefore)
         {
             Instantiate(enemyPrefab, transform.position + new Vector3(0, 0, -5), Quaternion.identity, transform);
-            GetComponent<RoomController>().completedBefore = true;
         }
     }
 
