@@ -145,6 +145,8 @@ public class RoomController : MonoBehaviour
         controller = transform.parent.gameObject.GetComponent<LevelController>();
         controller.roomArray[id] = this.gameObject;
 
+        //completedBefore = controller.completedRooms[id];
+
         prepareGates();
 
         if (!controller.lightOptimiation)

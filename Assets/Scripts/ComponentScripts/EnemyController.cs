@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     int dir;
     float sizeMult = 1;
+    RoomEnemiesController controller;
 
     void Start()
     {
@@ -14,6 +15,16 @@ public class EnemyController : MonoBehaviour
         transform.localScale = new Vector3(sizeMult, sizeMult, sizeMult);
     }
 
+    public void setRoomEnemyController(RoomEnemiesController rEC)
+    {
+        controller = rEC;
+    }
+
+    public void enemyDefeated()
+    {
+        controller.enemyDefeated();
+        Destroy(gameObject);
+    }
     void Update()
     {
         transform.Rotate(0, dir, 0);

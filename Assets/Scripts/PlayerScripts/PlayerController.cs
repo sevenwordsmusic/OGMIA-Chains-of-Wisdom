@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         else if (trigParent.CompareTag("enemy"))
         {
             print("enemy");
-            Destroy(trigParent.gameObject);
+            trigParent.GetComponent<EnemyController>().enemyDefeated();
         }
         else if (trigParent.CompareTag("portal"))
         {

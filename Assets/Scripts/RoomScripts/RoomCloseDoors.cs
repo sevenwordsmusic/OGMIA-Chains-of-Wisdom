@@ -9,6 +9,8 @@ public class RoomCloseDoors : MonoBehaviour
     [SerializeField] List<GameObject> trapDoors = new List<GameObject>();
     [SerializeField] List<BoxCollider> triggers = new List<BoxCollider>();
     [SerializeField] bool commitChanges = false;
+    public delegate void DoorsClosed();
+    public DoorsClosed doorsclosed;
 
     [CustomEditor(typeof(RoomCloseDoors))]
     public class ObjectBuilderEditor : Editor
@@ -66,6 +68,7 @@ public class RoomCloseDoors : MonoBehaviour
                 trapDoor.SetActive(true);
             }
         }
+        doorsclosed?.Invoke();
         GetComponent<RoomController>().completedBefore = true;
     }
 
