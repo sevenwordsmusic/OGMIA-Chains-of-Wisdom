@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
         if(levelInfos[num] == null)
         {
             print("generating new Level " + num);
-            levelInfos[num] = new LevelInfoWrapper(55, true, 25, 0, new Vector3(0, 1.28f, 0));
+            levelInfos[num] = new LevelInfoWrapper(123, true, 50, 0, new Vector3(0, 1.28f, 0));
             levelInfos[num].printInfo();
         }
         else

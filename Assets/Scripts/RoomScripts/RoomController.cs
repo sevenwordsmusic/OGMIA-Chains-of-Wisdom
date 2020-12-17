@@ -14,8 +14,8 @@ public class RoomController : MonoBehaviour
 
     public int id = 0;
     public bool completedBefore = false;
-    public enum RoomeTypes { Empty, Enemy, Healing, Trap, Start, Fragment, Boss };
-    public RoomeTypes roomType = RoomeTypes.Empty;
+    public enum RoomeTypes { Connector, Empty, Enemy, Healing, Trap, Start, Fragment, Boss };
+    public RoomeTypes roomType = RoomeTypes.Connector;
     public Transform startPos;
     public List<GameObject> gates = new List<GameObject>();
     public List<Transform> centerPoints = new List<Transform>();
@@ -194,24 +194,42 @@ public class RoomController : MonoBehaviour
             switch (roomType)
             {
                 case RoomeTypes.Start:
-                    return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                    return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     break;
                 case RoomeTypes.Fragment:
-                    if (randomValue <= 0.25f)
+                    if (randomValue <= 0.26f)
                     {
-                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                        return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     }
-                    else if (randomValue <= 0.5f)
+                    else if (randomValue <= 0.47f)
                     {
                         return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
                     }
-                    else if (randomValue <= 0.75f)
+                    else if (randomValue <= 0.68f)
+                    {
+                        return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
+                    }
+                    else if (randomValue <= 0.89f)
+                    {
+                        return controller.roomsHealing[controller.randomInt(0, controller.roomsHealing.Count)];
+                    }
+                    else
+                    {
+                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                    }
+                    break;
+                case RoomeTypes.Connector:
+                    if (randomValue <= 0.45f)
+                    {
+                        return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
+                    }
+                    else if (randomValue <= 0.9f)
                     {
                         return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
                     }
                     else
                     {
-                        return controller.roomsHealing[controller.randomInt(0, controller.roomsHealing.Count)];
+                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
                     }
                     break;
                 case RoomeTypes.Empty:
@@ -225,11 +243,15 @@ public class RoomController : MonoBehaviour
                     }
                     else
                     {
-                        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+                        return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     }
                     break;
                 case RoomeTypes.Enemy:
-                    if (randomValue <= 0.65f)
+                    if (randomValue <= 0.5f)
+                    {
+                        return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
+                    }
+                    else if (randomValue <= 0.65f)
                     {
                         return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
                     }
@@ -239,7 +261,11 @@ public class RoomController : MonoBehaviour
                     }
                     break;
                 case RoomeTypes.Trap:
-                    if (randomValue <= 0.65f)
+                    if (randomValue <= 0.5f)
+                    {
+                        return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
+                    }
+                    else if (randomValue <= 0.65f)
                     {
                         return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
                     }
@@ -249,13 +275,17 @@ public class RoomController : MonoBehaviour
                     }
                     break;
                 case RoomeTypes.Healing:
-                    if (randomValue <= 0.45f)
+                    if (randomValue <= 0.4f)
                     {
                         return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
                     }
-                    else if (randomValue <= 0.9f)
+                    else if (randomValue <= 0.8f)
                     {
                         return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
+                    }
+                    else if (randomValue <= 0.9f)
+                    {
+                        return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     }
                     else
                     {
@@ -264,7 +294,7 @@ public class RoomController : MonoBehaviour
                     break;
             }
         }
-        return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+        return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
     }
 
     //randomize gates list
@@ -482,20 +512,6 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    void turnOnLightsPrefab()
-    {
-        foreach (GameObject light in lights)
-        {
-            light.SetActive(true);
-        }
-    }
-    void turnOffLightsPrefab()
-    {
-        foreach (GameObject light in lights)
-        {
-            light.SetActive(false);
-        }
-    }
 
     void turnOnLights()
     {
