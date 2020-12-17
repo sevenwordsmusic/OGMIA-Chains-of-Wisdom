@@ -536,6 +536,11 @@ public class RoomController : MonoBehaviour
         }
     }
 
+    public LevelController getLevelController()
+    {
+        return controller;
+    }
+
     public void turnOnCloseLights(Vector3 playerPos)
     {
         foreach (GameObject light in lights)

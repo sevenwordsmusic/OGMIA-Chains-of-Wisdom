@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 {
     LevelInfoWrapper[] levelInfos;
     [SerializeField] GameObject player;
-    int currentLevel = -1;
+    public int currentLevel = -1;
     LevelController currentLvlController;
 
     [SerializeField] Vector3 startPos;
@@ -33,12 +33,12 @@ public class GameController : MonoBehaviour
 
             if (GUILayout.Button("Save Level 1"))
             {
-                myScript.saveLevel(1);
+                myScript.saveLevel();
             }
         }
     }
 
-    void goToHUB()
+    public void goToHUB()
     {
         currentLevel = -1;
         currentLvlController = null;
@@ -47,12 +47,12 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("MidNightsDream");
     }
 
-    void goToLevel(int num)
+    public void goToLevel(int num)
     {
         if(levelInfos[num] == null)
         {
             print("generating new Level " + num);
-            levelInfos[num] = new LevelInfoWrapper(123, true, 50, 0, new Vector3(0, 1.28f, 0));
+            levelInfos[num] = new LevelInfoWrapper(123, true, 20, 0, new Vector3(0, 1.28f, 0));
             levelInfos[num].printInfo();
         }
         else
@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("test");
     }
 
-    void saveLevel(int num)
+    public void saveLevel()
     {
         if (currentLvlController == null)
         {
@@ -71,13 +71,14 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            print("saving game");
             bool[] auxCompletedRooms = new bool[currentLvlController.roomAmount];
             for(int i=0; i<currentLvlController.roomAmount; i++)
             {
                 auxCompletedRooms[i] = currentLvlController.roomArray[i].GetComponent<RoomController>().completedBefore;
             }
             LevelInfoWrapper levelInfo = new LevelInfoWrapper(currentLvlController.roomSeed, false, currentLvlController.roomAmount, player.GetComponent<PlayerTracker>().getCurrentId(), player.transform.position, auxCompletedRooms);
-            levelInfos[num] = levelInfo;
+            levelInfos[currentLevel] = levelInfo;
         }
     }
 

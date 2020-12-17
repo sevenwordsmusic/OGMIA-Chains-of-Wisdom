@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
             print("enemy");
             Destroy(trigParent.gameObject);
         }
+        else if (trigParent.CompareTag("portal"))
+        {
+            PortalController pController = trigParent.GetComponent<PortalController>();
+            print("teleporting");
+            pController.teleport();
+        }
     }
 
     public void goRight()

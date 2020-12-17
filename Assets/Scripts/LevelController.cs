@@ -125,6 +125,12 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    //tell game controller to save current level
+    public void saveGameState()
+    {
+        gameController.saveLevel();
+    }
+
     //start generating the level
     public void startLevelGeneration()
     {
@@ -241,6 +247,7 @@ public class LevelController : MonoBehaviour
         else
             gameController.initializePlayerWhenReady(startPlayerPos, startPlayerId, startPlayerId);
 
+        roomArray[startPlayerId].GetComponent<RoomController>().enteredRoom();
         randValues = null;
         completedRooms = null;
         //DEBUG -> LIBERAR MEMORIA DE RESTO DE ESTRUCTURAS
