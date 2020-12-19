@@ -7,6 +7,7 @@ public class GameInitializer : MonoBehaviour
 {
     public GameObject player;
     public GameObject gameController;
+    public string sceneToLoadAtStart;
 
     void Start()
     {
@@ -15,8 +16,8 @@ public class GameInitializer : MonoBehaviour
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(gameController);
 
-
-        SceneManager.LoadScene("Tutorial");
+        if(sceneToLoadAtStart != null)
+        SceneManager.LoadScene(sceneToLoadAtStart);
 
     }
 }
