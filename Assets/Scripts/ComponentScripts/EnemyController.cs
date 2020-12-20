@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     int dir;
     float sizeMult = 1;
     RoomEnemiesController controller;
+    public bool isAlive;
 
     void Start()
     {
