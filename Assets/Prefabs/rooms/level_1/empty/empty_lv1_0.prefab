@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2108102972914855996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lightsObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3778979790453480520}
   - component: {fileID: 5926482784958127065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gate
   m_TagString: gate
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5087142863087784588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CenterPoint
   m_TagString: centerPoint
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 6927973320904288143}
   - component: {fileID: 4148594697969597353}
   - component: {fileID: 89575821105474891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 8062637599114785786}
   - component: {fileID: 6161676653031182112}
   - component: {fileID: 5973620063745919049}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7833159254832538050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PerRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7815088006620951632}
   - component: {fileID: 2507761794864698963}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gate (1)
   m_TagString: gate
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -392,7 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092778749370383193}
   - component: {fileID: 4716727714837818067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: empty_lv1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,6 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  completedBefore: 0
   roomType: 0
   startPos: {fileID: 0}
   gates:
@@ -468,7 +469,7 @@ GameObject:
   - component: {fileID: 3075127754958233705}
   - component: {fileID: 264653556068963426}
   - component: {fileID: 901916167733231528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1200003852112788635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: model
   m_TagString: transparent
   m_Icon: {fileID: 0}
@@ -664,7 +665,7 @@ GameObject:
   - component: {fileID: 6237145607326010480}
   - component: {fileID: 845464375480402691}
   - component: {fileID: 1889496867028608472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +759,7 @@ GameObject:
   - component: {fileID: 3649519129156826458}
   - component: {fileID: 1970406056064445838}
   - component: {fileID: 6149411665274515137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7382406351343814771}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +883,7 @@ GameObject:
   - component: {fileID: 3582847448540910442}
   - component: {fileID: 1887259095575741915}
   - component: {fileID: 72964962237305654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,6 +977,10 @@ PrefabInstance:
       value: dungeon-wall-stone (145)
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -1047,6 +1052,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (149)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -1123,7 +1132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_TagString
@@ -1200,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_TagString
@@ -1269,6 +1278,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -1342,6 +1355,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (146)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -1418,7 +1435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -1494,7 +1511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -1570,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -1646,7 +1663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -1719,6 +1736,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -1794,6 +1815,10 @@ PrefabInstance:
       value: dungeon-wall-stone (239)
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -1865,6 +1890,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -1940,6 +1969,10 @@ PrefabInstance:
       value: barrel-old (14)
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -2001,6 +2034,10 @@ PrefabInstance:
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_Name
       value: barrel-old (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString
@@ -2067,7 +2104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_TagString
@@ -2150,7 +2187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_TagString
@@ -2232,6 +2269,10 @@ PrefabInstance:
       value: dungeon-pillar-stone-edge (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -2306,7 +2347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -2381,6 +2422,10 @@ PrefabInstance:
       value: torche (1)
       objectReference: {fileID: 0}
     - target: {fileID: 189990, guid: 9fb7d58f5819fa44fb5a3165e0babaee, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 189990, guid: 9fb7d58f5819fa44fb5a3165e0babaee, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2422,8 +2467,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974634652711197172, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974634652711197172, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402117476221772813, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4402117476221772813, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
         type: 3}
@@ -2460,6 +2515,10 @@ PrefabInstance:
     - target: {fileID: 1812069452759534, guid: 3099df1c006684bb5b88c4d14fb8fc8e, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-corner (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812069452759534, guid: 3099df1c006684bb5b88c4d14fb8fc8e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1812069452759534, guid: 3099df1c006684bb5b88c4d14fb8fc8e, type: 3}
       propertyPath: m_TagString
@@ -2531,6 +2590,10 @@ PrefabInstance:
       value: barrel-old (10)
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -2595,7 +2658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -2670,6 +2733,10 @@ PrefabInstance:
       value: library (23)
       objectReference: {fileID: 0}
     - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -2727,6 +2794,10 @@ PrefabInstance:
     - target: {fileID: 1330995881027688, guid: 58ea094a6ac5e4cdc899c4827b82a38c, type: 3}
       propertyPath: m_Name
       value: torche-wall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330995881027688, guid: 58ea094a6ac5e4cdc899c4827b82a38c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1330995881027688, guid: 58ea094a6ac5e4cdc899c4827b82a38c, type: 3}
       propertyPath: m_IsActive
@@ -2789,8 +2860,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5741089942166697615, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5741089942166697615, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341745401350562053, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8341745401350562053, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
         type: 3}
@@ -2830,7 +2911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -2903,6 +2984,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (144)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -2978,6 +3063,10 @@ PrefabInstance:
       value: dungeon-pillar-stone-edge (11)
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -3051,6 +3140,10 @@ PrefabInstance:
       value: dungeon-pillar-stone-corner (13)
       objectReference: {fileID: 0}
     - target: {fileID: 1812069452759534, guid: 3099df1c006684bb5b88c4d14fb8fc8e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812069452759534, guid: 3099df1c006684bb5b88c4d14fb8fc8e, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -3120,6 +3213,10 @@ PrefabInstance:
       value: torche-wall (9)
       objectReference: {fileID: 0}
     - target: {fileID: 1330995881027688, guid: 58ea094a6ac5e4cdc899c4827b82a38c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330995881027688, guid: 58ea094a6ac5e4cdc899c4827b82a38c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3165,8 +3262,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5741089942166697615, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5741089942166697615, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341745401350562053, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8341745401350562053, guid: 58ea094a6ac5e4cdc899c4827b82a38c,
         type: 3}
@@ -3203,6 +3310,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (238)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -3278,6 +3389,10 @@ PrefabInstance:
       value: dungeon-wall-stone (142)
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -3349,6 +3464,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -3424,6 +3543,10 @@ PrefabInstance:
       value: dungeon-wall-stone (245)
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -3495,6 +3618,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -3571,7 +3698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_TagString
@@ -3640,6 +3767,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (157)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -3716,7 +3847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_TagString
@@ -3785,6 +3916,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (246)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -3860,6 +3995,10 @@ PrefabInstance:
       value: dungeon-wall-stone (148)
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -3931,6 +4070,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (240)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -4007,7 +4150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_TagString
@@ -4076,6 +4219,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (361)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -4151,6 +4298,10 @@ PrefabInstance:
       value: torche (6)
       objectReference: {fileID: 0}
     - target: {fileID: 189990, guid: 9fb7d58f5819fa44fb5a3165e0babaee, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 189990, guid: 9fb7d58f5819fa44fb5a3165e0babaee, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -4192,8 +4343,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974634652711197172, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974634652711197172, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402117476221772813, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4402117476221772813, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
         type: 3}
@@ -4253,7 +4414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_TagString
@@ -4325,7 +4486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -4401,7 +4562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -4474,6 +4635,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (360)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -4550,7 +4715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -4623,6 +4788,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -4699,7 +4868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_TagString
@@ -4770,6 +4939,10 @@ PrefabInstance:
       value: library (25)
       objectReference: {fileID: 0}
     - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -4830,7 +5003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -4909,6 +5082,10 @@ PrefabInstance:
       value: torche (7)
       objectReference: {fileID: 0}
     - target: {fileID: 189990, guid: 9fb7d58f5819fa44fb5a3165e0babaee, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 189990, guid: 9fb7d58f5819fa44fb5a3165e0babaee, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -4950,8 +5127,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974634652711197172, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974634652711197172, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402117476221772813, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4402117476221772813, guid: 9fb7d58f5819fa44fb5a3165e0babaee,
         type: 3}
@@ -4988,6 +5175,10 @@ PrefabInstance:
     - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
       propertyPath: m_Name
       value: library (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
       propertyPath: m_TagString
@@ -5047,6 +5238,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (244)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -5123,7 +5318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -5196,6 +5391,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (241)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -5272,7 +5471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1781130428969628, guid: 17462986d76284d599dd3f87e1100aea, type: 3}
       propertyPath: m_TagString
@@ -5346,6 +5545,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (242)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -5422,7 +5625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1189422364011162, guid: 6f65b76c628f14a8cb695d3fb4b9285a, type: 3}
       propertyPath: m_IsActive
@@ -5495,6 +5698,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (234)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -5570,6 +5777,10 @@ PrefabInstance:
       value: barrel-old (13)
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -5631,6 +5842,10 @@ PrefabInstance:
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_Name
       value: barrel-old (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString
@@ -5696,6 +5911,10 @@ PrefabInstance:
       value: door-wood (8)
       objectReference: {fileID: 0}
     - target: {fileID: 1789646300229838, guid: 1355992e2e0414a50ba4b0543adead7b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789646300229838, guid: 1355992e2e0414a50ba4b0543adead7b, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -5753,6 +5972,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (237)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -5828,6 +6051,10 @@ PrefabInstance:
       value: dungeon-wall-stone (147)
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -5899,6 +6126,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -5974,6 +6205,10 @@ PrefabInstance:
       value: barrel-old (12)
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -6037,6 +6272,10 @@ PrefabInstance:
       value: barrel-old (11)
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -6098,6 +6337,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (140)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -6173,6 +6416,10 @@ PrefabInstance:
       value: library (26)
       objectReference: {fileID: 0}
     - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481326055228522, guid: 209d1084f90d24df2903902969097dae, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -6230,6 +6477,10 @@ PrefabInstance:
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_Name
       value: dungeon-pillar-stone-edge (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581593569892464, guid: d042d526038684ffea1e3c7218c53a3d, type: 3}
       propertyPath: m_TagString
@@ -6303,6 +6554,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (143)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -6384,6 +6639,10 @@ PrefabInstance:
       value: dungeon-wall-stone (141)
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
       value: transparent
       objectReference: {fileID: 0}
@@ -6455,6 +6714,10 @@ PrefabInstance:
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_Name
       value: dungeon-wall-stone (243)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1135327754445724, guid: 2e9bb0112b1a3428f94ba8550d668f2f, type: 3}
       propertyPath: m_TagString
@@ -6534,6 +6797,10 @@ PrefabInstance:
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_Name
       value: barrel-old (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 150946, guid: ef4fcc24e9a681a45bf87bec627dd9fd, type: 3}
       propertyPath: m_TagString

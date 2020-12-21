@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool canDash;
     [HideInInspector] public bool canMove;
     public bool DashUpgrade;
+    private PlayerAnimationScript playerAnimationScript;
 
     //[SerializeField] float speed = 1;
     //[SerializeField] float jumpSpeed = 5;
@@ -42,13 +43,31 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
         cam = Camera.main.transform;
         //Esta linea cambia el estado del cursor cuando se está jugando, escondiéndolo y bloqueándolo en el centro de la ventana, para que no se vea y no estorbe.
         //Cursor.lockState = CursorLockMode.Confined;
         canMove = true;
         canDash = true;
 
+        playerAnimationScript.rollEvent += applyRoll;
+        //playerAnimationScript.enableMovementEvent += enableMovement;
+
         //rb = GetComponent<Rigidbody>();
+    }
+
+    //EVENTS
+    private void OnEnable()
+    {
+        //playerAnimationScript.comboCheckEvent += applyDash;
+
+    }
+
+    private void OnDisable()
+    {
+        playerAnimationScript.rollEvent -= applyRoll;
+        //playerAnimationScript.enableMovementEvent -= enableMovement;
+
     }
 
     #region INPUT MANAGEMENT
@@ -86,12 +105,6 @@ public class PlayerController : MonoBehaviour
     {
         if (canDash)
         {
-            //Añade a la velocidad un vector resultante de la multiplicación de la dirección del jugador (transform.forward) por un vector compuesto a partir del
-            //dashDistance y el drag, basado en fórmulas físicas 'realistas'.
-            velocity += Vector3.Scale(transform.forward,
-                                       dashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * drag.x + 1)) / -Time.deltaTime),
-                                                                  0,//^No entiendo muy bien por qué, pero a mayor el drag, mayor el dash en este caso.
-                                                                  (Mathf.Log(1f / (Time.deltaTime * drag.z + 1)) / -Time.deltaTime)));
 
             if(DashUpgrade)
             {
@@ -118,6 +131,16 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    public void applyRoll()
+    {
+        //Añade a la velocidad un vector resultante de la multiplicación de la dirección del jugador (transform.forward) por un vector compuesto a partir del
+        //dashDistance y el drag, basado en fórmulas físicas 'realistas'.
+        velocity += Vector3.Scale(transform.forward,
+                                   dashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * drag.x + 1)) / -Time.deltaTime),
+                                                              0,//^No entiendo muy bien por qué, pero a mayor el drag, mayor el dash en este caso.
+                                                              (Mathf.Log(1f / (Time.deltaTime * drag.z + 1)) / -Time.deltaTime)));
+    }
+
     #endregion
 
 
@@ -133,7 +156,7 @@ public class PlayerController : MonoBehaviour
             //No se coloca a 0 porque pueden darse casos en los que isGrounded sea true antes de que el jugador esté verdaderamente en el suelo.
             animator.SetBool("Falling", false); //Sirve para detener la animación de salto
         }
-        else if ((velocity.y < -6 && !isGrounded) || (animator.GetCurrentAnimatorStateInfo(0).IsName("JumpUp") && velocity.y < 0)) //Siempre que la velocidad sea inferior a -1, reproduce la animación de 'caida'. Sirve para saltos y para dejarse caer
+        else if ((velocity.y < -1 && !isGrounded) || (animator.GetCurrentAnimatorStateInfo(0).IsName("JumpUp") && velocity.y < 0)) //Siempre que la velocidad sea inferior a -1, reproduce la animación de 'caida'. Sirve para saltos y para dejarse caer
         {
             animator.SetBool("Falling", true);
         }

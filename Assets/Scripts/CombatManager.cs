@@ -71,25 +71,25 @@ public void showAllStats()
     //AUDIO
     private void calculateCombatState()
     {
-        if (player.isDead)
-        {
-            print("RIP Player");
-        }
-        else if (EnemiesLowHP())
-        {
-            print("Enemy LowHP!");
-            //AudioManager.engine.segmentCode = 3.0f;
-        }
-        else if (player.health <= (player.maxHealth / 2))
-        {
-            print("Player LowHP!");
-            //AudioManager.engine.segmentCode = 2.0f;
-        }
-        else
-        {
-            print("Just defaulting over here");
-            //AudioManager.engine.segmentCode = 1.0f;
-        }
+        //if (player.isDead)
+        //{
+        //    print("RIP Player");
+        //}
+        //else if (EnemiesLowHP())
+        //{
+        //    print("Enemy LowHP!");
+        //    //AudioManager.engine.segmentCode = 3.0f;
+        //}
+        //else if (player.health <= (player.maxHealth / 2))
+        //{
+        //    print("Player LowHP!");
+        //    //AudioManager.engine.segmentCode = 2.0f;
+        //}
+        //else
+        //{
+        //    print("Just defaulting over here");
+        //    //AudioManager.engine.segmentCode = 1.0f;
+        //}
     }
     //
 

@@ -7,6 +7,11 @@ public class PlayerAnimationScript : MonoBehaviour
 
     public delegate void ComboEvent();
     public event ComboEvent comboCheckEvent; //Evento lanzado en las animaciones de ataque para ejecutar la lógica del combo en el script.
+    public event ComboEvent rollEvent; //Evento lanzado en las animaciones de ataque para ejecutar la lógica del combo en el script.
+
+
+    //public delegate void movementEvent();
+    //public event movementEvent enableMovementEvent; //Evento lanzado en las animaciones de ataque para ejecutar la lógica del combo en el script.
 
     // Start is called before the first frame update
     void Start()
@@ -34,4 +39,23 @@ public class PlayerAnimationScript : MonoBehaviour
             
     }
 
+    public void rollCheck()
+    {
+
+        if (rollEvent != null)
+        {
+            rollEvent();
+        }
+
+    }
+
+    //public void enableMovement()
+    //{
+
+    //    if (enableMovementEvent != null)
+    //    {
+    //        enableMovementEvent();
+    //    }
+
+    //}
 }
