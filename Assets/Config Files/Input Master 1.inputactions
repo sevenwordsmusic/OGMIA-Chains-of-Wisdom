@@ -11,7 +11,7 @@
                     "id": "350b9a0a-1310-4805-b838-25e02efe1c4e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Tap"
                 },
                 {
                     "name": "Movement",
@@ -74,6 +74,14 @@
                     "type": "PassThrough",
                     "id": "7d701f5a-344a-402f-931f-e68ce48dc8ff",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "360Attack",
+                    "type": "Button",
+                    "id": "12745917-e305-4973-b6d1-552910af697c",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -395,6 +403,39 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "ChangeLockOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb45cca6-ca6e-465f-92d2-fc9190db0e98",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "SlowTap(duration=0.3)",
+                    "processors": "",
+                    "groups": "Keyboard + mouse",
+                    "action": "360Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa71da22-7e9c-4ffa-8e2b-af12c04f135d",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "360Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2bf39b89-1381-4c2c-b264-acb1ac5d0eec",
+                    "path": "<Keyboard>/k",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Keyboard + mouse",
+                    "action": "360Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

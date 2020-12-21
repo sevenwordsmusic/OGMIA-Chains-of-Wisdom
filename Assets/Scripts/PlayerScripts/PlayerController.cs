@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         canDash = true;
 
-        playerAnimationScript.rollEvent += applyRoll;
+        //playerAnimationScript.rollEvent += applyRoll;
         //playerAnimationScript.enableMovementEvent += enableMovement;
 
         //rb = GetComponent<Rigidbody>();
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        playerAnimationScript.rollEvent -= applyRoll;
+        //playerAnimationScript.rollEvent -= applyRoll;
         //playerAnimationScript.enableMovementEvent -= enableMovement;
 
     }
@@ -239,24 +239,31 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider trig)
     {
         Transform trigParent = trig.transform.parent;
-        if (trigParent.CompareTag("trap"))
+        if (trig.transform.parent != null)
         {
-            print("Player Damaged: -" + trig.transform.parent.GetComponent<TrapSpikesController>().damage+ "hp");
-        }
-        else if (trigParent.CompareTag("enemy"))
-        {
-            print("enemy");
-            trigParent.GetComponent<EnemyController>().enemyDefeated();
-        }
-        else if (trigParent.CompareTag("portal"))
-        {
-            PortalController pController = trigParent.GetComponent<PortalController>();
-            print("teleporting");
-            pController.teleport();
-        }
-        else if (trigParent.CompareTag("trapActivator"))
-        {
-            trigParent.GetComponent<RoomCloseDoors>().activateTrapDoors();
+            if (trigParent.CompareTag("trap"))
+            {
+                print("Player Damaged: -" + trig.transform.parent.GetComponent<TrapSpikesController>().damage + "hp");
+            }
+            else if (trigParent.CompareTag("enemy"))
+            {
+                print("enemy");
+                trigParent.GetComponent<EnemyController>().enemyDefeated();
+            }
+            else if (trigParent.CompareTag("portal"))
+            {
+                PortalController pController = trigParent.GetComponent<PortalController>();
+                print("teleporting");
+                pController.teleport();
+            }
+            else if (trigParent.CompareTag("trapActivator"))
+            {
+                trigParent.GetComponent<RoomCloseDoors>().activateTrapDoors();
+            }
+            else
+            {
+                //nothing
+            }
         }
     }
 

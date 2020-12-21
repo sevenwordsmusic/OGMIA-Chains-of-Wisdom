@@ -36,6 +36,11 @@ public class CombatController : MonoBehaviour
     [HideInInspector] public bool isDead;
     [HideInInspector] public int noOfTaps; //Número de taps o clicks que ha realizado el jugador desde que comenzó su combo de ataque.
 
+    //PLAYER UPGRADES
+    public bool thrustUpgrade;
+    public bool roundAttackUpgrade;
+    public bool blockUpgrade;
+
     //LOCK ON SYSTEM VARIABLES
     [HideInInspector] public EnemyController lockedEnemy;
     private bool lockedOn;
@@ -50,10 +55,10 @@ public class CombatController : MonoBehaviour
         playerTransform = GetComponent<Transform>();
         forceApplier = GetComponent<ForceApplier>();
         playerInput = GetComponent<PlayerInput>();
-        playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
+        //playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
         //healthBar = FindObjectOfType<HealthBarController>();
         //enemyHPBar = FindObjectOfType<EnemyHealthBar>();
-        playerAnimationScript.comboCheckEvent += comboAttack;
+        //playerAnimationScript.comboCheckEvent += comboAttack;
 
         noOfTaps = 0;
         canAttack = true;
@@ -75,7 +80,7 @@ public class CombatController : MonoBehaviour
 
     private void OnDisable()
     {
-        playerAnimationScript.comboCheckEvent -= comboAttack;
+        //playerAnimationScript.comboCheckEvent -= comboAttack;
 
         canAttack = false;
     }
@@ -124,10 +129,19 @@ public class CombatController : MonoBehaviour
         }
     }
 
+    public void On_360Attack(InputValue value)
+    {
+        print("360");
+        if (canAttack && roundAttackUpgrade)
+        {
+            animator.SetTrigger("360Attack");
+        }
+
+    }
 
     public void OnBlock()
     {
-        if (movementController.canMove)
+        if (movementController.canMove && blockUpgrade)
         {
             animator.SetTrigger("isBlocking");
             //El StateMachineBehaviour 'PlayerBlockingBehaviour' se ocupará de gestionar el resto de variables relacionadas con el bloqueo.
@@ -445,7 +459,7 @@ public class CombatController : MonoBehaviour
     /// Normalmente, esta función será invocada por eventos desencadenados en las animaciones de ataque. 
     /// En ese momento esta función decide qué animación ejecutar a continuación.
     /// </summary>
-    private void comboAttack()
+    public void comboAttack()
     {
         print("combeando");
         //todo: buscar una implementación más cómoda y escalable que permita crear nuevos combos más fácilmente
@@ -480,7 +494,7 @@ public class CombatController : MonoBehaviour
             StartCoroutine(attackCooldown(0.5f)); //El cooldown entre ataques viene definido por el arma del usuario.
             noOfTaps = 0; //Como el combo ha terminado, reseteamos esta variable.
         }
-        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Combo2") && noOfTaps >= 3) //AQUI SE LLAMA AL TERCER ATAQUE DEL COMBO
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Combo2") && noOfTaps >= 3 && thrustUpgrade) //AQUI SE LLAMA AL TERCER ATAQUE DEL COMBO
         {
             //Si se han registrado nuevos taps durante el segundo ataque, eso quiere decir que el jugador quiere continuar con el combo.
             animator.SetInteger("Combo", 3);
