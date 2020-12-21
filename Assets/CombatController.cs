@@ -34,7 +34,7 @@ public class CombatController : MonoBehaviour
     [HideInInspector] public bool isVulnerable;
     [HideInInspector] public bool isBlocking;
     [HideInInspector] public bool isDead;
-    private int noOfTaps; //Número de taps o clicks que ha realizado el jugador desde que comenzó su combo de ataque.
+    [HideInInspector] public int noOfTaps; //Número de taps o clicks que ha realizado el jugador desde que comenzó su combo de ataque.
 
     //LOCK ON SYSTEM VARIABLES
     [HideInInspector] public EnemyController lockedEnemy;

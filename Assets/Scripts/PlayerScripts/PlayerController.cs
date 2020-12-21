@@ -105,6 +105,8 @@ public class PlayerController : MonoBehaviour
     {
         if (canDash)
         {
+            
+            //velocity = Vector3.zero;
 
             if(DashUpgrade)
             {
