@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Pasamos las variables al animator para que se actualicen a tiempo real y funcionen adecuadamente.
-        animator.SetFloat("Speed", direction.magnitude); //Para lo que necesita el animator, basta con pasarle la magnitud (longitud al cuadrado en este caso).
+          animator.SetFloat("Speed", direction.magnitude); //Para lo que necesita el animator, basta con pasarle la magnitud (longitud al cuadrado en este caso).
                                                          //^Cuando sea positiva, aplicará animaciones de movimiento. Cuando no, animaciones "idle".
 
         //GRAVEDAD Y FÍSICAS

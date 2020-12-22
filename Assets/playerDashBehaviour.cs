@@ -21,6 +21,7 @@ public class playerDashBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.GetComponent<PlayerController>().enableMovement();
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
