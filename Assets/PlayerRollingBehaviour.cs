@@ -20,9 +20,10 @@ public class PlayerRollingBehaviour : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.GetComponent<PlayerController>().enableMovement();
         //animator.gameObject.GetComponentInParent<CombatController>().attackCollider.enabled = false;
         //animator.gameObject.GetComponentInParent<CombatController>().thrustFX.SetActive(false);
-        
+
         //animator.GetComponent<PlayerController>().enableMovement();
     }
 

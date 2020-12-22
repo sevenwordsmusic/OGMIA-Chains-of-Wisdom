@@ -117,6 +117,10 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("isRolling", true); //Reproduce la animacion de dash. El booleano se pondrá automaticamente a false cuando acabe la animación gracias al 'DashBehaviour' (consultar animator para + info)
                 StartCoroutine(dashCooldown(rollCooldownTime)); //Ponemos en cooldown el dash.
+
+                                                                //Añade a la velocidad un vector resultante de la multiplicación de la dirección del jugador (transform.forward) por un vector compuesto a partir del
+                                                                //dashDistance y el drag, basado en fórmulas físicas 'realistas'.
+
             }
 
         }
@@ -133,7 +137,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
-    public void applyRoll()
+    public void applyDash()
     {
         //Añade a la velocidad un vector resultante de la multiplicación de la dirección del jugador (transform.forward) por un vector compuesto a partir del
         //dashDistance y el drag, basado en fórmulas físicas 'realistas'.
@@ -208,10 +212,10 @@ public class PlayerController : MonoBehaviour
         velocity.z /= 1 + drag.z * Time.deltaTime;
 
 
-        if (canMove)
-        {
+        //if (canMove)
+        //{
             controller.Move(velocity * Time.deltaTime); //Finalmente, tras todas las simulaciones necesarias, movemos al jugador en función de la velocidad calculada
-        }
+        //}
     }
 
     public void disableMovement()

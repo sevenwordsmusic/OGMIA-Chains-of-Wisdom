@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdlePlayerBehaviour : StateMachineBehaviour
+public class playerBlockingBehaviour : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Reseteamos el numero de 'taps' del combo melee, para evitar bugs o comportamiento no deseado
-        animator.GetComponentInParent<CombatController>().noOfTaps = 0;
-
-        if(!animator.GetComponent<PlayerController>().canMove) //Si por algun motivo el jugador no tiene permitido moverse
-            animator.GetComponent<PlayerController>().enableMovement(); //Devuelvele el control del movimiento al entrar en el Idle
+        animator.GetComponent<PlayerController>().canMove = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
