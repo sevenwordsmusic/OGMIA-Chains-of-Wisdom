@@ -11,11 +11,11 @@
                     "id": "350b9a0a-1310-4805-b838-25e02efe1c4e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap"
+                    "interactions": ""
                 },
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "c4df0fe5-a556-4fd0-a272-972d3ae9c0f8",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -84,27 +84,46 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "CameraControl",
+                    "type": "Value",
+                    "id": "2344baa1-f4d4-475c-8bad-0a977d098d54",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "a6d6121a-b62f-4378-b502-76937b88614d",
-                    "path": "<Mouse>/leftButton",
+                    "id": "64f16834-22c6-4111-b27c-ca6c936810fc",
+                    "path": "<AndroidGamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard + mouse",
+                    "groups": "",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "64f16834-22c6-4111-b27c-ca6c936810fc",
+                    "id": "687fcf7a-585e-4c1c-b596-90b096f4ce21",
                     "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "Controller",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e33aed25-3f81-4ab7-b911-7282b48b458b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Keyboard + mouse",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -247,7 +266,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "Controller;Touch",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -324,7 +343,7 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "Controller;Touch",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -346,7 +365,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "Controller;Touch",
                     "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -425,6 +444,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "360Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f04a717-35ae-45dc-a5da-65d461180258",
+                    "path": "<AndroidGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "360Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "158a7086-c35a-4517-9bf4-59cc3a7f4570",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller;Touch",
+                    "action": "CameraControl",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

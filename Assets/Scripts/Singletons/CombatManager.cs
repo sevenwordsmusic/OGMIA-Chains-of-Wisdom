@@ -34,7 +34,7 @@ public class CombatManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CombatController>();
     }
 
-public void showAllStats()
+    public void showAllStats()
     {
         foreach(EnemyController enemy in enemies)
         {
