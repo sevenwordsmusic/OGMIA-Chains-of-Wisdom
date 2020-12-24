@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6659177831474280710}
   - component: {fileID: 6659177831474280709}
+  - component: {fileID: 366615675}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: enemy
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6659177831474280711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.35, y: 0, z: 2.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4512, y: 1.4512, z: 1.4512}
   m_Children:
   - {fileID: 6659177832175406662}
   m_Father: {fileID: 0}
@@ -44,6 +45,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c1c868df3f10443801c8cc904d7f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 0
+  currentHealth: 0
+  maxHealth: 50
+  isVulnerable: 0
+  invulnerabilityAfterHitTime: 0.33
+  onScreen: 0
+  addedToList: 0
+--- !u!143 &366615675
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659177831474280711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.91
+  m_Radius: 0.58
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.41, z: 0}
 --- !u!1 &6659177832175406663
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +158,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6659177832175406663}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

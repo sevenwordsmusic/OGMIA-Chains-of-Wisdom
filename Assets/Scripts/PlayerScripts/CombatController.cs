@@ -23,11 +23,13 @@ public class CombatController : MonoBehaviour
     private PlayerController movementController;
     private PlayerInput playerInput;
     private PlayerAnimationScript playerAnimationScript;
+    [HideInInspector] public weaponController weapon;
 
     [Header("Combat variables", order = 2)]
     public int maxHealth = 150;
     [HideInInspector] public int health;
-    //private HealthBarController healthBar;
+    private HealthBarController healthBar1;
+    private HealthBarController healthBar2;
     //private EnemyHealthBar enemyHPBar;
     [Tooltip("Impulso añadido al jugador cuando éste ataca")] [SerializeField] float attackImpulse = 1f;
     [HideInInspector] public bool canAttack;
@@ -58,8 +60,10 @@ public class CombatController : MonoBehaviour
         playerTransform = GetComponent<Transform>();
         forceApplier = GetComponent<ForceApplier>();
         playerInput = GetComponent<PlayerInput>();
+        weapon = GetComponentInChildren<weaponController>();
         //playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
-        //healthBar = FindObjectOfType<HealthBarController>();
+        healthBar1 = GameObject.FindGameObjectWithTag("HP1").GetComponent<HealthBarController>();
+        healthBar2 = GameObject.FindGameObjectWithTag("HP2").GetComponent<HealthBarController>();
         //enemyHPBar = FindObjectOfType<EnemyHealthBar>();
         //playerAnimationScript.comboCheckEvent += comboAttack;
 
@@ -68,7 +72,8 @@ public class CombatController : MonoBehaviour
         isVulnerable = true;
         isBlocking = false;
         health = maxHealth;
-        //healthBar.setMaxHealth(maxHealth);
+        healthBar1.setMaxHealth(maxHealth);
+        healthBar2.setMaxHealth(maxHealth);
     }
 
     //EVENTS
@@ -102,7 +107,7 @@ public class CombatController : MonoBehaviour
 
     public void OnAttack()
     {
-        print("evento recibido");
+        //print("evento recibido");
         print(canAttack);
         if (canAttack)
         {
@@ -110,7 +115,7 @@ public class CombatController : MonoBehaviour
             //AudioManager.engine.OnAttack();
             //
             noOfTaps++; //En cada paso del combo, si se puede atacar, acumula un "tap"
-            print("aumentando noOfTaps: " + noOfTaps);
+            //print("aumentando noOfTaps: " + noOfTaps);
 
             //Hacemos que el jugador se oriente hacia su enemigo fijado, para que los combos sean fluidos y comodos de ejecutar.
             if (lockedEnemy != null)
@@ -134,7 +139,7 @@ public class CombatController : MonoBehaviour
 
     public void On_360Attack(InputValue value)
     {
-        print("360");
+        //print("360");
         if (canAttack && roundAttackUpgrade)
         {
             animator.SetTrigger("360Attack");
@@ -417,14 +422,15 @@ public class CombatController : MonoBehaviour
     /// <param name="other">El objeto que ha causado el daño</param>
     public void takeDamage(int damage, float knockbackForce, Vector3 knockbackDir, GameObject other)
     {
-        print("player receives " + damage + " points of damage!");
+        //print("player receives " + damage + " points of damage!");
 
         //Check if blocking & vulnerability
         if (!isBlocking && isVulnerable && !isDead)
         {
             //Reduce health
             health = health - damage;
-            //healthBar.setHealth(health);
+            healthBar1.setHealth(health);
+            healthBar2.setHealth(health);
             if (health <= 0)
             {
                 isDead = true;
@@ -477,7 +483,7 @@ public class CombatController : MonoBehaviour
     /// </summary>
     public void comboAttack()
     {
-        print("combeando");
+        //print("combeando");
         //todo: buscar una implementación más cómoda y escalable que permita crear nuevos combos más fácilmente
         canAttack = false; //Ponemos "canAttack" a false durante la comprobación del estado del combo. Una vez lo sepamos, lo volveremos a poner a true. Así evitamos malas lecutras.
 

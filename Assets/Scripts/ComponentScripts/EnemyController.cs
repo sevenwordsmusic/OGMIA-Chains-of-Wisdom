@@ -9,8 +9,11 @@ public class EnemyController : MonoBehaviour
     RoomEnemiesController controller;
     public bool isAlive;
 
+    private Animator animator;
     [HideInInspector] public int currentHealth; //Salud actual del enemigo
     public int maxHealth; //Salud máxima del enemigo
+    public bool isVulnerable; //Booleano que determina si el enemigo puede recibir daño en su estado actual.
+    [SerializeField] float invulnerabilityAfterHitTime; //tiempo en segundos que pasa el enemigo siendo invulnerable tras recibir daño.
     //private EnemyHealthBar healthBar;
 
     //Variables relacionadas con el sistema de detección de enemigos en pantalla
@@ -20,9 +23,11 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        isVulnerable = true;
         dir = (Random.value<0.5f)?-1:1;
         sizeMult = Random.Range(0.5f, 1.5f);
         transform.localScale = new Vector3(sizeMult, sizeMult, sizeMult);
+        animator = GetComponent<Animator>();
     }
 
     public void setRoomEnemyController(RoomEnemiesController rEC)
@@ -82,7 +87,55 @@ public class EnemyController : MonoBehaviour
             //    statsWidget.GetComponent<StatsDisplayer>().updateWPandHP(currentHealth, willpower);
             //}
         }
+    }
 
 
+    public void takeDamage(int damage, float knockbackForce, Vector3 knockbackDir, GameObject other)
+    {
+        print("OUCH");
+        if (isVulnerable) //Si el enemigo es vulnerable,
+        {
+            currentHealth -= damage;
+            StartCoroutine(cooldownVulnerability());
+
+            //Play hurt animation
+            //animator.SetTrigger("Hurt");
+
+
+            //Look at the one who attacked
+            transform.LookAt(new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z));
+
+            //Apply knockback received from the 'other' who attacks
+            //if (knockbackForce != 0)
+            //    forceApplier.AddImpact(new Vector3(knockbackDir.x, 0, knockbackDir.z), knockbackForce);
+
+            if (currentHealth <= 0)
+            {
+                Die(); //Si el HP se reduce por debajo de 0, el enemigo muere.
+            }
+        }
+
+    }
+
+    private void Die()
+    {
+        //Play death animation
+        //animator.SetTrigger("Death");
+
+        isAlive = false;
+
+        CombatManager.CM.enemies.Remove(this);
+
+        this.enabled = false;
+
+        
+        Destroy(gameObject, 3f);
+    }
+
+    public IEnumerator cooldownVulnerability()
+    {
+        isVulnerable = false;
+        yield return new WaitForSeconds(invulnerabilityAfterHitTime);
+        isVulnerable = true;
     }
 }
