@@ -4,12 +4,14 @@ using UnityEngine.EventSystems;
 
 public class ShowPanels : MonoBehaviour {
 
-	public GameObject optionsPanel;							//Store a reference to the Game Object OptionsPanel 
+	public GameObject PauseOptionsPanel;                         //Store a reference to the Game Object OptionsPanel 
+	public GameObject MenuOptionsPanel;
 	public GameObject optionsTint;							//Store a reference to the Game Object OptionsTint 
 	public GameObject menuPanel;							//Store a reference to the Game Object MenuPanel 
 	public GameObject pausePanel;                           //Store a reference to the Game Object PausePanel 
+	public GameObject creditsPanel;
 
-    private GameObject activePanel;                         
+	private GameObject activePanel;                         
     private MenuObject activePanelMenuObject;
     private EventSystem eventSystem;
 
@@ -31,21 +33,48 @@ public class ShowPanels : MonoBehaviour {
         SetSelection(menuPanel);
     }
 
+	public void ShowCreditsPanel()
+    {
+		PauseOptionsPanel.SetActive(false);
+		optionsTint.SetActive(false);
+		menuPanel.SetActive(false);
+		creditsPanel.SetActive(true);
+		SetSelection(creditsPanel);
+    }
+
+	public void HideCreditsPanel()
+    {
+		creditsPanel.SetActive(false);
+    }
+
     //Call this function to activate and display the Options panel during the main menu
     public void ShowOptionsPanel()
 	{
-		optionsPanel.SetActive(true);
+		PauseOptionsPanel.SetActive(true);
 		optionsTint.SetActive(true);
         menuPanel.SetActive(false);
-        SetSelection(optionsPanel);
+        SetSelection(PauseOptionsPanel);
 
     }
+
+	public void ShowMenuoptionsPanel()
+    {
+		MenuOptionsPanel.SetActive(true);
+		//optionsTint.SetActive(true);
+		menuPanel.SetActive(false);
+		SetSelection(MenuOptionsPanel);
+	}
+
+	public void HideMenuOptions()
+	{
+		MenuOptionsPanel.SetActive(false);
+	}
 
 	//Call this function to deactivate and hide the Options panel during the main menu
 	public void HideOptionsPanel()
 	{
-        menuPanel.SetActive(true);
-        optionsPanel.SetActive(false);
+        //menuPanel.SetActive(true);
+        PauseOptionsPanel.SetActive(false);
 		optionsTint.SetActive(false);
 	}
 

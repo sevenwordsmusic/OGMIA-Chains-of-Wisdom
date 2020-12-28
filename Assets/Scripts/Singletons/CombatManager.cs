@@ -9,7 +9,7 @@ public class CombatManager : MonoBehaviour
 
     public List<EnemyController> enemies;
 
-    public GameObject combatHUD;
+    //public GameObject combatHUD;
 
     public bool onCombat;
 
@@ -29,7 +29,22 @@ public class CombatManager : MonoBehaviour
         DontDestroyOnLoad(this); //Ah, y no destruyas esto al cargar
     }
 
+    private void OnEnable()
+    {
+        GameInitializer.gameInitialized += getPlayerReference;
+    }
+
+    private void OnDisable()
+    {
+        GameInitializer.gameInitialized -= getPlayerReference;
+    }
+
     private void Start()
+    {
+        //getPlayerReference();
+    }
+
+    public void getPlayerReference()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CombatController>();
     }
@@ -55,7 +70,7 @@ public class CombatManager : MonoBehaviour
         onCombat = enemies.Count > 0; //Si hay al menos un enemigo en la lista, eso significa que estamos en un combate.
         if (!onCombat)
         {
-            combatHUD.SetActive(false);
+            //combatHUD.SetActive(false);
 
             //AUDIO
                 //AudioManager.engine.segmentCode = 0.0f;
@@ -65,12 +80,12 @@ public class CombatManager : MonoBehaviour
         {
             if(!player.isDead)
             {
-                combatHUD.SetActive(true);
+                //combatHUD.SetActive(true);
                 calculateCombatState();
             } 
             else
             {
-                combatHUD.SetActive(false);
+                //combatHUD.SetActive(false);
             }
         }
     }

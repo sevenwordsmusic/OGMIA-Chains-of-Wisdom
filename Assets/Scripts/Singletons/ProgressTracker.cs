@@ -9,7 +9,7 @@ public class ProgressTracker : MonoBehaviour
     public static ProgressTracker PT;
 
     public int numberOfPieces; //Numero de esquirlas de amuleto que tiene el jugador.
-    private GameObject Amulet;
+    public GameObject Amulet;
     private Image AmuletImage;
     public Sprite[] amuletSprites; //recipiente de sprites temporales para el amuleto
 
@@ -31,11 +31,14 @@ public class ProgressTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Amulet = GameObject.FindGameObjectWithTag("Amulet");
+        //Amulet = GameObject.FindGameObjectWithTag("Amulet");
         AmuletImage = Amulet.GetComponent<Image>();
         Amulet.SetActive(false);
-        numberOfPieces = 0;
-        PlayerPrefs.SetInt("numberOfPieces", numberOfPieces);
+        if(!PlayerPrefs.HasKey("numberOfPieces"))
+        {
+            numberOfPieces = 0;
+            PlayerPrefs.SetInt("numberOfPieces", numberOfPieces);
+        }
     }
 
 

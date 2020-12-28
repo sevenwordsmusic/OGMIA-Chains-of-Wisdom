@@ -34,17 +34,12 @@ public class PlayerController : MonoBehaviour
     public bool DashUpgrade;
     private PlayerAnimationScript playerAnimationScript;
 
-    //[SerializeField] float speed = 1;
-    //[SerializeField] float jumpSpeed = 5;
-    Rigidbody rb;
-    Vector2 moveVec = new Vector2(0, 0);
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
-        cam = Camera.main.transform;
+        cam = GetComponentInChildren<Camera>().transform;
         //Esta linea cambia el estado del cursor cuando se está jugando, escondiéndolo y bloqueándolo en el centro de la ventana, para que no se vea y no estorbe.
         //Cursor.lockState = CursorLockMode.Confined;
         canMove = true;
@@ -54,19 +49,21 @@ public class PlayerController : MonoBehaviour
         //playerAnimationScript.enableMovementEvent += enableMovement;
 
         //rb = GetComponent<Rigidbody>();
+
     }
+
 
     //EVENTS
     private void OnEnable()
     {
-        //playerAnimationScript.comboCheckEvent += applyDash;
+        //GameInitializer.gameInitialized += getCameraReference;
+
 
     }
 
     private void OnDisable()
     {
-        //playerAnimationScript.rollEvent -= applyRoll;
-        //playerAnimationScript.enableMovementEvent -= enableMovement;
+        //GameInitializer.gameInitialized -= getCameraReference;
 
     }
 
