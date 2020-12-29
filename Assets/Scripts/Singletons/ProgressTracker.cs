@@ -81,6 +81,7 @@ public class ProgressTracker : MonoBehaviour
             case 7:
                 //amuleto COMPLETO
                 AmuletImage.sprite = amuletSprites[5];
+                //TODO PERMITIR FINAL DE JUEGO
                 break;
 
             default:
