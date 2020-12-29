@@ -17,7 +17,7 @@ public class ShowPanels : MonoBehaviour {
 
 
 
-    private void SetSelection(GameObject panelToSetSelected)
+	private void SetSelection(GameObject panelToSetSelected)
     {
 
         activePanel = panelToSetSelected;
@@ -51,10 +51,10 @@ public class ShowPanels : MonoBehaviour {
     public void ShowOptionsPanel()
 	{
 		PauseOptionsPanel.SetActive(true);
-		optionsTint.SetActive(true);
+		//optionsTint.SetActive(true);
         menuPanel.SetActive(false);
+		pausePanel.SetActive(false);
         SetSelection(PauseOptionsPanel);
-
     }
 
 	public void ShowMenuoptionsPanel()
@@ -107,4 +107,7 @@ public class ShowPanels : MonoBehaviour {
 		optionsTint.SetActive(false);
 
 	}
+
+
+
 }

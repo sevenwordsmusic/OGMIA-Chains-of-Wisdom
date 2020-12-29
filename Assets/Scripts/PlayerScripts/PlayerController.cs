@@ -62,7 +62,10 @@ public class PlayerController : MonoBehaviour
     //EVENTS
     private void OnEnable()
     {
-        //GameInitializer.gameInitialized += getCameraReference;
+        //EVENTS
+        UIManager.goBackToMainMenuEvent += DestroyPlayer; //Destruye el objeto jugador cuando se vuelva al menu principal para evitar arrastrar datos entre ciclos de juego.
+
+        //Adaptación del Canvas para las funcionalidades 3D.
         cam = GetComponentInChildren<Camera>().transform;
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //Busca el GameObject llamado Canvas, por lo tanto, el Canvas NO debe cambiar de nombre
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
@@ -73,8 +76,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        //GameInitializer.gameInitialized -= getCameraReference;
+        UIManager.goBackToMainMenuEvent -= DestroyPlayer; //Destruye el objeto jugador cuando se vuelva al menu principal para evitar arrastrar datos entre ciclos de juego.
 
+    }
+
+    private void OnDestroy()
+    {
+        UIManager.goBackToMainMenuEvent -= DestroyPlayer; //Destruye el objeto jugador cuando se vuelva al menu principal para evitar arrastrar datos entre ciclos de juego.
+    }
+
+    private void DestroyPlayer()
+    {
+        Destroy(this.gameObject);
     }
 
     #region INPUT MANAGEMENT

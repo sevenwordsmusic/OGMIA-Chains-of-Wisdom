@@ -25,10 +25,20 @@ public class GameInitializer : MonoBehaviour
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(gameController);
 
+        PlayerPrefs.DeleteAll(); //Al comenzar una nueva partida, destruye todos los datos guardados de la anterior.
+
         if (gameInitialized != null)
             gameInitialized();
 
         //if (sceneToLoadAtStart != null)
         //    SceneManager.LoadScene(sceneToLoadAtStart);
+    }
+
+    public void continueGame()
+    {
+        player.SetActive(true);
+        gameController.SetActive(true);
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(gameController);
     }
 }

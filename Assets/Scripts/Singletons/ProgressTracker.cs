@@ -18,7 +18,7 @@ public class ProgressTracker : MonoBehaviour
     {
         if (PT != null) //Si por algún motivo ya existe un combatManager...
         {
-            GameObject.Destroy(PT); //Este script lo mata. Solo puede haber una abeja reina en la colmena.
+            GameObject.Destroy(PT.gameObject); //Este script lo mata. Solo puede haber una abeja reina en la colmena.
         }
         else //En caso de que el trono esté libre...
         {
@@ -26,6 +26,29 @@ public class ProgressTracker : MonoBehaviour
         }
 
         DontDestroyOnLoad(this); //Ah, y no destruyas esto al cargar
+    }
+
+
+    private void OnEnable()
+    {
+        UIManager.goBackToMainMenuEvent += DestroyProgressTracker;
+        GameInitializer.gameInitialized += clearSavedProgress;
+    }
+
+    private void OnDisable()
+    {
+        UIManager.goBackToMainMenuEvent -= DestroyProgressTracker;
+        GameInitializer.gameInitialized -= clearSavedProgress;
+    }
+
+    private void clearSavedProgress()
+    {
+        PlayerPrefs.DeleteKey("numberOfPieces");
+    }
+
+    private void DestroyProgressTracker()
+    {
+        Destroy(this.gameObject);
     }
 
     // Start is called before the first frame update
@@ -93,9 +116,4 @@ public class ProgressTracker : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

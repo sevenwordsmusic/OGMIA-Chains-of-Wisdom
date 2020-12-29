@@ -11,8 +11,24 @@ public class LevelProgressTracker : MonoBehaviour
     [SerializeField] string playerPrefsKey;
 
 
+    private void OnEnable()
+    {
+        GameInitializer.gameInitialized += clearSavedData;
+    }
+
+    private void OnDisable()
+    {
+        GameInitializer.gameInitialized -= clearSavedData;
+    }
+
+    private void clearSavedData()
+    {
+        PlayerPrefs.DeleteKey(playerPrefsKey);
+    }
+
     private void Awake()
     {
+        if(fragmentCounterText == null)
         fragmentCounterText = GameObject.FindGameObjectWithTag("fragmentCounter").GetComponentInChildren<Text>();
 
         if (!PlayerPrefs.HasKey(playerPrefsKey))

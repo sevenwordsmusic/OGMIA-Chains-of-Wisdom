@@ -19,7 +19,7 @@ public class CombatManager : MonoBehaviour
     {
         if(CM != null) //Si por algún motivo ya existe un combatManager...
         {
-            GameObject.Destroy(CM); //Este script lo mata. Solo puede haber una abeja reina en la colmena.
+            GameObject.Destroy(CM.gameObject); //Este script lo mata. Solo puede haber una abeja reina en la colmena.
         } 
         else //En caso de que el trono esté libre...
         {
@@ -32,11 +32,18 @@ public class CombatManager : MonoBehaviour
     private void OnEnable()
     {
         GameInitializer.gameInitialized += getPlayerReference;
+        UIManager.goBackToMainMenuEvent += DestroyCombatManager;
     }
 
     private void OnDisable()
     {
         GameInitializer.gameInitialized -= getPlayerReference;
+        UIManager.goBackToMainMenuEvent -= DestroyCombatManager;
+    }
+
+    private void DestroyCombatManager()
+    {
+        Destroy(this.gameObject);
     }
 
     private void Start()
