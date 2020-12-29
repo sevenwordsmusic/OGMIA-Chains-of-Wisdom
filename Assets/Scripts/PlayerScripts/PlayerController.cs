@@ -7,9 +7,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("References", order = 0)]
+    //Canvas & camera setting variables
     private Transform cam;
-    [SerializeField] Animator animator;
     [SerializeField] CinemachineFreeLook cinemaCam;
+    private Canvas canvas;
+
+    [SerializeField] Animator animator;
     [Tooltip("Layer que contiene los objetos que se identificarán como 'suelo'")] [SerializeField] LayerMask groundMask;
     [Tooltip("Punto en el espacio donde se proyecta la esfera que detectará si el jugador está tocando el suelo")] [SerializeField] Transform groundCheck;
     private CharacterController controller;
@@ -34,12 +37,15 @@ public class PlayerController : MonoBehaviour
     public bool DashUpgrade;
     private PlayerAnimationScript playerAnimationScript;
 
+
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
-        cam = GetComponentInChildren<Camera>().transform;
+
+
         //Esta linea cambia el estado del cursor cuando se está jugando, escondiéndolo y bloqueándolo en el centro de la ventana, para que no se vea y no estorbe.
         //Cursor.lockState = CursorLockMode.Confined;
         canMove = true;
@@ -57,7 +63,11 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         //GameInitializer.gameInitialized += getCameraReference;
-
+        cam = GetComponentInChildren<Camera>().transform;
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //Busca el GameObject llamado Canvas, por lo tanto, el Canvas NO debe cambiar de nombre
+        canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        canvas.worldCamera = cam.gameObject.GetComponent<Camera>();
+        canvas.planeDistance = 2;
 
     }
 

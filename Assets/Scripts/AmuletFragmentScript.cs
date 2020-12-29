@@ -9,6 +9,7 @@ public class AmuletFragmentScript : MonoBehaviour
     private Vector3 target;
     [SerializeField] Light light;
     private CharacterController characterController;
+    private LevelProgressTracker levelProgressTracker;
 
     [SerializeField] float speed;
     [SerializeField] float disminutionFactor;
@@ -17,13 +18,17 @@ public class AmuletFragmentScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levelProgressTracker = FindObjectOfType<LevelProgressTracker>(); //Solo puede haber UN LevelProgressTracker por nivel
+        levelProgressTracker.addFragmentToCounter();
+
         characterController = GetComponent<CharacterController>();
         absorbed = false;
     }
 
-    public void addPiece()
+    public void addFragment()
     {
-        ProgressTracker.PT.addPiece();
+        levelProgressTracker.fragmentCollected();
+
         light.intensity = 15;
         this.gameObject.GetComponent<SphereCollider>().enabled = false;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
