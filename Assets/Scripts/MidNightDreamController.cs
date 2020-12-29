@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers;
 
 public class MidNightDreamController : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class MidNightDreamController : MonoBehaviour
             characterController.enabled = false;
             player.transform.position = this.transform.position;
             characterController.enabled = true;
+
+            //SAVE THE GAME
+            SaveSystem.SaveToSlot(1);
+            //ToDo: mensaje de 'partida guardada con exito'
         }
 
         //comprobamos si el jugador ha reunido todos los fragmentos del amuleto

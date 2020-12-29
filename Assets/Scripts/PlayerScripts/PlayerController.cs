@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
+using PixelCrushers.DialogueSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Punto en el espacio donde se proyecta la esfera que detectará si el jugador está tocando el suelo")] [SerializeField] Transform groundCheck;
     private CharacterController controller;
     private PlayerInput playerInput;
+    private ProximitySelector proximitySelector;
 
     [Header("Movement variables", order = 1)]
     [Tooltip("Velocidad de movimiento del jugador")] [SerializeField] float speed = 6f;
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
-
+        proximitySelector = GetComponent<ProximitySelector>();
 
         //Esta linea cambia el estado del cursor cuando se está jugando, escondiéndolo y bloqueándolo en el centro de la ventana, para que no se vea y no estorbe.
         //Cursor.lockState = CursorLockMode.Confined;
@@ -80,6 +82,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+
     private void OnDestroy()
     {
         UIManager.goBackToMainMenuEvent -= DestroyPlayer; //Destruye el objeto jugador cuando se vuelva al menu principal para evitar arrastrar datos entre ciclos de juego.
@@ -110,6 +114,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void OnPause()
+    {
+        UIManager.UIM.gameObject.GetComponent<Pause>().DoPause();
+        UIManager.UIM.ShowPausePanel();
+        UIManager.UIM.HideGeneralHUD();
+    }
+
+    private void OnInteract()
+    {
+        proximitySelector.UseCurrentSelection();
+    }
 
     public void OnJump()
     {
