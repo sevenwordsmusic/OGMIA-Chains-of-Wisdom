@@ -99,7 +99,7 @@
 			<value>20</value>
 		</property>
 		<property name="volume">
-			<value>-18</value>
+			<value>-12</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -107,6 +107,7 @@
 		<relationship name="modulators">
 			<destination>{642299a5-f3b2-4731-ae7e-898e3b66582f}</destination>
 			<destination>{7fcc9723-b5d1-4959-a218-0b01b4754017}</destination>
+			<destination>{bc2b5259-9228-40fc-b7bf-e4e84eb35795}</destination>
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{d03e0a52-ed08-4e96-80bf-d7cd398d9067}</destination>
@@ -164,6 +165,14 @@
 			<value>11</value>
 		</property>
 	</object>
+	<object class="RandomizerModulator" id="{bc2b5259-9228-40fc-b7bf-e4e84eb35795}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{738e58d2-5c6c-49f3-a1ee-cc68ef3fada6}">
 		<relationship name="effects">
 			<destination>{6db1a107-6bb5-42a0-935e-af609558c088}</destination>
@@ -182,7 +191,7 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>2</value>
+			<value>4</value>
 		</property>
 		<property name="minimumExtent">
 			<value>180</value>
