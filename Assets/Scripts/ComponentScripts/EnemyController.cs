@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
     [HideInInspector] public int currentHealth; //Salud actual del enemigo
     public int maxHealth; //Salud máxima del enemigo
+    [Tooltip("Altura a la que representar la barra de vida sobre el enemigo")][SerializeField] float healthBarOffset = 1.5f;
+    private HealthBarController healthBarScript;
+    private GameObject healthBarObject;
     public bool isVulnerable; //Booleano que determina si el enemigo puede recibir daño en su estado actual.
     [SerializeField] float invulnerabilityAfterHitTime; //tiempo en segundos que pasa el enemigo siendo invulnerable tras recibir daño.
     //private EnemyHealthBar healthBar;
@@ -20,14 +23,31 @@ public class EnemyController : MonoBehaviour
     [HideInInspector] public bool onScreen;
     [HideInInspector] public bool addedToList;
     private float timeOutTimer;
+    private float healthBarOnScreenTimer;
 
     void Start()
     {
         isVulnerable = true;
         dir = (Random.value<0.5f)?-1:1;
-        sizeMult = Random.Range(0.5f, 1.5f);
+        sizeMult = Random.Range(1.2f, 1.5f);
         transform.localScale = new Vector3(sizeMult, sizeMult, sizeMult);
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
+        healthBarScript = GetComponentInChildren<HealthBarController>();
+        healthBarObject = healthBarScript.gameObject;
+        healthBarScript.setMaxHealth(maxHealth);
+
+        setupHealthBar();
+    }
+
+    /// <summary>
+    /// Prepara la barra de vida del enemigo haciéndola 'hija' del canvas auxiliar permanente en la escena
+    /// </summary>
+    private void setupHealthBar()
+    {
+        var canvas = GameObject.Find("Overlay_Canvas");
+        healthBarObject.transform.SetParent(canvas.transform, false);
+        healthBarObject.SetActive(false);
     }
 
     public void setRoomEnemyController(RoomEnemiesController rEC)
@@ -65,7 +85,7 @@ public class EnemyController : MonoBehaviour
         {
             //Si el enemigo esta fuera de la pantalla,
             timeOutTimer += Time.deltaTime; //corre el contador de tiempo,
-            if (timeOutTimer >= 4500) //si dicho contador supera los 4,5 segundos fuera de pantalla
+            if (timeOutTimer >= 5f) //si dicho contador supera los 5 segundos fuera de pantalla
             {
                 //quita al enemigo de la lista
                 addedToList = false;
@@ -77,15 +97,22 @@ public class EnemyController : MonoBehaviour
         if (onScreen && addedToList)
         {
 
-            //if (statsWidget.activeSelf == true) //Si las stats están siendo mostradas en pantalla,
-            //{
-            //    //Actualiza la posición del widget para que siga al enemigo,
-            //    Vector3 viewportPosition = Camera.main.WorldToScreenPoint(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z));
-            //    statsWidget.transform.position = new Vector3(viewportPosition.x, viewportPosition.y, -3);
+            if (healthBarObject.activeSelf) //Si las stats están siendo mostradas en pantalla,
+            {
+                //Actualiza la posición del widget para que siga al enemigo.
+                Vector3 viewportPosition = Camera.main.WorldToScreenPoint(new Vector3(this.transform.position.x, this.transform.position.y + healthBarOffset, this.transform.position.z));
+                healthBarObject.transform.position = new Vector3(viewportPosition.x, viewportPosition.y, -3);
 
-            //    //Y activa la información de HP y WP
-            //    statsWidget.GetComponent<StatsDisplayer>().updateWPandHP(currentHealth, willpower);
-            //}
+                //Contamos cuanto tiempo lleva activa la barra de vida desde el ultimo golpe recibido
+                healthBarOnScreenTimer += Time.deltaTime;
+                print(healthBarOnScreenTimer);
+                if(healthBarOnScreenTimer >= 3f) //Si el enemigo no ha recibido daño en los ultimos tres segundos...
+                {
+                    healthBarObject.SetActive(false); //Escondemos su barra de vida.
+                    healthBarOnScreenTimer = 0;
+                }
+
+            }
         }
     }
 
@@ -96,6 +123,13 @@ public class EnemyController : MonoBehaviour
         if (isVulnerable) //Si el enemigo es vulnerable,
         {
             currentHealth -= damage;
+
+            //Actualizamos el valor en el script de la barra de vida y manejamos el objeto, haciendo que se vuelva invisible tras unos segundos.
+            healthBarObject.SetActive(true);
+            healthBarScript.setHealth(currentHealth);
+            healthBarOnScreenTimer = 0;
+
+            //Cooldown durante el cual el enemigo no puede volver a recibir daño
             StartCoroutine(cooldownVulnerability());
 
             //Play hurt animation
@@ -124,6 +158,9 @@ public class EnemyController : MonoBehaviour
 
         isAlive = false;
 
+        //Destruye el objeto healthBar
+        Destroy(healthBarObject);
+
         CombatManager.CM.enemies.Remove(this);
 
         this.enabled = false;
@@ -131,6 +168,7 @@ public class EnemyController : MonoBehaviour
         
         Destroy(gameObject, 3f);
     }
+
 
     public IEnumerator cooldownVulnerability()
     {

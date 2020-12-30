@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References", order = 0)]
     //Canvas & camera setting variables
-    private Transform cam;
+    [SerializeField] Transform cam;
     [SerializeField] Camera UICamera;
     [SerializeField] CinemachineFreeLook cinemaCam;
     private Canvas canvas;
@@ -91,7 +91,9 @@ public class PlayerController : MonoBehaviour
         UIManager.goBackToMainMenuEvent += DestroyPlayer; //Destruye el objeto jugador cuando se vuelva al menu principal para evitar arrastrar datos entre ciclos de juego.
 
         //Adaptación del Canvas para las funcionalidades 3D.
-        cam = GetComponentInChildren<Camera>().transform;
+        //cam = GetComponentInChildren<Camera>().transform;
+        cam.gameObject.SetActive(true);
+        cinemaCam.transform.parent.gameObject.SetActive(true);
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //Busca el GameObject llamado Canvas, por lo tanto, el Canvas NO debe cambiar de nombre
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
         canvas.worldCamera = UICamera;
@@ -117,6 +119,8 @@ public class PlayerController : MonoBehaviour
 
     private void DestroyPlayer()
     {
+        Destroy(cam.gameObject);
+        Destroy(cinemaCam.transform.parent.gameObject);
         Destroy(this.gameObject);
     }
 

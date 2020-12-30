@@ -308,7 +308,7 @@ public class CombatController : MonoBehaviour
                     //Direccion entre el jugador y el enemigo
                     Vector3 PlayerToEnemy = (enemy.transform.position - transform.position).normalized;
 
-                    if (Vector3.Dot(PlayerToEnemy, attackPointer.forward) > 0) //Si el producto entre esa direccion y el forward del jugador es positivo, eso significa que el jugador está en frente del enemigo.
+                    if (Vector3.Dot(PlayerToEnemy, attackPointer.up) > 0) //Si el producto entre esa direccion y el forward del jugador es positivo, eso significa que el jugador está en frente del enemigo.
                     {
                         //Los enemigos en frente del jugador tienen preferencia para ser fijados. De manera que no hay penalizacion.
                         if (Vector3.Distance(this.transform.position, enemy.transform.position) < distanceToEnemy) //Si la distancia al enemigo es la más cercana que se ha visto hasta ahora,
@@ -320,7 +320,7 @@ public class CombatController : MonoBehaviour
                     else //Si por el contrario el enemigo está detrás del jugador
                     {
                         //Se aplica una penalización en la comparacion de la distancia, para favorecer que los enemigos en frente del jugador sean fijados más facilmente.
-                        if ((Vector3.Distance(this.transform.position, enemy.transform.position) * 2) + 20 < (distanceToEnemy)) //Si incluso con la penalizacion es el candidato favorito,
+                        if ((Vector3.Distance(this.transform.position, enemy.transform.position) * 2) + 10 < (distanceToEnemy)) //Si incluso con la penalizacion es el candidato favorito,
                         {
                             lockedEnemy = enemy; //Fija a ese enemigo.
                             distanceToEnemy = Vector3.Distance(this.transform.position, enemy.transform.position); //Y guarda esa distancia como la más corta.
@@ -409,6 +409,7 @@ public class CombatController : MonoBehaviour
             Debug.DrawLine(cameraRay.origin, pointToLookAt, Color.blue); //Debug line para corroborar todo lo anterior
 
             attackPointerContainer.LookAt(new Vector3(pointToLookAt.x, attackPointer.transform.position.y, pointToLookAt.z)); //Finalmente, hacemos que el pointer mire hacia ese punto rotándolo únicamente en los ejes X y Z, manteniendo su altura Y
+            //attackPointerContainer.LookAt(new Vector3(pointToLookAt.x, attackPointer.transform.position.y, pointToLookAt.z)); //Finalmente, hacemos que el pointer mire hacia ese punto rotándolo únicamente en los ejes X y Z, manteniendo su altura Y
             //attackPointerContainer.transform.rotation = new Quaternion(0, attackPointer.transform.rotation.y, 0, 0);
         }
     }
