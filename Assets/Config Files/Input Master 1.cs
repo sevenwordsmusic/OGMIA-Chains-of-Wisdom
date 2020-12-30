@@ -530,7 +530,7 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8f95e755-2b8a-47f6-a8e9-8be29201bd18"",
+                    ""id"": ""37f38dfb-f9d1-4aa1-a375-0570af50e818"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
