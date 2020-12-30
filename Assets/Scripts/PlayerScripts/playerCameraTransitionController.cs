@@ -8,11 +8,11 @@ public class playerCameraTransitionController : MonoBehaviour
 {
     [SerializeField] PlayableDirector originalCamera;
     [SerializeField] PlayableDirector newCameraPoint;
-    private CombatController combatController;
+    [SerializeField] CombatController combatController;
 
     private void Awake()
     {
-        combatController = GetComponentInParent<CombatController>();
+
     }
 
     private void OnEnable()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers;
 
 public class Tutorial_Initial_Script : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class Tutorial_Initial_Script : MonoBehaviour
         characterController.enabled = false;
         player.transform.position = this.transform.position;
         characterController.enabled = true;
+
+        //GUARDADO AUTOMÁTICO
+        SaveSystem.SaveToSlot(1);
     }
 
     // Update is called once per frame

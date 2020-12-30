@@ -120,7 +120,7 @@ public class EnemyController : MonoBehaviour
     public void takeDamage(int damage, float knockbackForce, Vector3 knockbackDir, GameObject other)
     {
         print("OUCH");
-        if (isVulnerable) //Si el enemigo es vulnerable,
+        if (isVulnerable && isAlive) //Si el enemigo es vulnerable,
         {
             currentHealth -= damage;
 
