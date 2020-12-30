@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject menuPanel;
     public GameObject pausePanel;
     public GameObject creditsPanel;
+    public GameObject mobileJoystick;
 
     public GameObject generalHUD,GameOverHUD;
 
@@ -136,11 +137,19 @@ public class UIManager : MonoBehaviour
     public void HideGeneralHUD()
     {
         generalHUD.SetActive(false);
+        mobileJoystick.SetActive(false);
+    }
+
+    public void ShowGeneralHUD()
+    {
+        generalHUD.SetActive(true);
+        mobileJoystick.SetActive(true);
     }
 
     public void showGameOverHUD()
     {
         generalHUD.SetActive(false);
+        mobileJoystick.SetActive(false);
         GameOverHUD.SetActive(true);
     }
 

@@ -31,6 +31,7 @@ public class newGameWarningScript : MonoBehaviour
             gameInitializer.initializeGame();
             UIManager.UIM.HideMenu();
             UIManager.UIM.generalHUD.SetActive(true);
+            UIManager.UIM.mobileJoystick.SetActive(true);
             GetComponent<ScenePortal>().UsePortal();
         }
     }

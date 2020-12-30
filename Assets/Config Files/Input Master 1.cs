@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/ConfigFiles/Input Master 1.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Config Files/Input Master 1.inputactions'
 
 using System;
 using System.Collections;
@@ -28,7 +28,7 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""c4df0fe5-a556-4fd0-a272-972d3ae9c0f8"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -41,22 +41,6 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""CameraSnapLeft"",
-                    ""type"": ""Button"",
-                    ""id"": ""00a87ed7-8080-4bc9-8a1c-13a8a8860d8b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Tap""
-                },
-                {
-                    ""name"": ""CameraSnapRight"",
-                    ""type"": ""Button"",
-                    ""id"": ""4cb43f09-1274-45da-8863-2652c4abe6eb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Tap""
                 },
                 {
                     ""name"": ""Interact"",
@@ -107,17 +91,41 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Concentration"",
+                    ""name"": ""360Attack"",
                     ""type"": ""Button"",
-                    ""id"": ""f589a21c-2ab3-496c-b433-1bd829f55362"",
+                    ""id"": ""12745917-e305-4973-b6d1-552910af697c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Respawn"",
+                    ""name"": ""CameraControl"",
+                    ""type"": ""Value"",
+                    ""id"": ""2344baa1-f4d4-475c-8bad-0a977d098d54"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""d756bb49-7c4d-41a3-b58d-67d582830dfc"",
+                    ""id"": ""b4aa83b2-2b26-4103-9776-ec1c194ec017"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""c2755513-13e6-4e5f-9be5-10254eb79aeb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""EnableCameraRotation"",
+                    ""type"": ""Button"",
+                    ""id"": ""cdb15f7c-003c-47ae-8104-c851f752061d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -126,22 +134,33 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""a6d6121a-b62f-4378-b502-76937b88614d"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""64f16834-22c6-4111-b27c-ca6c936810fc"",
+                    ""path"": ""<AndroidGamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
+                    ""groups"": """",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""64f16834-22c6-4111-b27c-ca6c936810fc"",
+                    ""id"": ""687fcf7a-585e-4c1c-b596-90b096f4ce21"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""processors"": """",
                     ""groups"": ""Controller"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e33aed25-3f81-4ab7-b911-7282b48b458b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -154,39 +173,6 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard + mouse"",
                     ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""94854ab5-8895-4cb7-bbe2-6070b95a5bac"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2d79d60b-cc01-4a35-9597-12bd1a8b2caa"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""CameraSnapLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""026454b7-e72b-46da-aee5-4dfe9d79e666"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""CameraSnapLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -306,7 +292,7 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller;Touch"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -357,28 +343,6 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""50b7aff6-0bfb-4522-83f3-8cf8cf783048"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""CameraSnapRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c2d84ac0-4c36-4a7d-81c4-ad01f3da137b"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""CameraSnapRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""fcd43a91-2d1d-46fb-94f9-9b2fef002c16"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
@@ -405,7 +369,7 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller;Touch"",
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -427,7 +391,7 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller;Touch"",
                     ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -489,233 +453,100 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""38169f37-bc28-48c1-99fa-8003ae33e6eb"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Concentration"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""35b43d39-5cf1-413c-9d52-3a6fae950ba5"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""Concentration"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""34f8d87f-254f-4d58-9b36-21b93ff34796"",
-                    ""path"": ""<Keyboard>/o"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""Respawn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""54a2b026-eac7-4a79-b88e-23a34fbc75ed"",
-                    ""path"": ""<Gamepad>/select"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Respawn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Combat_Menu"",
-            ""id"": ""513d6961-1a3c-4a10-8756-f674761a0abe"",
-            ""actions"": [
-                {
-                    ""name"": ""Concentration"",
-                    ""type"": ""Button"",
-                    ""id"": ""c7661c71-555b-4262-ac8e-5970bcfb5067"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Cancel"",
-                    ""type"": ""Button"",
-                    ""id"": ""631be15a-de55-40e3-a971-4d32e3f55bb1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""8dc9cc6b-c90d-42e0-9586-99aaff75e0b5"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""Concentration"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dbfe2ad8-0437-4a6c-ad16-1fe36bb1b96d"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Concentration"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d02894de-4948-444f-972c-5ea63df3040a"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4d21873b-eeb9-490c-9494-cb45e3a415a7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Enemy_Selection"",
-            ""id"": ""ab0be66a-93b0-45d1-a272-8341c7032bd3"",
-            ""actions"": [
-                {
-                    ""name"": ""ChangeSelectedEnemy"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""4cadbabd-f4e2-4734-8cd8-b180ffa9e82e"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""CancelEnemySelection"",
-                    ""type"": ""Button"",
-                    ""id"": ""68ed6980-5b26-48a7-bc50-3c6d775a64fd"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""SelectEnemy"",
-                    ""type"": ""Button"",
-                    ""id"": ""17e11887-80e5-412e-8086-71b2a43a6f8b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""9ffc50ca-6867-4c3e-944e-983d1a412f26"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""ChangeSelectedEnemy"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d4b526bb-bab3-436a-a0ad-823417ca0fe5"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""ChangeSelectedEnemy"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""97565acb-4337-43ca-bd27-f313fb26a25a"",
-                    ""path"": ""<Mouse>/scroll"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""ChangeSelectedEnemy"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""652c9682-20ad-49cc-896a-1b14c5050947"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""CancelEnemySelection"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b4e407b1-3c66-4a08-b62f-ee37a6511e2e"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""CancelEnemySelection"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9b1257e5-98e8-4f9c-9240-1480e0095dcc"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""SelectEnemy"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5e72b809-5b04-46b6-94bd-96cb762e7ceb"",
+                    ""id"": ""eb45cca6-ca6e-465f-92d2-fc9190db0e98"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""SlowTap(duration=0.3)"",
                     ""processors"": """",
                     ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""SelectEnemy"",
+                    ""action"": ""360Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ba14ee72-7842-4c21-925f-938d4cb746bf"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""id"": ""aa71da22-7e9c-4ffa-8e2b-af12c04f135d"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""360Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f04a717-35ae-45dc-a5da-65d461180258"",
+                    ""path"": ""<AndroidGamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""360Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""158a7086-c35a-4517-9bf4-59cc3a7f4570"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller;Touch"",
+                    ""action"": ""CameraControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""219a71ef-c941-4fad-a0b1-edad4c48a6e8"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard + mouse"",
-                    ""action"": ""SelectEnemy"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de310460-0ddf-4b4d-951c-bd7527c9a86a"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller;Touch"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9cb5894-7542-4dbf-9d8e-7b7542191e92"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Controller;Touch"",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f95e755-2b8a-47f6-a8e9-8be29201bd18"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25a159ca-6ad6-40da-a12e-6d4b9e26220b"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
+                    ""action"": ""EnableCameraRotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -749,6 +580,17 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Touch"",
+            ""bindingGroup"": ""Touch"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Touchscreen>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -757,25 +599,17 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_CameraSnapLeft = m_Player.FindAction("CameraSnapLeft", throwIfNotFound: true);
-        m_Player_CameraSnapRight = m_Player.FindAction("CameraSnapRight", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_MouseAim = m_Player.FindAction("MouseAim", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
         m_Player_LockOn = m_Player.FindAction("LockOn", throwIfNotFound: true);
         m_Player_ChangeLockOn = m_Player.FindAction("ChangeLockOn", throwIfNotFound: true);
-        m_Player_Concentration = m_Player.FindAction("Concentration", throwIfNotFound: true);
-        m_Player_Respawn = m_Player.FindAction("Respawn", throwIfNotFound: true);
-        // Combat_Menu
-        m_Combat_Menu = asset.FindActionMap("Combat_Menu", throwIfNotFound: true);
-        m_Combat_Menu_Concentration = m_Combat_Menu.FindAction("Concentration", throwIfNotFound: true);
-        m_Combat_Menu_Cancel = m_Combat_Menu.FindAction("Cancel", throwIfNotFound: true);
-        // Enemy_Selection
-        m_Enemy_Selection = asset.FindActionMap("Enemy_Selection", throwIfNotFound: true);
-        m_Enemy_Selection_ChangeSelectedEnemy = m_Enemy_Selection.FindAction("ChangeSelectedEnemy", throwIfNotFound: true);
-        m_Enemy_Selection_CancelEnemySelection = m_Enemy_Selection.FindAction("CancelEnemySelection", throwIfNotFound: true);
-        m_Enemy_Selection_SelectEnemy = m_Enemy_Selection.FindAction("SelectEnemy", throwIfNotFound: true);
+        m_Player__360Attack = m_Player.FindAction("360Attack", throwIfNotFound: true);
+        m_Player_CameraControl = m_Player.FindAction("CameraControl", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_RotateCamera = m_Player.FindAction("RotateCamera", throwIfNotFound: true);
+        m_Player_EnableCameraRotation = m_Player.FindAction("EnableCameraRotation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -828,16 +662,17 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_CameraSnapLeft;
-    private readonly InputAction m_Player_CameraSnapRight;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_MouseAim;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Block;
     private readonly InputAction m_Player_LockOn;
     private readonly InputAction m_Player_ChangeLockOn;
-    private readonly InputAction m_Player_Concentration;
-    private readonly InputAction m_Player_Respawn;
+    private readonly InputAction m_Player__360Attack;
+    private readonly InputAction m_Player_CameraControl;
+    private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_RotateCamera;
+    private readonly InputAction m_Player_EnableCameraRotation;
     public struct PlayerActions
     {
         private @InputMaster1 m_Wrapper;
@@ -845,16 +680,17 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @CameraSnapLeft => m_Wrapper.m_Player_CameraSnapLeft;
-        public InputAction @CameraSnapRight => m_Wrapper.m_Player_CameraSnapRight;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @MouseAim => m_Wrapper.m_Player_MouseAim;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Block => m_Wrapper.m_Player_Block;
         public InputAction @LockOn => m_Wrapper.m_Player_LockOn;
         public InputAction @ChangeLockOn => m_Wrapper.m_Player_ChangeLockOn;
-        public InputAction @Concentration => m_Wrapper.m_Player_Concentration;
-        public InputAction @Respawn => m_Wrapper.m_Player_Respawn;
+        public InputAction @_360Attack => m_Wrapper.m_Player__360Attack;
+        public InputAction @CameraControl => m_Wrapper.m_Player_CameraControl;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @RotateCamera => m_Wrapper.m_Player_RotateCamera;
+        public InputAction @EnableCameraRotation => m_Wrapper.m_Player_EnableCameraRotation;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -873,12 +709,6 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @CameraSnapLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraSnapLeft;
-                @CameraSnapLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraSnapLeft;
-                @CameraSnapLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraSnapLeft;
-                @CameraSnapRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraSnapRight;
-                @CameraSnapRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraSnapRight;
-                @CameraSnapRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraSnapRight;
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
@@ -897,12 +727,21 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 @ChangeLockOn.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeLockOn;
                 @ChangeLockOn.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeLockOn;
                 @ChangeLockOn.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeLockOn;
-                @Concentration.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnConcentration;
-                @Concentration.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnConcentration;
-                @Concentration.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnConcentration;
-                @Respawn.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRespawn;
-                @Respawn.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRespawn;
-                @Respawn.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRespawn;
+                @_360Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.On_360Attack;
+                @_360Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.On_360Attack;
+                @_360Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.On_360Attack;
+                @CameraControl.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraControl;
+                @CameraControl.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraControl;
+                @CameraControl.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraControl;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @RotateCamera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateCamera;
+                @EnableCameraRotation.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCameraRotation;
+                @EnableCameraRotation.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCameraRotation;
+                @EnableCameraRotation.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCameraRotation;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -916,12 +755,6 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @CameraSnapLeft.started += instance.OnCameraSnapLeft;
-                @CameraSnapLeft.performed += instance.OnCameraSnapLeft;
-                @CameraSnapLeft.canceled += instance.OnCameraSnapLeft;
-                @CameraSnapRight.started += instance.OnCameraSnapRight;
-                @CameraSnapRight.performed += instance.OnCameraSnapRight;
-                @CameraSnapRight.canceled += instance.OnCameraSnapRight;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
@@ -940,106 +773,25 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 @ChangeLockOn.started += instance.OnChangeLockOn;
                 @ChangeLockOn.performed += instance.OnChangeLockOn;
                 @ChangeLockOn.canceled += instance.OnChangeLockOn;
-                @Concentration.started += instance.OnConcentration;
-                @Concentration.performed += instance.OnConcentration;
-                @Concentration.canceled += instance.OnConcentration;
-                @Respawn.started += instance.OnRespawn;
-                @Respawn.performed += instance.OnRespawn;
-                @Respawn.canceled += instance.OnRespawn;
+                @_360Attack.started += instance.On_360Attack;
+                @_360Attack.performed += instance.On_360Attack;
+                @_360Attack.canceled += instance.On_360Attack;
+                @CameraControl.started += instance.OnCameraControl;
+                @CameraControl.performed += instance.OnCameraControl;
+                @CameraControl.canceled += instance.OnCameraControl;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @RotateCamera.started += instance.OnRotateCamera;
+                @RotateCamera.performed += instance.OnRotateCamera;
+                @RotateCamera.canceled += instance.OnRotateCamera;
+                @EnableCameraRotation.started += instance.OnEnableCameraRotation;
+                @EnableCameraRotation.performed += instance.OnEnableCameraRotation;
+                @EnableCameraRotation.canceled += instance.OnEnableCameraRotation;
             }
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-
-    // Combat_Menu
-    private readonly InputActionMap m_Combat_Menu;
-    private ICombat_MenuActions m_Combat_MenuActionsCallbackInterface;
-    private readonly InputAction m_Combat_Menu_Concentration;
-    private readonly InputAction m_Combat_Menu_Cancel;
-    public struct Combat_MenuActions
-    {
-        private @InputMaster1 m_Wrapper;
-        public Combat_MenuActions(@InputMaster1 wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Concentration => m_Wrapper.m_Combat_Menu_Concentration;
-        public InputAction @Cancel => m_Wrapper.m_Combat_Menu_Cancel;
-        public InputActionMap Get() { return m_Wrapper.m_Combat_Menu; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(Combat_MenuActions set) { return set.Get(); }
-        public void SetCallbacks(ICombat_MenuActions instance)
-        {
-            if (m_Wrapper.m_Combat_MenuActionsCallbackInterface != null)
-            {
-                @Concentration.started -= m_Wrapper.m_Combat_MenuActionsCallbackInterface.OnConcentration;
-                @Concentration.performed -= m_Wrapper.m_Combat_MenuActionsCallbackInterface.OnConcentration;
-                @Concentration.canceled -= m_Wrapper.m_Combat_MenuActionsCallbackInterface.OnConcentration;
-                @Cancel.started -= m_Wrapper.m_Combat_MenuActionsCallbackInterface.OnCancel;
-                @Cancel.performed -= m_Wrapper.m_Combat_MenuActionsCallbackInterface.OnCancel;
-                @Cancel.canceled -= m_Wrapper.m_Combat_MenuActionsCallbackInterface.OnCancel;
-            }
-            m_Wrapper.m_Combat_MenuActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Concentration.started += instance.OnConcentration;
-                @Concentration.performed += instance.OnConcentration;
-                @Concentration.canceled += instance.OnConcentration;
-                @Cancel.started += instance.OnCancel;
-                @Cancel.performed += instance.OnCancel;
-                @Cancel.canceled += instance.OnCancel;
-            }
-        }
-    }
-    public Combat_MenuActions @Combat_Menu => new Combat_MenuActions(this);
-
-    // Enemy_Selection
-    private readonly InputActionMap m_Enemy_Selection;
-    private IEnemy_SelectionActions m_Enemy_SelectionActionsCallbackInterface;
-    private readonly InputAction m_Enemy_Selection_ChangeSelectedEnemy;
-    private readonly InputAction m_Enemy_Selection_CancelEnemySelection;
-    private readonly InputAction m_Enemy_Selection_SelectEnemy;
-    public struct Enemy_SelectionActions
-    {
-        private @InputMaster1 m_Wrapper;
-        public Enemy_SelectionActions(@InputMaster1 wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ChangeSelectedEnemy => m_Wrapper.m_Enemy_Selection_ChangeSelectedEnemy;
-        public InputAction @CancelEnemySelection => m_Wrapper.m_Enemy_Selection_CancelEnemySelection;
-        public InputAction @SelectEnemy => m_Wrapper.m_Enemy_Selection_SelectEnemy;
-        public InputActionMap Get() { return m_Wrapper.m_Enemy_Selection; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(Enemy_SelectionActions set) { return set.Get(); }
-        public void SetCallbacks(IEnemy_SelectionActions instance)
-        {
-            if (m_Wrapper.m_Enemy_SelectionActionsCallbackInterface != null)
-            {
-                @ChangeSelectedEnemy.started -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnChangeSelectedEnemy;
-                @ChangeSelectedEnemy.performed -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnChangeSelectedEnemy;
-                @ChangeSelectedEnemy.canceled -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnChangeSelectedEnemy;
-                @CancelEnemySelection.started -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnCancelEnemySelection;
-                @CancelEnemySelection.performed -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnCancelEnemySelection;
-                @CancelEnemySelection.canceled -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnCancelEnemySelection;
-                @SelectEnemy.started -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnSelectEnemy;
-                @SelectEnemy.performed -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnSelectEnemy;
-                @SelectEnemy.canceled -= m_Wrapper.m_Enemy_SelectionActionsCallbackInterface.OnSelectEnemy;
-            }
-            m_Wrapper.m_Enemy_SelectionActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @ChangeSelectedEnemy.started += instance.OnChangeSelectedEnemy;
-                @ChangeSelectedEnemy.performed += instance.OnChangeSelectedEnemy;
-                @ChangeSelectedEnemy.canceled += instance.OnChangeSelectedEnemy;
-                @CancelEnemySelection.started += instance.OnCancelEnemySelection;
-                @CancelEnemySelection.performed += instance.OnCancelEnemySelection;
-                @CancelEnemySelection.canceled += instance.OnCancelEnemySelection;
-                @SelectEnemy.started += instance.OnSelectEnemy;
-                @SelectEnemy.performed += instance.OnSelectEnemy;
-                @SelectEnemy.canceled += instance.OnSelectEnemy;
-            }
-        }
-    }
-    public Enemy_SelectionActions @Enemy_Selection => new Enemy_SelectionActions(this);
     private int m_KeyboardmouseSchemeIndex = -1;
     public InputControlScheme KeyboardmouseScheme
     {
@@ -1058,31 +810,30 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_ControllerSchemeIndex];
         }
     }
+    private int m_TouchSchemeIndex = -1;
+    public InputControlScheme TouchScheme
+    {
+        get
+        {
+            if (m_TouchSchemeIndex == -1) m_TouchSchemeIndex = asset.FindControlSchemeIndex("Touch");
+            return asset.controlSchemes[m_TouchSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnAttack(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnCameraSnapLeft(InputAction.CallbackContext context);
-        void OnCameraSnapRight(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMouseAim(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
         void OnLockOn(InputAction.CallbackContext context);
         void OnChangeLockOn(InputAction.CallbackContext context);
-        void OnConcentration(InputAction.CallbackContext context);
-        void OnRespawn(InputAction.CallbackContext context);
-    }
-    public interface ICombat_MenuActions
-    {
-        void OnConcentration(InputAction.CallbackContext context);
-        void OnCancel(InputAction.CallbackContext context);
-    }
-    public interface IEnemy_SelectionActions
-    {
-        void OnChangeSelectedEnemy(InputAction.CallbackContext context);
-        void OnCancelEnemySelection(InputAction.CallbackContext context);
-        void OnSelectEnemy(InputAction.CallbackContext context);
+        void On_360Attack(InputAction.CallbackContext context);
+        void OnCameraControl(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnRotateCamera(InputAction.CallbackContext context);
+        void OnEnableCameraRotation(InputAction.CallbackContext context);
     }
 }

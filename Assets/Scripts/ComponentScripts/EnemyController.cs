@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
     }
     void Update()
     {
-        transform.Rotate(0, dir, 0);
+        //transform.Rotate(0, dir, 0);
 
         //GESTIONAR SI EL ENEMIGO ESTÁ EN PANTALLA, Y SI LO ESTÁ, AÑADIRLO A LA LISTA DE ENEMIGOS EN EL COMBAT MANAGER
 

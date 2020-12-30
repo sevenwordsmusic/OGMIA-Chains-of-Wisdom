@@ -4,12 +4,14 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
 using PixelCrushers.DialogueSystem;
+using System.Runtime.InteropServices;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("References", order = 0)]
     //Canvas & camera setting variables
     private Transform cam;
+    [SerializeField] Camera UICamera;
     [SerializeField] CinemachineFreeLook cinemaCam;
     private Canvas canvas;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Punto en el espacio donde se proyecta la esfera que detectará si el jugador está tocando el suelo")] [SerializeField] Transform groundCheck;
     private CharacterController controller;
     private PlayerInput playerInput;
+    private InputMaster1 inputActions;
     private ProximitySelector proximitySelector;
 
     [Header("Movement variables", order = 1)]
@@ -30,19 +33,35 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Cooldown de la voltereta")] [SerializeField] float rollCooldownTime = 0.6f;
     [Tooltip("Simulación de fuerzas (aire, fricción) que ralentizan y detienen al jugador al moverse, saltar, dashear, etc")]
     [SerializeField] Vector3 drag = new Vector3(10f, 1f, 10f);
+    [Tooltip("Velocidad a la que rotará la cámara")] [SerializeField] float rotateCameraSpeed = 2; 
+    [Tooltip("Velocidad a la que rotará la cámara en movil")] [SerializeField] float rotateCameraSpeedMobile = 50; 
     private Vector3 direction;
     private Vector3 moveDir;
     private Vector3 velocity;
     private bool isGrounded;
     [HideInInspector] public bool canDash;
     [HideInInspector] public bool canMove;
+    private float rotateCameraAmount;
+
     public bool DashUpgrade;
     private PlayerAnimationScript playerAnimationScript;
 
+    //CHEQUEOS DE PLATAFORMA
+    [DllImport("__Internal")]
+    private static extern bool IsMobile();
 
-
-    void Start()
+    public bool isMobile()
     {
+        #if !UNITY_EDITOR && UNITY_WEBGL
+            return IsMobile();
+        #endif
+        return false;
+    }
+
+
+    void Awake()
+    {
+        inputActions = new InputMaster1();
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         playerAnimationScript = GetComponentInChildren<PlayerAnimationScript>();
@@ -64,6 +83,10 @@ public class PlayerController : MonoBehaviour
     //EVENTS
     private void OnEnable()
     {
+        //INPUT
+        //playerInput = GetComponent<PlayerInput>();
+        playerInput.ActivateInput();
+        inputActions.Enable();
         //EVENTS
         UIManager.goBackToMainMenuEvent += DestroyPlayer; //Destruye el objeto jugador cuando se vuelva al menu principal para evitar arrastrar datos entre ciclos de juego.
 
@@ -71,13 +94,16 @@ public class PlayerController : MonoBehaviour
         cam = GetComponentInChildren<Camera>().transform;
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //Busca el GameObject llamado Canvas, por lo tanto, el Canvas NO debe cambiar de nombre
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
-        canvas.worldCamera = cam.gameObject.GetComponent<Camera>();
-        canvas.planeDistance = 2;
+        canvas.worldCamera = UICamera;
+
+        //Cursor.lockState = CursorLockMode.Confined;
 
     }
 
     private void OnDisable()
     {
+        playerInput.DeactivateInput();
+        inputActions.Disable();
         UIManager.goBackToMainMenuEvent -= DestroyPlayer; //Destruye el objeto jugador cuando se vuelva al menu principal para evitar arrastrar datos entre ciclos de juego.
 
     }
@@ -98,20 +124,33 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputValue value)
     {
+        if (!isMobile())
+        {
+
+            var v = value.Get<Vector2>(); //El valor leído siempre debe corresponder con el asignado a la acción dentro del Action Map
+
+            if (v.magnitude < 0.1)
+                v = Vector2.zero;
+
+            if (canMove) //Recoge el input sólo si el jugador puede moverse.
+            {
+                direction = new Vector3(v.x, 0f, v.y); //Normalmente este vector deberia normalizarse, pero los valores vienen ya normalizados del sistema de Input.
+            }
+            else //Si no puede, resetea el vector a cero para que no queden 'direcciones residuales' recogidas de inputs anteriores. 
+            {
+                direction = Vector3.zero;
+            }
+        }
+    }
+
+    public void OnRotateCamera(InputValue value)
+    {
         var v = value.Get<Vector2>(); //El valor leído siempre debe corresponder con el asignado a la acción dentro del Action Map
 
         if (v.magnitude < 0.1)
             v = Vector2.zero;
 
-        if (canMove) //Recoge el input sólo si el jugador puede moverse.
-        {
-            direction = new Vector3(v.x, 0f, v.y); //Normalmente este vector deberia normalizarse, pero los valores vienen ya normalizados del sistema de Input.
-        }
-        else //Si no puede, resetea el vector a cero para que no queden 'direcciones residuales' recogidas de inputs anteriores. 
-        {
-            direction = Vector3.zero;
-        }
-
+        rotateCameraAmount = v.x;
     }
 
     public void OnPause()
@@ -140,21 +179,20 @@ public class PlayerController : MonoBehaviour
     {
         if (canDash)
         {
-            
             //velocity = Vector3.zero;
 
-            if(DashUpgrade)
+            if (DashUpgrade)
             {
                 animator.SetBool("isDashing", true); //Reproduce la animacion de dash. El booleano se pondrá automaticamente a false cuando acabe la animación gracias al 'DashBehaviour' (consultar animator para + info)
                 StartCoroutine(dashCooldown(dashCooldownTime)); //Ponemos en cooldown el dash.
-            } 
+            }
             else
             {
                 animator.SetBool("isRolling", true); //Reproduce la animacion de dash. El booleano se pondrá automaticamente a false cuando acabe la animación gracias al 'DashBehaviour' (consultar animator para + info)
                 StartCoroutine(dashCooldown(rollCooldownTime)); //Ponemos en cooldown el dash.
 
-                                                                //Añade a la velocidad un vector resultante de la multiplicación de la dirección del jugador (transform.forward) por un vector compuesto a partir del
-                                                                //dashDistance y el drag, basado en fórmulas físicas 'realistas'.
+                //Añade a la velocidad un vector resultante de la multiplicación de la dirección del jugador (transform.forward) por un vector compuesto a partir del
+                //dashDistance y el drag, basado en fórmulas físicas 'realistas'.
 
             }
 
@@ -187,6 +225,32 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //IF estamos en movil...
+        if (isMobile())
+        {
+            //Recibimos el input del joystick virtual
+            Vector2 movementInput = inputActions.Player.Movement.ReadValue<Vector2>();
+            direction = new Vector3(movementInput.x, 0f, movementInput.y);
+
+            //Aplicamos rotacion a la camara, si se ha recibido input para ello:
+            Vector2 delta = inputActions.Player.RotateCamera.ReadValue<Vector2>();
+            cinemaCam.m_XAxis.Value += (delta.x * rotateCameraSpeedMobile * Time.deltaTime);
+        } 
+        else
+        {
+            //En caso de estar en PC, solo necesitamos aplicar aquí la rotación de cámara.
+            if(playerInput.currentControlScheme == "Keyboard + mouse") //Si se está usando teclado,
+            {
+                if (inputActions.Player.EnableCameraRotation.ReadValue<float>() > 0f) //Si el jugador está pulsando el boton que permite el giro de camara...
+                    cinemaCam.m_XAxis.Value += (rotateCameraAmount * rotateCameraSpeed * Time.deltaTime); //La gira
+            } 
+            else //En caso de estar usando mando, no necesitamos combinaciones de teclas.
+            {
+                cinemaCam.m_XAxis.Value += (rotateCameraAmount * rotateCameraSpeed * Time.deltaTime); //La gira
+            }
+ 
+        }
+
         //DETECCION DE COLISIONES
         //Proyecta una esfera en el objeto groundcheck de radio groundDistance, devolviendo true si esa esfera colisiona con un objeto que esté en la capa "groundMask"
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -234,7 +298,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Pasamos las variables al animator para que se actualicen a tiempo real y funcionen adecuadamente.
-          animator.SetFloat("Speed", direction.magnitude); //Para lo que necesita el animator, basta con pasarle la magnitud (longitud al cuadrado en este caso).
+        animator.SetFloat("Speed", direction.magnitude); //Para lo que necesita el animator, basta con pasarle la magnitud (longitud al cuadrado en este caso).
                                                          //^Cuando sea positiva, aplicará animaciones de movimiento. Cuando no, animaciones "idle".
 
         //GRAVEDAD Y FÍSICAS
@@ -249,7 +313,7 @@ public class PlayerController : MonoBehaviour
 
         //if (canMove)
         //{
-            controller.Move(velocity * Time.deltaTime); //Finalmente, tras todas las simulaciones necesarias, movemos al jugador en función de la velocidad calculada
+        controller.Move(velocity * Time.deltaTime); //Finalmente, tras todas las simulaciones necesarias, movemos al jugador en función de la velocidad calculada
         //}
     }
 
