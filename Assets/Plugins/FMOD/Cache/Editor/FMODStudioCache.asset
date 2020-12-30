@@ -14,10 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Kithara_fmod/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
-  lastModified: 637430678619190987
+  lastModified: 637449168814958515
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-3675279448675170661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/fireCandle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/fireCandle
+  guid: 0ec783aa819f444780c4ae29e80fecf6
+  Banks:
+  - {fileID: -7071215853461736667}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3649970959102978627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,20 +55,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Kithara_fmod/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
-  lastModified: 637430678619200960
+  lastModified: 637449168814968497
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 730
+    Value: 900
   - Name: 
-    Value: 730
+    Value: 900
+  - Name: Assets
+    Value: 900
   - Name: Build
-    Value: 730
+    Value: 900
   - Name: Metadata
-    Value: 730
+    Value: 900
   - Name: Plugins
-    Value: 730
+    Value: 900
   Exists: 1
+--- !u!114 &-1138074590079410840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/fireTorch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/fireTorch
+  guid: 1e72e7963530754f998c14dec5191919
+  Banks:
+  - {fileID: -7071215853461736667}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,13 +111,39 @@ MonoBehaviour:
   - {fileID: -7071215853461736667}
   EditorEvents:
   - {fileID: 9147926809012265898}
+  - {fileID: -3675279448675170661}
+  - {fileID: -1138074590079410840}
+  - {fileID: 6203294511286441477}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7071215853461736667}
   StringsBanks:
   - {fileID: -3649970959102978627}
-  stringsBankWriteTime: 637430678619200960
+  stringsBankWriteTime: 637449168814968497
   cacheVersion: 5
+--- !u!114 &6203294511286441477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ambientExteriorWindLoop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ambientExteriorWindLoop
+  guid: 50fbb2cda36aaa449b05fcb0760ddba9
+  Banks:
+  - {fileID: -7071215853461736667}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 60
+  Length: 60000
 --- !u!114 &9147926809012265898
 MonoBehaviour:
   m_ObjectHideFlags: 0
