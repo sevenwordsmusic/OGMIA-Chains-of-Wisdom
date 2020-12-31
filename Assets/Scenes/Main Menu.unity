@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 57391522}
   - component: {fileID: 57391524}
   - component: {fileID: 57391523}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 57391524}
   minIntensity: 0
-  maxIntensity: 2
+  maxIntensity: 1
   smoothing: 10
 --- !u!108 &57391524
 Light:
@@ -181,7 +181,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.59703445, b: 0.36320752, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -218,7 +218,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 332496918}
   - component: {fileID: 332496920}
   - component: {fileID: 332496919}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,8 +657,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 332496920}
   minIntensity: 0
-  maxIntensity: 3
-  smoothing: 20
+  maxIntensity: 1.5
+  smoothing: 10
 --- !u!108 &332496920
 Light:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.59703445, b: 0.36320752, a: 1}
-  m_Intensity: 3
+  m_Intensity: 1.5
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -708,7 +708,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -766,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402059835}
   - component: {fileID: 402059836}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +836,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -858,7 +858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428188543}
   - component: {fileID: 428188544}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +928,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 752657970}
   - component: {fileID: 752657973}
   - component: {fileID: 752657972}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (75)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 784255379}
   - component: {fileID: 784255381}
   - component: {fileID: 784255380}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 784255381}
   minIntensity: 0
-  maxIntensity: 2
+  maxIntensity: 1
   smoothing: 10
 --- !u!108 &784255381
 Light:
@@ -1218,7 +1218,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.59703445, b: 0.36320752, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1255,7 +1255,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -1267,239 +1267,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &791463090
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6095601, guid: 6a2d328069ded2345b91caa526498d3a, type: 3}
-      propertyPath: mobileJoystick
-      value: 
-      objectReference: {fileID: 353674707}
-    - target: {fileID: 1518664658376982667, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1833754769982935905, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1833754769982935905, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1833754769982935905, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1833754769982935905, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1833754769982935905, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2727935838265005408, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 268170728}
-    - target: {fileID: 5019135657401976901, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657401976901, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413727455, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 67.98999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413732111, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413784033, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413784033, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413784033, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413784033, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413784033, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413788533, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413788533, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413788533, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413788533, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413788533, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5019135657413863547, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1338821568}
-    - target: {fileID: 5919501270974255510, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 268170728}
-    - target: {fileID: 6881470676394863726, guid: 6a2d328069ded2345b91caa526498d3a,
-        type: 3}
-      propertyPath: gameInitializer
-      value: 
-      objectReference: {fileID: 268170728}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6a2d328069ded2345b91caa526498d3a, type: 3}
 --- !u!20 &839045940 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2066732149316851632, guid: 1da6ebfeaf6cbfa4ea02b63b1497511e,
@@ -1516,7 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891080242}
   - component: {fileID: 891080243}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1353,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -1740,7 +1507,7 @@ GameObject:
   - component: {fileID: 946726482}
   - component: {fileID: 946726485}
   - component: {fileID: 946726484}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (78)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1586,7 @@ GameObject:
   - component: {fileID: 1171573037}
   - component: {fileID: 1171573039}
   - component: {fileID: 1171573038}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1854,8 +1621,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 1171573039}
   minIntensity: 0
-  maxIntensity: 3
-  smoothing: 20
+  maxIntensity: 1.5
+  smoothing: 10
 --- !u!108 &1171573039
 Light:
   m_ObjectHideFlags: 0
@@ -1868,7 +1635,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.59703445, b: 0.36320752, a: 1}
-  m_Intensity: 3
+  m_Intensity: 1.5
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1905,7 +1672,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -2107,7 +1874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310672164}
   - component: {fileID: 1310672165}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2177,7 +1944,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -2211,7 +1978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323196102}
   - component: {fileID: 1323196103}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2281,7 +2048,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -2304,7 +2071,7 @@ GameObject:
   - component: {fileID: 1338756691}
   - component: {fileID: 1338756694}
   - component: {fileID: 1338756693}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (79)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2546,7 +2313,7 @@ GameObject:
   - component: {fileID: 1772018178}
   - component: {fileID: 1772018181}
   - component: {fileID: 1772018180}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (77)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2624,7 +2391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820243388}
   - component: {fileID: 1820243389}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2694,7 +2461,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -2717,7 +2484,7 @@ GameObject:
   - component: {fileID: 1860973425}
   - component: {fileID: 1860973428}
   - component: {fileID: 1860973427}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (74)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2795,7 +2562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1866373220}
   - component: {fileID: 1866373222}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2865,7 +2632,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -2887,7 +2654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941354466}
   - component: {fileID: 1941354467}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2957,7 +2724,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -3205,7 +2972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1971741544}
   - component: {fileID: 1971741545}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3275,7 +3042,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -3298,7 +3065,7 @@ GameObject:
   - component: {fileID: 2053304239}
   - component: {fileID: 2053304242}
   - component: {fileID: 2053304241}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (76)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3381,7 +3148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2055007642}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3470,7 +3237,7 @@ GameObject:
   - component: {fileID: 4329911096101233}
   - component: {fileID: 4329911097148457}
   - component: {fileID: 65749851380251035}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3578,7 +3345,7 @@ GameObject:
   - component: {fileID: 14368006105574859}
   - component: {fileID: 14368006106584815}
   - component: {fileID: 61427402429158667}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12588,7 +12355,7 @@ GameObject:
   - component: {fileID: 178136997356694863}
   - component: {fileID: 178136997357733459}
   - component: {fileID: 185396250385640957}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12703,7 +12470,7 @@ GameObject:
   - component: {fileID: 225290045638535325}
   - component: {fileID: 225290045637470983}
   - component: {fileID: 272284070816668591}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12769,7 +12536,7 @@ GameObject:
   - component: {fileID: 1099925711255467599}
   - component: {fileID: 5623892680324553597}
   - component: {fileID: 5076896143427330047}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (51)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12827,7 +12594,7 @@ GameObject:
   - component: {fileID: 4536068623838779226}
   - component: {fileID: 3569165074989331232}
   - component: {fileID: 6789029567491252964}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12920,7 +12687,7 @@ GameObject:
   - component: {fileID: 297952695935385126}
   - component: {fileID: 297952695934272116}
   - component: {fileID: 343850874400345678}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12967,7 +12734,7 @@ GameObject:
   - component: {fileID: 312303320263704101}
   - component: {fileID: 312303320262690603}
   - component: {fileID: 342213222960099327}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13031,7 +12798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6473678005510555082}
   - component: {fileID: 3855502514737957633}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: noSun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13090,7 +12857,7 @@ GameObject:
   - component: {fileID: 381651983294681169}
   - component: {fileID: 391812924150496069}
   - component: {fileID: 421205892838008369}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (84)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13194,7 +12961,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -13308,7 +13075,7 @@ GameObject:
   - component: {fileID: 451073759218325365}
   - component: {fileID: 451073759217203969}
   - component: {fileID: 480224637518701017}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13374,7 +13141,7 @@ GameObject:
   - component: {fileID: 2794090216876751521}
   - component: {fileID: 3474018330512412487}
   - component: {fileID: 3039095362052564131}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13393,7 +13160,7 @@ GameObject:
   - component: {fileID: 437388688367841304}
   - component: {fileID: 447530929662958348}
   - component: {fileID: 469043148203689592}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (74)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13453,7 +13220,7 @@ GameObject:
   - component: {fileID: 469812350052153451}
   - component: {fileID: 469812350051039161}
   - component: {fileID: 463142525581609811}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13585,7 +13352,7 @@ GameObject:
   - component: {fileID: 3957349664693626377}
   - component: {fileID: 7234682955508485544}
   - component: {fileID: 630599312494530704}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (65)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13612,7 +13379,7 @@ GameObject:
   - component: {fileID: 3953276977340295546}
   - component: {fileID: 1143882575061998625}
   - component: {fileID: 3094021664358471878}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13631,7 +13398,7 @@ GameObject:
   - component: {fileID: 3844063583538616271}
   - component: {fileID: 9172238195244824141}
   - component: {fileID: 66890014268172916}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (67)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13657,7 +13424,7 @@ GameObject:
   - component: {fileID: 6908406338815463367}
   - component: {fileID: 929384766679842845}
   - component: {fileID: 1743083706287485135}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13742,7 +13509,7 @@ GameObject:
   - component: {fileID: 577708574642008930}
   - component: {fileID: 577708574640903432}
   - component: {fileID: 639973473687702302}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13835,7 +13602,7 @@ GameObject:
   - component: {fileID: 3424570536122799610}
   - component: {fileID: 1084636961103764217}
   - component: {fileID: 4062374809372097894}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13868,7 +13635,7 @@ GameObject:
   - component: {fileID: 601967506180149654}
   - component: {fileID: 601967506179169860}
   - component: {fileID: 626823033661317806}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14167,7 +13934,7 @@ GameObject:
   - component: {fileID: 636668204423531652}
   - component: {fileID: 636668204422463238}
   - component: {fileID: 591713086992650414}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Railing_Angle_03 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14276,7 +14043,7 @@ GameObject:
   - component: {fileID: 621053484839415070}
   - component: {fileID: 629197789106711016}
   - component: {fileID: 576897496618202986}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (241)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14322,7 +14089,7 @@ GameObject:
   - component: {fileID: 6738792601580918331}
   - component: {fileID: 3209193493848436647}
   - component: {fileID: 8101499917582612012}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14410,7 +14177,7 @@ GameObject:
   - component: {fileID: 2314650477805379188}
   - component: {fileID: 4282729102062132905}
   - component: {fileID: 8825077628598085257}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (50)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14484,7 +14251,7 @@ GameObject:
   - component: {fileID: 709068459841628821}
   - component: {fileID: 709068459842610503}
   - component: {fileID: 666370542862031277}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14517,7 +14284,7 @@ GameObject:
   - component: {fileID: 6016562794360470092}
   - component: {fileID: 6802424992121395893}
   - component: {fileID: 3801876235148820816}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14590,7 +14357,7 @@ GameObject:
   - component: {fileID: 723162738123034676}
   - component: {fileID: 751625093809568370}
   - component: {fileID: 741435271190278396}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14711,7 +14478,7 @@ GameObject:
   - component: {fileID: 3773478261884237685}
   - component: {fileID: 1274586888699901721}
   - component: {fileID: 4157340389438237190}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (56)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14730,7 +14497,7 @@ GameObject:
   - component: {fileID: 5501314644213110815}
   - component: {fileID: 6227776474364327928}
   - component: {fileID: 5357655980023250522}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (63)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14776,7 +14543,7 @@ GameObject:
   - component: {fileID: 904290005452615722}
   - component: {fileID: 904290005451629734}
   - component: {fileID: 893562896290329006}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14986,7 +14753,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -15050,7 +14817,7 @@ GameObject:
   - component: {fileID: 964601915351319414}
   - component: {fileID: 964601915352169338}
   - component: {fileID: 974976207022959184}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Stairs_13 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15130,7 +14897,7 @@ GameObject:
   - component: {fileID: 968104886835469907}
   - component: {fileID: 968104886836342955}
   - component: {fileID: 976021840229860471}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Pillar_Square_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15285,7 +15052,7 @@ GameObject:
   - component: {fileID: 985660680655815750}
   - component: {fileID: 985660680656801994}
   - component: {fileID: 957007683773629890}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15351,7 +15118,7 @@ GameObject:
   - component: {fileID: 1003568919942000542}
   - component: {fileID: 1003568919942979660}
   - component: {fileID: 938181274921311398}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15439,7 +15206,7 @@ GameObject:
   - component: {fileID: 5543933066238454546}
   - component: {fileID: 1801693512001676117}
   - component: {fileID: 1226583408995678081}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15458,7 +15225,7 @@ GameObject:
   - component: {fileID: 1037388203825383868}
   - component: {fileID: 1037388203824334052}
   - component: {fileID: 1045818287339239766}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15566,7 +15333,7 @@ GameObject:
   - component: {fileID: 6247725192647278262}
   - component: {fileID: 400293180693836140}
   - component: {fileID: 1250693818455523774}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15622,7 +15389,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -15707,7 +15474,7 @@ GameObject:
   - component: {fileID: 1089660666724491486}
   - component: {fileID: 1089660666723513426}
   - component: {fileID: 1149962556295536986}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15803,7 +15570,7 @@ GameObject:
   - component: {fileID: 1103793874308414401}
   - component: {fileID: 1103793874309395475}
   - component: {fileID: 1132942097242900729}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20363,7 +20130,7 @@ GameObject:
   - component: {fileID: 1129464117776183292}
   - component: {fileID: 1119338099712099560}
   - component: {fileID: 1098635670427670940}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (81)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20429,7 +20196,7 @@ GameObject:
   - component: {fileID: 1143757711801375544}
   - component: {fileID: 1143757711802407074}
   - component: {fileID: 1096711605916919818}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20539,7 +20306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3513133585882714394}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: CEIL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20660,7 +20427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4255782284047628201}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: mainMenuBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20693,7 +20460,7 @@ GameObject:
   - component: {fileID: 1221481238371061846}
   - component: {fileID: 1221481238372526580}
   - component: {fileID: 1160104913711383442}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20787,7 +20554,7 @@ GameObject:
   - component: {fileID: 1244577558832431786}
   - component: {fileID: 1244577558833490358}
   - component: {fileID: 1274473604226040344}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20869,7 +20636,7 @@ GameObject:
   - component: {fileID: 1274344671215721814}
   - component: {fileID: 1273440300367032374}
   - component: {fileID: 1274376826052385402}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_03 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20964,7 +20731,7 @@ GameObject:
   - component: {fileID: 7107140319148392412}
   - component: {fileID: 5469109720148961953}
   - component: {fileID: 7300406132605111061}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25543,7 +25310,7 @@ GameObject:
   - component: {fileID: 1298808179438875428}
   - component: {fileID: 1298808179437763830}
   - component: {fileID: 1364090769686331420}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25617,7 +25384,7 @@ GameObject:
   - component: {fileID: 1360011447445539062}
   - component: {fileID: 1360011447444489646}
   - component: {fileID: 1313166628727552028}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25709,7 +25476,7 @@ GameObject:
   - component: {fileID: 1393503176738669686}
   - component: {fileID: 1393503176739735532}
   - component: {fileID: 1419068398831286084}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25891,7 +25658,7 @@ GameObject:
   - component: {fileID: 1432804593399258092}
   - component: {fileID: 1432804593398271840}
   - component: {fileID: 1371456518653123176}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25971,7 +25738,7 @@ GameObject:
   - component: {fileID: 1446935082715870713}
   - component: {fileID: 1446935082714805859}
   - component: {fileID: 1509751766292711115}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26003,7 +25770,7 @@ GameObject:
   - component: {fileID: 1480311153688199165}
   - component: {fileID: 1480311153689244325}
   - component: {fileID: 1472089962360147735}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26307,7 +26074,7 @@ GameObject:
   - component: {fileID: 1550884711135684863}
   - component: {fileID: 1577006206827168441}
   - component: {fileID: 1569208371426428983}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30799,7 +30566,7 @@ GameObject:
   - component: {fileID: 7963503398098843181}
   - component: {fileID: 8560704388450741221}
   - component: {fileID: 7447577077875289640}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30832,7 +30599,7 @@ GameObject:
   - component: {fileID: 1611113380434034269}
   - component: {fileID: 1611113380435101049}
   - component: {fileID: 1635619551266227869}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30945,7 +30712,7 @@ GameObject:
   - component: {fileID: 1621109129090319920}
   - component: {fileID: 1621109129089337826}
   - component: {fileID: 1627809727000491272}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31207,7 +30974,7 @@ GameObject:
   - component: {fileID: 1702821781268642815}
   - component: {fileID: 1704285419624191167}
   - component: {fileID: 1702456847589790651}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31225,7 +30992,7 @@ GameObject:
   - component: {fileID: 1675651489816035584}
   - component: {fileID: 1580766192155592464}
   - component: {fileID: 1552190787209869050}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31258,7 +31025,7 @@ GameObject:
   - component: {fileID: 1682932153294122989}
   - component: {fileID: 1682932153295082431}
   - component: {fileID: 1710779662283825029}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31385,7 +31152,7 @@ GameObject:
   - component: {fileID: 1693183561563621998}
   - component: {fileID: 1693183561564669750}
   - component: {fileID: 1700549049419102852}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31486,7 +31253,7 @@ GameObject:
   - component: {fileID: 6264533452072698384}
   - component: {fileID: 1023421970043540719}
   - component: {fileID: 1735074653379832496}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (49)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31521,7 +31288,7 @@ GameObject:
   - component: {fileID: 9123431797736630992}
   - component: {fileID: 3695345500242253106}
   - component: {fileID: 868861253315624795}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31602,7 +31369,7 @@ GameObject:
   - component: {fileID: 1837379161177246510}
   - component: {fileID: 1826946631410995160}
   - component: {fileID: 1864577593828610394}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (240)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31658,7 +31425,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -31723,6 +31490,220 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1001 &1829543294673606400
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4813462947086547, guid: 3ebca81df5401a248a41508e8f1bf468, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813462947086547, guid: 3ebca81df5401a248a41508e8f1bf468, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813462947086547, guid: 3ebca81df5401a248a41508e8f1bf468, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813462947086547, guid: 3ebca81df5401a248a41508e8f1bf468, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813462947086547, guid: 3ebca81df5401a248a41508e8f1bf468, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829543294255108419, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: mobileJoystick
+      value: 
+      objectReference: {fileID: 353674707}
+    - target: {fileID: 4375322766229685970, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 268170728}
+    - target: {fileID: 5051968888742576092, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: gameInitializer
+      value: 
+      objectReference: {fileID: 268170728}
+    - target: {fileID: 5423913837038387748, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 268170728}
+    - target: {fileID: 6684567422256380873, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1338821568}
+    - target: {fileID: 6684567422256423507, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256423507, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256423507, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256423507, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256423507, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256435399, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256435399, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256435399, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256435399, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256435399, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422256510141, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684567422276082679, guid: 3ebca81df5401a248a41508e8f1bf468,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ebca81df5401a248a41508e8f1bf468, type: 3}
 --- !u!33 &1837379161177246510
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31844,7 +31825,7 @@ GameObject:
   - component: {fileID: 1885888714531896297}
   - component: {fileID: 1885888714530780219}
   - component: {fileID: 1928798141672261841}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31910,7 +31891,7 @@ GameObject:
   - component: {fileID: 1891796372236554205}
   - component: {fileID: 1891796372238022271}
   - component: {fileID: 1921652979917839385}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36380,7 +36361,7 @@ GameObject:
   - component: {fileID: 3509706166720919326}
   - component: {fileID: 8032279650683187705}
   - component: {fileID: 5305240938358135295}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (55)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36446,7 +36427,7 @@ GameObject:
   - component: {fileID: 1943664515695647097}
   - component: {fileID: 1943664515694604901}
   - component: {fileID: 1878914582860405195}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36648,7 +36629,7 @@ GameObject:
   - component: {fileID: 1997420401278102277}
   - component: {fileID: 1997420401279128075}
   - component: {fileID: 1968649654921394911}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36714,7 +36695,7 @@ GameObject:
   - component: {fileID: 1997787506930181683}
   - component: {fileID: 1997787506931244861}
   - component: {fileID: 1969161609419765737}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36794,7 +36775,7 @@ GameObject:
   - component: {fileID: 2002332768383022830}
   - component: {fileID: 2002332768382044860}
   - component: {fileID: 1958687480627988102}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36930,7 +36911,7 @@ GameObject:
   - component: {fileID: 2026367828429189632}
   - component: {fileID: 2026367828430279786}
   - component: {fileID: 2088210442041346684}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37005,7 +36986,7 @@ GameObject:
   - component: {fileID: 4796840578131800952}
   - component: {fileID: 9122189586760210735}
   - component: {fileID: 424103942330741674}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37125,7 +37106,7 @@ GameObject:
   - component: {fileID: 2032336185560393243}
   - component: {fileID: 2032032806724208987}
   - component: {fileID: 2032736307962842719}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37268,7 +37249,7 @@ GameObject:
   - component: {fileID: 2018599562316041163}
   - component: {fileID: 2019007325902742667}
   - component: {fileID: 2018304791164134287}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37315,7 +37296,7 @@ GameObject:
   - component: {fileID: 2098339429841906840}
   - component: {fileID: 2098339429842972418}
   - component: {fileID: 2160021830857727914}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37477,7 +37458,7 @@ GameObject:
   - component: {fileID: 6105865022106428221}
   - component: {fileID: 7352881397154811392}
   - component: {fileID: 1306736657094069814}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (62)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37588,7 +37569,7 @@ GameObject:
   - component: {fileID: 2167691238494628706}
   - component: {fileID: 2167691238493624112}
   - component: {fileID: 2229914429275560714}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37668,7 +37649,7 @@ GameObject:
   - component: {fileID: 2191721561968810942}
   - component: {fileID: 2184175387662262088}
   - component: {fileID: 2230810995978486218}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (244)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37686,7 +37667,7 @@ GameObject:
   - component: {fileID: 4155498461248867058}
   - component: {fileID: 1810632346071516657}
   - component: {fileID: 3336528829340181102}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37752,7 +37733,7 @@ GameObject:
   - component: {fileID: 2180105104573144898}
   - component: {fileID: 2180105104572027024}
   - component: {fileID: 2209359151077878906}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37899,7 +37880,7 @@ GameObject:
   - component: {fileID: 2233914926322619844}
   - component: {fileID: 2233914926323725230}
   - component: {fileID: 2298453546469223864}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37967,7 +37948,7 @@ GameObject:
   - component: {fileID: 2305054946375804453}
   - component: {fileID: 2304231875557706085}
   - component: {fileID: 2304936298938977889}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38047,7 +38028,7 @@ GameObject:
   - component: {fileID: 88850549707554470}
   - component: {fileID: 4834122191944605969}
   - component: {fileID: 7085508650718351269}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (57)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38127,7 +38108,7 @@ GameObject:
   - component: {fileID: 2253953083465664619}
   - component: {fileID: 2253953083464314983}
   - component: {fileID: 2279557561168224589}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Stairs_13 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38160,7 +38141,7 @@ GameObject:
   - component: {fileID: 2255495073455628625}
   - component: {fileID: 2255495073454517891}
   - component: {fileID: 2280319677432271465}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38225,7 +38206,7 @@ GameObject:
   - component: {fileID: 7820478649573342266}
   - component: {fileID: 5026131271260514631}
   - component: {fileID: 7743386644113819891}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38270,7 +38251,7 @@ GameObject:
   - component: {fileID: 2276616929705273249}
   - component: {fileID: 2276616929704664579}
   - component: {fileID: 2265940607692420197}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38397,7 +38378,7 @@ GameObject:
   - component: {fileID: 2277815302799026568}
   - component: {fileID: 2277815302800139866}
   - component: {fileID: 2266470084573698736}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38547,7 +38528,7 @@ GameObject:
   - component: {fileID: 2338163282619681559}
   - component: {fileID: 2338163282620790597}
   - component: {fileID: 2347998249021242239}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43092,7 +43073,7 @@ GameObject:
   - component: {fileID: 2391932109677315406}
   - component: {fileID: 2391932109678422330}
   - component: {fileID: 2439061377481896930}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43172,7 +43153,7 @@ GameObject:
   - component: {fileID: 8762043988822597408}
   - component: {fileID: 1660987308309752752}
   - component: {fileID: 7249520060683585261}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43219,7 +43200,7 @@ GameObject:
   - component: {fileID: 6629885160911636960}
   - component: {fileID: 613688288818409002}
   - component: {fileID: 5222027774339243685}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43265,7 +43246,7 @@ GameObject:
   - component: {fileID: 2458049815563792869}
   - component: {fileID: 2458049815564798657}
   - component: {fileID: 2519076852743178533}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43331,7 +43312,7 @@ GameObject:
   - component: {fileID: 2460287028202022043}
   - component: {fileID: 2460287028200939455}
   - component: {fileID: 2507803786961345627}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43479,7 +43460,7 @@ GameObject:
   - component: {fileID: 2474643559786488094}
   - component: {fileID: 2370772932210157326}
   - component: {fileID: 2349984407560509156}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43581,7 +43562,7 @@ GameObject:
   - component: {fileID: 2496422775183879404}
   - component: {fileID: 2496422775184867480}
   - component: {fileID: 2471776611121470016}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43616,7 +43597,7 @@ GameObject:
   - component: {fileID: 2470276576121172583}
   - component: {fileID: 2472294335176564007}
   - component: {fileID: 2470747135998319139}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43796,7 +43777,7 @@ GameObject:
   - component: {fileID: 2529902926747181918}
   - component: {fileID: 2529902926743808464}
   - component: {fileID: 2529902926744810222}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Door_Frame_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43842,7 +43823,7 @@ GameObject:
   - component: {fileID: 5652041858047744809}
   - component: {fileID: 1176154474770214917}
   - component: {fileID: 7381188506452533301}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43900,7 +43881,7 @@ GameObject:
   - component: {fileID: 6775957977081813662}
   - component: {fileID: 8139435702360557253}
   - component: {fileID: 6110889196272020577}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43918,7 +43899,7 @@ GameObject:
   - component: {fileID: 8919029349404274706}
   - component: {fileID: 2953377855829835720}
   - component: {fileID: 4335271419608305434}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43984,7 +43965,7 @@ GameObject:
   - component: {fileID: 2577445065844613506}
   - component: {fileID: 2577445065846069280}
   - component: {fileID: 2535239972460098118}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44080,7 +44061,7 @@ GameObject:
   - component: {fileID: 2525978029358512928}
   - component: {fileID: 2524661551489193056}
   - component: {fileID: 2526492704914740068}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44099,7 +44080,7 @@ GameObject:
   - component: {fileID: 2601780090525317324}
   - component: {fileID: 2601780090524259280}
   - component: {fileID: 2661934669944191102}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44255,7 +44236,7 @@ GameObject:
   - component: {fileID: 2644773595600799081}
   - component: {fileID: 2644574499652839977}
   - component: {fileID: 2645279335552625965}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44360,7 +44341,7 @@ GameObject:
   - component: {fileID: 1796647477491503488}
   - component: {fileID: 6586531715801628370}
   - component: {fileID: 8373094159027258885}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44426,7 +44407,7 @@ GameObject:
   - component: {fileID: 2653166425749355438}
   - component: {fileID: 2653166425750489132}
   - component: {fileID: 2608210354301216644}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Railing_Angle_03 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44459,7 +44440,7 @@ GameObject:
   - component: {fileID: 2654726728441156608}
   - component: {fileID: 2654726728440119068}
   - component: {fileID: 2611258388752389298}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44657,7 +44638,7 @@ GameObject:
   - component: {fileID: 2779196218006586355}
   - component: {fileID: 2779196218007637675}
   - component: {fileID: 2771760097467265817}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44737,7 +44718,7 @@ GameObject:
   - component: {fileID: 2781071390176261340}
   - component: {fileID: 2781071390175148814}
   - component: {fileID: 2769761918962714596}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44850,7 +44831,7 @@ GameObject:
   - component: {fileID: 2782028819484694317}
   - component: {fileID: 2782028819485715465}
   - component: {fileID: 2770540865788489709}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44928,7 +44909,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -45013,7 +44994,7 @@ GameObject:
   - component: {fileID: 2803322314272270729}
   - component: {fileID: 2803322314271212181}
   - component: {fileID: 2741865912683456827}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45100,7 +45081,7 @@ GameObject:
   - component: {fileID: 5351780808489099187}
   - component: {fileID: 8984649467657853216}
   - component: {fileID: 2488988737696903392}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45119,7 +45100,7 @@ GameObject:
   - component: {fileID: 5201712492442314752}
   - component: {fileID: 558027659344308103}
   - component: {fileID: 2211934870310961889}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45185,7 +45166,7 @@ GameObject:
   - component: {fileID: 2871404402362192531}
   - component: {fileID: 2871404402363251087}
   - component: {fileID: 2824655648529748513}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45232,7 +45213,7 @@ GameObject:
   - component: {fileID: 2873914584688664489}
   - component: {fileID: 2873914584689709809}
   - component: {fileID: 2811591098981003075}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45345,7 +45326,7 @@ GameObject:
   - component: {fileID: 2881675253804777101}
   - component: {fileID: 2881675253803768039}
   - component: {fileID: 2817018028170856177}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45396,7 +45377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5825240588258025933}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45415,7 +45396,7 @@ GameObject:
   - component: {fileID: 7420121621554598234}
   - component: {fileID: 5600987379375547287}
   - component: {fileID: 4950178163854584969}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45508,7 +45489,7 @@ GameObject:
   - component: {fileID: 2923780288655678683}
   - component: {fileID: 2923780288654684335}
   - component: {fileID: 2917147681222060663}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45527,7 +45508,7 @@ GameObject:
   - component: {fileID: 2949495578929742455}
   - component: {fileID: 2949495578928703851}
   - component: {fileID: 2883641685010629317}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45644,7 +45625,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -45710,7 +45691,7 @@ GameObject:
   - component: {fileID: 2650200000706383685}
   - component: {fileID: 3656345851449911030}
   - component: {fileID: 5836740367880175974}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45797,7 +45778,7 @@ GameObject:
   - component: {fileID: 2976013814003097060}
   - component: {fileID: 2984158255711443218}
   - component: {fileID: 3013767033535661968}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (239)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45829,7 +45810,7 @@ GameObject:
   - component: {fileID: 7285343460429020234}
   - component: {fileID: 8859695722662782492}
   - component: {fileID: 5969428545976804234}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (59)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45956,7 +45937,7 @@ GameObject:
   - component: {fileID: 3002509800196923855}
   - component: {fileID: 3002509800195869395}
   - component: {fileID: 2972789783903723901}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46037,7 +46018,7 @@ GameObject:
   - component: {fileID: 2960789934082230036}
   - component: {fileID: 2959325850123987028}
   - component: {fileID: 2960873603237932880}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46070,7 +46051,7 @@ GameObject:
   - component: {fileID: 3887086898138465855}
   - component: {fileID: 6550616595790109387}
   - component: {fileID: 2809225697811939561}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46089,7 +46070,7 @@ GameObject:
   - component: {fileID: 4641651222050836956}
   - component: {fileID: 2678948659138898817}
   - component: {fileID: 4710953458464706400}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46224,7 +46205,7 @@ GameObject:
   - component: {fileID: 3083557861487162732}
   - component: {fileID: 3083557861488249954}
   - component: {fileID: 3035620359883351222}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46271,7 +46252,7 @@ GameObject:
   - component: {fileID: 907559941204402586}
   - component: {fileID: 5389276648690672418}
   - component: {fileID: 927649612937727876}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46289,7 +46270,7 @@ GameObject:
   - component: {fileID: 918141443752930028}
   - component: {fileID: 3185742121624806895}
   - component: {fileID: 1971191633730142832}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46308,7 +46289,7 @@ GameObject:
   - component: {fileID: 3122485772712185959}
   - component: {fileID: 3130377739585420147}
   - component: {fileID: 3154427080671487495}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (82)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46327,7 +46308,7 @@ GameObject:
   - component: {fileID: 3123335465682865965}
   - component: {fileID: 3133768506615368667}
   - component: {fileID: 3154684553965753689}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (238)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46388,7 +46369,7 @@ GameObject:
   - component: {fileID: 3114372616770129915}
   - component: {fileID: 3114372616773496955}
   - component: {fileID: 3114372616772259157}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Prop_Brazier_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46470,7 +46451,7 @@ GameObject:
   - component: {fileID: 3128287965352784368}
   - component: {fileID: 3128287965351644578}
   - component: {fileID: 3138720580748263832}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46703,7 +46684,7 @@ GameObject:
   - component: {fileID: 3153523015477434195}
   - component: {fileID: 3153523015478417537}
   - component: {fileID: 3110828469988451435}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51235,7 +51216,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -51444,7 +51425,7 @@ GameObject:
   - component: {fileID: 3204640317172155387}
   - component: {fileID: 3206103956718775483}
   - component: {fileID: 3204556856322485183}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51571,7 +51552,7 @@ GameObject:
   - component: {fileID: 3223989595939909307}
   - component: {fileID: 3223989595940721797}
   - component: {fileID: 3194180153146369101}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Door_Large_Wood_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51637,7 +51618,7 @@ GameObject:
   - component: {fileID: 3228869295564932636}
   - component: {fileID: 3228869295563952784}
   - component: {fileID: 3180952852448839576}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51745,7 +51726,7 @@ GameObject:
   - component: {fileID: 3257564675325060518}
   - component: {fileID: 3257564675324058100}
   - component: {fileID: 3301738007808333262}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51777,7 +51758,7 @@ GameObject:
   - component: {fileID: 8493938854165492724}
   - component: {fileID: 2799770095899360302}
   - component: {fileID: 3607299677038464252}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51796,7 +51777,7 @@ GameObject:
   - component: {fileID: 173146104546313301}
   - component: {fileID: 4336821603924434898}
   - component: {fileID: 192268456081260060}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51815,7 +51796,7 @@ GameObject:
   - component: {fileID: 6268954259257296965}
   - component: {fileID: 7905831343143872910}
   - component: {fileID: 6576502051337906844}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51998,7 +51979,7 @@ GameObject:
   - component: {fileID: 3325397265250531789}
   - component: {fileID: 3325397265249525671}
   - component: {fileID: 3369789460882375089}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52038,7 +52019,7 @@ GameObject:
   - component: {fileID: 3339789272272615516}
   - component: {fileID: 3332152461114642970}
   - component: {fileID: 3322103444656527508}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52167,7 +52148,7 @@ GameObject:
   - component: {fileID: 3373156019775636947}
   - component: {fileID: 3373156019774656863}
   - component: {fileID: 3325318743773955159}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52310,7 +52291,7 @@ GameObject:
   - component: {fileID: 3317269911252547508}
   - component: {fileID: 3317470562514508500}
   - component: {fileID: 3317270742921556120}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_03 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52403,7 +52384,7 @@ GameObject:
   - component: {fileID: 3413085882316249485}
   - component: {fileID: 3413085882315199701}
   - component: {fileID: 3439416017268992359}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52510,7 +52491,7 @@ GameObject:
   - component: {fileID: 3428113845826607775}
   - component: {fileID: 3428113845825542405}
   - component: {fileID: 3419401516990523821}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52542,7 +52523,7 @@ GameObject:
   - component: {fileID: 3448153981570777475}
   - component: {fileID: 3448153981571842585}
   - component: {fileID: 3404001377902473905}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52724,7 +52705,7 @@ GameObject:
   - component: {fileID: 3511973796207669877}
   - component: {fileID: 3511973796206689703}
   - component: {fileID: 3482826178923348301}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52924,7 +52905,7 @@ GameObject:
   - component: {fileID: 3532185538960043213}
   - component: {fileID: 3532185538956710733}
   - component: {fileID: 3532185538958175843}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Prop_Brazier_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52958,7 +52939,7 @@ GameObject:
   - component: {fileID: 1631690207363941036}
   - component: {fileID: 5833903017349758996}
   - component: {fileID: 1649176199607037106}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53102,7 +53083,7 @@ GameObject:
   - component: {fileID: 1667162671805633982}
   - component: {fileID: 607857055002440630}
   - component: {fileID: 1213491485351617542}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53229,7 +53210,7 @@ GameObject:
   - component: {fileID: 3657880059438279986}
   - component: {fileID: 3657880059439272288}
   - component: {fileID: 3613142960922926426}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53262,7 +53243,7 @@ GameObject:
   - component: {fileID: 3662806757860994506}
   - component: {fileID: 3662806757859942546}
   - component: {fileID: 3616973743520439584}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53450,7 +53431,7 @@ GameObject:
   - component: {fileID: 4943198785662865648}
   - component: {fileID: 206353770440403894}
   - component: {fileID: 8563915799450870820}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (60)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53530,7 +53511,7 @@ GameObject:
   - component: {fileID: 3726344813085647097}
   - component: {fileID: 3726344813084547575}
   - component: {fileID: 3701094637479571747}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53565,7 +53546,7 @@ GameObject:
   - component: {fileID: 3681471549797613607}
   - component: {fileID: 3680703479771721031}
   - component: {fileID: 3681456971120822027}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_03 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53631,7 +53612,7 @@ GameObject:
   - component: {fileID: 3778755212008068945}
   - component: {fileID: 3770863550207786053}
   - component: {fileID: 3810994352119275825}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (78)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53719,7 +53700,7 @@ GameObject:
   - component: {fileID: 3781471329320812054}
   - component: {fileID: 3948357785280509958}
   - component: {fileID: 3940963350290909676}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53918,7 +53899,7 @@ GameObject:
   - component: {fileID: 1553464337787523274}
   - component: {fileID: 2968516101021358237}
   - component: {fileID: 6868766615464871404}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53974,7 +53955,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -53998,7 +53979,7 @@ GameObject:
   - component: {fileID: 1059117076136686625}
   - component: {fileID: 4603300313264976947}
   - component: {fileID: 617652188869213311}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54017,7 +53998,7 @@ GameObject:
   - component: {fileID: 1577690362680484571}
   - component: {fileID: 6483762669088030517}
   - component: {fileID: 8851099237575996019}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (52)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54097,7 +54078,7 @@ GameObject:
   - component: {fileID: 3880772061539758140}
   - component: {fileID: 3880772061538779118}
   - component: {fileID: 3833469123573973764}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54138,7 +54119,7 @@ GameObject:
   - component: {fileID: 3888232874078769163}
   - component: {fileID: 3888232874077779553}
   - component: {fileID: 3823571108315654263}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54204,7 +54185,7 @@ GameObject:
   - component: {fileID: 4140387710873504708}
   - component: {fileID: 481693725490795604}
   - component: {fileID: 9090385304546536250}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54237,7 +54218,7 @@ GameObject:
   - component: {fileID: 3910856027871124624}
   - component: {fileID: 3910856027870139202}
   - component: {fileID: 3940179829133701032}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54369,7 +54350,7 @@ GameObject:
   - component: {fileID: 3939451923171919106}
   - component: {fileID: 3939451923172951704}
   - component: {fileID: 3912645489821316656}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58930,7 +58911,7 @@ GameObject:
   - component: {fileID: 3976598154038154754}
   - component: {fileID: 3976598154039259240}
   - component: {fileID: 4020162417626771070}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59084,7 +59065,7 @@ GameObject:
   - component: {fileID: 4003873217835504843}
   - component: {fileID: 4003873217836489497}
   - component: {fileID: 3997207460700055539}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59227,7 +59208,7 @@ GameObject:
   - component: {fileID: 4084795319927779917}
   - component: {fileID: 4084795319926668703}
   - component: {fileID: 4060111371891720565}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59321,7 +59302,7 @@ GameObject:
   - component: {fileID: 8717307896114720872}
   - component: {fileID: 248937649735983261}
   - component: {fileID: 5974062825631314285}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (64)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59353,7 +59334,7 @@ GameObject:
   - component: {fileID: 4648089150483156695}
   - component: {fileID: 4703308308936778538}
   - component: {fileID: 6373160646805354412}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59482,7 +59463,7 @@ GameObject:
   - component: {fileID: 4146424389368646590}
   - component: {fileID: 4146424389367537458}
   - component: {fileID: 4134642296790403642}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59552,7 +59533,7 @@ GameObject:
   - component: {fileID: 4164304067246238635}
   - component: {fileID: 4156237361002021357}
   - component: {fileID: 4146055638693153635}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59570,7 +59551,7 @@ GameObject:
   - component: {fileID: 2133087611152880440}
   - component: {fileID: 6613814894079955328}
   - component: {fileID: 2152121921922120998}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59604,7 +59585,7 @@ GameObject:
   - component: {fileID: 4195677482400660825}
   - component: {fileID: 4195677482402038489}
   - component: {fileID: 4195677482402922487}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Prop_Brazier_01 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59796,7 +59777,7 @@ GameObject:
   - component: {fileID: 4215923831570096831}
   - component: {fileID: 4215923831569092299}
   - component: {fileID: 4209010301130167315}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59885,7 +59866,7 @@ GameObject:
   - component: {fileID: 4244089957200104079}
   - component: {fileID: 4215781515967176905}
   - component: {fileID: 4225821805049653831}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60105,7 +60086,7 @@ GameObject:
   - component: {fileID: 4276297718172734371}
   - component: {fileID: 4276297718171645385}
   - component: {fileID: 4304804105342168031}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60251,7 +60232,7 @@ GameObject:
   - component: {fileID: 4323019309884488870}
   - component: {fileID: 4312876810547124146}
   - component: {fileID: 4282353542865537734}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (88)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60331,7 +60312,7 @@ GameObject:
   - component: {fileID: 4301882395323485444}
   - component: {fileID: 4301882395324471688}
   - component: {fileID: 4276563117597101184}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60425,7 +60406,7 @@ GameObject:
   - component: {fileID: 5751944940511539576}
   - component: {fileID: 7391690486112904197}
   - component: {fileID: 5197965096092648881}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60573,7 +60554,7 @@ GameObject:
   - component: {fileID: 4374232508918459296}
   - component: {fileID: 4374232508919551986}
   - component: {fileID: 4346947408723368904}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60606,7 +60587,7 @@ GameObject:
   - component: {fileID: 485083547720661807}
   - component: {fileID: 5959682620290517656}
   - component: {fileID: 7329390031729914728}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (54)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60638,7 +60619,7 @@ GameObject:
   - component: {fileID: 4460364638443368499}
   - component: {fileID: 4460364638444440343}
   - component: {fileID: 4399830211197077747}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60772,7 +60753,7 @@ GameObject:
   - component: {fileID: 4512954536464566295}
   - component: {fileID: 4512954536463517007}
   - component: {fileID: 4487776685629012221}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60852,7 +60833,7 @@ GameObject:
   - component: {fileID: 4517485666514192687}
   - component: {fileID: 4517485666513078013}
   - component: {fileID: 4492665245690968599}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61048,7 +61029,7 @@ GameObject:
   - component: {fileID: 4541194934687362756}
   - component: {fileID: 4541194934686245142}
   - component: {fileID: 4606587308526771708}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61067,7 +61048,7 @@ GameObject:
   - component: {fileID: 4567258520627549399}
   - component: {fileID: 4559385405637427139}
   - component: {fileID: 4607643796410393271}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (77)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61184,7 +61165,7 @@ GameObject:
   - component: {fileID: 4584970233570245933}
   - component: {fileID: 4584970233569087151}
   - component: {fileID: 4558451598239949063}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Railing_Angle_03 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61311,7 +61292,7 @@ GameObject:
   - component: {fileID: 4592535597008079286}
   - component: {fileID: 4592535597009088476}
   - component: {fileID: 4566153401627259338}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61483,7 +61464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2324302517362285487}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61576,7 +61557,7 @@ GameObject:
   - component: {fileID: 4611214430621437308}
   - component: {fileID: 4611214430620379926}
   - component: {fileID: 4547397089892988160}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61637,7 +61618,7 @@ GameObject:
   - component: {fileID: 3679050337262744897}
   - component: {fileID: 1894063729989705788}
   - component: {fileID: 3818909615394079112}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61717,7 +61698,7 @@ GameObject:
   - component: {fileID: 4676220045768403907}
   - component: {fileID: 4676220045767370841}
   - component: {fileID: 4612382740458182897}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61849,7 +61830,7 @@ GameObject:
   - component: {fileID: 4722445689270545919}
   - component: {fileID: 4722445689271584483}
   - component: {fileID: 4711619646630636877}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61957,7 +61938,7 @@ GameObject:
   - component: {fileID: 4776972005177791292}
   - component: {fileID: 4776972005176863390}
   - component: {fileID: 4801155277812465912}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62048,7 +62029,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -62072,7 +62053,7 @@ GameObject:
   - component: {fileID: 4583910910682421657}
   - component: {fileID: 5645826680811005467}
   - component: {fileID: 1567156654717677127}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62166,7 +62147,7 @@ GameObject:
   - component: {fileID: 4851527472634074487}
   - component: {fileID: 4851527472635179805}
   - component: {fileID: 4877921835440205067}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62294,7 +62275,7 @@ GameObject:
   - component: {fileID: 187944600843446755}
   - component: {fileID: 3837127442973940384}
   - component: {fileID: 5072764450848149998}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62313,7 +62294,7 @@ GameObject:
   - component: {fileID: 4869777351026852799}
   - component: {fileID: 4877667779631458475}
   - component: {fileID: 4829941554078660063}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (73)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62360,7 +62341,7 @@ GameObject:
   - component: {fileID: 2492837635974963308}
   - component: {fileID: 2551953599453237314}
   - component: {fileID: 1096410669983785004}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (53)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62453,7 +62434,7 @@ GameObject:
   - component: {fileID: 4939290058420602484}
   - component: {fileID: 4939290058421586342}
   - component: {fileID: 4927941128941942092}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62571,7 +62552,7 @@ GameObject:
   - component: {fileID: 4993984721530788493}
   - component: {fileID: 4993984721529804127}
   - component: {fileID: 5018770159440652725}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62651,7 +62632,7 @@ GameObject:
   - component: {fileID: 4994363197487181260}
   - component: {fileID: 4994363197488167232}
   - component: {fileID: 5018618147963087944}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62725,7 +62706,7 @@ GameObject:
   - component: {fileID: 5004680773114875353}
   - component: {fileID: 5004680773113850803}
   - component: {fileID: 5013060801726166437}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62791,7 +62772,7 @@ GameObject:
   - component: {fileID: 5008039721988895294}
   - component: {fileID: 5008039721987862948}
   - component: {fileID: 5000998238505959692}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62910,7 +62891,7 @@ GameObject:
   - component: {fileID: 7073473343547296585}
   - component: {fileID: 4801371378921227338}
   - component: {fileID: 8488429984830251989}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67445,7 +67426,7 @@ GameObject:
   - component: {fileID: 5119305143120396636}
   - component: {fileID: 5119305143121309604}
   - component: {fileID: 5183515718524394360}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Pillar_Square_07 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67540,7 +67521,7 @@ GameObject:
   - component: {fileID: 5133445763254483822}
   - component: {fileID: 5133445763255540996}
   - component: {fileID: 5176996768057623314}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67573,7 +67554,7 @@ GameObject:
   - component: {fileID: 2143302275622237}
   - component: {fileID: 4524098693101104601}
   - component: {fileID: 6522185818761661222}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67684,7 +67665,7 @@ GameObject:
   - component: {fileID: 7756591284612864368}
   - component: {fileID: 7786889673711605216}
   - component: {fileID: 5407215765885429323}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (71)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67780,7 +67761,7 @@ GameObject:
   - component: {fileID: 5145303482357579234}
   - component: {fileID: 5143321528288645794}
   - component: {fileID: 5144868177730409894}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67815,7 +67796,7 @@ GameObject:
   - component: {fileID: 5177974650813390097}
   - component: {fileID: 5188082112075036165}
   - component: {fileID: 5136450418519763825}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (86)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67833,7 +67814,7 @@ GameObject:
   - component: {fileID: 5162729259819978375}
   - component: {fileID: 5170921062355133633}
   - component: {fileID: 5180996879360945743}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68083,7 +68064,7 @@ GameObject:
   - component: {fileID: 5191164893526856050}
   - component: {fileID: 5191164893527915118}
   - component: {fileID: 5251424459327640000}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68221,7 +68202,7 @@ GameObject:
   - component: {fileID: 541990142238573524}
   - component: {fileID: 3214213935076193483}
   - component: {fileID: 4503493794716294034}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72786,7 +72767,7 @@ GameObject:
   - component: {fileID: 5276467926149331486}
   - component: {fileID: 5442839570001968142}
   - component: {fileID: 5472620070826839524}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72868,7 +72849,7 @@ GameObject:
   - component: {fileID: 5306873277956387967}
   - component: {fileID: 5307078400277010719}
   - component: {fileID: 5306879061714563923}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_03 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72915,7 +72896,7 @@ GameObject:
   - component: {fileID: 5279307596982220964}
   - component: {fileID: 5279307596983200808}
   - component: {fileID: 5308022166649813280}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73155,7 +73136,7 @@ GameObject:
   - component: {fileID: 5338272676878572346}
   - component: {fileID: 5234384431446367530}
   - component: {fileID: 5250700039106636992}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77735,7 +77716,7 @@ GameObject:
   - component: {fileID: 5436630036005007219}
   - component: {fileID: 5436630036006095129}
   - component: {fileID: 5446823022132713231}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82142,7 +82123,7 @@ GameObject:
   - component: {fileID: 5444628972533690601}
   - component: {fileID: 5444628972534677307}
   - component: {fileID: 5433389883025769425}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82236,7 +82217,7 @@ GameObject:
   - component: {fileID: 5449369582906351535}
   - component: {fileID: 5449369582905232163}
   - component: {fileID: 5425202041189916203}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82363,7 +82344,7 @@ GameObject:
   - component: {fileID: 5465633455575419113}
   - component: {fileID: 5465633455574397415}
   - component: {fileID: 5418845753224468787}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82395,7 +82376,7 @@ GameObject:
   - component: {fileID: 4048822592754623701}
   - component: {fileID: 1258688566600954280}
   - component: {fileID: 4594142724378578972}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86889,7 +86870,7 @@ GameObject:
   - component: {fileID: 1269249364217423765}
   - component: {fileID: 7565388912402510092}
   - component: {fileID: 4755647498121708674}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86916,7 +86897,7 @@ GameObject:
   - component: {fileID: 6250088535341531268}
   - component: {fileID: 805544587403764275}
   - component: {fileID: 4288727104760115476}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86935,7 +86916,7 @@ GameObject:
   - component: {fileID: 5943217079270197840}
   - component: {fileID: 2107488094742280579}
   - component: {fileID: 6678375963143482837}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87023,7 +87004,7 @@ GameObject:
   - component: {fileID: 5556814353301674113}
   - component: {fileID: 5556814353300632477}
   - component: {fileID: 5618156392532056115}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87133,7 +87114,7 @@ GameObject:
   - component: {fileID: 7672288930371290773}
   - component: {fileID: 3182831463446758445}
   - component: {fileID: 7655717755949361291}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87198,7 +87179,7 @@ GameObject:
   - component: {fileID: 5609593633312614644}
   - component: {fileID: 5609593633311381364}
   - component: {fileID: 5609593633310747226}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Prop_Brazier_01 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87313,7 +87294,7 @@ GameObject:
   - component: {fileID: 5626017256961315558}
   - component: {fileID: 5626017256962371782}
   - component: {fileID: 5690875018690580074}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Door_Large_Wood_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87440,7 +87421,7 @@ GameObject:
   - component: {fileID: 5640725855308415040}
   - component: {fileID: 5640725855309522474}
   - component: {fileID: 5666136219879929916}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87564,7 +87545,7 @@ GameObject:
   - component: {fileID: 5648089241125180276}
   - component: {fileID: 5649060743857552436}
   - component: {fileID: 5648638894962195248}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87641,7 +87622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4205321443965548252}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87760,7 +87741,7 @@ GameObject:
   - component: {fileID: 5741682025220506445}
   - component: {fileID: 5741682025221557781}
   - component: {fileID: 5712948353755820967}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87854,7 +87835,7 @@ GameObject:
   - component: {fileID: 5757257621301210869}
   - component: {fileID: 5757257621300136095}
   - component: {fileID: 5692595924572722825}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87948,7 +87929,7 @@ GameObject:
   - component: {fileID: 5760555711253613217}
   - component: {fileID: 5760555711252580667}
   - component: {fileID: 5698924996948113811}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87967,7 +87948,7 @@ GameObject:
   - component: {fileID: 5779170397801567062}
   - component: {fileID: 5779170397802683524}
   - component: {fileID: 5826477729778901102}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88121,7 +88102,7 @@ GameObject:
   - component: {fileID: 5812910400194966699}
   - component: {fileID: 5812910400195999537}
   - component: {fileID: 5786184085151565721}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92642,7 +92623,7 @@ GameObject:
   - component: {fileID: 5879145262847891669}
   - component: {fileID: 5877653380645222293}
   - component: {fileID: 5879202401980641425}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92795,7 +92776,7 @@ GameObject:
   - component: {fileID: 5880941318358887610}
   - component: {fileID: 5880941318357829542}
   - component: {fileID: 5870225201241975816}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92874,7 +92855,7 @@ GameObject:
   - component: {fileID: 5875084251658998159}
   - component: {fileID: 5903940215599725513}
   - component: {fileID: 5893899239058239815}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92969,7 +92950,7 @@ GameObject:
   - component: {fileID: 201099726709598801}
   - component: {fileID: 6877949937651440576}
   - component: {fileID: 2047807430688496424}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93132,7 +93113,7 @@ GameObject:
   - component: {fileID: 5977356378971497230}
   - component: {fileID: 5977356378972594012}
   - component: {fileID: 5914568936871744358}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93251,7 +93232,7 @@ GameObject:
   - component: {fileID: 5988161400282392037}
   - component: {fileID: 5988161400283376183}
   - component: {fileID: 6048980171100378845}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93298,7 +93279,7 @@ GameObject:
   - component: {fileID: 2905535171316294090}
   - component: {fileID: 634470307515214627}
   - component: {fileID: 7104807035333318631}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93325,7 +93306,7 @@ GameObject:
   - component: {fileID: 5940816500815999968}
   - component: {fileID: 5979494610277308224}
   - component: {fileID: 6531193927100277014}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93357,7 +93338,7 @@ GameObject:
   - component: {fileID: 6051373810222899559}
   - component: {fileID: 6051373810221893389}
   - component: {fileID: 5989513673169688859}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93484,7 +93465,7 @@ GameObject:
   - component: {fileID: 6054219174270492109}
   - component: {fileID: 6054219174271564711}
   - component: {fileID: 6116208095643280817}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93533,7 +93514,7 @@ GameObject:
   - component: {fileID: 6108832912699519896}
   - component: {fileID: 6107332751015812312}
   - component: {fileID: 6108881328831110108}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93765,7 +93746,7 @@ GameObject:
   - component: {fileID: 6148892986171152585}
   - component: {fileID: 6148892986170088275}
   - component: {fileID: 6175135918671686651}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93798,7 +93779,7 @@ GameObject:
   - component: {fileID: 6157054173540842035}
   - component: {fileID: 6157054173539746071}
   - component: {fileID: 6168647687365362419}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93904,7 +93885,7 @@ GameObject:
   - component: {fileID: 6196887849472622318}
   - component: {fileID: 6196887849471510496}
   - component: {fileID: 6130959854996270900}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93970,7 +93951,7 @@ GameObject:
   - component: {fileID: 6199262247545676626}
   - component: {fileID: 6199262247544630794}
   - component: {fileID: 6264156374191838136}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94125,7 +94106,7 @@ GameObject:
   - component: {fileID: 6226507682535971989}
   - component: {fileID: 6226507682537077503}
   - component: {fileID: 6236699504811435241}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94262,7 +94243,7 @@ GameObject:
   - component: {fileID: 6270018289656409750}
   - component: {fileID: 6270018289657370420}
   - component: {fileID: 6334739044718001490}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94343,7 +94324,7 @@ GameObject:
   - component: {fileID: 6296006736854505557}
   - component: {fileID: 6303588193213635747}
   - component: {fileID: 6323063948900794913}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (242)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94514,7 +94495,7 @@ GameObject:
   - component: {fileID: 6341347909377849187}
   - component: {fileID: 6341347909378898491}
   - component: {fileID: 6405820098143504265}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94623,7 +94604,7 @@ GameObject:
   - component: {fileID: 6481143059055614303}
   - component: {fileID: 6482598143983416863}
   - component: {fileID: 6480769331430584603}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94764,7 +94745,7 @@ GameObject:
   - component: {fileID: 6441259521675356292}
   - component: {fileID: 6441259521676339030}
   - component: {fileID: 6452392813263297468}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94851,7 +94832,7 @@ GameObject:
   - component: {fileID: 6453778043658792709}
   - component: {fileID: 6453778043657733145}
   - component: {fileID: 6447495092799238071}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94917,7 +94898,7 @@ GameObject:
   - component: {fileID: 6476550557196932472}
   - component: {fileID: 6468662035766525548}
   - component: {fileID: 6445458766176953112}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (87)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95004,7 +94985,7 @@ GameObject:
   - component: {fileID: 6723245813770801958}
   - component: {fileID: 9140519440496878989}
   - component: {fileID: 6289390231515954543}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95111,7 +95092,7 @@ GameObject:
   - component: {fileID: 9054187190104896386}
   - component: {fileID: 6714035903227968641}
   - component: {fileID: 7656154382137301790}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95157,7 +95138,7 @@ GameObject:
   - component: {fileID: 2968502889542456951}
   - component: {fileID: 33127740509602570}
   - component: {fileID: 3369782565523612350}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95215,7 +95196,7 @@ GameObject:
   - component: {fileID: 3201706091438246803}
   - component: {fileID: 4033486395821528572}
   - component: {fileID: 2403192763636153322}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95371,7 +95352,7 @@ GameObject:
   - component: {fileID: 6588189730959463123}
   - component: {fileID: 6588189730958345823}
   - component: {fileID: 6595468774103438167}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95437,7 +95418,7 @@ GameObject:
   - component: {fileID: 6588658984413188125}
   - component: {fileID: 6588658984414297193}
   - component: {fileID: 6595256134744303281}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95561,7 +95542,7 @@ GameObject:
   - component: {fileID: 6578643316970332336}
   - component: {fileID: 6578737811577794436}
   - component: {fileID: 6578877765154350918}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_Corner_01 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100177,7 +100158,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -100243,7 +100224,7 @@ GameObject:
   - component: {fileID: 6739248091667384525}
   - component: {fileID: 6861093509435690717}
   - component: {fileID: 6867425399647878967}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100262,7 +100243,7 @@ GameObject:
   - component: {fileID: 6743708065376292168}
   - component: {fileID: 6743708065375312324}
   - component: {fileID: 6736341061433167052}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100356,7 +100337,7 @@ GameObject:
   - component: {fileID: 6758592635364921215}
   - component: {fileID: 6758592635363803309}
   - component: {fileID: 6711254371090775111}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100505,7 +100486,7 @@ GameObject:
   - component: {fileID: 6776134404249021241}
   - component: {fileID: 6776134404247971425}
   - component: {fileID: 6840791315531684819}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100675,7 +100656,7 @@ GameObject:
   - component: {fileID: 6791625717656391828}
   - component: {fileID: 6791625717655346636}
   - component: {fileID: 6820216444053495934}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100722,7 +100703,7 @@ GameObject:
   - component: {fileID: 6786434696348139914}
   - component: {fileID: 6776329563095460510}
   - component: {fileID: 6826833155539138538}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (89)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100807,7 +100788,7 @@ GameObject:
   - component: {fileID: 6810117304734194766}
   - component: {fileID: 6810117304735278954}
   - component: {fileID: 6803626077569836174}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100916,7 +100897,7 @@ GameObject:
   - component: {fileID: 6776453580198327986}
   - component: {fileID: 6776094646609615826}
   - component: {fileID: 6776461558681383326}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_03 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105527,7 +105508,7 @@ GameObject:
   - component: {fileID: 3324603643888809396}
   - component: {fileID: 6624191380946571020}
   - component: {fileID: 1166954162225843411}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105545,7 +105526,7 @@ GameObject:
   - component: {fileID: 6965914916114769488}
   - component: {fileID: 6965914916115503568}
   - component: {fileID: 6965914916116899070}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Prop_Brazier_01 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105626,7 +105607,7 @@ GameObject:
   - component: {fileID: 5119417554041358385}
   - component: {fileID: 97127969098025609}
   - component: {fileID: 5137538144743892527}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105692,7 +105673,7 @@ GameObject:
   - component: {fileID: 6973984768350858107}
   - component: {fileID: 6973984768351839401}
   - component: {fileID: 6926782835274668099}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105798,7 +105779,7 @@ GameObject:
   - component: {fileID: 7041093086736009022}
   - component: {fileID: 7041093086734925360}
   - component: {fileID: 7015680165273376484}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105830,7 +105811,7 @@ GameObject:
   - component: {fileID: 5078484295601070881}
   - component: {fileID: 7417857244243733538}
   - component: {fileID: 5880740212601228221}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105849,7 +105830,7 @@ GameObject:
   - component: {fileID: 7055524245207167557}
   - component: {fileID: 7055524245206092619}
   - component: {fileID: 6989602842533094303}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105929,7 +105910,7 @@ GameObject:
   - component: {fileID: 7062155260766894145}
   - component: {fileID: 7062155260767912271}
   - component: {fileID: 7127966624349350299}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106058,7 +106039,7 @@ GameObject:
   - component: {fileID: 1056231448321650216}
   - component: {fileID: 7801031102480657106}
   - component: {fileID: 4749913055899649837}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106077,7 +106058,7 @@ GameObject:
   - component: {fileID: 7089424199213722740}
   - component: {fileID: 7089424199212606374}
   - component: {fileID: 7100703013352333132}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106212,7 +106193,7 @@ GameObject:
   - component: {fileID: 4247566110660887395}
   - component: {fileID: 7622380493892586681}
   - component: {fileID: 9015460215167941739}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106231,7 +106212,7 @@ GameObject:
   - component: {fileID: 7120087412477644312}
   - component: {fileID: 7127668874161441518}
   - component: {fileID: 7084232767106946156}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (246)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106332,7 +106313,7 @@ GameObject:
   - component: {fileID: 7134744805296279633}
   - component: {fileID: 7134744805295169411}
   - component: {fileID: 7200067106952962921}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106448,7 +106429,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -106508,7 +106489,7 @@ GameObject:
   - component: {fileID: 7182918383212171308}
   - component: {fileID: 7182918383211178274}
   - component: {fileID: 7153006062582907382}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106728,7 +106709,7 @@ GameObject:
   - component: {fileID: 7242065404645799238}
   - component: {fileID: 7242065404646841946}
   - component: {fileID: 7235747836152706548}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106746,7 +106727,7 @@ GameObject:
   - component: {fileID: 7250464369400525201}
   - component: {fileID: 7276037207455439831}
   - component: {fileID: 7268239372311073113}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: torche-wall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111504,7 +111485,7 @@ GameObject:
   - component: {fileID: 7305471004706305927}
   - component: {fileID: 7305471004707337245}
   - component: {fileID: 7315257417906668725}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111723,7 +111704,7 @@ GameObject:
   - component: {fileID: 7363185244785859080}
   - component: {fileID: 7363185244784779564}
   - component: {fileID: 7405740444205032136}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111755,7 +111736,7 @@ GameObject:
   - component: {fileID: 7375233343748298862}
   - component: {fileID: 7271916990788050558}
   - component: {fileID: 7246703895624953748}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116275,7 +116256,7 @@ GameObject:
   - component: {fileID: 7407594540204548988}
   - component: {fileID: 7407594540205546098}
   - component: {fileID: 7360923409674908326}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116369,7 +116350,7 @@ GameObject:
   - component: {fileID: 7416889684925919636}
   - component: {fileID: 7416889684927045088}
   - component: {fileID: 7351709872234202936}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116425,7 +116406,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -116513,7 +116494,7 @@ GameObject:
   - component: {fileID: 7487421064681741724}
   - component: {fileID: 7487421064682748918}
   - component: {fileID: 7425700561352009184}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116590,7 +116571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 120395870044107768}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116622,7 +116603,7 @@ GameObject:
   - component: {fileID: 3482793383990286777}
   - component: {fileID: 7164978871289894499}
   - component: {fileID: 8627319853322872497}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116693,7 +116674,7 @@ GameObject:
   - component: {fileID: 9153143332291286765}
   - component: {fileID: 7298804546812764861}
   - component: {fileID: 629577991443218952}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116709,7 +116690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9038833250268865960}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116789,7 +116770,7 @@ GameObject:
   - component: {fileID: 7550147180947170567}
   - component: {fileID: 7550147180948219999}
   - component: {fileID: 7503410361631167981}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116888,7 +116869,7 @@ GameObject:
   - component: {fileID: 7599804466177294745}
   - component: {fileID: 7599804466178412107}
   - component: {fileID: 7610977396479799969}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117032,7 +117013,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -117117,7 +117098,7 @@ GameObject:
   - component: {fileID: 7622437184865239204}
   - component: {fileID: 7622437184864254378}
   - component: {fileID: 7575645080021324158}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117344,7 +117325,7 @@ GameObject:
   - component: {fileID: 7663753752945350478}
   - component: {fileID: 7663753752944236700}
   - component: {fileID: 7688608924001870966}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117363,7 +117344,7 @@ GameObject:
   - component: {fileID: 7665611601771971276}
   - component: {fileID: 7665611601770852024}
   - component: {fileID: 7676713021745362016}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117527,7 +117508,7 @@ GameObject:
   - component: {fileID: 7687140237862516576}
   - component: {fileID: 7687140237863604490}
   - component: {fileID: 7659496834247151388}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117634,7 +117615,7 @@ GameObject:
   - component: {fileID: 7685860225163394525}
   - component: {fileID: 7677987093671646921}
   - component: {fileID: 7654469912489462717}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-pillar-stone-round-tall (85)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117714,7 +117695,7 @@ GameObject:
   - component: {fileID: 7728047227420976332}
   - component: {fileID: 7728047227419944790}
   - component: {fileID: 7771162311945852926}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117780,7 +117761,7 @@ GameObject:
   - component: {fileID: 7730018351317553951}
   - component: {fileID: 7730018351318594933}
   - component: {fileID: 7756113509752466275}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118086,7 +118067,7 @@ GameObject:
   - component: {fileID: 7805595588385300862}
   - component: {fileID: 7805595588386343522}
   - component: {fileID: 7834431133544604108}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118133,7 +118114,7 @@ GameObject:
   - component: {fileID: 7830985654982475596}
   - component: {fileID: 7830985654983585950}
   - component: {fileID: 7801727201504693364}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118313,7 +118294,7 @@ GameObject:
   - component: {fileID: 7872884188641748516}
   - component: {fileID: 7872884188642734760}
   - component: {fileID: 7901607556385941408}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118345,7 +118326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6284512748360453603}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118463,7 +118444,7 @@ GameObject:
   - component: {fileID: 7911507109735555014}
   - component: {fileID: 7911507109736526770}
   - component: {fileID: 7864341848025196906}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118496,7 +118477,7 @@ GameObject:
   - component: {fileID: 7925780193625639611}
   - component: {fileID: 7925780193626781417}
   - component: {fileID: 7861341005879720659}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118576,7 +118557,7 @@ GameObject:
   - component: {fileID: 7118643898749577121}
   - component: {fileID: 7505956849471525400}
   - component: {fileID: 8906187817328680267}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (69)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118663,7 +118644,7 @@ GameObject:
   - component: {fileID: 7966215898672915894}
   - component: {fileID: 7966215898669423158}
   - component: {fileID: 7966215898670589720}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Prop_Brazier_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118697,7 +118678,7 @@ GameObject:
   - component: {fileID: 5273040847869479895}
   - component: {fileID: 1116708870861719919}
   - component: {fileID: 5290175040280651209}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118716,7 +118697,7 @@ GameObject:
   - component: {fileID: 105796241627800412}
   - component: {fileID: 726885816784992792}
   - component: {fileID: 7446349050991213539}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (61)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118824,7 +118805,7 @@ GameObject:
   - component: {fileID: 8010392369486869779}
   - component: {fileID: 8010392369487912463}
   - component: {fileID: 8052672686593389985}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118918,7 +118899,7 @@ GameObject:
   - component: {fileID: 8013315158620114661}
   - component: {fileID: 8013315158621179263}
   - component: {fileID: 8057572360783347159}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119032,7 +119013,7 @@ GameObject:
   - component: {fileID: 8006057398345071183}
   - component: {fileID: 8006361259156804879}
   - component: {fileID: 8005938688639570443}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119139,7 +119120,7 @@ GameObject:
   - component: {fileID: 3651567018891651211}
   - component: {fileID: 7632074760903674809}
   - component: {fileID: 7356404631827681508}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (48)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119221,7 +119202,7 @@ GameObject:
   - component: {fileID: 8120679841378986772}
   - component: {fileID: 8121404813147800660}
   - component: {fileID: 8120983342058570576}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119254,7 +119235,7 @@ GameObject:
   - component: {fileID: 3543829702938091275}
   - component: {fileID: 1172443912920826670}
   - component: {fileID: 7611128449664109203}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (73)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119329,7 +119310,7 @@ GameObject:
   - component: {fileID: 8125199296153744735}
   - component: {fileID: 8125199296152702033}
   - component: {fileID: 8081936709685290117}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119462,7 +119443,7 @@ GameObject:
   - component: {fileID: 8142638554525528936}
   - component: {fileID: 8142638554526640100}
   - component: {fileID: 8208455596732461804}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119541,7 +119522,7 @@ GameObject:
   - component: {fileID: 4523394738675527837}
   - component: {fileID: 3919910362357461042}
   - component: {fileID: 8839760593100229160}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119574,7 +119555,7 @@ GameObject:
   - component: {fileID: 8163603457722051944}
   - component: {fileID: 8163603457722979530}
   - component: {fileID: 8187796892855762604}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119677,7 +119658,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -119761,7 +119742,7 @@ GameObject:
   - component: {fileID: 7670876188012147974}
   - component: {fileID: 5175246663191442946}
   - component: {fileID: 3211486178138028076}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119795,7 +119776,7 @@ GameObject:
   - component: {fileID: 700712628071695621}
   - component: {fileID: 5188072283438198983}
   - component: {fileID: 2063171301900652470}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119814,7 +119795,7 @@ GameObject:
   - component: {fileID: 8191086433539891345}
   - component: {fileID: 8181252039173416039}
   - component: {fileID: 8156991285904341733}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (237)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119901,7 +119882,7 @@ GameObject:
   - component: {fileID: 8223256328723458663}
   - component: {fileID: 8223256328724470245}
   - component: {fileID: 8285824788704638541}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Railing_Angle_03 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119933,7 +119914,7 @@ GameObject:
   - component: {fileID: 3056254529204386447}
   - component: {fileID: 8742541575283570005}
   - component: {fileID: 7892211855014856071}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119991,7 +119972,7 @@ GameObject:
   - component: {fileID: 8227419401720941059}
   - component: {fileID: 8227419401719985057}
   - component: {fileID: 8270787777904335303}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_02 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120085,7 +120066,7 @@ GameObject:
   - component: {fileID: 8232990822168386394}
   - component: {fileID: 8232990822169366486}
   - component: {fileID: 8262779065208871646}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120202,7 +120183,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -120263,7 +120244,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -120287,7 +120268,7 @@ GameObject:
   - component: {fileID: 8216816311273030922}
   - component: {fileID: 8224362584437228028}
   - component: {fileID: 8257384050532212606}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (243)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120331,7 +120312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1014180418937885837}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120390,7 +120371,7 @@ GameObject:
   - component: {fileID: 7087503794954814486}
   - component: {fileID: 1986767501041343432}
   - component: {fileID: 9153982192009554074}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (66)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120409,7 +120390,7 @@ GameObject:
   - component: {fileID: 8298765658131493897}
   - component: {fileID: 8298765658132453501}
   - component: {fileID: 8341708397907231397}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_07 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120489,7 +120470,7 @@ GameObject:
   - component: {fileID: 1524864807666301347}
   - component: {fileID: 8971385408916207844}
   - component: {fileID: 3057135934430421748}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (68)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120508,7 +120489,7 @@ GameObject:
   - component: {fileID: 7763722114876702294}
   - component: {fileID: 3178582180131040750}
   - component: {fileID: 4374510484431590081}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (70)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120596,7 +120577,7 @@ GameObject:
   - component: {fileID: 1133914143238424933}
   - component: {fileID: 4597923519761613665}
   - component: {fileID: 3607954120362550778}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (47)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120664,7 +120645,7 @@ GameObject:
   - component: {fileID: 8374794223363808553}
   - component: {fileID: 8376214910963855977}
   - component: {fileID: 8374666577978733933}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120696,7 +120677,7 @@ GameObject:
   - component: {fileID: 5964243095401566706}
   - component: {fileID: 8236762855118708465}
   - component: {fileID: 4982054179280042350}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120780,7 +120761,7 @@ GameObject:
   - component: {fileID: 8483599508351573827}
   - component: {fileID: 8483544596028887159}
   - component: {fileID: 8483404608226941109}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_Corner_01 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120898,7 +120879,7 @@ GameObject:
   - component: {fileID: 5902427280690819286}
   - component: {fileID: 8170164163786686421}
   - component: {fileID: 5048344732341016650}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121039,7 +121020,7 @@ GameObject:
   - component: {fileID: 8600239459762923153}
   - component: {fileID: 8600239459761789635}
   - component: {fileID: 8628088544998020857}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121166,7 +121147,7 @@ GameObject:
   - component: {fileID: 8603918408151337251}
   - component: {fileID: 8603918408152479089}
   - component: {fileID: 8610973598737250635}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121212,7 +121193,7 @@ GameObject:
   - component: {fileID: 8626871093940431608}
   - component: {fileID: 8626871093941469668}
   - component: {fileID: 8598141080690993738}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Window_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121384,7 +121365,7 @@ GameObject:
   - component: {fileID: 8581654780865208817}
   - component: {fileID: 8583680992282382001}
   - component: {fileID: 8582134205487843765}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121477,7 +121458,7 @@ GameObject:
   - component: {fileID: 8667833621863106079}
   - component: {fileID: 8667833621862126227}
   - component: {fileID: 8692062184328152987}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121496,7 +121477,7 @@ GameObject:
   - component: {fileID: 8672260597517754559}
   - component: {fileID: 8672260597518820133}
   - component: {fileID: 8700167100772684685}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121603,7 +121584,7 @@ GameObject:
   - component: {fileID: 8698912880268598209}
   - component: {fileID: 8698912880267509163}
   - component: {fileID: 8673217879976780733}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121696,7 +121677,7 @@ GameObject:
   - component: {fileID: 8716539218037463631}
   - component: {fileID: 8716539218038530881}
   - component: {fileID: 8655092851310726037}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121783,7 +121764,7 @@ GameObject:
   - component: {fileID: 2402438633836735259}
   - component: {fileID: 8245366641881834689}
   - component: {fileID: 7401690891123758099}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121839,7 +121820,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 2048
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -121884,7 +121865,7 @@ GameObject:
   - component: {fileID: 8779484241067450533}
   - component: {fileID: 8892322528412853941}
   - component: {fileID: 8871421715639883615}
-  m_Layer: 1
+  m_Layer: 11
   m_Name: FX_Fire_Small_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121964,7 +121945,7 @@ GameObject:
   - component: {fileID: 8796024535045796358}
   - component: {fileID: 8796024535046853740}
   - component: {fileID: 8859718661773560442}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_Pillar_Large_Round_01_Base 1 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122119,7 +122100,7 @@ GameObject:
   - component: {fileID: 4841038376469090556}
   - component: {fileID: 8915101803155194473}
   - component: {fileID: 7585416187733870309}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (72)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126734,7 +126715,7 @@ GameObject:
   - component: {fileID: 8905010744094359400}
   - component: {fileID: 8905796354802274824}
   - component: {fileID: 8905001117434902596}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_03 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126862,7 +126843,7 @@ GameObject:
   - component: {fileID: 8955930931671145021}
   - component: {fileID: 8955930931670029807}
   - component: {fileID: 8980645777699858693}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Wall_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127119,7 +127100,7 @@ GameObject:
   - component: {fileID: 9077774377821954000}
   - component: {fileID: 9070121453110549286}
   - component: {fileID: 9035727590364153252}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: dungeon-floor-stone (245)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127213,7 +127194,7 @@ GameObject:
   - component: {fileID: 9055571228027135487}
   - component: {fileID: 9055571228028215003}
   - component: {fileID: 9026034198523174207}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_03 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127293,7 +127274,7 @@ GameObject:
   - component: {fileID: 2631167540977886360}
   - component: {fileID: 5266962863747478072}
   - component: {fileID: 6764976520586232217}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127359,7 +127340,7 @@ GameObject:
   - component: {fileID: 7176652126449804964}
   - component: {fileID: 5594450876036846629}
   - component: {fileID: 3585056522646521255}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127486,7 +127467,7 @@ GameObject:
   - component: {fileID: 9154050461069376101}
   - component: {fileID: 9154050461070460471}
   - component: {fileID: 9218490812785248781}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127600,7 +127581,7 @@ GameObject:
   - component: {fileID: 9193393703235934045}
   - component: {fileID: 9192422095260465181}
   - component: {fileID: 9193125320430272281}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Curved_01 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127666,7 +127647,7 @@ GameObject:
   - component: {fileID: 9183618321900238700}
   - component: {fileID: 9183618321901227618}
   - component: {fileID: 9194251604808017590}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127801,7 +127782,7 @@ GameObject:
   - component: {fileID: 3573850640716218972}
   - component: {fileID: 6283453686740638325}
   - component: {fileID: 8799471635305468989}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Plane (58)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127867,7 +127848,7 @@ GameObject:
   - component: {fileID: 9204644548121272746}
   - component: {fileID: 9204644548122271224}
   - component: {fileID: 9176761106940498370}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Ceiling_Stone_Flat_01 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127913,7 +127894,7 @@ GameObject:
   - component: {fileID: 9220063124490706466}
   - component: {fileID: 9220063124489655162}
   - component: {fileID: 9156604932105006792}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SM_Env_Tiles_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
