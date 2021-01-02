@@ -252,6 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268170729}
   - component: {fileID: 268170728}
+  - component: {fileID: 268170730}
   m_Layer: 0
   m_Name: Game Initializer
   m_TagString: Untagged
@@ -288,6 +289,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &268170730
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268170727}
+  m_Enabled: 1
 --- !u!1001 &281498907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37065,7 +37074,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2066732150519776768, guid: 1da6ebfeaf6cbfa4ea02b63b1497511e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1da6ebfeaf6cbfa4ea02b63b1497511e, type: 3}
 --- !u!1 &2076334184423040883
 GameObject:
