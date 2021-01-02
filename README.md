@@ -1,6 +1,8 @@
 # Project Ogmia
 ##### *Kilonova Studios -- Diciembre de 2020*
 
+*Para una mejor visualización del Documento de Diseño de Juego, por favor lea su versión PDF haciendo adjuntada en la raíz del proyecto*
+
 Índice
 ======
 
