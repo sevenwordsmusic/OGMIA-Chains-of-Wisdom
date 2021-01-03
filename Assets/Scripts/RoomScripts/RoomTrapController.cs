@@ -77,7 +77,7 @@ public class RoomTrapController : MonoBehaviour
                 intervalAux = 0 ;
                 foreach (TrapSpikesController trap in traps)
                 {
-                    trap.toggleTrap();
+                    //trap.toggleTrap();
                 }
             }
         }

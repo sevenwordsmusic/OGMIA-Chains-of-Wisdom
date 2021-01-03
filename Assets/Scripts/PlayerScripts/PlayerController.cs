@@ -338,11 +338,7 @@ public class PlayerController : MonoBehaviour
         Transform trigParent = trig.transform.parent;
         if (trig.transform.parent != null)
         {
-            if (trigParent.CompareTag("trap"))
-            {
-                print("Player Damaged: -" + trig.transform.parent.GetComponent<TrapSpikesController>().damage + "hp");
-            }
-            else if (trigParent.CompareTag("enemy"))
+            if (trigParent.CompareTag("enemy"))
             {
                 //print("enemy");
                 //trigParent.GetComponent<EnemyController>().enemyDefeated();
