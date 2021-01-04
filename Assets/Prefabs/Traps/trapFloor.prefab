@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6472499468161545993}
   - component: {fileID: 4879331805301044775}
+  - component: {fileID: 6205673824001696262}
+  - component: {fileID: 3587210441762536458}
   m_Layer: 0
   m_Name: trapFloor
   m_TagString: trap
@@ -45,9 +47,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d7b830c7e019b4f8b3be89900d0ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageInterval: 2
+  isSmart: 0
+  cycleTime: 3
+  isAsymmetric: 0
+  asymmetricLaunchTime: 3
+  asymmetricHideTime: 0.5
   damage: 10
-  damageCol: {fileID: 8320753194278096296}
+--- !u!95 &6205673824001696262
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983350475797997088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8fb7a8c22adf1234da3b2c671064df91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &3587210441762536458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983350475797997088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.71, y: 3.19, z: 3.49}
+  m_Center: {x: 0, y: 1.65, z: 0}
 --- !u!65 &8320753194278096296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57,10 +94,24 @@ BoxCollider:
   m_GameObject: {fileID: 7845436845388766588}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2.0010405}
   m_Center: {x: 0.009458423, y: 1.1780218, z: -0.028076738}
+--- !u!114 &792662980874597767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845436845388766588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04644346a2ed4e34696620ffb63bc905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToDeal: 0
+  damageCooldownTime: 0.66
 --- !u!65 &3380926939808812733
 BoxCollider:
   m_ObjectHideFlags: 0

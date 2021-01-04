@@ -23,14 +23,14 @@ public class TrapSpikesController : MonoBehaviour
         isLaunched = false;
         animator.SetTrigger("Hide");
 
-        //if (isSmart)
-        //{
-        //    TriggerCollider.enabled = true;
-        //}
-        //else
-        //{
-        //    TriggerCollider.enabled = false;
-        //}
+        if (isSmart)
+        {
+            TriggerCollider.enabled = true;
+        }
+        else
+        {
+            TriggerCollider.enabled = false;
+        }
 
         //if (isAsymmetric)
         //{
@@ -47,7 +47,7 @@ public class TrapSpikesController : MonoBehaviour
         if (!isSmart || isLaunched)
         {
             timer += Time.deltaTime;
-            print("timer");
+            
 
             if (isAsymmetric)
             {
