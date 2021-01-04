@@ -50,18 +50,5 @@ public class TutorialTrapController : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-            intervalAux += Time.deltaTime;
-            if(intervalAux >= damageInterval)
-            {
-                intervalAux = 0 ;
-                foreach (TrapSpikesController trap in traps)
-                {
-                    trap.toggleTrap();
-                }
-            }
-    }
-
 
 }
