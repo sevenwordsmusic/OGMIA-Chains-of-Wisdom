@@ -7,8 +7,10 @@ public class LevelProgressTracker : MonoBehaviour
 {
     private Text fragmentCounterText;
     private int numberOfFragments;
-    private int fragmentsCollected;
+    public int fragmentsCollected;
     [SerializeField] string playerPrefsKey;
+
+    GameController gameController;
 
 
     private void OnEnable()
@@ -23,23 +25,24 @@ public class LevelProgressTracker : MonoBehaviour
 
     private void clearSavedData()
     {
-        PlayerPrefs.DeleteKey(playerPrefsKey);
+        PlayerPrefs.DeleteKey(playerPrefsKey + gameController.currentLevel);
     }
 
     private void Awake()
     {
         if(fragmentCounterText == null)
         fragmentCounterText = GameObject.FindGameObjectWithTag("fragmentCounter").GetComponentInChildren<Text>();
+        gameController = GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>();
 
-        if (!PlayerPrefs.HasKey(playerPrefsKey))
+        if (!PlayerPrefs.HasKey(playerPrefsKey + gameController.currentLevel))
         {
             fragmentsCollected = 0;
             fragmentCounterText.text = fragmentsCollected + " / " + numberOfFragments;
-            PlayerPrefs.SetInt(playerPrefsKey, numberOfFragments);
+            PlayerPrefs.SetInt(playerPrefsKey + gameController.currentLevel, numberOfFragments);
         } 
         else
         {
-            fragmentsCollected = PlayerPrefs.GetInt(playerPrefsKey);
+            fragmentsCollected = PlayerPrefs.GetInt(playerPrefsKey + gameController.currentLevel);
             fragmentCounterText.text = fragmentsCollected + " / " + numberOfFragments;
         }
     }
@@ -47,7 +50,7 @@ public class LevelProgressTracker : MonoBehaviour
     public void fragmentCollected()
     {
         fragmentsCollected++;
-        PlayerPrefs.SetInt(playerPrefsKey, fragmentsCollected);
+        PlayerPrefs.SetInt(playerPrefsKey + gameController.currentLevel, fragmentsCollected);
         fragmentCounterText.text = fragmentsCollected + " / " + numberOfFragments;
 
         if(fragmentsCollected >= numberOfFragments)
@@ -63,8 +66,8 @@ public class LevelProgressTracker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        gameController = GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>();
     }
 }

@@ -305,25 +305,28 @@ public class CombatController : MonoBehaviour
                     //todo: Distinguir entre control por teclado y mando: en el control por mando, se utiliza la posición del jugador para el playerToEnemy,
                     //pero en el control por teclado, se debe utilizar el puntero para realizar esa comparación.
 
-                    //Direccion entre el jugador y el enemigo
-                    Vector3 PlayerToEnemy = (enemy.transform.position - transform.position).normalized;
+                    if(enemy != null)
+                    {
+                        //Direccion entre el jugador y el enemigo
+                        Vector3 PlayerToEnemy = (enemy.transform.position - transform.position).normalized;
 
                     if (Vector3.Dot(PlayerToEnemy, attackPointer.up) > 0) //Si el producto entre esa direccion y el forward del jugador es positivo, eso significa que el jugador está en frente del enemigo.
-                    {
-                        //Los enemigos en frente del jugador tienen preferencia para ser fijados. De manera que no hay penalizacion.
-                        if (Vector3.Distance(this.transform.position, enemy.transform.position) < distanceToEnemy) //Si la distancia al enemigo es la más cercana que se ha visto hasta ahora,
                         {
-                            lockedEnemy = enemy; //Fija a ese enemigo.
-                            distanceToEnemy = Vector3.Distance(this.transform.position, enemy.transform.position); //Y guarda esa distancia como la más corta.
+                            //Los enemigos en frente del jugador tienen preferencia para ser fijados. De manera que no hay penalizacion.
+                            if (Vector3.Distance(this.transform.position, enemy.transform.position) < distanceToEnemy) //Si la distancia al enemigo es la más cercana que se ha visto hasta ahora,
+                            {
+                                lockedEnemy = enemy; //Fija a ese enemigo.
+                                distanceToEnemy = Vector3.Distance(this.transform.position, enemy.transform.position); //Y guarda esa distancia como la más corta.
+                            }
                         }
-                    }
-                    else //Si por el contrario el enemigo está detrás del jugador
-                    {
-                        //Se aplica una penalización en la comparacion de la distancia, para favorecer que los enemigos en frente del jugador sean fijados más facilmente.
-                        if ((Vector3.Distance(this.transform.position, enemy.transform.position) * 2) + 10 < (distanceToEnemy)) //Si incluso con la penalizacion es el candidato favorito,
+                        else //Si por el contrario el enemigo está detrás del jugador
                         {
-                            lockedEnemy = enemy; //Fija a ese enemigo.
-                            distanceToEnemy = Vector3.Distance(this.transform.position, enemy.transform.position); //Y guarda esa distancia como la más corta.
+                            //Se aplica una penalización en la comparacion de la distancia, para favorecer que los enemigos en frente del jugador sean fijados más facilmente.
+                            if ((Vector3.Distance(this.transform.position, enemy.transform.position) * 2) + 20 < (distanceToEnemy)) //Si incluso con la penalizacion es el candidato favorito,
+                            {
+                                lockedEnemy = enemy; //Fija a ese enemigo.
+                                distanceToEnemy = Vector3.Distance(this.transform.position, enemy.transform.position); //Y guarda esa distancia como la más corta.
+                            }
                         }
                     }
                 }

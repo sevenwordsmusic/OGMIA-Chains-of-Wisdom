@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[RequireComponent(typeof(RoomController))]
-public class RoomTrapController : MonoBehaviour
+public class TutorialTrapController : MonoBehaviour
 {
     [SerializeField] float damageInterval = 2f;
     float intervalAux = 0;
@@ -12,14 +11,14 @@ public class RoomTrapController : MonoBehaviour
     [SerializeField] bool commitChanges = false;
     bool trapsEnabled = false;
 
-    /*[CustomEditor(typeof(RoomTrapController))]
+    /*[CustomEditor(typeof(TutorialTrapController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
 
-            RoomTrapController myScript = (RoomTrapController)target;
+            TutorialTrapController myScript = (TutorialTrapController)target;
             if (GUILayout.Button("Update Traps"))
             {
                 myScript.updateTrapsInit();
@@ -51,36 +50,17 @@ public class RoomTrapController : MonoBehaviour
     }
 
 
-    void Start()
-    {
-        GetComponent<RoomController>().enteredRoom += enableTraps;
-        GetComponent<RoomController>().exitedRoom += disableTraps;
-    }
-
-    void enableTraps()
-    {
-        trapsEnabled = true;
-    }
-
-    void disableTraps()
-    {
-        trapsEnabled = false;
-    }
-
     private void Update()
     {
-        if (trapsEnabled)
-        {
             intervalAux += Time.deltaTime;
             if(intervalAux >= damageInterval)
             {
                 intervalAux = 0 ;
                 foreach (TrapSpikesController trap in traps)
                 {
-                    //trap.toggleTrap();
+                    trap.toggleTrap();
                 }
             }
-        }
     }
 
 

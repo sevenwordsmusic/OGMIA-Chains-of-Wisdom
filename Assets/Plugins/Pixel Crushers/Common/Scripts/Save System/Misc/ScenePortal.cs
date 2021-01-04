@@ -26,6 +26,9 @@ namespace PixelCrushers
 
         private bool m_isLoadingScene = false;
 
+        public delegate void Teleported();
+        public Teleported teleported;
+
         public string requiredTag
         {
             get { return m_requiredTag; }
@@ -54,6 +57,7 @@ namespace PixelCrushers
         {
             if (isLoadingScene) return;
             isLoadingScene = true;
+            teleported?.Invoke();
             LoadScene();
         }
 
