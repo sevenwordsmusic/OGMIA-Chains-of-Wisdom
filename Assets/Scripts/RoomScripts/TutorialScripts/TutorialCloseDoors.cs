@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[RequireComponent(typeof(RoomController))]
-public class RoomCloseDoors : MonoBehaviour
+public class TutorialCloseDoors : MonoBehaviour
 {
     [SerializeField] List<GameObject> trapDoors = new List<GameObject>();
     [SerializeField] List<BoxCollider> triggers = new List<BoxCollider>();
@@ -12,14 +11,14 @@ public class RoomCloseDoors : MonoBehaviour
     public delegate void DoorsClosed();
     public DoorsClosed doorsclosed;
 
-    /*[CustomEditor(typeof(RoomCloseDoors))]
+    /*[CustomEditor(typeof(TutorialCloseDoors))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
 
-            RoomCloseDoors myScript = (RoomCloseDoors)target;
+            TutorialCloseDoors myScript = (TutorialCloseDoors)target;
             if (GUILayout.Button("Update Trap Doors"))
             {
                 myScript.updateTrapsDoorsInit();
@@ -57,8 +56,6 @@ public class RoomCloseDoors : MonoBehaviour
 
     public void activateTrapDoors()
     {
-        if (!GetComponent<RoomController>().completedBefore)
-        {
             foreach (BoxCollider bC in triggers)
             {
                 bC.enabled = false;
@@ -67,9 +64,7 @@ public class RoomCloseDoors : MonoBehaviour
             {
                 trapDoor.SetActive(true);
             }
-        }
         doorsclosed?.Invoke();
-        GetComponent<RoomController>().completedBefore = true;
     }
 
     public void deactivateTrapDoors()

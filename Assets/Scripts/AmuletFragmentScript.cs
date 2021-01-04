@@ -19,6 +19,7 @@ public class AmuletFragmentScript : MonoBehaviour
     void Start()
     {
         levelProgressTracker = FindObjectOfType<LevelProgressTracker>(); //Solo puede haber UN LevelProgressTracker por nivel
+
         levelProgressTracker.addFragmentToCounter();
 
         characterController = GetComponent<CharacterController>();
@@ -27,11 +28,30 @@ public class AmuletFragmentScript : MonoBehaviour
 
     public void addFragment()
     {
+        if(levelProgressTracker == null)
+        {
+            levelProgressTracker = FindObjectOfType<LevelProgressTracker>();
+            if(levelProgressTracker == null)
+            {
+                levelProgressTracker = GameObject.Find("LevelController").GetComponent<LevelProgressTracker>();
+            }
+        }
         levelProgressTracker.fragmentCollected();
+
+        RoomController deactivator = transform.parent.GetComponent<RoomController>();
+        if (deactivator != null)
+        {
+            deactivator.completedBefore = true;
+            deactivator.saveState();
+        }
 
         light.intensity = 15;
         this.gameObject.GetComponent<SphereCollider>().enabled = false;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        if(playerTransform == null)
+        {
+            playerTransform = GameObject.Find("Root Player").transform;
+        }
         //Ignora la colisión entre el jugador y el fragmento para que no obstaculice la 'absorcion'
         Physics.IgnoreCollision(playerTransform.gameObject.GetComponent<CharacterController>(), characterController, true);
         absorbed = true;

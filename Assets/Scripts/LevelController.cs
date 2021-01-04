@@ -247,6 +247,9 @@ public class LevelController : MonoBehaviour
         else
             gameController.initializePlayerWhenReady(startPlayerPos, startPlayerId, startPlayerId);
 
+        /*GetComponent<LevelProgressTracker>().addFragmentToCounter();
+        GetComponent<LevelProgressTracker>().addFragmentToCounter();*/
+
         roomArray[startPlayerId].GetComponent<RoomController>().enteredRoom();
         randValues = null;
         completedRooms = null;
@@ -260,7 +263,7 @@ public class LevelController : MonoBehaviour
         roomMatrix[idB, idA] = value;
     }
 
-    //debug method
+    /*//debug method
     private void OnDrawGizmos()
     {
         if (debug && Application.isPlaying && roomMatrix != null)
@@ -321,5 +324,5 @@ public class LevelController : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }
