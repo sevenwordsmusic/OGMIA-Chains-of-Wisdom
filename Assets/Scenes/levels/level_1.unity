@@ -364,23 +364,28 @@ MonoBehaviour:
   interconectivity: 1
   initRoom: {fileID: 6561418898872382415, guid: 19e7cf73d1724ce4bb55f0707ad4e722,
     type: 3}
-  basicConector: {fileID: 6561418898872382415, guid: ac264dd572d830841bba178a2e1eed76,
+  basicConector: {fileID: 6561418898872382415, guid: 1da306606e25cfe4789ae251d1f5033f,
     type: 3}
-  roomsConnector:
-  - {fileID: 6561418898872382415, guid: ac264dd572d830841bba178a2e1eed76, type: 3}
-  - {fileID: 6561418898872382415, guid: 1da306606e25cfe4789ae251d1f5033f, type: 3}
+  roomsConnector: []
   roomsEmpty:
+  - {fileID: 6561418898872382415, guid: ac264dd572d830841bba178a2e1eed76, type: 3}
   - {fileID: 6561418898872382415, guid: 84ba50d7cb58db04b80a67789488976d, type: 3}
   - {fileID: 6561418898872382415, guid: 5110d8ce35507114b804d21e6e597ea5, type: 3}
   roomsEnemy:
   - {fileID: 6561418898872382415, guid: 63d9101b30b20564483f301e19db3997, type: 3}
+  - {fileID: 6561418898872382415, guid: 06e887d1472abf24faed967e29afe18b, type: 3}
+  - {fileID: 6561418898872382415, guid: 80acf66bce34fd4459b3805337784c43, type: 3}
   roomsHealing:
   - {fileID: 6561418898872382415, guid: 4a9685e2b813a6a46a51d15d14fd895d, type: 3}
+  - {fileID: 6561418898872382415, guid: 948a6bda3400aa34c8b44b2097c501ad, type: 3}
   roomsTrap:
   - {fileID: 6561418898872382415, guid: 5df1677043978e7488957cf2d849ad0e, type: 3}
   - {fileID: 6561418898872382415, guid: 6d8e9e46b0b74e14889a76759a11e97c, type: 3}
+  - {fileID: 6561418898872382415, guid: 372aaba740eeee6469f4e2ed911fa6fa, type: 3}
   roomsFragment:
   - {fileID: 6561418898872382415, guid: b624c82120325f040af3558a86298aef, type: 3}
+  - {fileID: 6561418898872382415, guid: 35eb966c34d640b428ca021792d90cea, type: 3}
+  - {fileID: 6561418898872382415, guid: 32df5d35e63e5dc409361dbbbbcc22c9, type: 3}
   roomsBoss:
   - {fileID: 6561418898872382415, guid: 86f7bbfe82c2e994ea47e4bad899c0c0, type: 3}
   lastRoom: {fileID: 0}
@@ -423,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d230faf7a8a468a4fb7cc40e1bc34fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fragmentsCollected: 0
   playerPrefsKey: tutorial2
 --- !u!1 &1967983147
 GameObject:
