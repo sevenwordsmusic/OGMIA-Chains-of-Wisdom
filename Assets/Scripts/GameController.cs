@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour
 
     [SerializeField] Vector3 startPos;
 
-    /*[CustomEditor(typeof(GameController))]
+    //Comentar On Build
+    [CustomEditor(typeof(GameController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -36,7 +37,8 @@ public class GameController : MonoBehaviour
                 myScript.saveLevel();
             }
         }
-    }*/
+    }
+    //
 
     public void goToHUB()
     {
