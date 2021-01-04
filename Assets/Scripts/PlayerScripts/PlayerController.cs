@@ -343,15 +343,13 @@ public class PlayerController : MonoBehaviour
                 //print("enemy");
                 //trigParent.GetComponent<EnemyController>().enemyDefeated();
             }
-            else if (trigParent.CompareTag("portal"))
-            {
-                PortalController pController = trigParent.GetComponent<PortalController>();
-                print("teleporting");
-                pController.teleport();
-            }
             else if (trigParent.CompareTag("trapActivator"))
             {
                 trigParent.GetComponent<RoomCloseDoors>().activateTrapDoors();
+            }
+            else if (trigParent.CompareTag("trapActivator2"))
+            {
+                trigParent.GetComponent<TutorialCloseDoors>().activateTrapDoors();
             }
             else
             {

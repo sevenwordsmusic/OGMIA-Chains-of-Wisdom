@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     int dir;
     float sizeMult = 1;
     RoomEnemiesController controller;
+    TutorialEnemiesController tutorialController;
     public bool isAlive;
 
     private Animator animator;
@@ -54,11 +55,19 @@ public class EnemyController : MonoBehaviour
     {
         controller = rEC;
     }
+    public void setTutorialEnemyController(TutorialEnemiesController tEC)
+    {
+        tutorialController = tEC;
+    }
 
     public void enemyDefeated()
     {
         if(controller!= null){
             controller.enemyDefeated();
+        }
+        if (tutorialController != null)
+        {
+            tutorialController.enemyDefeated();
         }
         Destroy(gameObject);
     }

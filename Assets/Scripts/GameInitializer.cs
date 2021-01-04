@@ -27,6 +27,8 @@ public class GameInitializer : MonoBehaviour
 
         PlayerPrefs.DeleteAll(); //Al comenzar una nueva partida, destruye todos los datos guardados de la anterior.
 
+        gameController.GetComponent<GameController>().resetInfo();
+
         if (gameInitialized != null)
             gameInitialized();
 
