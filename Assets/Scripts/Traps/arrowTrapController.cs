@@ -67,8 +67,6 @@ public class arrowTrapController : MonoBehaviour
         {
            arrowController arrowScript = child.GetComponent<arrowController>();
 
-            print(arrowScript);
-
             //child.transform.position = new Vector3 (child.transform.position.x, child.transform.position.y, (child.transform.position.z + Random.Range(-positionOffset, positionOffset)));
             arrowScript.characterController.enabled = true;
 
