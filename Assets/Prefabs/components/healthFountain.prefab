@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3317204997021835491}
   - component: {fileID: 4703317258988090662}
   - component: {fileID: 154347296424977267}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: FX_Pickup_Glow_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180665047691310563}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3153, z: 0}
+  m_LocalPosition: {x: -0.0022, y: -0.2576, z: 0.0022}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 2294610854400749285}
@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 1688207740198266424}
   - component: {fileID: 1865076438143044705}
   - component: {fileID: 8133268397768244844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spot Light
   m_TagString: lightComponent
   m_Icon: {fileID: 0}
@@ -4856,8 +4856,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.46666667, g: 1, b: 0.46666667, a: 1}
-  m_Intensity: 7.5
-  m_Range: 15
+  m_Intensity: 6
+  m_Range: 16
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4893,7 +4893,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4864
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -4918,9 +4918,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 1865076438143044705}
-  minIntensity: 0.8
-  maxIntensity: 1
-  smoothing: 45
+  minIntensity: 5
+  maxIntensity: 8
+  smoothing: 40
 --- !u!1 &4850861081944333194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,7 +4932,7 @@ GameObject:
   - component: {fileID: 2294610854400749285}
   - component: {fileID: 4001641310009361473}
   - component: {fileID: 7925417500717443909}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: healthFountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9676,6 +9676,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &4555552385976967137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5110876600756850911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4376925, y: 1.3471993, z: 1.245243}
+  m_Center: {x: 0, y: 0.6735995, z: -0.0000019073484}
 --- !u!1 &5471965635128123923
 GameObject:
   m_ObjectHideFlags: 0
@@ -9687,7 +9700,7 @@ GameObject:
   - component: {fileID: 4283600750551543463}
   - component: {fileID: 8215823964947860884}
   - component: {fileID: 2079260321117632884}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: FX_Pickup_Beams_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14499,7 +14512,7 @@ GameObject:
   - component: {fileID: 2133685243397291026}
   - component: {fileID: 8896442738053016279}
   - component: {fileID: 4774758034704238644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Pickup_Sparkles_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14514,8 +14527,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7010773865181329055}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.09499999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 2294610854400749285}
   m_RootOrder: 3
@@ -19307,6 +19320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2294610854400749285}
     m_Modifications:
+    - target: {fileID: 106404, guid: f5bef9e1bbbbe9f4a89a3c958ad516c7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 460624, guid: f5bef9e1bbbbe9f4a89a3c958ad516c7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19366,6 +19383,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2294610854400749285}
     m_Modifications:
+    - target: {fileID: 128100, guid: 6e329ba57c2f99b41acb3584d0cb8da5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468554, guid: 6e329ba57c2f99b41acb3584d0cb8da5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -19412,6 +19433,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e329ba57c2f99b41acb3584d0cb8da5, type: 3}
+--- !u!1 &5110876600756850911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 128100, guid: 6e329ba57c2f99b41acb3584d0cb8da5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5110876600756741307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5110876600756404977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 468554, guid: 6e329ba57c2f99b41acb3584d0cb8da5,
