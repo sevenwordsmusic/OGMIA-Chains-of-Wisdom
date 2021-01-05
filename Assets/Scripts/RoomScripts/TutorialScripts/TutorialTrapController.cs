@@ -11,7 +11,7 @@ public class TutorialTrapController : MonoBehaviour
     [SerializeField] bool commitChanges = false;
     bool trapsEnabled = false;
 
-    /*[CustomEditor(typeof(TutorialTrapController))]
+    [CustomEditor(typeof(TutorialTrapController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -25,7 +25,7 @@ public class TutorialTrapController : MonoBehaviour
                 myScript.commitChanges = false;
             }
         }
-    }*/
+    }
 
     void updateTraps(Transform t)
     {
