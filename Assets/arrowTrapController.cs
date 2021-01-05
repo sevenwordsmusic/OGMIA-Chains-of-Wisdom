@@ -63,11 +63,8 @@ public class arrowTrapController : MonoBehaviour
         GameObject spawnedArrows = Instantiate(arrowContainer, this.transform, true);
         spawnedArrows.SetActive(true);
 
-        print("HIJOS: " + spawnedArrows.transform.childCount);
-
         foreach(Transform child in spawnedArrows.transform)
         {
-            print(child);
            arrowController arrowScript = child.GetComponent<arrowController>();
 
             print(arrowScript);
