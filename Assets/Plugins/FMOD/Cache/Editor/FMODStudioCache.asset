@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8603246891230068405
+--- !u!114 &-8173840192315689957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BGM/mainLoop
+  m_Name: event:/SFX/lavaHoleLoop
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  Path: event:/BGM/mainLoop
-  guid: 28c5c639a6da34419a4f9b7a6bdc6257
+  Path: event:/SFX/lavaHoleLoop
+  guid: f186bdacbe120a4f80d318b189350bdf
   Banks:
-  - {fileID: 8621133199578944735}
+  - {fileID: -7756325100250286731}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 432313
---- !u!114 &-7648970901543553921
+  MinDistance: 1
+  MaxDistance: 40
+  Length: 20000
+--- !u!114 &-7756325100250286731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,17 +33,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-=======
->>>>>>> Stashed changes
-  Path: event:/SFX/ambientLevel0
-  Name: 
-  lastModified: 0
+  Path: Kithara_fmod/Build/Desktop/Master.bank
+  Name: Master
+  lastModified: 637454054019094298
   LoadResult: 0
   FileSizes: []
-  Exists: 0
---- !u!114 &-7057743599770078532
+  Exists: 1
+--- !u!114 &-7619846189131645551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,11 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Kithara_fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
-<<<<<<< Updated upstream
-  lastModified: 637453664742890135
-=======
-  lastModified: 637453125630939850
->>>>>>> Stashed changes
+  lastModified: 637454054019114237
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -70,7 +63,30 @@ MonoBehaviour:
   - Name: Mobile
     Value: 1118
   Exists: 1
---- !u!114 &-6813498598129613412
+--- !u!114 &-6611028459790718455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/fireTorchLoop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/fireTorchLoop
+  guid: 1e72e7963530754f998c14dec5191919
+  Banks:
+  - {fileID: -7756325100250286731}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15000
+--- !u!114 &-6367321957716395481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,15 +101,15 @@ MonoBehaviour:
   Path: event:/SFX/amuletGlowLoop
   guid: 8814ad2d37372c42b69fae12e9d3ff37
   Banks:
-  - {fileID: 8621133199578944735}
-  IsStream: 0
+  - {fileID: -7756325100250286731}
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 60
   Length: 10000
---- !u!114 &-5219189920849267829
+--- !u!114 &-1851313268974384324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +124,7 @@ MonoBehaviour:
   Path: event:/SFX/fireCandleLoop
   guid: 0ec783aa819f444780c4ae29e80fecf6
   Banks:
-  - {fileID: 8621133199578944735}
+  - {fileID: -7756325100250286731}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -116,7 +132,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 10
   Length: 60000
---- !u!114 &-4074541722339948168
+--- !u!114 &-356852525873802391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +147,7 @@ MonoBehaviour:
   Path: event:/SFX/ambientLevel0
   guid: c21dedcd334870499b8f2b0ed4de3685
   Banks:
-  - {fileID: 8621133199578944735}
+  - {fileID: -7756325100250286731}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -139,118 +155,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 20000
---- !u!114 &-3519575135182204586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/lavaHoleLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/lavaHoleLoop
-  guid: f186bdacbe120a4f80d318b189350bdf
-  Banks:
-  - {fileID: -2362785985827750029}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 40
-  Length: 20000
---- !u!114 &-2726461261396359574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ambientExteriorWindLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ambientExteriorWindLoop
-  guid: 50fbb2cda36aaa449b05fcb0760ddba9
-  Banks:
-  - {fileID: 8621133199578944735}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 60
-  Length: 60000
---- !u!114 &-2529446375175910036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/fireCandleLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/fireCandleLoop
-  guid: 0ec783aa819f444780c4ae29e80fecf6
-  Banks: []
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 10
-  Length: 60000
---- !u!114 &-2362785985827750029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Kithara_fmod/Build/Desktop/Master.bank
-  Name: Master
-<<<<<<< Updated upstream
-  lastModified: 637453664742880162
-=======
-  lastModified: 637453125633343637
->>>>>>> Stashed changes
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-1689365846949106488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/amuletGlowLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/amuletGlowLoop
-  guid: 8814ad2d37372c42b69fae12e9d3ff37
-  Banks: []
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 432313
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,63 +168,25 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2813516099488987651}
-  - {fileID: 8621133199578944735}
+  - {fileID: -7619846189131645551}
+  - {fileID: -7756325100250286731}
   EditorEvents:
-<<<<<<< Updated upstream
-  - {fileID: -5219189920849267829}
-  - {fileID: 4184649490249698162}
-  - {fileID: -8603246891230068405}
-  - {fileID: -2726461261396359574}
-  - {fileID: -6813498598129613412}
-  - {fileID: -4074541722339948168}
-  - {fileID: 7585338600789750076}
-  - {fileID: 2963272498302454844}
-=======
-  - {fileID: -2529446375175910036}
-  - {fileID: 5408131429182860602}
-  - {fileID: -1689365846949106488}
-  - {fileID: 7533136491819749439}
-  - {fileID: 5660920274046083759}
-  - {fileID: 0}
-  - {fileID: 6096842825843785675}
-  - {fileID: -3519575135182204586}
->>>>>>> Stashed changes
+  - {fileID: -1851313268974384324}
+  - {fileID: -6611028459790718455}
+  - {fileID: 1078392746468188108}
+  - {fileID: 3390434643156756409}
+  - {fileID: -6367321957716395481}
+  - {fileID: -356852525873802391}
+  - {fileID: 2711121095850705079}
+  - {fileID: -8173840192315689957}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8621133199578944735}
+  - {fileID: -7756325100250286731}
   StringsBanks:
-<<<<<<< Updated upstream
-  - {fileID: 2813516099488987651}
-  stringsBankWriteTime: 637453664742890135
-=======
-  - {fileID: -7057743599770078532}
-  stringsBankWriteTime: 637453125630939850
->>>>>>> Stashed changes
+  - {fileID: -7619846189131645551}
+  stringsBankWriteTime: 637454054019114237
   cacheVersion: 5
---- !u!114 &2813516099488987651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Kithara_fmod/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  lastModified: 637453664742890135
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1118
-  - Name: Mobile
-    Value: 1118
-  Exists: 1
---- !u!114 &2963272498302454844
+--- !u!114 &1078392746468188108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,90 +196,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/lavaHoleLoop
+  m_Name: event:/BGM/mainLoop
   m_EditorClassIdentifier: 
-  Path: event:/SFX/lavaHoleLoop
-  guid: f186bdacbe120a4f80d318b189350bdf
+  Path: event:/BGM/mainLoop
+  guid: 28c5c639a6da34419a4f9b7a6bdc6257
   Banks:
-  - {fileID: 8621133199578944735}
+  - {fileID: -7756325100250286731}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 40
-  Length: 20000
---- !u!114 &4184649490249698162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/fireTorchLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/fireTorchLoop
-  guid: 1e72e7963530754f998c14dec5191919
-<<<<<<< Updated upstream
-  Banks:
-  - {fileID: 8621133199578944735}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 15000
---- !u!114 &5408131429182860602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/fireTorchLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/fireTorchLoop
-  guid: 1e72e7963530754f998c14dec5191919
-=======
->>>>>>> Stashed changes
-  Banks: []
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 15000
---- !u!114 &5660920274046083759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/amuletGlowLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/amuletGlowLoop
-  guid: 8814ad2d37372c42b69fae12e9d3ff37
-  Banks: []
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 60
-  Length: 10000
---- !u!114 &6096842825843785675
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 432313
+--- !u!114 &2711121095850705079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -428,15 +224,15 @@ MonoBehaviour:
   Path: event:/SFX/amuletCoreGlowLoop
   guid: cdb235037368054fbf407036471e5fa1
   Banks:
-  - {fileID: -2362785985827750029}
-  IsStream: 0
+  - {fileID: -7756325100250286731}
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 60
   Length: 10000
---- !u!114 &7533136491819749439
+--- !u!114 &3390434643156756409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,7 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/ambientExteriorWindLoop
   guid: 50fbb2cda36aaa449b05fcb0760ddba9
-  Banks: []
+  Banks:
+  - {fileID: -7756325100250286731}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -458,44 +255,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 60
   Length: 60000
---- !u!114 &7585338600789750076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/amuletCoreGlowLoop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/amuletCoreGlowLoop
-  guid: cdb235037368054fbf407036471e5fa1
-  Banks:
-  - {fileID: 8621133199578944735}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 60
-  Length: 10000
---- !u!114 &8621133199578944735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Kithara_fmod/Build/Desktop/Master.bank
-  Name: Master
-  lastModified: 637453664742880162
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
