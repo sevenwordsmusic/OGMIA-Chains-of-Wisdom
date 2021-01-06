@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using PixelCrushers;
 
 public class newGameWarningScript : MonoBehaviour
 {
     public GameObject menuButtons,creditButton,newGameWarningPanel;
     public GameInitializer gameInitializer;
+    public PlayableDirector introAnimation;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +31,12 @@ public class newGameWarningScript : MonoBehaviour
         } 
         else
         {
-            gameInitializer.initializeGame();
-            UIManager.UIM.HideMenu();
-            UIManager.UIM.generalHUD.SetActive(true);
-            UIManager.UIM.mobileJoystick.SetActive(true);
-            GetComponent<ScenePortal>().UsePortal();
+            //gameInitializer.initializeGame();
+            //UIManager.UIM.HideMenu();
+            //UIManager.UIM.generalHUD.SetActive(true);
+            //UIManager.UIM.mobileJoystick.SetActive(true);
+            //GetComponent<ScenePortal>().UsePortal();
+            introAnimation.Play();
         }
     }
 }
