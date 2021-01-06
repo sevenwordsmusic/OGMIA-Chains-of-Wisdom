@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour
             //No se coloca a 0 porque pueden darse casos en los que isGrounded sea true antes de que el jugador esté verdaderamente en el suelo.
             animator.SetBool("Falling", false); //Sirve para detener la animación de salto
         }
-        else if ((velocity.y < -1 && !isGrounded) || (animator.GetCurrentAnimatorStateInfo(0).IsName("JumpUp") && velocity.y < 0)) //Siempre que la velocidad sea inferior a -1, reproduce la animación de 'caida'. Sirve para saltos y para dejarse caer
+        else if ((velocity.y < -2 && !isGrounded) || (animator.GetCurrentAnimatorStateInfo(0).IsName("JumpUp") && velocity.y < 0)) //Siempre que la velocidad sea inferior a -1, reproduce la animación de 'caida'. Sirve para saltos y para dejarse caer
         {
             animator.SetBool("Falling", true);
         }

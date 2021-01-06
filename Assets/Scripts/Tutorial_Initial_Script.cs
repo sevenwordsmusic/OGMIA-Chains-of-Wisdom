@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using Cinemachine;
 using PixelCrushers;
 
 public class Tutorial_Initial_Script : MonoBehaviour
@@ -13,6 +14,8 @@ public class Tutorial_Initial_Script : MonoBehaviour
     public Transform hiddenPos;
     public Transform initialPos;
     public bool playCutscene;
+    public Camera cutsceneCamera;
+    public CinemachineVirtualCamera cinemaCam;
 
 
     private void Awake()
@@ -27,6 +30,9 @@ public class Tutorial_Initial_Script : MonoBehaviour
             characterController.enabled = true;
 
             UIManager.UIM.HideGeneralHUD();
+
+            cutsceneCamera.gameObject.SetActive(true);
+            cinemaCam.Priority = 9000;
 
             initialCutscene.Play();
         } else
