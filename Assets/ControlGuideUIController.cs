@@ -49,7 +49,7 @@ public class ControlGuideUIController : MonoBehaviour
     {
         if(!isMobile()) //Solo querremos hacer comprobacion activa si no estamos en movil.
         {
-            print(playerInput.currentControlScheme);
+            //print(playerInput.currentControlScheme);
             if(playerInput.currentControlScheme == "Controller") //Si el jugador está usando un mando,
             {
                 //Muestra los contoles de mando

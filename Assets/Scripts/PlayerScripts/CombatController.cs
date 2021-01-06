@@ -108,7 +108,7 @@ public class CombatController : MonoBehaviour
     public void OnAttack()
     {
         //print("evento recibido");
-        print(canAttack);
+        //print(canAttack);
         if (canAttack)
         {
             //AUDIO

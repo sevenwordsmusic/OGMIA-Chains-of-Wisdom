@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class MenuObject : MonoBehaviour {
@@ -11,7 +12,9 @@ public class MenuObject : MonoBehaviour {
     public void SetFirstSelected()
     {
         //Tell the EventSystem to select this object
-        EventSystemChecker.menuEventSystem.SetSelectedGameObject(firstSelectedObject);
+        EventSystem.current.SetSelectedGameObject(firstSelectedObject);
+        //Highlight the button
+        firstSelectedObject.GetComponent<Selectable>().OnSelect(null);
     }
 
     public void OnEnable()
