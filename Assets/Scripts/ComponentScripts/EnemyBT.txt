@@ -1,0 +1,30 @@
+tree("Root")
+	fallback
+		tree("Chase")
+		tree("Attack")
+		tree("Flee")
+		
+		
+tree("Chase")
+	sequence
+		playerDetected
+		prepareMove()
+		while playerDetected
+			sequence
+				moveToPlayer()
+
+tree("Attack")
+	sequence
+		playerNear
+		sequence
+			prepareAttack()
+			attack()
+			Wait(0.01)
+
+tree("Flee")
+	sequence
+		lowHealth
+		prepareFlee()
+		while lowHealth
+			sequence
+				fleeFromPlayer()
