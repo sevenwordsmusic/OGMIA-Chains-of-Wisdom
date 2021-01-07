@@ -6,8 +6,6 @@ using UnityEngine.Playables;
 
 public class playerCameraTransitionController : MonoBehaviour
 {
-    [SerializeField] PlayableDirector originalCamera;
-    [SerializeField] PlayableDirector newCameraPoint;
     [SerializeField] CombatController combatController;
 
     private void Awake()
