@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    int dir;
     float sizeMult = 1;
     RoomEnemiesController controller;
     TutorialEnemiesController tutorialController;
-    public bool isAlive;
+    public bool isAlive = true;
 
     private Animator animator;
     [HideInInspector] public int currentHealth; //Salud actual del enemigo
@@ -26,12 +25,15 @@ public class EnemyController : MonoBehaviour
     private float timeOutTimer;
     private float healthBarOnScreenTimer;
 
+
+
+   
+
+
+
     void Start()
     {
         isVulnerable = true;
-        dir = (Random.value<0.5f)?-1:1;
-        sizeMult = Random.Range(1.2f, 1.5f);
-        transform.localScale = new Vector3(sizeMult, sizeMult, sizeMult);
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBarScript = GetComponentInChildren<HealthBarController>();
@@ -69,8 +71,8 @@ public class EnemyController : MonoBehaviour
         {
             tutorialController.enemyDefeated();
         }
-        Destroy(gameObject);
     }
+
     void Update()
     {
         //transform.Rotate(0, dir, 0);
@@ -114,7 +116,7 @@ public class EnemyController : MonoBehaviour
 
                 //Contamos cuanto tiempo lleva activa la barra de vida desde el ultimo golpe recibido
                 healthBarOnScreenTimer += Time.deltaTime;
-                print(healthBarOnScreenTimer);
+                //print(healthBarOnScreenTimer);
                 if(healthBarOnScreenTimer >= 3f) //Si el enemigo no ha recibido daño en los ultimos tres segundos...
                 {
                     healthBarObject.SetActive(false); //Escondemos su barra de vida.
@@ -128,10 +130,10 @@ public class EnemyController : MonoBehaviour
 
     public void takeDamage(int damage, float knockbackForce, Vector3 knockbackDir, GameObject other)
     {
-        print("OUCH");
         if (isVulnerable && isAlive) //Si el enemigo es vulnerable,
         {
             currentHealth -= damage;
+            print("OUCH: " + damage + "  " + currentHealth);
 
             //Actualizamos el valor en el script de la barra de vida y manejamos el objeto, haciendo que se vuelva invisible tras unos segundos.
             healthBarObject.SetActive(true);
@@ -162,6 +164,7 @@ public class EnemyController : MonoBehaviour
 
     private void Die()
     {
+        print("enemyDead");
         //Play death animation
         //animator.SetTrigger("Death");
 
@@ -174,7 +177,7 @@ public class EnemyController : MonoBehaviour
 
         this.enabled = false;
 
-        
+        enemyDefeated();
         Destroy(gameObject, 3f);
     }
 
