@@ -14,14 +14,16 @@ public class Tutorial_Initial_Script : MonoBehaviour
     public Transform hiddenPos;
     public Transform initialPos;
     public bool playCutscene;
-    public Camera cutsceneCamera;
+    public Camera testingCamera;
     public CinemachineVirtualCamera cinemaCam;
-
+    private CinemachineBrain cinemachineBrain;
+    private float oldBlendTime;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         characterController = player.GetComponent<CharacterController>();
+        testingCamera.gameObject.SetActive(false);
 
         if(playCutscene)
         {
@@ -29,9 +31,15 @@ public class Tutorial_Initial_Script : MonoBehaviour
             player.transform.position = hiddenPos.position;
             characterController.enabled = true;
 
+            player.gameObject.SetActive(false);
+
             UIManager.UIM.HideGeneralHUD();
 
-            cutsceneCamera.gameObject.SetActive(true);
+            //PROGRAMAR CORTE INSTANTANEO DE CAMARA
+            cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+            oldBlendTime = cinemachineBrain.m_DefaultBlend.m_Time;
+            cinemachineBrain.m_DefaultBlend.m_Time = 0;
+
             cinemaCam.Priority = 9000;
 
             initialCutscene.Play();
@@ -56,6 +64,12 @@ public class Tutorial_Initial_Script : MonoBehaviour
         characterController.enabled = false;
         player.transform.position = initialPos.position;
         characterController.enabled = true;
+
+        cinemaCam.Priority = 0; //Eliminamos la prioridad de camara, ya innecesaria
+
+        //Restablecemos el blend time para evitar cortes indeseados.
+        cinemachineBrain.m_DefaultBlend.m_Time = oldBlendTime;
+        player.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
