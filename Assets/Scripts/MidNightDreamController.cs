@@ -26,6 +26,11 @@ public class MidNightDreamController : MonoBehaviour
         cutsceneCamera.SetActive(false);
 
         //Escondemos al jugador durante la cutscene introductoria
+        if(player == null || characterController == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            characterController = player.GetComponent<CharacterController>();
+        }
         characterController.enabled = false;
         player.transform.position = hiddenPos.position;
         characterController.enabled = true;
@@ -64,8 +69,11 @@ public class MidNightDreamController : MonoBehaviour
     {
         if (warpPlayerHereAtStart)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-            characterController = player.GetComponent<CharacterController>();
+            if (player == null || characterController == null)
+            {
+                player = GameObject.FindGameObjectWithTag("Player");
+                characterController = player.GetComponent<CharacterController>();
+            }
             characterController.enabled = false;
             player.transform.position = this.transform.position;
             characterController.enabled = true;
