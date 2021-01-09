@@ -31,7 +31,7 @@ public class LevelProgressTracker : MonoBehaviour
     private void Awake()
     {
         if(fragmentCounterText == null)
-        fragmentCounterText = GameObject.FindGameObjectWithTag("fragmentCounter").GetComponentInChildren<Text>();
+            fragmentCounterText = GameObject.FindGameObjectWithTag("fragmentCounter").GetComponentInChildren<Text>();
         gameController = GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>();
 
         if (!PlayerPrefs.HasKey(playerPrefsKey + gameController.currentLevel))
@@ -49,6 +49,8 @@ public class LevelProgressTracker : MonoBehaviour
 
     public void fragmentCollected()
     {
+        if (fragmentCounterText == null)
+            fragmentCounterText = GameObject.FindGameObjectWithTag("fragmentCounter").GetComponentInChildren<Text>();
         fragmentsCollected++;
         PlayerPrefs.SetInt(playerPrefsKey + gameController.currentLevel, fragmentsCollected);
         fragmentCounterText.text = fragmentsCollected + " / " + numberOfFragments;
@@ -61,6 +63,8 @@ public class LevelProgressTracker : MonoBehaviour
 
     public void addFragmentToCounter()
     {
+        if (fragmentCounterText == null)
+            fragmentCounterText = GameObject.FindGameObjectWithTag("fragmentCounter").GetComponentInChildren<Text>();
         numberOfFragments++;
         fragmentCounterText.text = fragmentsCollected + " / " + numberOfFragments;
     }
@@ -68,6 +72,8 @@ public class LevelProgressTracker : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        if (fragmentCounterText == null)
+            fragmentCounterText = GameObject.FindGameObjectWithTag("fragmentCounter").GetComponentInChildren<Text>();
         gameController = GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>();
     }
 }
