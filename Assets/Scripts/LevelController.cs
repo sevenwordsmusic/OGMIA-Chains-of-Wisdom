@@ -263,7 +263,7 @@ public class LevelController : MonoBehaviour
         roomMatrix[idB, idA] = value;
     }
 
-    /*//debug method
+    //debug method
     private void OnDrawGizmos()
     {
         if (debug && Application.isPlaying && roomMatrix != null)
@@ -324,5 +324,5 @@ public class LevelController : MonoBehaviour
                 }
             }
         }
-    }*/
+    }
 }

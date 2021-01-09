@@ -31,6 +31,8 @@ public class MeeleAITasks : MonoBehaviour
     public bool attackDamage = false;
     bool isAliveAux = true;
 
+    Vector3 prevPos;
+
 
 
     [Task]
@@ -75,6 +77,8 @@ public class MeeleAITasks : MonoBehaviour
         fleePlayerPos = player.transform.position;
         fleeTimer = 0;
 
+        idleTrigger = false;
+
         Task.current.Succeed();
     }
 
@@ -87,17 +91,23 @@ public class MeeleAITasks : MonoBehaviour
 
         fleeTimer += Time.deltaTime;
 
-        if(agent.speed <= 0.01f && !idleTrigger)
+        /*if (Vector3.Distance(prevPos, transform.position) == 0 && !idleTrigger)
         {
+            print("asd");
+            attackDamage = false;
+            animator.SetFloat("Blend", 0);
+            animator.SetBool("inCombat", false);
             animator.SetTrigger("idle");
             idleTrigger = true;
-        }
+        }*/
 
         if (fleeTimer >= escapeTime)
         {
             reEngage = true;
             lowHealth = false;
         }
+
+        //prevPos = transform.position;
     }
 
 
