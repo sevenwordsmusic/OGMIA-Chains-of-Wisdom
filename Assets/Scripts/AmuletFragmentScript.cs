@@ -56,6 +56,11 @@ public class AmuletFragmentScript : MonoBehaviour
         Physics.IgnoreCollision(playerTransform.gameObject.GetComponent<CharacterController>(), characterController, true);
         absorbed = true;
         //StartCoroutine(absorbeFragmentVFX(this.transform.position,other.transform.position,100));
+
+        //Hacemos que el jugador mire hacia el amuleto
+        playerTransform.LookAt(new Vector3 (transform.position.x, playerTransform.position.y, transform.position.z));
+        //Ejecutamos la animacion de 'adquirir objeto'
+        playerTransform.gameObject.GetComponent<Animator>().SetTrigger("takeItem");
     }
 
     public void FixedUpdate()

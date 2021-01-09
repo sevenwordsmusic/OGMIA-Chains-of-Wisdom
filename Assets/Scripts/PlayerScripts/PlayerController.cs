@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Cooldown de la voltereta")] [SerializeField] float rollCooldownTime = 0.6f;
     [Tooltip("Simulación de fuerzas (aire, fricción) que ralentizan y detienen al jugador al moverse, saltar, dashear, etc")]
     [SerializeField] Vector3 drag = new Vector3(10f, 1f, 10f);
-    [Tooltip("Velocidad a la que rotará la cámara")] [SerializeField] float rotateCameraSpeed = 2; 
+    [Tooltip("Velocidad a la que rotará la cámara")] [SerializeField] float rotateCameraSpeed = 2;
+    [Tooltip("Velocidad a la que rotará la cámara con el mando")] [SerializeField] float rotateCameraSpeedController = 80;
     [Tooltip("Velocidad a la que rotará la cámara en movil")] [SerializeField] float rotateCameraSpeedMobile = 50; 
     private Vector3 direction;
     private Vector3 moveDir;
@@ -96,6 +97,7 @@ public class PlayerController : MonoBehaviour
         cinemaCam.transform.parent.gameObject.SetActive(true);
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //Busca el GameObject llamado Canvas, por lo tanto, el Canvas NO debe cambiar de nombre
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        canvas.planeDistance = 5;
         canvas.worldCamera = UICamera;
 
         //Cursor.lockState = CursorLockMode.Confined;
@@ -250,7 +252,7 @@ public class PlayerController : MonoBehaviour
             } 
             else //En caso de estar usando mando, no necesitamos combinaciones de teclas.
             {
-                cinemaCam.m_XAxis.Value += (rotateCameraAmount * rotateCameraSpeed * Time.deltaTime); //La gira
+                cinemaCam.m_XAxis.Value += (rotateCameraAmount * rotateCameraSpeedController * Time.deltaTime); //La gira
             }
  
         }

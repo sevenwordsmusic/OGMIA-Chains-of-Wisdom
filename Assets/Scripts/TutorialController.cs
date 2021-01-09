@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers;
+using PixelCrushers.DialogueSystem;
 
 public class TutorialController : MonoBehaviour
 {
     private bool coreFound;
-
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +29,14 @@ public class TutorialController : MonoBehaviour
         else
         {
             //Play cool ending cutscene for tutorial
-            print("tutorial finalizado!");
-            SaveSystem.LoadScene("MidNightsDream");
+            ProgressTracker.PT.addPiece();
+            //SaveSystem.LoadScene("MidNightsDream");
         }
     }
 
     private void coreMissingCutscene()
     {
-
+        DialogueManager.StartConversation("Tutorial_Core_Missing");
     }
 
 }

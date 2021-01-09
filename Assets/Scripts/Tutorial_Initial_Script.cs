@@ -13,6 +13,7 @@ public class Tutorial_Initial_Script : MonoBehaviour
 
     public Transform hiddenPos;
     public Transform initialPos;
+    private Vector3 oldPosition;
     public bool playCutscene;
     public Camera testingCamera;
     public CinemachineVirtualCamera cinemaCam;
@@ -25,7 +26,9 @@ public class Tutorial_Initial_Script : MonoBehaviour
         characterController = player.GetComponent<CharacterController>();
         testingCamera.gameObject.SetActive(false);
 
-        if(playCutscene)
+        PlayerPrefs.SetInt("firstTimeMD", 0); //Esta variable se comprobara en el sueño de medianoche par alanzar la cutscene de primera vez
+
+        if (playCutscene)
         {
             characterController.enabled = false;
             player.transform.position = hiddenPos.position;
@@ -58,6 +61,22 @@ public class Tutorial_Initial_Script : MonoBehaviour
         SaveSystem.SaveToSlot(1);
     }
 
+
+    public void deactivatePlayer()
+    {
+        oldPosition = player.transform.position;
+
+        characterController.enabled = false;
+        player.transform.position = hiddenPos.position;
+        characterController.enabled = true;
+    }
+
+    public void activatePlayer()
+    {
+        characterController.enabled = false;
+        player.transform.position = oldPosition;
+        characterController.enabled = true;
+    }
 
     public void placePlayerOnInitialPos()
     {

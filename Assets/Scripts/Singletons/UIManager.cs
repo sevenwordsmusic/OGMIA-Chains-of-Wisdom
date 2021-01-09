@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     private GameObject activePanel;
     private MenuObject activePanelMenuObject;
     private EventSystem eventSystem;
+    public Pause pause;
 
     public delegate void UIEvent();
     public static event UIEvent goBackToMainMenuEvent; //Evento lanzado cuando el jugador muere, para causar una reacción global
@@ -37,6 +38,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        pause = GetComponent<Pause>();
         if (UIM != null) //Si por algún motivo ya existe un combatManager...
         {
             GameObject.Destroy(UIM); //Este script lo mata. Solo puede haber una abeja reina en la colmena.
