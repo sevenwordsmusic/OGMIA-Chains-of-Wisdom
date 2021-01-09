@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 33978264798706614}
   - component: {fileID: 23687765097601988}
   - component: {fileID: 64776636109467056}
-  m_Layer: 1
+  - component: {fileID: 7998698291800997342}
+  m_Layer: 8
   m_Name: candles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1012234050983592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2365977, y: 1.2365978, z: 1.2365977}
   m_Children:
   - {fileID: 7859010314845404509}
   - {fileID: 5923263874478927001}
@@ -94,11 +95,24 @@ MeshCollider:
   m_GameObject: {fileID: 1012234050983592}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c6cacc99900144a72b36f17bd9c469f8, type: 3}
+--- !u!65 &7998698291800997342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012234050983592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3345375, y: 0.61742467, z: 0.38514447}
+  m_Center: {x: -0.000506483, y: 0.30871233, z: -0.043441065}
 --- !u!1 &4461153396839123152
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,13 +196,13 @@ Light:
     serializedVersion: 2
     m_Bits: 768
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.3510647e-38, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.3509887e-38, z: 2.3509887e-38, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -199,14 +213,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4461153396839123152}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ad222b62fbc29a41aa50af0835f3497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 7132574543202071366}
-  minIntensity: 0.2
-  maxIntensity: 1
+  minIntensity: 2
+  maxIntensity: 3
   smoothing: 30
 --- !u!1001 &4909326435323631450
 PrefabInstance:
@@ -226,6 +240,10 @@ PrefabInstance:
     - target: {fileID: 1074828802862616, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619271642824592, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4128544692081670, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
       propertyPath: m_RootOrder
@@ -310,6 +328,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2619271642824592, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4128544692081670, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -392,6 +414,10 @@ PrefabInstance:
     - target: {fileID: 1074828802862616, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619271642824592, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4128544692081670, guid: 90bdb8398e186b34282d968564dfec29, type: 3}
       propertyPath: m_RootOrder
