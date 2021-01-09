@@ -66,13 +66,13 @@ public class GameController : MonoBehaviour
             {
                 case 1:
                     print("generating new Level " + num);
-                    levelInfos[num] = new LevelInfoWrapper(124, true, 20, 0, new Vector3(0, 1.28f, 0));
+                    levelInfos[num] = new LevelInfoWrapper(124, true, 30, 0, new Vector3(0, 1.28f, 0));
                     levelInfos[num].printInfo();
                     //SceneManager.LoadScene("level_1");
                     break;
                 case 2:
                     print("generating new Level " + num);
-                    levelInfos[num] = new LevelInfoWrapper(55, true, 30, 0, new Vector3(0, 1.28f, 0));
+                    levelInfos[num] = new LevelInfoWrapper(55, true, 40, 0, new Vector3(0, 1.28f, 0));
                     levelInfos[num].printInfo();
                     //SceneManager.LoadScene("level_2");
                     break;

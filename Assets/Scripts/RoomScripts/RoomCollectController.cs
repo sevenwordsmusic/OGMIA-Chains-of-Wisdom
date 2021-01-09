@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(RoomCloseDoors))]
 public class RoomCollectController : MonoBehaviour
 {
     [SerializeField] GameObject[] objects;
