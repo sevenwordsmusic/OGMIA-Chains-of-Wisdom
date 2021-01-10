@@ -892,7 +892,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Timeline(play,Timeline_2,nowait,nostop);
+        value: 'Timeline(stop, Intro_Cutscene);
+
+          Timeline(play,Timeline_2,nowait,nostop);'
         type: 0
         typeString: 
       conversationID: 3
@@ -1693,7 +1695,7 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Pictures
         value: '[]'
         type: 3
@@ -1701,7 +1703,7 @@ MonoBehaviour:
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: -1
         type: 5
@@ -1713,15 +1715,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: '> Only you can find out.'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Parenthetical
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Audio Files
         value: '[]'
         type: 3
@@ -1729,15 +1731,15 @@ MonoBehaviour:
       - title: Video File
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: 09067101-31ca-4f8c-936b-70f19721d264
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2472,8 +2474,8 @@ MonoBehaviour:
         y: 820
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 10.22728}
-    canvasZoom: 0.87999994
+    canvasScrollPosition: {x: 3.9473877, y: 0}
+    canvasZoom: 0.75999993
   - id: 4
     fields:
     - title: Title
@@ -3686,6 +3688,8 @@ MonoBehaviour:
       - title: Sequence
         value: 'CinemachinePriority(vcam4,9998,cut);
 
+          SetActive(Player_Double_Armed,true);
+
           SetContinueMode(false);
 
           SetContinueMode(true)@2'
@@ -4771,8 +4775,8 @@ MonoBehaviour:
         y: 670
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7900001
+    canvasScrollPosition: {x: 9.750778, y: 261.35275}
+    canvasZoom: 0.7900002
   - id: 6
     fields:
     - title: Title
@@ -5199,8 +5203,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Your very objective is to find as much 'fragments' as possible. All
-          of them look like this, so you'll know when you find one.
+        value: Your very objective is to find as much 'shards' as possible. All of
+          them look like this, so you'll know when you find one.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -5712,8 +5716,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Then, let me repeat to you the importance of getting more fragments
-          of KNOWLEDGE
+        value: Then, let me repeat to you the importance of getting more shards of
+          KNOWLEDGE
         type: 0
         typeString: 
       - title: Parenthetical
@@ -5757,8 +5761,8 @@ MonoBehaviour:
         y: 502
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7600001
+    canvasScrollPosition: {x: 32.94117, y: 137.10524}
+    canvasZoom: 0.85000014
   - id: 7
     fields:
     - title: Title
@@ -6041,7 +6045,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Good job! You found all the fragments of the tutorial level!
+        value: Good job! You found all the shards of the tutorial level!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -6112,8 +6116,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Keep in mind: in the next levels, you''ll need to find multiple ''fragments''
-          of crystals to get a full Crystal'
+        value: 'Keep in mind: in the next levels, you''ll need to find multiple crystal
+          shards to get a full Crystal'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -6399,7 +6403,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: You got one just now. To find the others, you may have to fight powerful
-          enemies, or scatter for 'fragments' of 'Crystals'
+          enemies, or scatter for 'crystal shards'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -6735,7 +6739,7 @@ MonoBehaviour:
         y: 541
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 173.07474}
+    canvasScrollPosition: {x: 26.829224, y: 0}
     canvasZoom: 0.82000005
   - id: 8
     fields:
@@ -8260,7 +8264,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'SetContinueMode(false);
+        value: 'SetActive(Amulet,False);
+
+          SetContinueMode(false);
 
           SetContinueMode(true)@2'
         type: 0
@@ -9018,9 +9024,7 @@ MonoBehaviour:
 
           CinemachinePriority(vcam8,0,cut);
 
-          CinemachinePriority(vcam9,0,cut);
-
-          CinemachinePriority(vcam10,0,cut);'
+          CinemachinePriority(vcam9,0,cut);'
         type: 0
         typeString: 
       - title: EventGuid
@@ -9099,9 +9103,7 @@ MonoBehaviour:
 
           CinemachinePriority(vcam8,0,cut);
 
-          CinemachinePriority(vcam9,0,cut);
-
-          CinemachinePriority(vcam10,0,cut);'
+          CinemachinePriority(vcam9,0,cut);'
         type: 0
         typeString: 
       - title: EventGuid
@@ -9348,8 +9350,8 @@ MonoBehaviour:
         y: 651.8474
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 212.85715}
-    canvasZoom: 0.70000017
+    canvasScrollPosition: {x: 161.13394, y: 0}
+    canvasZoom: 0.97000015
   syncInfo:
     syncActors: 0
     syncItems: 0

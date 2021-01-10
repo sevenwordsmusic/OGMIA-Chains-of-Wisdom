@@ -31,10 +31,10 @@ public class MidNightDreamController : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             characterController = player.GetComponent<CharacterController>();
         }
-        characterController.enabled = false;
-        player.transform.position = hiddenPos.position;
-        characterController.enabled = true;
-        player.gameObject.SetActive(false);
+        //characterController.enabled = false;
+        //player.transform.position = hiddenPos.position;
+        //characterController.enabled = true;
+        //player.gameObject.SetActive(false);
 
         //Escondemos la interfaz durante la escena
         UIManager.UIM.HideGeneralHUD();
