@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9450981, g: 0.82745105, b: 0.41960788, a: 1}
+  m_Color: {r: 0.8941177, g: 0.6862745, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 1116453034}
   - component: {fileID: 1116453033}
   - component: {fileID: 1116453036}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -368,7 +368,8 @@ GameObject:
   - component: {fileID: 1266562297}
   - component: {fileID: 1266562296}
   - component: {fileID: 1266562294}
-  m_Layer: 0
+  - component: {fileID: 1266562295}
+  m_Layer: 5
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,6 +415,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!222 &1266562295
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266562293}
+  m_CullTransparentMesh: 0
 --- !u!33 &1266562296
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -560,6 +569,7 @@ GameObject:
   - component: {fileID: 235756061293024546}
   - component: {fileID: 6548466689483715124}
   - component: {fileID: 6549608109874950510}
+  - component: {fileID: 6351423264695739479}
   m_Layer: 5
   m_Name: FX_loading
   m_TagString: Untagged
@@ -567,6 +577,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!222 &6351423264695739479
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351423264695739478}
+  m_CullTransparentMesh: 0
 --- !u!198 &6548466689483715124
 ParticleSystem:
   m_ObjectHideFlags: 0

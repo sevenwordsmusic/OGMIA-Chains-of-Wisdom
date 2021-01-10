@@ -69,6 +69,8 @@ public class FlickerLight : MonoBehaviour
 
         // Calculate new smoothed average
         light.intensity = lastSum / (float)smoothQueue.Count;
+
+
     }
 
 }
