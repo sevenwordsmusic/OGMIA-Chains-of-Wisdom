@@ -10,17 +10,31 @@ public class RangedAITasks : MonoBehaviour
     [Header("AI Variables")]
     GameObject player;
     NavMeshAgent agent;
-    [SerializeField] float attackIddle = 1;
     [SerializeField] float attackSpeed = 2;
     [SerializeField] float escapeSpeed = 4;
     [SerializeField] float detectDistance = 10;
-    [SerializeField] float attackDistance = 2;
+    [SerializeField] float fleeDistance = 2;
     [SerializeField] float escapeTime = 3;
+
+    [SerializeField] float attackDuration;
+    [SerializeField] float attackDurationOffset = 0.75f;
+
+    [SerializeField] float projectileSpeed = 5;
+    [SerializeField] int damage = 10;
+    [SerializeField] GameObject projectle;
+    [SerializeField] Transform spawnPoint1;
+    [SerializeField] Transform spawnPoint2;
+
+    [SerializeField] float attackBlendDefault = 0;
+
+
+    [SerializeField] Animator animator;
 
     float attackTimer = 0;
     bool attacking = false;
     Vector3 fleePlayerPos;
     float fleeTimer = 0;
+    bool isAliveAux = true;
 
 
     [Task]
@@ -45,6 +59,10 @@ public class RangedAITasks : MonoBehaviour
     [Task]
     void prepareFlee()
     {
+        animator.SetFloat("Blend", 0);
+        animator.SetBool("inCombat", false);
+        animator.SetTrigger("move");
+
         print("preparing flee");
         agent.speed = escapeSpeed;
         fleePlayerPos = player.transform.position;
@@ -57,7 +75,6 @@ public class RangedAITasks : MonoBehaviour
     [Task]
     void fleeFromPlayer()
     {
-        print(agent.velocity);
         agent.speed = escapeSpeed;
         agent.SetDestination(transform.position + (transform.position - fleePlayerPos).normalized * (escapeSpeed + 0.1f));
 
@@ -81,24 +98,34 @@ public class RangedAITasks : MonoBehaviour
     [Task]
     void prepareAttack()
     {
+        animator.SetFloat("Blend", attackBlendDefault);
+        animator.SetBool("inCombat", true);
+        animator.SetTrigger("attack");
+
         agent.SetDestination(transform.position);
         attackTimer = 0;
         attacking = true;
         print("preparing Attack");
+
         Task.current.Succeed();
     }
 
     [Task]
     void attack()
     {
-        if (attacking)
-        {
-            attacking = false;
-            print("enemy attack");
-        }
         attackTimer += Time.deltaTime;
 
-        if (attackTimer >= 2)
+        if (attackTimer >= attackDuration - attackDurationOffset && attacking)
+        {
+            attacking = false;
+            Vector3 projSpawnPoint = (spawnPoint1.position + spawnPoint2.position) / 2;
+            Vector3 targetPoint = player.transform.position;
+            targetPoint.y += 1.6f;
+            var proj = Instantiate(projectle, projSpawnPoint, Quaternion.identity);
+            proj.GetComponent<projectileController>().initProjectile(projectileSpeed, (targetPoint - projSpawnPoint).normalized, damage);
+        }
+
+        if (attackTimer >= attackDuration)
         {
             Task.current.Succeed();
         }
@@ -115,7 +142,7 @@ public class RangedAITasks : MonoBehaviour
     {
         if (player == null) { GameObject.FindGameObjectWithTag("Player"); print(player); }
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (distToPlayer < attackDistance)
+        if (distToPlayer < fleeDistance)
         {
             playerNear = true;
             playerDetected = false;
@@ -135,6 +162,15 @@ public class RangedAITasks : MonoBehaviour
         {
             Vector3 lookrotation = player.transform.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);
+        }
+
+        if (isAliveAux && GetComponent<EnemyController>().isAlive && GetComponent<EnemyController>().currentHealth <= 0)
+        {
+            isAliveAux = false;
+
+            animator.SetFloat("Blend", 0);
+            animator.SetBool("inCombat", false);
+            animator.SetTrigger("death");
         }
     }
 }

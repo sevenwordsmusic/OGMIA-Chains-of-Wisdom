@@ -10,7 +10,6 @@ public class MeeleAITasks : MonoBehaviour
     [Header("AI Variables")]
     public GameObject player;
     NavMeshAgent agent;
-    [SerializeField] float attackIddle = 1;
     [SerializeField] float attackSpeed = 2;
     [SerializeField] float escapeSpeed = 4;
     [SerializeField] float detectDistance = 10;
@@ -19,6 +18,10 @@ public class MeeleAITasks : MonoBehaviour
     [SerializeField] float escapeTime = 3;
 
     [SerializeField] float attackDuration;
+
+    [SerializeField] float attackBlendDefault = 0;
+
+    public int damage = 10;
 
     [SerializeField] Animator animator;
 
@@ -115,7 +118,7 @@ public class MeeleAITasks : MonoBehaviour
     void prepareAttack()
     {
         attackDamage = true;
-        animator.SetFloat("Blend", 0);
+        animator.SetFloat("Blend", attackBlendDefault);
         animator.SetBool("inCombat", true);
         animator.SetTrigger("attack");
 

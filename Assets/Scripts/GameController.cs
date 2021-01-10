@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     [SerializeField] Vector3 startPos;
 
     //Comentar On Build
-    [CustomEditor(typeof(GameController))]
+    /*[CustomEditor(typeof(GameController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
                 myScript.goToHUBInspector();
             }
 
-            if (GUILayout.Button("Go To Level 1"))
+            /*if (GUILayout.Button("Go To Level 1"))
             {
                 myScript.goToLevel(1);
             }
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
                 myScript.saveLevel();
             }
         }
-    }
+    }*/
     //
 
     public void goToHUB()
@@ -50,6 +50,8 @@ public class GameController : MonoBehaviour
 
     public void goToHUBInspector()
     {
+        player.SetActive(true);
+
         goToHUB();
         SceneManager.LoadScene("MidNightsDream");
     }

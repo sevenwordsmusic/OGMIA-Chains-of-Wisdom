@@ -12,7 +12,7 @@ public class RoomTrapController : MonoBehaviour
     [SerializeField] bool commitChanges = false;
     bool trapsEnabled = false;
 
-    [CustomEditor(typeof(RoomTrapController))]
+    /*[CustomEditor(typeof(RoomTrapController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -26,7 +26,7 @@ public class RoomTrapController : MonoBehaviour
                 myScript.commitChanges = false;
             }
         }
-    }
+    }*/
 
     void updateTraps(Transform t)
     {

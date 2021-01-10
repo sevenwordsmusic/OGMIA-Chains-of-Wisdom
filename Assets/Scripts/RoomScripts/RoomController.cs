@@ -30,7 +30,7 @@ public class RoomController : MonoBehaviour
     public delegate void ExitedRoom();
     public ExitedRoom exitedRoom;
 
-    [CustomEditor(typeof(RoomController))]
+    /*[CustomEditor(typeof(RoomController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -68,7 +68,7 @@ public class RoomController : MonoBehaviour
                 myScript.commitChanges = false;
             }
         }
-    }
+    }*/
 
     void updateValues()
     {

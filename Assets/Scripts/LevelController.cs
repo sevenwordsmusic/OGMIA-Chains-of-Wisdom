@@ -47,6 +47,7 @@ public class LevelController : MonoBehaviour
     [Tooltip("Only turn lights that are a certain distance from player")] public bool lightDistanceOptimization = false;
     [Tooltip("Distance for Light Distance Optimization")] public float lightUpDistance = 10f;
 
+
     [Header("Debug Settings")]
     [Tooltip("Show room connections")] public bool debug = false;
     [SerializeField] float nodeSize = 3f;
@@ -263,7 +264,7 @@ public class LevelController : MonoBehaviour
         roomMatrix[idB, idA] = value;
     }
 
-    //debug method
+    /*//debug method
     private void OnDrawGizmos()
     {
         if (debug && Application.isPlaying && roomMatrix != null)
@@ -324,5 +325,5 @@ public class LevelController : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

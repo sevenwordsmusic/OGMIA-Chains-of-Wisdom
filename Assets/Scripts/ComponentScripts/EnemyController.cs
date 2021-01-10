@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -27,7 +28,20 @@ public class EnemyController : MonoBehaviour
 
 
 
-   
+    /*[CustomEditor(typeof(EnemyController))]
+    public class ObjectBuilderEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            DrawDefaultInspector();
+
+            EnemyController myScript = (EnemyController)target;
+            if (GUILayout.Button("Kill Enemy"))
+            {
+                myScript.takeDamage(1000, 0, Vector3.forward, myScript.transform.gameObject);
+            }
+        }
+    }*/
 
 
 
@@ -39,6 +53,15 @@ public class EnemyController : MonoBehaviour
         healthBarScript = GetComponentInChildren<HealthBarController>();
         healthBarObject = healthBarScript.gameObject;
         healthBarScript.setMaxHealth(maxHealth);
+
+
+        Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        if (playerTransform == null)
+        {
+            playerTransform = GameObject.Find("Root Player").transform;
+        }
+        //Ignora la colisión entre el jugador y el fragmento para que no obstaculice la 'absorcion'
+        Physics.IgnoreCollision(playerTransform.gameObject.GetComponent<CharacterController>(), GetComponent<CharacterController>(), true);
 
         setupHealthBar();
     }

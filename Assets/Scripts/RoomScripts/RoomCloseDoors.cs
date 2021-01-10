@@ -12,7 +12,7 @@ public class RoomCloseDoors : MonoBehaviour
     public delegate void DoorsClosed();
     public DoorsClosed doorsclosed;
 
-    [CustomEditor(typeof(RoomCloseDoors))]
+    /*[CustomEditor(typeof(RoomCloseDoors))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -26,7 +26,7 @@ public class RoomCloseDoors : MonoBehaviour
                 myScript.commitChanges = false;
             }
         }
-    }
+    }*/
 
     void updateTrapDoors(Transform t)
     {

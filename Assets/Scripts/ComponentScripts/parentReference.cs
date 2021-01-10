@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class parentReference : MonoBehaviour
 {
-    public GameObject perent;
+    public GameObject parent;
+    public int damage;
+    private void Start()
+    {
+        damage = parent.GetComponent<MeeleAITasks>().damage;
+    }
 }

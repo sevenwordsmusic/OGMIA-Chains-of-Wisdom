@@ -337,25 +337,42 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider trig)
     {
-        Transform trigParent = trig.transform.parent;
-        if (trig.transform.parent != null)
+        if (trig.CompareTag("weapon"))
         {
-            if (trigParent.CompareTag("enemy"))
+            var scriptReference = trig.GetComponent<parentReference>();
+            if (scriptReference != null)
             {
-                //print("enemy");
-                //trigParent.GetComponent<EnemyController>().enemyDefeated();
-            }
-            else if (trigParent.CompareTag("trapActivator"))
-            {
-                trigParent.GetComponent<RoomCloseDoors>().activateTrapDoors();
-            }
-            else if (trigParent.CompareTag("trapActivator2"))
-            {
-                trigParent.GetComponent<TutorialCloseDoors>().activateTrapDoors();
+                GetComponent<CombatController>().takeDamage(scriptReference.damage, 5, transform.position - trig.transform.position, trig.gameObject);
             }
             else
             {
-                //nothing
+                var scriptReference2 = trig.GetComponent<projectileController>();
+                GetComponent<CombatController>().takeDamage(scriptReference2.damage, 5, transform.position - trig.transform.position, trig.gameObject);
+                scriptReference2.destroyProjectile();
+            }
+        }
+        else
+        {
+            Transform trigParent = trig.transform.parent;
+            if (trig.transform.parent != null)
+            {
+                if (trigParent.CompareTag("enemy"))
+                {
+                    //print("enemy");
+                    //trigParent.GetComponent<EnemyController>().enemyDefeated();
+                }
+                else if (trigParent.CompareTag("trapActivator"))
+                {
+                    trigParent.GetComponent<RoomCloseDoors>().activateTrapDoors();
+                }
+                else if (trigParent.CompareTag("trapActivator2"))
+                {
+                    trigParent.GetComponent<TutorialCloseDoors>().activateTrapDoors();
+                }
+                else
+                {
+                    //nothing
+                }
             }
         }
     }
