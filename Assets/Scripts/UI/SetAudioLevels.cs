@@ -1,22 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Audio;
 using UnityEngine.UI;
+using FMOD.Studio;
+
 
 public class SetAudioLevels : MonoBehaviour {
 
-	public AudioMixer mainMixer;					//Used to hold a reference to the AudioMixer mainMixer
+    private FMOD.Studio.Bus bgmBus;
+    private FMOD.Studio.Bus sfxBus;
 
 
-	//Call this function and pass in the float parameter musicLvl to set the volume of the AudioMixerGroup Music in mainMixer
-	public void SetMusicLevel(float musicLvl)
+    //AUDIO by @sevenwordsmusic
+    public void SetMusicLevel(float musicLvl)
 	{
-		mainMixer.SetFloat("musicVol", musicLvl);
-	}
 
-	//Call this function and pass in the float parameter sfxLevel to set the volume of the AudioMixerGroup SoundFx in mainMixer
+        bgmBus=FMODUnity.RuntimeManager.GetBus("bus:/BGM_bus");
+        Debug.Log(bgmBus);
+        bgmBus.setVolume(musicLvl);
+    }
+
+	//AUDIO by @sevenwordsmusic
 	public void SetSfxLevel(float sfxLevel)
 	{
-		mainMixer.SetFloat("sfxVol", sfxLevel);
-	}
+        sfxBus=FMODUnity.RuntimeManager.GetBus("bus:/SFX_bus");
+        sfxBus.setVolume(sfxLevel);
+    }
 }
