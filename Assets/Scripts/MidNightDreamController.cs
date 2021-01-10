@@ -9,7 +9,9 @@ public class MidNightDreamController : MonoBehaviour
 {
     private GameObject player;
     private CharacterController characterController;
+    [SerializeField] Transform startPos;
     [SerializeField] Transform hiddenPos;
+    [SerializeField] GameObject playerDouble;
     [SerializeField] GameObject cutsceneCamera;
     [SerializeField] CinemachineVirtualCamera cinemaCam;
     [SerializeField] PlayableDirector normalIntroCutscene;
@@ -31,10 +33,10 @@ public class MidNightDreamController : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             characterController = player.GetComponent<CharacterController>();
         }
-        //characterController.enabled = false;
-        //player.transform.position = hiddenPos.position;
-        //characterController.enabled = true;
-        //player.gameObject.SetActive(false);
+        characterController.enabled = false;
+        player.transform.position = hiddenPos.position;
+        characterController.enabled = true;
+        player.gameObject.SetActive(false);
 
         //Escondemos la interfaz durante la escena
         UIManager.UIM.HideGeneralHUD();
@@ -59,7 +61,8 @@ public class MidNightDreamController : MonoBehaviour
         } 
         else
         {
-            normalIntroCutscene.Play();
+            //normalIntroCutscene.Play();
+            firstTimeIntroCutscene.Play();
         }
 
     }
@@ -67,21 +70,37 @@ public class MidNightDreamController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (warpPlayerHereAtStart)
-        {
-            if (player == null || characterController == null)
-            {
-                player = GameObject.FindGameObjectWithTag("Player");
-                characterController = player.GetComponent<CharacterController>();
-            }
-            characterController.enabled = false;
-            player.transform.position = this.transform.position;
-            characterController.enabled = true;
+        //if (warpPlayerHereAtStart)
+        //{
+        //    if (player == null || characterController == null)
+        //    {
+        //        player = GameObject.FindGameObjectWithTag("Player");
+        //        characterController = player.GetComponent<CharacterController>();
+        //    }
+        //    characterController.enabled = false;
+        //    player.transform.position = this.transform.position;
+        //    characterController.enabled = true;
 
-            //SAVE THE GAME
-            SaveSystem.SaveToSlot(1);
-            //ToDo: mensaje de 'partida guardada con exito'
-        }
+        //    //SAVE THE GAME
+        //    SaveSystem.SaveToSlot(1);
+        //    //ToDo: mensaje de 'partida guardada con exito'
+        //}
+
+    }
+
+    public void placePlayerAtStart()
+    {
+        playerDouble.SetActive(false);
+
+        characterController.enabled = false;
+        player.transform.position = startPos.position;
+        characterController.enabled = true;
+        player.gameObject.SetActive(true);
+
+        cinemaCam.Priority = 0;
+        //SAVE THE GAME
+        SaveSystem.SaveToSlot(1);
+        //ToDo: mensaje de 'partida guardada con exito'
 
     }
 
