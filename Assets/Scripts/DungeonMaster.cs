@@ -14,7 +14,7 @@ public class DungeonMaster : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        bTracker = player.GetComponent<BehaviourTracker>();
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //bTracker = player.GetComponent<BehaviourTracker>();
     }
 }

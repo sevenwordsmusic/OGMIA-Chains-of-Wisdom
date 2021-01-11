@@ -4398,7 +4398,7 @@ GameObject:
   - component: {fileID: 509347858}
   m_Layer: 8
   m_Name: VengefulSpirit
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4527,14 +4527,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 2
-  escapeSpeed: 4
+  escapeSpeed: 5
   detectDistance: 20
   fleeDistance: 5
   escapeTime: 3
   attackDuration: 3.15
   attackDurationOffset: 0.75
-  projectileSpeed: 0.3
-  damage: 10
+  attackWait: 0.4
+  projectileSpeed: 0.4
+  damage: 15
   projectle: {fileID: 6312937762141821613, guid: eeac3e556e25a5b4dbc7a46975faa62e,
     type: 3}
   spawnPoint1: {fileID: 7192470832633479157}

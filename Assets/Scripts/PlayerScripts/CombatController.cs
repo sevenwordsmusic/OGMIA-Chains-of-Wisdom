@@ -28,6 +28,7 @@ public class CombatController : MonoBehaviour
     [Header("Combat variables", order = 2)]
     public int maxHealth = 150;
     [HideInInspector] public int health;
+    float healthAux;
     private HealthBarController healthBar1;
     private HealthBarController healthBar2;
     //private EnemyHealthBar enemyHPBar;
@@ -480,6 +481,14 @@ public class CombatController : MonoBehaviour
             //Play Block VFX
         }
 
+    }
+
+    public void increaseHealth(float h)
+    {
+        healthAux = Mathf.Min(maxHealth, healthAux + h);
+        health = (int)healthAux;
+        healthBar1.setHealth(health);
+        healthBar2.setHealth(health);
     }
 
     /// <summary>

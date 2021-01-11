@@ -18,6 +18,7 @@ public class RangedAITasks : MonoBehaviour
 
     [SerializeField] float attackDuration;
     [SerializeField] float attackDurationOffset = 0.75f;
+    [SerializeField] float attackWait = 0.8f;
 
     [SerializeField] float projectileSpeed = 5;
     [SerializeField] int damage = 10;
@@ -35,6 +36,8 @@ public class RangedAITasks : MonoBehaviour
     Vector3 fleePlayerPos;
     float fleeTimer = 0;
     bool isAliveAux = true;
+
+    bool inAttackAnimation = false;
 
 
     [Task]
@@ -63,7 +66,6 @@ public class RangedAITasks : MonoBehaviour
         animator.SetBool("inCombat", false);
         animator.SetTrigger("move");
 
-        print("preparing flee");
         agent.speed = escapeSpeed;
         fleePlayerPos = player.transform.position;
         fleeTimer = 0;
@@ -105,7 +107,8 @@ public class RangedAITasks : MonoBehaviour
         agent.SetDestination(transform.position);
         attackTimer = 0;
         attacking = true;
-        print("preparing Attack");
+
+        inAttackAnimation = true;
 
         Task.current.Succeed();
     }
@@ -125,8 +128,9 @@ public class RangedAITasks : MonoBehaviour
             proj.GetComponent<projectileController>().initProjectile(projectileSpeed, (targetPoint - projSpawnPoint).normalized, damage);
         }
 
-        if (attackTimer >= attackDuration)
+        if (attackTimer >= attackDuration + attackWait)
         {
+            inAttackAnimation = false;
             Task.current.Succeed();
         }
     }
@@ -158,7 +162,7 @@ public class RangedAITasks : MonoBehaviour
             playerDetected = false;
         }
 
-        if (!playerNear)
+        if (!playerNear || inAttackAnimation)
         {
             Vector3 lookrotation = player.transform.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);

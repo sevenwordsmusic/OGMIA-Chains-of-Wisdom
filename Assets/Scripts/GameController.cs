@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     [SerializeField] Vector3 startPos;
 
     //Comentar On Build
-    /*[CustomEditor(typeof(GameController))]
+    [CustomEditor(typeof(GameController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -35,9 +35,9 @@ public class GameController : MonoBehaviour
             if (GUILayout.Button("Save Level 1"))
             {
                 myScript.saveLevel();
-            }
+            }*/
         }
-    }*/
+    }
     //
 
     public void goToHUB()

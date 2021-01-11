@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 1012012397}
   m_Layer: 8
   m_Name: SkeletonRecruit
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -803,11 +803,12 @@ MonoBehaviour:
   escapeSpeed: 4
   detectDistance: 10
   attackDistance: 1.2
-  escapeHealth: 100
+  escapeHealth: -1000
   escapeTime: 8
   attackDuration: 1.2
+  attackWait: 0.8
   attackBlendDefault: 0
-  damage: 10
+  damage: 12
   animator: {fileID: 8048091626273094719}
   attackDamage: 0
 --- !u!114 &1012012396
@@ -824,7 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   currentHealth: 0
-  maxHealth: 200
+  maxHealth: 150
   healthBarOffset: 1.5
   isVulnerable: 0
   invulnerabilityAfterHitTime: 0.33
@@ -4582,6 +4583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 8048091626273094712}
   damage: 0
+  deadly: 0
 --- !u!1 &8048091628078983058
 GameObject:
   m_ObjectHideFlags: 0

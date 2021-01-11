@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using Panda;
 
 [RequireComponent(typeof(EnemyController))]
-public class MeeleAITasks : MonoBehaviour
+public class BossAITasks : MonoBehaviour
 {
     [Header("AI Variables")]
     public GameObject player;
@@ -17,10 +17,15 @@ public class MeeleAITasks : MonoBehaviour
     [SerializeField] int escapeHealth = 999999;
     [SerializeField] float escapeTime = 3;
 
-    [SerializeField] float attackDuration;
+    int chosenAttack = 0;
+    [SerializeField] List<float> attackDuration;
     [SerializeField] float attackWait = 0.8f;
 
     [SerializeField] float attackBlendDefault = 0;
+
+    bool firstAttack = true;
+
+    [SerializeField] GameObject weapon;
 
     public int damage = 10;
 
@@ -117,10 +122,28 @@ public class MeeleAITasks : MonoBehaviour
     [Task]
     void prepareAttack()
     {
-        attackDamage = true;
-        animator.SetFloat("Blend", attackBlendDefault);
-        animator.SetBool("inCombat", true);
-        animator.SetTrigger("attack");
+        bool specialAttack = Random.value > 0.8f;
+        if (specialAttack || firstAttack)
+        {
+            firstAttack = false;
+            chosenAttack = 2;
+            weapon.GetComponent<parentReference>().deadly = true;
+
+            attackDamage = true;
+            animator.SetFloat("Blend", 0);
+            animator.SetBool("inCombat", true);
+            animator.SetTrigger("special");
+        }
+        else
+        {
+            chosenAttack = Random.Range(0, 2);
+            weapon.GetComponent<parentReference>().deadly = true;
+
+            attackDamage = true;
+            animator.SetFloat("Blend", chosenAttack);
+            animator.SetBool("inCombat", true);
+            animator.SetTrigger("attack");
+        }
 
         agent.SetDestination(transform.position);
         attackTimer = 0;
@@ -145,8 +168,17 @@ public class MeeleAITasks : MonoBehaviour
         }
         attackTimer += Time.deltaTime;
 
-        if (attackTimer >= attackDuration + attackWait)
+        if (attackTimer >= attackDuration[chosenAttack] + attackWait)
         {
+            if(chosenAttack == 2)
+            {
+                var trySpawnEnemies = GetComponent<EnemySpawner>();
+                if(trySpawnEnemies != null)
+                {
+                    trySpawnEnemies.spawnENemies();
+                }
+            }
+            chosenAttack = Random.Range(0, 2);
             Task.current.Succeed();
         }
     }

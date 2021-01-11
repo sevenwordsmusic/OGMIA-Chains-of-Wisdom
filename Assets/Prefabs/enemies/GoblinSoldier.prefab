@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 1524459879}
   m_Layer: 8
   m_Name: GoblinSoldier
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1464,15 +1464,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  attackSpeed: 2
+  attackSpeed: 2.5
   escapeSpeed: 4
   detectDistance: 10
   attackDistance: 1.2
-  escapeHealth: 100
-  escapeTime: 8
+  escapeHealth: 50
+  escapeTime: 6
   attackDuration: 1.2
+  attackWait: 0.6
   attackBlendDefault: 0
-  damage: 10
+  damage: 15
   animator: {fileID: 5452834483259455155}
   attackDamage: 0
 --- !u!114 &1524459877
@@ -1489,7 +1490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   currentHealth: 0
-  maxHealth: 200
+  maxHealth: 175
   healthBarOffset: 1.5
   isVulnerable: 0
   invulnerabilityAfterHitTime: 0.33
@@ -4666,6 +4667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1587413772516177523}
   damage: 0
+  deadly: 0
 --- !u!1 &7579031259896531981
 GameObject:
   m_ObjectHideFlags: 0

@@ -2818,7 +2818,7 @@ GameObject:
   - component: {fileID: 1739901000}
   m_Layer: 8
   m_Name: GoblinShaman
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2905,14 +2905,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 2
-  escapeSpeed: 4
+  escapeSpeed: 5
   detectDistance: 20
   fleeDistance: 5
   escapeTime: 3
   attackDuration: 2.1
   attackDurationOffset: 0.85
+  attackWait: 0.5
   projectileSpeed: 0.3
-  damage: 10
+  damage: 13
   projectle: {fileID: 6312937762141821613, guid: eeac3e556e25a5b4dbc7a46975faa62e,
     type: 3}
   spawnPoint1: {fileID: 4874690581968125202}
@@ -2933,7 +2934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 125
   healthBarOffset: 1.5
   isVulnerable: 0
   invulnerabilityAfterHitTime: 0.33

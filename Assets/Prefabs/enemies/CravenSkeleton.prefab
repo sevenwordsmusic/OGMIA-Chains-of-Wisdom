@@ -2029,7 +2029,7 @@ GameObject:
   - component: {fileID: 416181600}
   m_Layer: 0
   m_Name: CravenSkeleton
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 100
   healthBarOffset: 1.5
   isVulnerable: 0
   invulnerabilityAfterHitTime: 0.33
@@ -2164,9 +2164,10 @@ MonoBehaviour:
   escapeTime: 3
   attackDuration: 2.1
   attackDurationOffset: 1.05
+  attackWait: 0.5
   projectileSpeed: 0.3
-  damage: 10
-  projectle: {fileID: 6312937762141821613, guid: eeac3e556e25a5b4dbc7a46975faa62e,
+  damage: 8
+  projectle: {fileID: 6312937762141821613, guid: edd5a95a5999d084392a8bdc095d0e3c,
     type: 3}
   spawnPoint1: {fileID: 3902415796818698584}
   spawnPoint2: {fileID: 3902415796818698584}

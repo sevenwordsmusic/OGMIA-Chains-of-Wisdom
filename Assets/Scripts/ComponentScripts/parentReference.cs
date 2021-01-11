@@ -6,6 +6,8 @@ public class parentReference : MonoBehaviour
 {
     public GameObject parent;
     public int damage;
+    public bool deadly = false;
+
     private void Start()
     {
         damage = parent.GetComponent<MeeleAITasks>().damage;
