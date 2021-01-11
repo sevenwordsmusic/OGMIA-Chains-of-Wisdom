@@ -46,7 +46,8 @@ public class Tutorial_Initial_Script : MonoBehaviour
             cinemaCam.Priority = 9000;
 
             initialCutscene.Play();
-        } else
+        }
+        else
         {
             characterController.enabled = false;
             player.transform.position = initialPos.position;
