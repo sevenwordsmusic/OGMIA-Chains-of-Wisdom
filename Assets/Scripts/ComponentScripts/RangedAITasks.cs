@@ -144,7 +144,7 @@ public class RangedAITasks : MonoBehaviour
 
     private void Update()
     {
-        if (isAliveAux) { return; }
+        if (!isAliveAux) { return; }
         if (player == null) { GameObject.FindGameObjectWithTag("Player"); print(player); }
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (distToPlayer < fleeDistance)

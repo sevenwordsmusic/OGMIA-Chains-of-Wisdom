@@ -160,7 +160,7 @@ public class MeeleAITasks : MonoBehaviour
 
     private void Update()
     {
-        if (isAliveAux) { return; }
+        if (!isAliveAux) { return; }
         if (player == null) { GameObject.FindGameObjectWithTag("Player"); }
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (GetComponent<EnemyController>().currentHealth <= escapeHealth && !reEngage)

@@ -42,5 +42,9 @@ public class GameInitializer : MonoBehaviour
         gameController.SetActive(true);
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(gameController);
+
+
+        if (gameInitialized != null)
+            gameInitialized();
     }
 }

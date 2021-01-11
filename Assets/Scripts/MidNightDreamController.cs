@@ -62,8 +62,8 @@ public class MidNightDreamController : MonoBehaviour
         } 
         else
         {
-            //normalIntroCutscene.Play();
-            endGameCutscene.Play();
+            normalIntroCutscene.Play();
+            //endGameCutscene.Play();
         }
 
     }

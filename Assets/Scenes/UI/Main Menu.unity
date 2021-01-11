@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_requiredTag: Player
-  m_destinationSceneName: midnightsDream
+  m_destinationSceneName: level_0
   m_spawnpointNameInDestinationScene: StartPos
 --- !u!114 &694135137
 MonoBehaviour:
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732489292}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a2840b06cde3b479416623b4d15788, type: 3}
   m_Name: 
@@ -2934,12 +2934,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4334585862097019012}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3560313134255293880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 959072169731089724, guid: b359205cf59088c4cb00c82a8c1c8875,
-    type: 3}
-  m_PrefabInstance: {fileID: 4334585862097019012}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3560313135098398938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 959072171027310686, guid: b359205cf59088c4cb00c82a8c1c8875,
@@ -3124,6 +3118,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1524359093}
+    - target: {fileID: 4378513168629585743, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: continueGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253662575988040694, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -281
+      objectReference: {fileID: 0}
     - target: {fileID: 5253662576979880568, guid: b359205cf59088c4cb00c82a8c1c8875,
         type: 3}
       propertyPath: mobileJoystick
@@ -3136,9 +3140,29 @@ PrefabInstance:
       objectReference: {fileID: 694135133}
     - target: {fileID: 6053646645183188757, guid: b359205cf59088c4cb00c82a8c1c8875,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053646645183188757, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053646645183188757, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1524359093}
+    - target: {fileID: 6053646645183188757, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053646645183188757, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: continueGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6348296319219331901, guid: b359205cf59088c4cb00c82a8c1c8875,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
