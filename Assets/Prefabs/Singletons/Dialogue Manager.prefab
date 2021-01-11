@@ -495,6 +495,49 @@ MonoBehaviour:
     onDialogueSystemUnpause:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &650791182407135706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092341352934872909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.6981132, g: 0.64290994, b: 0.46431115, a: 1}
+    m_HighlightedColor: {r: 0.9450981, g: 0.82745105, b: 0.41960788, a: 1}
+    m_PressedColor: {r: 0.37254903, g: 0.37254903, b: 0.37254903, a: 1}
+    m_SelectedColor: {r: 0.9450981, g: 0.82745105, b: 0.41960788, a: 1}
+    m_DisabledColor: {r: 0.12156863, g: 0.12156863, b: 0.12156863, a: 0.7647059}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.15
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8099510572122732483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,6 +632,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.37254903
       objectReference: {fileID: 0}
+    - target: {fileID: 7663815185269722745, guid: 43ed9b1f317a48b478e03c3c69673885,
+        type: 3}
+      propertyPath: m_Size
+      value: 0.99999136
+      objectReference: {fileID: 0}
     - target: {fileID: 7663815185269728221, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -649,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 7663815185269751921, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185269751921, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
@@ -778,6 +826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_AlignByGeometry
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663815185275060929, guid: 43ed9b1f317a48b478e03c3c69673885,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185275078731, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
@@ -1097,42 +1150,42 @@ PrefabInstance:
     - target: {fileID: 7663815185295429821, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295429821, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295429821, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 997.2146
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295429821, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295429821, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295429821, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295433379, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295433379, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0000064373016
+      value: 0.0009854389
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295439453, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
@@ -1197,32 +1250,32 @@ PrefabInstance:
     - target: {fileID: 7663815185295458769, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295458769, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295458769, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 981.2146
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295458769, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295458769, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 498.6073
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295458769, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7663815185295460485, guid: 43ed9b1f317a48b478e03c3c69673885,
         type: 3}
