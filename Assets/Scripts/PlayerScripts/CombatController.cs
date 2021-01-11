@@ -77,6 +77,8 @@ public class CombatController : MonoBehaviour
         health = maxHealth;
         healthBar1.setMaxHealth(maxHealth);
         healthBar2.setMaxHealth(maxHealth);
+
+        healthAux = health;
     }
 
     //EVENTS

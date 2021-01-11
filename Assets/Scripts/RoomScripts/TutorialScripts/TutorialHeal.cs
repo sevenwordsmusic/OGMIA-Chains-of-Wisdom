@@ -19,13 +19,18 @@ public class TutorialHeal : MonoBehaviour
     {
         current = amount;
         player = GameObject.FindGameObjectWithTag("Player");
-        CombatController cController = player.GetComponent<CombatController>();
+        cController = player.GetComponent<CombatController>();
         intensityTracker = light.GetComponent<Light>().intensity;
     }
 
 
     private void Update()
     {
+        if (player == null || cController == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            cController = player.GetComponent<CombatController>();
+        }
         if (heal && cController.health < cController.maxHealth)
         {
             current -= rate * Time.deltaTime;
