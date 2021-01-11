@@ -124,10 +124,13 @@ public class CombatController : MonoBehaviour
 
             //Hacemos que el jugador se oriente hacia su enemigo fijado, para que los combos sean fluidos y comodos de ejecutar.
             if (lockedEnemy != null)
+            {
                 transform.LookAt(new Vector3(lockedEnemy.transform.position.x, transform.position.y, lockedEnemy.transform.position.z));
-
-            //if (playerInput.currentControlScheme == "Keyboard + mouse") //Si se está usando ratón y teclado, apunta el ataque en la dirección del ratón.
-            //    playerTransform.LookAt(new Vector3(attackPointer.position.x, playerTransform.position.y, attackPointer.position.z));
+            }
+            else if (playerInput.currentControlScheme == "Keyboard + mouse") //Si se está usando ratón y teclado, apunta el ataque en la dirección del ratón.
+            {
+                playerTransform.LookAt(new Vector3(attackPointer.position.x, playerTransform.position.y, attackPointer.position.z));
+            }
         }
 
         if (noOfTaps == 1) //Si el número de  taps es exactamente 1, PRIMER GOLPE DEL COMBO

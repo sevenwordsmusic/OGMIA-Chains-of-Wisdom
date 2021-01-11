@@ -34,7 +34,7 @@ public class Tutorial_Initial_Script : MonoBehaviour
             player.transform.position = hiddenPos.position;
             characterController.enabled = true;
 
-            player.gameObject.SetActive(false);
+            //player.gameObject.SetActive(false);
 
             UIManager.UIM.HideGeneralHUD();
 

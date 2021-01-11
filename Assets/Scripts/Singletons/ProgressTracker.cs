@@ -65,6 +65,7 @@ public class ProgressTracker : MonoBehaviour
     {
         numberOfPieces++;
         PlayerPrefs.SetInt("numberOfPieces", numberOfPieces);
+        print(PlayerPrefs.GetInt("numberOfPieces"));
 
         switch(numberOfPieces)
         {

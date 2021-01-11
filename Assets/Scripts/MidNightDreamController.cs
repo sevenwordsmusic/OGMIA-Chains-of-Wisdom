@@ -49,13 +49,13 @@ public class MidNightDreamController : MonoBehaviour
 
         cinemaCam.Priority = 9000;
 
-        if (PlayerPrefs.GetInt("numberOfPieces") == 1 && PlayerPrefs.GetInt("firstTimeMD") == 0) //Si tiene solo el 'nucleo' y es la primera visita del jugador al sueño de medianoche...
+        if (PlayerPrefs.GetInt("numberOfPieces") == 2 && PlayerPrefs.GetInt("firstTimeMD") == 0) //Si tiene solo el 'nucleo' y es la primera visita del jugador al sueño de medianoche...
         {
             //Lanzamos la cutscene de introduccion al sueño de medianoche
             PlayerPrefs.SetInt("firstTimeMD", 1); //Evitamos que esta cutscene se vuelva a reproducir en el futuro
             firstTimeIntroCutscene.Play();
         }
-        else if (PlayerPrefs.GetInt("numberOfPieces") >= 5) //Si los tiene todos
+        else if (PlayerPrefs.GetInt("numberOfPieces") >= 6) //Si los tiene todos
         {
             //Lanzamos la cutscene final del juego
             endGameCutscene.Play();
