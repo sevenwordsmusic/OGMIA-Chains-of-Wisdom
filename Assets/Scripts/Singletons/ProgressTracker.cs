@@ -53,9 +53,6 @@ public class ProgressTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Amulet = GameObject.FindGameObjectWithTag("Amulet");
-        AmuletImage = Amulet.GetComponent<Image>();
-        Amulet.SetActive(false);
         if(!PlayerPrefs.HasKey("numberOfPieces"))
         {
             numberOfPieces = 0;
