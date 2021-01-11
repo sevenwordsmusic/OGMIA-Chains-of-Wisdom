@@ -342,7 +342,8 @@ public class PlayerController : MonoBehaviour
             var scriptReference = trig.GetComponent<parentReference>();
             if (scriptReference != null)
             {
-                GetComponent<CombatController>().takeDamage(scriptReference.damage, 5, transform.position - trig.transform.position, trig.gameObject);
+                int dmg = (scriptReference.deadly) ? 99999 : scriptReference.damage;
+                GetComponent<CombatController>().takeDamage(dmg, 5, transform.position - trig.transform.position, trig.gameObject);
             }
             else
             {
@@ -369,10 +370,38 @@ public class PlayerController : MonoBehaviour
                 {
                     trigParent.GetComponent<TutorialCloseDoors>().activateTrapDoors();
                 }
+                else if (trigParent.CompareTag("heal"))
+                {
+                    trigParent.GetComponent<RoomHeal>().heal = true;
+                }
+                else if (trigParent.CompareTag("heal2"))
+                {
+
+                }
                 else
                 {
                     //nothing
                 }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider trig)
+    {
+        Transform trigParent = trig.transform.parent;
+        if (trig.transform.parent != null)
+        {
+            if (trigParent.CompareTag("heal"))
+            {
+                trigParent.GetComponent<RoomHeal>().heal = false;
+            }
+            else if (trigParent.CompareTag("heal2"))
+            {
+
+            }
+            else
+            {
+                //nothing
             }
         }
     }
