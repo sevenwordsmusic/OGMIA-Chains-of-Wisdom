@@ -9,10 +9,8 @@ public class ProgressTracker : MonoBehaviour
     public static ProgressTracker PT;
 
     public int numberOfPieces; //Numero de esquirlas de amuleto que tiene el jugador.
-    public GameObject Amulet;
     public Animator AmuletAnimator;
-    private Image AmuletImage;
-    public Sprite[] amuletSprites; //recipiente de sprites temporales para el amuleto
+    [HideInInspector] public bool isNewSkill;
 
 
     private void Awake()
@@ -55,9 +53,6 @@ public class ProgressTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Amulet = GameObject.FindGameObjectWithTag("Amulet");
-        AmuletImage = Amulet.GetComponent<Image>();
-        Amulet.SetActive(false);
         if(!PlayerPrefs.HasKey("numberOfPieces"))
         {
             numberOfPieces = 0;
@@ -74,42 +69,37 @@ public class ProgressTracker : MonoBehaviour
         switch(numberOfPieces)
         {
             case 1:
+                //Obtención del núcleo de cristal
                 AmuletAnimator.SetTrigger("getCore");
                 break;
 
             case 2:
-                //amuleto con 1 esquirla
+                //ensamblado de amuleto
                 AmuletAnimator.SetTrigger("assembleAmulet");
                 break;
 
             case 3:
-                //amuleto con 2 esquirla
-                AmuletImage.sprite = amuletSprites[1];
+                //amuleto con 1 cristal
+                AmuletAnimator.SetTrigger("firstCrystal");
                 break;
 
             case 4:
-                //amuleto con 3 esquirla
-                AmuletImage.sprite = amuletSprites[2];
+                //amuleto con 2 cristales
+                AmuletAnimator.SetTrigger("secondCrystal");
                 break;
 
             case 5:
-                //amuleto con 4 esquirla
-                AmuletImage.sprite = amuletSprites[3];
+                //amuleto con 3 cristales
+                AmuletAnimator.SetTrigger("thirdCrystal");
                 break;
 
             case 6:
-                //amuleto con 5 esquirla
-                AmuletImage.sprite = amuletSprites[4];
-                break;
-
-            case 7:
                 //amuleto COMPLETO
-                AmuletImage.sprite = amuletSprites[5];
-                //TODO PERMITIR FINAL DE JUEGO
+                AmuletAnimator.SetTrigger("lastCrystal");
                 break;
 
             default:
-                print("something went wrong here..." + numberOfPieces + " fragments");
+                print("something went wrong here... " + numberOfPieces + " crystals");
                 break;
 
 

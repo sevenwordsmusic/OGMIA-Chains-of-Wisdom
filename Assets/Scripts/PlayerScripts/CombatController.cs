@@ -27,6 +27,8 @@ public class CombatController : MonoBehaviour
 
     [Header("Combat variables", order = 2)]
     public int maxHealth = 150;
+    public int maxHealthUpgrade1 = 200;
+    public int maxHealthUpgrade2 = 250;
     [HideInInspector] public int health;
     float healthAux;
     private HealthBarController healthBar1;
@@ -245,6 +247,21 @@ public class CombatController : MonoBehaviour
 
     #endregion
 
+    public void upgradeHealth1()
+    {
+        maxHealth = maxHealthUpgrade1;
+        healthBar1.setMaxHealth(maxHealth);
+        healthBar2.setMaxHealth(maxHealth);
+        health = maxHealthUpgrade1;
+    }
+
+    public void upgradeHealth2()
+    {
+        maxHealth = maxHealthUpgrade2;
+        healthBar1.setMaxHealth(maxHealth);
+        healthBar2.setMaxHealth(maxHealth);
+        health = maxHealthUpgrade2;
+    }
 
     // Update is called once per frame
     void Update()

@@ -20,7 +20,7 @@ public class RoomHeal : MonoBehaviour
     void Start()
     {
         current = amount;
-        player = GameObject.FindGameObjectWithTag("player");
+        player = GameObject.FindGameObjectWithTag("Player");
         CombatController cController = player.GetComponent<CombatController>();
         intensityTracker = light.GetComponent<Light>().intensity;
     }
