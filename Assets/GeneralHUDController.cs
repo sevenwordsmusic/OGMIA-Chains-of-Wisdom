@@ -8,11 +8,13 @@ public class GeneralHUDController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
     [SerializeField] CombatController combatController;
+    private Animator animator;
     private PlayerInput playerInput;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         playerInput = playerController.gameObject.GetComponent<PlayerInput>();
     }
 
@@ -32,6 +34,9 @@ public class GeneralHUDController : MonoBehaviour
 
     public void triggerCoreConversation()
     {
+        //Activamos la nueva skill
+        playerController.DashUpgrade = true;
+
         DialogueManager.StartConversation("Fragment_Counter_Tutorial");
     }
 
@@ -42,27 +47,100 @@ public class GeneralHUDController : MonoBehaviour
 
     public void triggerFirstCrystalConversation()
     {
-        DialogueManager.StartConversation("First_Crystal_Obtained");
+        if (ProgressTracker.PT.isNewSkill)
+        {
+            DialogueManager.StartConversation("RoundAttack_Skill_Obtained");
+
+            //Activamos la nueva skill
+            combatController.roundAttackUpgrade = true;
+
+            ProgressTracker.PT.isNewSkill = false;
+        }
+        else
+        {
+            //PLAY INCREASE HEALTH BAR ANIMATION
+            animator.SetTrigger("upgrade1");
+            //Increase player health
+            combatController.upgradeHealth1();
+        }
+
     }
 
     public void triggerSecondCrystalConversation()
     {
-        DialogueManager.StartConversation("Second_Crystal_Obtained");
+        if (ProgressTracker.PT.isNewSkill)
+        {
+            DialogueManager.StartConversation("RoundAttack_Skill_Obtained");
+
+            //Activamos la nueva skill
+            combatController.roundAttackUpgrade = true;
+
+            ProgressTracker.PT.isNewSkill = false;
+        }
+        else
+        {
+            //PLAY INCREASE HEALTH BAR ANIMATION
+            animator.SetTrigger("upgrade1");
+            //Increase player health
+            combatController.upgradeHealth1();
+        }
     }
 
     public void triggerThirdCrystalConversation()
     {
-        DialogueManager.StartConversation("Third_Crystal_Obtained");
+        if (ProgressTracker.PT.isNewSkill)
+        {
+            DialogueManager.StartConversation("Block_Skill_Obtained");
+
+            //Activamos la nueva skill
+            combatController.blockUpgrade = true;
+
+            ProgressTracker.PT.isNewSkill = false;
+        }
+        else
+        {
+            //PLAY INCREASE HEALTH BAR ANIMATION
+            animator.SetTrigger("upgrade2");
+            //Increase player health
+            combatController.upgradeHealth2();
+        }
     }
 
     public void triggerLastCrystalConversation()
     {
-        DialogueManager.StartConversation("Last_Crystal_Obtained");
+        if (ProgressTracker.PT.isNewSkill)
+        {
+            DialogueManager.StartConversation("Block_Skill_Obtained_final");
+
+            //Activamos la nueva skill
+            combatController.blockUpgrade = true;
+
+            ProgressTracker.PT.isNewSkill = false;
+        }
+        else
+        {
+            //PLAY INCREASE HEALTH BAR ANIMATION
+            animator.SetTrigger("upgrade2");
+            //Increase player health
+            combatController.upgradeHealth2();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void triggerUpgradeHealth1Conversation()
     {
-        
+        DialogueManager.StartConversation("Health_Upgrade_1");
     }
+
+    public void triggerUpgradeHealth2Conversation()
+    {
+        if(ProgressTracker.PT.numberOfPieces >= 6)
+        {
+            DialogueManager.StartConversation("Health_Upgrade_2_final");
+        } 
+        else
+        {
+            DialogueManager.StartConversation("Health_Upgrade_2");
+        }
+    }
+
 }

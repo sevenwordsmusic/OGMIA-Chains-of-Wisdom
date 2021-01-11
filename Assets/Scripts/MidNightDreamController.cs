@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using PixelCrushers;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class MidNightDreamController : MonoBehaviour
@@ -54,7 +55,7 @@ public class MidNightDreamController : MonoBehaviour
             PlayerPrefs.SetInt("firstTimeMD", 1); //Evitamos que esta cutscene se vuelva a reproducir en el futuro
             firstTimeIntroCutscene.Play();
         }
-        else if (PlayerPrefs.GetInt("numberOfPieces") == 7) //Si los tiene todos
+        else if (PlayerPrefs.GetInt("numberOfPieces") >= 5) //Si los tiene todos
         {
             //Lanzamos la cutscene final del juego
             endGameCutscene.Play();
@@ -62,7 +63,7 @@ public class MidNightDreamController : MonoBehaviour
         else
         {
             //normalIntroCutscene.Play();
-            firstTimeIntroCutscene.Play();
+            endGameCutscene.Play();
         }
 
     }
@@ -102,6 +103,19 @@ public class MidNightDreamController : MonoBehaviour
         SaveSystem.SaveToSlot(1);
         //ToDo: mensaje de 'partida guardada con exito'
 
+    }
+
+
+    public void EndA()
+    {
+        UIManager.UIM.goBackToMainMenu();
+        SceneManager.LoadScene("EndA");
+    }
+
+    public void EndB()
+    {
+        UIManager.UIM.goBackToMainMenu();
+        SceneManager.LoadScene("EndB");
     }
 
     // Update is called once per frame
