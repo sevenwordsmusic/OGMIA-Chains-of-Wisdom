@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-[RequireComponent(typeof(RoomController))]
-public class RoomHeal : MonoBehaviour
+public class TutorialHeal : MonoBehaviour
 {
     [SerializeField] float amount = 20;
     [SerializeField] float rate = 0.1f;
