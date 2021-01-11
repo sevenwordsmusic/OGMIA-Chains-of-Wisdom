@@ -38,6 +38,7 @@ public class RoomEnemiesController : MonoBehaviour
                     var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], enemyPos, Quaternion.identity);
                     enemy.GetComponent<EnemyController>().setRoomEnemyController(this);
                 }
+                spawnArea.enabled = false;
             }
         }
     }

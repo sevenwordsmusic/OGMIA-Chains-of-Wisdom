@@ -15,7 +15,7 @@ public class TutorialEnemiesController : MonoBehaviour
 
     void Start()
     {
-        spawnEnemies();
+        GetComponent<TutorialCloseDoors>().doorsclosed += spawnEnemies;
     }
 
     void spawnEnemies()
@@ -28,9 +28,10 @@ public class TutorialEnemiesController : MonoBehaviour
             enemiesToDefeat += enemyAux;
             for (int i = 0; i < enemyAux; i++)
             {
-                Vector3 enemyPos = new Vector3(Random.Range(area.min.x, area.max.x), 0.5f, Random.Range(area.min.z, area.max.z));
+                Vector3 enemyPos = new Vector3(Random.Range(area.min.x, area.max.x), 20.5f, Random.Range(area.min.z, area.max.z));
                 var enemy = Instantiate(enemyPrefabs[0], enemyPos, Quaternion.identity, transform);
                 enemy.GetComponent<EnemyController>().setTutorialEnemyController(this);
+                spawnArea.enabled = false;
             }
         }
     }

@@ -44004,11 +44004,12 @@ GameObject:
   - component: {fileID: 3188228390865076429}
   - component: {fileID: 3188228390865076430}
   - component: {fileID: 3188228390865076431}
-  - component: {fileID: 3188228390865076428}
   - component: {fileID: 1439720122420333277}
+  - component: {fileID: 3154136040077223821}
+  - component: {fileID: 1654059585371464707}
   m_Layer: 9
   m_Name: SM_Wep_Straightsword_01 (1)
-  m_TagString: Untagged
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44074,20 +44075,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3188228390865076428
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3188228390865076426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43826581424661576, guid: 23c2830330476d8498d6e1378c25bfe6, type: 2}
 --- !u!114 &1439720122420333277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44103,6 +44090,32 @@ MonoBehaviour:
   damage: 30
   knockback: 0.35
   thrust: 1
+--- !u!65 &3154136040077223821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188228390865076426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16111891, y: 1.2250365, z: 0.22881903}
+  m_Center: {x: -0.009631265, y: 0.44249937, z: -0.013726737}
+--- !u!135 &1654059585371464707
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188228390865076426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5683293
+  m_Center: {x: 0.0000008775708, y: 0.4112799, z: 0.018513666}
 --- !u!1 &3641224124936975104
 GameObject:
   m_ObjectHideFlags: 0
@@ -45046,6 +45059,8 @@ MonoBehaviour:
     m_Bits: 256
   weapon: {fileID: 0}
   maxHealth: 100
+  maxHealthUpgrade1: 200
+  maxHealthUpgrade2: 250
   health: 0
   attackImpulse: 1
   canAttack: 0
