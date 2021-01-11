@@ -39,7 +39,7 @@ public class TutorialEnemiesController : MonoBehaviour
     public void enemyDefeated()
     {
         defeatedEnemies++;
-        if (defeatedEnemies >= 20)
+        if (defeatedEnemies >= enemiesToDefeat)
             enemiesDefeated();
     }
 

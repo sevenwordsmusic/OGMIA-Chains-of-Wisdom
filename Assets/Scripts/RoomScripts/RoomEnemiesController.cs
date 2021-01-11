@@ -46,7 +46,7 @@ public class RoomEnemiesController : MonoBehaviour
     public void enemyDefeated()
     {
         defeatedEnemies++;
-        if (defeatedEnemies >= 20)
+        if (defeatedEnemies >= enemiesToDefeat)
             enemiesDefeated();
     }
 
