@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
 
     [SerializeField] Vector3 startPos;
 
+    [SerializeField] GameObject generatingLevel1;
+    [SerializeField] GameObject generatingLevel2;
+
     //Comentar On Build
     [CustomEditor(typeof(GameController))]
     public class ObjectBuilderEditor : Editor
@@ -102,6 +105,9 @@ public class GameController : MonoBehaviour
                     break;
             }*/
         }
+
+        generatingLevel1.SetActive(true);
+        generatingLevel2.SetActive(true);
     }
 
     public void resetInfo()
@@ -172,6 +178,10 @@ public class GameController : MonoBehaviour
         player.transform.position = pos;
         player.GetComponent<PlayerTracker>().enabled = true;
         player.GetComponent<PlayerTracker>().initializePlayerTracker(currentLvlController, cRoom, pRoom);
+
+
+        generatingLevel1.SetActive(false);
+        generatingLevel2.SetActive(false);
     }
 
     public class LevelInfoWrapper{

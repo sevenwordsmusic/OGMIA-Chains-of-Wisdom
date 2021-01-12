@@ -22,17 +22,23 @@ public class RoomHeal : MonoBehaviour
         current = amount;
         player = GameObject.FindGameObjectWithTag("Player");
         CombatController cController = player.GetComponent<CombatController>();
-        intensityTracker = light.GetComponent<Light>().intensity;
+        intensityTracker = light.GetComponent<FlickerLight>().maxIntensity;
     }
 
 
     private void Update()
     {
-        if (heal && cController.health < cController.maxHealth)
+        if (player == null || cController == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            cController = player.GetComponent<CombatController>();
+        }
+
+        if (heal && cController.health < cController.maxHealth && current > 0)
         {
             current -= rate * Time.deltaTime;
             cController.increaseHealth(rate * Time.deltaTime);
-            light.GetComponent<Light>().intensity-= rate * Time.deltaTime * intensityTracker/amount;
+            light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
         }
     }
 }

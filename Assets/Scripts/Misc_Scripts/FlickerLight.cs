@@ -73,4 +73,10 @@ public class FlickerLight : MonoBehaviour
 
     }
 
+    public void adjustIntenisty(float num)
+    {
+        minIntensity = Mathf.Max(0, minIntensity - num);
+        maxIntensity = Mathf.Max(0, maxIntensity - num);
+    }
+
 }

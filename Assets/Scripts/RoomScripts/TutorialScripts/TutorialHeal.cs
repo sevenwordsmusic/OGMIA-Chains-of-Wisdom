@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TutorialHeal : MonoBehaviour
 {
-    [SerializeField] float amount = 20;
-    [SerializeField] float rate = 0.1f;
+    [SerializeField] float amount = 10;
+    [SerializeField] float rate = 1;
     [SerializeField] GameObject light;
-    float current;
+    [SerializeField] float current;
     GameObject player;
     CombatController cController;
     public bool heal = false;
@@ -20,7 +20,7 @@ public class TutorialHeal : MonoBehaviour
         current = amount;
         player = GameObject.FindGameObjectWithTag("Player");
         cController = player.GetComponent<CombatController>();
-        intensityTracker = light.GetComponent<Light>().intensity;
+        intensityTracker = light.GetComponent<FlickerLight>().maxIntensity;
     }
 
 
@@ -31,11 +31,12 @@ public class TutorialHeal : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             cController = player.GetComponent<CombatController>();
         }
-        if (heal && cController.health < cController.maxHealth)
+
+        if (heal && cController.health < cController.maxHealth && current > 0)
         {
             current -= rate * Time.deltaTime;
             cController.increaseHealth(rate * Time.deltaTime);
-            light.GetComponent<Light>().intensity-= rate * Time.deltaTime * intensityTracker/amount;
+            light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
         }
     }
 }

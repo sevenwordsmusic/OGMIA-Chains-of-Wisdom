@@ -27,6 +27,12 @@ public class EnemyController : MonoBehaviour
     private float healthBarOnScreenTimer;
 
 
+    public delegate void EnemyDead();
+    public EnemyDead enemyDead;
+
+    public bool tutorialFix = false;
+
+
 
     /*[CustomEditor(typeof(EnemyController))]
     public class ObjectBuilderEditor : Editor
@@ -64,6 +70,12 @@ public class EnemyController : MonoBehaviour
         Physics.IgnoreCollision(playerTransform.gameObject.GetComponent<CharacterController>(), GetComponent<CharacterController>(), true);
 
         setupHealthBar();
+    }
+
+
+    public void initVariables(bool inTutoria)
+    {
+        tutorialFix = true;
     }
 
     /// <summary>
@@ -201,6 +213,9 @@ public class EnemyController : MonoBehaviour
         this.enabled = false;
 
         enemyDefeated();
+
+        enemyDead?.Invoke();
+
         Destroy(gameObject, 3f);
     }
 

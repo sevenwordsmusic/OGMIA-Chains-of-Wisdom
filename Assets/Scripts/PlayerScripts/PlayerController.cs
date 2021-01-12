@@ -376,7 +376,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (trigParent.CompareTag("heal2"))
                 {
-
+                    trigParent.GetComponent<TutorialHeal>().heal = true;
                 }
                 else
                 {
@@ -397,7 +397,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (trigParent.CompareTag("heal2"))
             {
-
+                trigParent.GetComponent<TutorialHeal>().heal = false;
             }
             else
             {

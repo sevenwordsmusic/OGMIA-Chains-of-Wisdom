@@ -30,12 +30,12 @@ public class RangedAITasks : MonoBehaviour
 
 
     [SerializeField] Animator animator;
+    [SerializeField] PandaBehaviour pandaScript;
 
     float attackTimer = 0;
     bool attacking = false;
     Vector3 fleePlayerPos;
     float fleeTimer = 0;
-    bool isAliveAux = true;
 
     bool inAttackAnimation = false;
 
@@ -69,6 +69,8 @@ public class RangedAITasks : MonoBehaviour
         agent.speed = escapeSpeed;
         fleePlayerPos = player.transform.position;
         fleeTimer = 0;
+
+        GetComponent<EnemyController>().tutorialFix = false;
 
         Task.current.Succeed();
     }
@@ -108,6 +110,8 @@ public class RangedAITasks : MonoBehaviour
         attackTimer = 0;
         attacking = true;
 
+        GetComponent<EnemyController>().tutorialFix = false;
+
         inAttackAnimation = true;
 
         Task.current.Succeed();
@@ -142,9 +146,18 @@ public class RangedAITasks : MonoBehaviour
 
     }
 
+    void enemyDead()
+    {
+        animator.SetFloat("Blend", (int)Random.Range(0, 2));
+        animator.SetBool("inCombat", false);
+        animator.SetTrigger("death");
+
+        pandaScript.enabled = false;
+        GetComponent<MeeleAITasks>().enabled = false;
+    }
+
     private void Update()
     {
-        if (!isAliveAux) { return; }
         if (player == null) { GameObject.FindGameObjectWithTag("Player"); print(player); }
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (distToPlayer < fleeDistance)
@@ -163,19 +176,10 @@ public class RangedAITasks : MonoBehaviour
             playerDetected = false;
         }
 
-        if (!playerNear || inAttackAnimation)
+        if ((!playerNear && !GetComponent<EnemyController>().tutorialFix) || inAttackAnimation)
         {
             Vector3 lookrotation = player.transform.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);
-        }
-
-        if (isAliveAux && GetComponent<EnemyController>().isAlive && GetComponent<EnemyController>().currentHealth <= 0)
-        {
-            isAliveAux = false;
-
-            animator.SetFloat("Blend", 0);
-            animator.SetBool("inCombat", false);
-            animator.SetTrigger("death");
         }
     }
 }
