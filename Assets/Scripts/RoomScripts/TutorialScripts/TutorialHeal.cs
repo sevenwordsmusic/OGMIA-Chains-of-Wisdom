@@ -39,7 +39,7 @@ public class TutorialHeal : MonoBehaviour
             {
                 current -= rate * Time.deltaTime;
                 cController.increaseHealth(rate * Time.deltaTime);
-                light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
+                //light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
             }
             else
             {
