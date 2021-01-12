@@ -13,9 +13,6 @@ public class GameController : MonoBehaviour
 
     [SerializeField] Vector3 startPos;
 
-    [SerializeField] GameObject generatingLevel1;
-    [SerializeField] GameObject generatingLevel2;
-
     //Comentar On Build
     [CustomEditor(typeof(GameController))]
     public class ObjectBuilderEditor : Editor
@@ -106,8 +103,6 @@ public class GameController : MonoBehaviour
             }*/
         }
 
-        generatingLevel1.SetActive(true);
-        generatingLevel2.SetActive(true);
     }
 
     public void resetInfo()
@@ -166,6 +161,10 @@ public class GameController : MonoBehaviour
 
     public void readyForInitialization(LevelController levelController)
     {
+
+        UIManager.UIM.generatingLevel1.SetActive(true);
+        UIManager.UIM.generatingLevel2.SetActive(true);
+
         currentLvlController = levelController;
         print(currentLevel);
         currentLvlController.enabled = true;
@@ -180,8 +179,8 @@ public class GameController : MonoBehaviour
         player.GetComponent<PlayerTracker>().initializePlayerTracker(currentLvlController, cRoom, pRoom);
 
 
-        generatingLevel1.SetActive(false);
-        generatingLevel2.SetActive(false);
+        UIManager.UIM.generatingLevel1.SetActive(false);
+        UIManager.UIM.generatingLevel2.SetActive(false);
     }
 
     public class LevelInfoWrapper{

@@ -216,7 +216,7 @@ public class EnemyController : MonoBehaviour
 
         enemyDead?.Invoke();
 
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 6f);
     }
 
 
