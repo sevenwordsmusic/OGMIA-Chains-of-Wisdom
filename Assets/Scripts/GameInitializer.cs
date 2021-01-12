@@ -20,6 +20,9 @@ public class GameInitializer : MonoBehaviour
 
     public void initializeGame()
     {
+
+        UIManager.UIM.generatingLevel1.SetActive(true);
+
         player.SetActive(true);
         gameController.SetActive(true);
         DontDestroyOnLoad(player);
@@ -38,6 +41,9 @@ public class GameInitializer : MonoBehaviour
 
     public void continueGame()
     {
+
+        UIManager.UIM.generatingLevel1.SetActive(true);
+
         player.SetActive(true);
         gameController.SetActive(true);
         DontDestroyOnLoad(player);

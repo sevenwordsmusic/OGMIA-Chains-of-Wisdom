@@ -30,6 +30,7 @@ public class BossAITasks : MonoBehaviour
     public int damage = 10;
 
     [SerializeField] Animator animator;
+    [SerializeField] PandaBehaviour pandaScript;
 
     float attackTimer = 0;
     bool attacking = false;
@@ -38,7 +39,6 @@ public class BossAITasks : MonoBehaviour
 
     bool idleTrigger = false;
     public bool attackDamage = false;
-    bool isAliveAux = true;
 
     Vector3 prevPos;
 
@@ -190,9 +190,19 @@ public class BossAITasks : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    void enemyDead()
+    {
+        attackDamage = false;
+        animator.SetFloat("Blend", (int)Random.Range(0,2));
+        animator.SetBool("inCombat", false);
+        animator.SetTrigger("death");
+
+        pandaScript.enabled = false;
+        GetComponent<MeeleAITasks>().enabled = false;
+    }
+
     private void Update()
     {
-        if (!isAliveAux) { return; }
         if (player == null) { GameObject.FindGameObjectWithTag("Player"); }
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (GetComponent<EnemyController>().currentHealth <= escapeHealth && !reEngage)
@@ -221,16 +231,6 @@ public class BossAITasks : MonoBehaviour
         {
             Vector3 lookrotation = player.transform.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);
-        }
-
-        if(isAliveAux && GetComponent<EnemyController>().isAlive && GetComponent<EnemyController>().currentHealth <= 0)
-        {
-            isAliveAux = false;
-
-            attackDamage = false;
-            animator.SetFloat("Blend", 0);
-            animator.SetBool("inCombat", false);
-            animator.SetTrigger("death");
         }
 
     }

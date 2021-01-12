@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1791854807}
-  m_IndirectSpecularColor: {r: 0.31277096, g: 0.10491108, b: 0.2772052, a: 1}
+  m_IndirectSpecularColor: {r: 0.31276408, g: 0.10491099, b: 0.27720535, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2557,6 +2557,8 @@ PlayableDirector:
     value: {fileID: 1351550526}
   - key: {fileID: 8697654354659114968, guid: b5346e5ff0555b949a550931a388caea, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -8994250772144652911, guid: b5346e5ff0555b949a550931a388caea, type: 2}
+    value: {fileID: 948882792}
   m_ExposedReferences:
     m_References:
     - e1f6018498ff47543a46809f4b1e44f4: {fileID: 0}
@@ -4769,6 +4771,10 @@ PrefabInstance:
       value: doorTrap (3)
       objectReference: {fileID: 0}
     - target: {fileID: 108204, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108204, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -4826,12 +4832,6 @@ PrefabInstance:
 --- !u!4 &106398706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477762, guid: ccb8112539740f54eb26d539f5ab25b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 106398705}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &106398707 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 108204, guid: ccb8112539740f54eb26d539f5ab25b3,
     type: 3}
   m_PrefabInstance: {fileID: 106398705}
   m_PrefabAsset: {fileID: 0}
@@ -11279,7 +11279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258368066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -85.93776, y: 20.410587, z: 0.7153778}
+  m_LocalPosition: {x: -70.91, y: 14.41, z: 5.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 750746572}
@@ -11296,8 +11296,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1406937, y: 1.7315006, z: 5.0325265}
-  m_Center: {x: 0.13858414, y: 0.3657503, z: -0.23742148}
+  m_Size: {x: 6.680916, y: 1.9522362, z: 18.18787}
+  m_Center: {x: -1.631527, y: 0.4761181, z: 0.43676567}
 --- !u!1001 &261966791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34683,11 +34683,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7166424859687089047, guid: a0878cc4afb53cc4dbc859fedf867f37, type: 3}
+  - {fileID: 2611224607086337632, guid: fe992ced5c49f9642a22e8e03a3c1c9a, type: 3}
   spawnAreas:
   - {fileID: 2012424971}
   - {fileID: 1420272680}
-  defaultEnemyNumber: 1
-  enemyVariance: 0
   dificultyOffset: 1
 --- !u!114 &750746574
 MonoBehaviour:
@@ -34705,7 +34704,6 @@ MonoBehaviour:
   - {fileID: 1962453976}
   - {fileID: 1342190647}
   - {fileID: 779569199}
-  - {fileID: 106398707}
   triggers:
   - {fileID: 258368068}
   commitChanges: 0
@@ -35691,6 +35689,10 @@ PrefabInstance:
     - target: {fileID: 477762, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45.842003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962453977, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7324924454135279166, guid: ccb8112539740f54eb26d539f5ab25b3,
         type: 3}
@@ -59972,6 +59974,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1962453977, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7324924454135279166, guid: ccb8112539740f54eb26d539f5ab25b3,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -66442,9 +66448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de705c49916815b40b3f29b2c7d539f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 20
-  rate: 0.001
+  amount: 10
+  rate: 1
   light: {fileID: 1135471406}
+  current: 0
   heal: 0
 --- !u!1 &1496919162
 GameObject:
@@ -85999,6 +86006,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1962453977, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7324924454135279166, guid: ccb8112539740f54eb26d539f5ab25b3,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -90990,8 +91001,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067752269}
-  m_LocalRotation: {x: 0, y: -0.7071079, z: 0, w: 0.7071057}
-  m_LocalPosition: {x: -17.54, y: 10.27, z: 4.92}
+  m_LocalRotation: {x: 0, y: 0.70710576, z: 0, w: 0.70710784}
+  m_LocalPosition: {x: -28.97002, y: 9.358334, z: 5.072565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

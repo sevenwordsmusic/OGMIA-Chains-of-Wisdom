@@ -457,6 +457,7 @@ public class CombatController : MonoBehaviour
         {
             //Reduce health
             health = health - damage;
+            healthAux = health;
             healthBar1.setHealth(health);
             healthBar2.setHealth(health);
             if (health <= 0)

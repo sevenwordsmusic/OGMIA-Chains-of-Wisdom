@@ -25,6 +25,9 @@ public class MeeleAITasks : MonoBehaviour
     public int damage = 10;
 
     [SerializeField] Animator animator;
+    [SerializeField] PandaBehaviour pandaScript;
+
+    EnemyController enemyController;
 
     float attackTimer = 0;
     bool attacking = false;
@@ -33,7 +36,6 @@ public class MeeleAITasks : MonoBehaviour
 
     bool idleTrigger = false;
     public bool attackDamage = false;
-    bool isAliveAux = true;
 
     Vector3 prevPos;
 
@@ -56,6 +58,8 @@ public class MeeleAITasks : MonoBehaviour
         attackDamage = false;
         animator.SetBool("inCombat", true);
         animator.SetTrigger("move");
+
+        GetComponent<EnemyController>().tutorialFix = false;
 
         agent.speed = attackSpeed;
         Task.current.Succeed();
@@ -122,6 +126,8 @@ public class MeeleAITasks : MonoBehaviour
         animator.SetBool("inCombat", true);
         animator.SetTrigger("attack");
 
+        GetComponent<EnemyController>().tutorialFix = false;
+
         agent.SetDestination(transform.position);
         attackTimer = 0;
         facingPlayer = false;
@@ -156,11 +162,25 @@ public class MeeleAITasks : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        enemyController = GetComponent<EnemyController>();
+        enemyController.enemyDead += enemyDead;
+
+    }
+
+    void enemyDead()
+    {
+        attackDamage = false;
+        animator.SetFloat("Blend", (int)Random.Range(0, 2));
+        animator.SetBool("inCombat", false);
+        animator.SetTrigger("death");
+
+        pandaScript.enabled = false;
+        GetComponent<MeeleAITasks>().enabled = false;
     }
 
     private void Update()
     {
-        if (!isAliveAux) { return; }
         if (player == null) { GameObject.FindGameObjectWithTag("Player"); }
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (GetComponent<EnemyController>().currentHealth <= escapeHealth && !reEngage)
@@ -185,20 +205,10 @@ public class MeeleAITasks : MonoBehaviour
             playerDetected = false;
         }
 
-        if (!lowHealth)
+        if (!lowHealth && !GetComponent<EnemyController>().tutorialFix)
         {
             Vector3 lookrotation = player.transform.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);
-        }
-
-        if(isAliveAux && GetComponent<EnemyController>().isAlive && GetComponent<EnemyController>().currentHealth <= 0)
-        {
-            isAliveAux = false;
-
-            attackDamage = false;
-            animator.SetFloat("Blend", 0);
-            animator.SetBool("inCombat", false);
-            animator.SetTrigger("death");
         }
 
     }
