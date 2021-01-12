@@ -4670,8 +4670,8 @@ GameObject:
   - component: {fileID: 8279062276509074304}
   - component: {fileID: 8279062276508242196}
   - component: {fileID: 8279062276507141284}
-  - component: {fileID: 8214800985956181456}
   - component: {fileID: 1610386733}
+  - component: {fileID: 8828296420635377442}
   m_Layer: 8
   m_Name: SM_Wep_Ornate_Sword_02
   m_TagString: weapon
@@ -4740,20 +4740,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8214800985956181456
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8279062276509340292}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43960247642864304, guid: 6039e5e605f06b047b3363ee05dd5b12, type: 2}
 --- !u!114 &1610386733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4769,6 +4755,19 @@ MonoBehaviour:
   parent: {fileID: 8228752915348653429}
   damage: 0
   deadly: 0
+--- !u!65 &8828296420635377442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8279062276509340292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.26128623, y: 1.2631902, z: 0.36731535}
+  m_Center: {x: 0.02336902, y: 0.8287892, z: 0.0000003713075}
 --- !u!1 &8414351002122753335
 GameObject:
   m_ObjectHideFlags: 0

@@ -3954,6 +3954,7 @@ GameObject:
   - component: {fileID: 7467725151541368186}
   - component: {fileID: 7441119249986671508}
   - component: {fileID: 535412407}
+  - component: {fileID: 8515311005011648036}
   m_Layer: 8
   m_Name: SM_Wep_Goblin_Shiv_Stone_01
   m_TagString: weapon
@@ -4031,7 +4032,7 @@ MeshCollider:
   m_GameObject: {fileID: 7467725151543130252}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -4051,6 +4052,19 @@ MonoBehaviour:
   parent: {fileID: 5766729132368375278}
   damage: 0
   deadly: 0
+--- !u!65 &8515311005011648036
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467725151543130252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.08629812, y: 0.93329734, z: 0.15624265}
+  m_Center: {x: 0.0000009893974, y: 0.21783528, z: 0.007777279}
 --- !u!1 &7660388833928353956
 GameObject:
   m_ObjectHideFlags: 0
