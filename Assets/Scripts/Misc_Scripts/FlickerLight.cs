@@ -41,7 +41,7 @@ public class FlickerLight : MonoBehaviour
         /// restart you can do.
         /// </summary>
         /// 
-/*
+
     public void Reset()
     {
         smoothQueue.Clear();
@@ -85,6 +85,6 @@ public class FlickerLight : MonoBehaviour
         minIntensity = Mathf.Max(0, minIntensity - num);
         maxIntensity = Mathf.Max(0, maxIntensity - num);
     }
-*/
+
 }
 
