@@ -1808,13 +1808,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   currentHealth: 0
-  maxHealth: 125
+  maxHealth: 150
   healthBarOffset: 1.5
   isVulnerable: 0
   invulnerabilityAfterHitTime: 0.33
   onScreen: 0
   addedToList: 0
-  tutorialFix: 0
 --- !u!195 &509347852
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1858,14 +1857,13 @@ MonoBehaviour:
   attackDurationOffset: 0.75
   attackWait: 0.4
   projectileSpeed: 0.4
-  damage: 8
+  damage: 15
   projectle: {fileID: 6312937762141821613, guid: eeac3e556e25a5b4dbc7a46975faa62e,
     type: 3}
   spawnPoint1: {fileID: 7192470832633479157}
   spawnPoint2: {fileID: 5295490573784725117}
   attackBlendDefault: 1
   animator: {fileID: 3202044943880667149}
-  pandaScript: {fileID: 509347858}
 --- !u!114 &509347858
 MonoBehaviour:
   m_ObjectHideFlags: 0

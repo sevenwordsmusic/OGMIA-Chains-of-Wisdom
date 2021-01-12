@@ -2166,7 +2166,6 @@ MonoBehaviour:
   weapon: {fileID: 8163565501766001255}
   damage: 20
   animator: {fileID: 1314645246661909549}
-  pandaScript: {fileID: 1792709112}
   attackDamage: 0
 --- !u!195 &1792709114
 NavMeshAgent:
@@ -2210,7 +2209,6 @@ MonoBehaviour:
   invulnerabilityAfterHitTime: 0.33
   onScreen: 0
   addedToList: 0
-  tutorialFix: 0
 --- !u!114 &1792709120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,8 +2395,8 @@ GameObject:
   - component: {fileID: 8163565501765665485}
   - component: {fileID: 8163565501764992119}
   - component: {fileID: 8163565501763775611}
+  - component: {fileID: 8192006121015988987}
   - component: {fileID: 1792709117}
-  - component: {fileID: 7024501213079033884}
   m_Layer: 8
   m_Name: SM_Wep_Crystal_Axe_01
   m_TagString: weapon
@@ -2467,6 +2465,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8192006121015988987
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163565501766001255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 43073952845712458, guid: 05666246a42c9b3429c7d9b2931bd8a2, type: 2}
 --- !u!114 &1792709117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2482,16 +2494,3 @@ MonoBehaviour:
   parent: {fileID: 1314645246661909550}
   damage: 0
   deadly: 0
---- !u!65 &7024501213079033884
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8163565501766001255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4151095, y: 0.55169785, z: 0.72585905}
-  m_Center: {x: -0.015319051, y: 0.70380604, z: -0.003393233}

@@ -1023,7 +1023,6 @@ MonoBehaviour:
   weapon: {fileID: 2814794966498946611}
   damage: 17
   animator: {fileID: 850735373645966134}
-  pandaScript: {fileID: 457179812}
   attackDamage: 0
 --- !u!114 &457179812
 MonoBehaviour:
@@ -1067,7 +1066,6 @@ MonoBehaviour:
   invulnerabilityAfterHitTime: 0.33
   onScreen: 0
   addedToList: 0
-  tutorialFix: 0
 --- !u!195 &457179814
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2121,8 +2119,8 @@ GameObject:
   - component: {fileID: 2814794966499148361}
   - component: {fileID: 2814794966495729753}
   - component: {fileID: 2814794966496725279}
+  - component: {fileID: 2879614644656384703}
   - component: {fileID: 457179816}
-  - component: {fileID: 7886977857142645722}
   m_Layer: 8
   m_Name: SM_Wep_Crystal_Ornate_Straightsword_01
   m_TagString: weapon
@@ -2191,6 +2189,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2879614644656384703
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814794966498946611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 43986161777339886, guid: 2816e07dbdd809d4d962a69afb384e1b, type: 2}
 --- !u!114 &457179816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,16 +2218,3 @@ MonoBehaviour:
   parent: {fileID: 850735373645966133}
   damage: 0
   deadly: 0
---- !u!65 &7886977857142645722
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2814794966498946611}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.173658, y: 0.96800077, z: 0.2169291}
-  m_Center: {x: -0.006498228, y: 0.60257095, z: 0.0000005389494}
