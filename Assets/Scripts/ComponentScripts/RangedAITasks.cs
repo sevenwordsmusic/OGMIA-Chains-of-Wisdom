@@ -10,18 +10,18 @@ public class RangedAITasks : MonoBehaviour
     [Header("AI Variables")]
     GameObject player;
     NavMeshAgent agent;
-    [SerializeField] float attackSpeed = 2;
-    [SerializeField] float escapeSpeed = 4;
-    [SerializeField] float detectDistance = 10;
-    [SerializeField] float fleeDistance = 2;
+    [Tooltip("Enemy speed while chasing player")] [SerializeField] float attackSpeed = 2;
+    [Tooltip("Enemy speed while fleeing")] [SerializeField] float escapeSpeed = 4;
+    [Tooltip("Distance at wich enemy starts chasing the player")] [SerializeField] float detectDistance = 10;
+    [Tooltip("Distance at wich enemy flees from player")] [SerializeField] float fleeDistance = 2;
     [SerializeField] float escapeTime = 3;
 
-    [SerializeField] float attackDuration;
-    [SerializeField] float attackDurationOffset = 0.75f;
-    [SerializeField] float attackWait = 0.8f;
+    [Tooltip("Don't change this")] [SerializeField] float attackDuration;
+    [Tooltip("Don't change this")] [SerializeField] float attackDurationOffset = 0.75f;
+    [Tooltip("Time spent wating before attacking again")] [SerializeField] float attackWait = 0.8f;
 
-    [SerializeField] float projectileSpeed = 5;
-    [SerializeField] int damage = 10;
+    [Tooltip("Projectile speed")] [SerializeField] float projectileSpeed = 5;
+    [Tooltip("Projectile damage")] [SerializeField] int damage = 10;
     [SerializeField] GameObject projectle;
     [SerializeField] Transform spawnPoint1;
     [SerializeField] Transform spawnPoint2;

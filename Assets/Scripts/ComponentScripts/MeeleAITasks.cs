@@ -10,19 +10,19 @@ public class MeeleAITasks : MonoBehaviour
     [Header("AI Variables")]
     public GameObject player;
     NavMeshAgent agent;
-    [SerializeField] float attackSpeed = 2;
-    [SerializeField] float escapeSpeed = 4;
-    [SerializeField] float detectDistance = 10;
-    [SerializeField] float attackDistance = 2;
-    [SerializeField] int escapeHealth = 999999;
-    [SerializeField] float escapeTime = 3;
+    [Tooltip("Enemy speed while chasing player")] [SerializeField] float attackSpeed = 2;
+    [Tooltip("Enemy speed while fleeing")] [SerializeField] float escapeSpeed = 4;
+    [Tooltip("Distance at wich enemy starts chasing the player")] [SerializeField] float detectDistance = 10;
+    [Tooltip("Distance at wich enemy attacks the player")] [SerializeField] float attackDistance = 2;
+    [Tooltip("Health at wich enemy starts fleeing")] [SerializeField] int escapeHealth = 999999;
+    [Tooltip("Time spent fleeing before reengaging")] [SerializeField] float escapeTime = 3;
 
-    [SerializeField] float attackDuration;
-    [SerializeField] float attackWait = 0.8f;
+    [Tooltip("Don't change this")] [SerializeField] float attackDuration;
+    [Tooltip("Time spent wating before attacking again")] [SerializeField] float attackWait = 0.8f;
 
-    [SerializeField] float attackBlendDefault = 0;
+    [Tooltip("Don't change this")] [SerializeField] float attackBlendDefault = 0;
 
-    public int damage = 10;
+    [Tooltip("Projectile damage")] public int damage = 10;
 
     [SerializeField] Animator animator;
     [SerializeField] PandaBehaviour pandaScript;
