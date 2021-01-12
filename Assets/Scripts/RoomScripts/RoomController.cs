@@ -12,6 +12,11 @@ public class RoomController : MonoBehaviour
         RoomController.lastId = 0;
     }
 
+    public static void backtrackId()
+    {
+        RoomController.lastId--;
+    }
+
     public int id = 0;
     public bool completedBefore = false;
     public enum RoomeTypes { Connector, Empty, Enemy, Healing, Trap, Start, Fragment, Boss };
@@ -25,12 +30,14 @@ public class RoomController : MonoBehaviour
     LevelController controller;
     [HideInInspector] public bool firstSpawn = true;
 
+    bool bossRoomForce = false;
+
     public delegate void EnteredRoom();
     public EnteredRoom enteredRoom;
     public delegate void ExitedRoom();
     public ExitedRoom exitedRoom;
 
-    [CustomEditor(typeof(RoomController))]
+    /*[CustomEditor(typeof(RoomController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -68,7 +75,7 @@ public class RoomController : MonoBehaviour
                 myScript.commitChanges = false;
             }
         }
-    }
+    }*/
 
     void updateValues()
     {
@@ -170,8 +177,9 @@ public class RoomController : MonoBehaviour
     }
 
     //add only gates that havent been yet connected to generation queue
-    public void prepareFreeGates()
+    public void prepareFreeGates(bool forceBoss)
     {
+        forceBoss = bossRoomForce;
         for (int i = 0; i < gates.Count; i++)
         {
             if (!gates[i].GetComponent<GateController>().isGate)
@@ -182,6 +190,10 @@ public class RoomController : MonoBehaviour
     //get random room depending on room type
     GameObject fetchRoomPrefab()
     {
+        if (bossRoomForce)
+        {
+            return controller.roomsBoss[0];
+        }
         if(controller.currentRoomAmount == ((int)(controller.roomAmount/3)) || controller.currentRoomAmount == ((int)(2*controller.roomAmount / 3)))
         {
             return controller.roomsFragment[controller.randomInt(0, controller.roomsFragment.Count)];

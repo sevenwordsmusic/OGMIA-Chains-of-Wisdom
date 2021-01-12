@@ -50299,6 +50299,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1135471404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1135471407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2180665047691310563, guid: d7bf8979cf3f8c841b58a3f5a20876da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1135471404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1135471408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7010773865181329055, guid: d7bf8979cf3f8c841b58a3f5a20876da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1135471404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1135471409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5471965635128123923, guid: d7bf8979cf3f8c841b58a3f5a20876da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1135471404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1138889985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66448,9 +66466,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de705c49916815b40b3f29b2c7d539f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 10
-  rate: 1
+  amount: 20
+  rate: 2
   light: {fileID: 1135471406}
+  effects:
+  - {fileID: 1135471409}
+  - {fileID: 1135471408}
+  - {fileID: 1135471407}
   current: 0
   heal: 0
 --- !u!1 &1496919162
@@ -80974,7 +80996,7 @@ MonoBehaviour:
   initialCutscene: {fileID: 53423912}
   hiddenPos: {fileID: 1496919163}
   initialPos: {fileID: 2123452658}
-  playCutscene: 0
+  playCutscene: 1
   testingCamera: {fileID: 2067752272}
   cinemaCam: {fileID: 100989839}
 --- !u!114 &1843577970
@@ -94997,6 +95019,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Amulet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025174706797351274, guid: 24d9c5177b5878948a0167f59de6ed11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1025174706797351274, guid: 24d9c5177b5878948a0167f59de6ed11,
         type: 3}

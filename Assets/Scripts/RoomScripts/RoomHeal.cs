@@ -8,8 +8,9 @@ using UnityEngine;
 public class RoomHeal : MonoBehaviour
 {
     [SerializeField] float amount = 20;
-    [SerializeField] float rate = 0.1f;
+    [SerializeField] float rate = 2f;
     [SerializeField] GameObject light;
+    [SerializeField] List<GameObject> effects;
     float current;
     GameObject player;
     CombatController cController;
@@ -34,11 +35,22 @@ public class RoomHeal : MonoBehaviour
             cController = player.GetComponent<CombatController>();
         }
 
-        if (heal && cController.health < cController.maxHealth && current > 0)
+
+        if (heal && cController.health < cController.maxHealth)
         {
-            current -= rate * Time.deltaTime;
-            cController.increaseHealth(rate * Time.deltaTime);
-            light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
+            if (current > 0)
+            {
+                current -= rate * Time.deltaTime;
+                cController.increaseHealth(rate * Time.deltaTime);
+                light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
+            }
+            else
+            {
+                foreach (GameObject effect in effects)
+                {
+                    effect.SetActive(false);
+                }
+            }
         }
     }
 }

@@ -6,8 +6,9 @@ using UnityEngine;
 public class TutorialHeal : MonoBehaviour
 {
     [SerializeField] float amount = 10;
-    [SerializeField] float rate = 1;
+    [SerializeField] float rate = 2;
     [SerializeField] GameObject light;
+    [SerializeField] List<GameObject> effects;
     [SerializeField] float current;
     GameObject player;
     CombatController cController;
@@ -32,11 +33,23 @@ public class TutorialHeal : MonoBehaviour
             cController = player.GetComponent<CombatController>();
         }
 
-        if (heal && cController.health < cController.maxHealth && current > 0)
+        if (heal && cController.health < cController.maxHealth)
         {
-            current -= rate * Time.deltaTime;
-            cController.increaseHealth(rate * Time.deltaTime);
-            light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
+            if(current > 0)
+            {
+                current -= rate * Time.deltaTime;
+                cController.increaseHealth(rate * Time.deltaTime);
+                light.GetComponent<FlickerLight>().adjustIntenisty(rate * Time.deltaTime * intensityTracker / amount);
+            }
+            else
+            {
+                foreach(GameObject effect in effects)
+                {
+                    effect.SetActive(false);
+                }
+            }
         }
+
+
     }
 }

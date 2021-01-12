@@ -7,6 +7,7 @@ using PixelCrushers.DialogueSystem;
 public class TutorialController : MonoBehaviour
 {
     private bool coreFound;
+    bool amuletSanityCheck = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +29,14 @@ public class TutorialController : MonoBehaviour
         } 
         else
         {
-            //Play cool ending cutscene for tutorial
-            ProgressTracker.PT.addPiece();
-            this.gameObject.SetActive(false);
-            //SaveSystem.LoadScene("MidNightsDream");
+            if (!amuletSanityCheck)
+            {
+                amuletSanityCheck = true;
+                //Play cool ending cutscene for tutorial
+                ProgressTracker.PT.addPiece();
+                this.gameObject.SetActive(false);
+                //SaveSystem.LoadScene("MidNightsDream");
+            }
         }
     }
 
