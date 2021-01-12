@@ -32,6 +32,8 @@ public class BossAITasks : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] PandaBehaviour pandaScript;
 
+    EnemyController enemyController;
+
     float attackTimer = 0;
     bool attacking = false;
     Vector3 fleePlayerPos;
@@ -137,7 +139,7 @@ public class BossAITasks : MonoBehaviour
         else
         {
             chosenAttack = Random.Range(0, 2);
-            weapon.GetComponent<parentReference>().deadly = true;
+            weapon.GetComponent<parentReference>().deadly = false;
 
             attackDamage = true;
             animator.SetFloat("Blend", chosenAttack);
@@ -188,6 +190,9 @@ public class BossAITasks : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        enemyController = GetComponent<EnemyController>();
+        enemyController.enemyDead += enemyDead;
     }
 
     void enemyDead()
@@ -198,7 +203,7 @@ public class BossAITasks : MonoBehaviour
         animator.SetTrigger("death");
 
         pandaScript.enabled = false;
-        GetComponent<MeeleAITasks>().enabled = false;
+        GetComponent<BossAITasks>().enabled = false;
     }
 
     private void Update()

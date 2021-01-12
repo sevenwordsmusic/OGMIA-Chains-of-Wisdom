@@ -210,7 +210,7 @@ public class LevelController : MonoBehaviour
             {
                 room.GetComponent<RoomController>().secondGeneration();
             }
-            levelFinished();
+            lastCheck();
         }
         //if desired room amount isnt achieved, level generation is tried again
         else if (currentRoomAmount < roomAmount)
@@ -219,7 +219,7 @@ public class LevelController : MonoBehaviour
             levelShape = 1;
             for (int i=0; i<currentRoomAmount; i++)
             {
-                roomArray[i].GetComponent<RoomController>().prepareFreeGates();
+                roomArray[i].GetComponent<RoomController>().prepareFreeGates(false);
             }
             iterationCompleted = false;
         }
@@ -230,12 +230,32 @@ public class LevelController : MonoBehaviour
     }
 
     //called when rooms are generated and desired room amount is achieved
-    void levelFinished()
-    {   
+    void lastCheck()
+    {
+        if (!lastRoom.name.Contains("boss"))
+        {
+            print("skiped boss room, generating another");
+            levelShape = 1;
+            Destroy(lastRoom);
+            currentRoomAmount--;
+            RoomController.backtrackId();
+            for (int i = currentRoomAmount-1; i >= 0; i--)
+            {
+                roomArray[i].GetComponent<RoomController>().prepareFreeGates(true);
+            }
+        }
+
+        StartCoroutine(levelFinished());
+    }
+
+    IEnumerator levelFinished()
+    {
+        yield return new WaitForSeconds(1);
+
         //if optimization is enabled most rooms get disabled
         if (optimization)
         {
-            for(int i=0; i< roomArray.Length; i++)
+            for (int i = 0; i < roomArray.Length; i++)
             {
                 roomArray[i].SetActive(false);
             }
@@ -243,7 +263,7 @@ public class LevelController : MonoBehaviour
         }
 
         RoomController.resetLastId();
-        if(firstTime && roomArray[0].GetComponent<RoomController>().startPos != null)
+        if (firstTime && roomArray[0].GetComponent<RoomController>().startPos != null)
             gameController.initializePlayerWhenReady(roomArray[0].GetComponent<RoomController>().startPos.position, startPlayerId, startPlayerId);
         else
             gameController.initializePlayerWhenReady(startPlayerPos, startPlayerId, startPlayerId);
@@ -252,6 +272,7 @@ public class LevelController : MonoBehaviour
         GetComponent<LevelProgressTracker>().addFragmentToCounter();*/
 
         roomArray[startPlayerId].GetComponent<RoomController>().enteredRoom();
+
         randValues = null;
         completedRooms = null;
         //DEBUG -> LIBERAR MEMORIA DE RESTO DE ESTRUCTURAS

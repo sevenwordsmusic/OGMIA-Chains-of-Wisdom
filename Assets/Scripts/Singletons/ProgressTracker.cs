@@ -60,6 +60,15 @@ public class ProgressTracker : MonoBehaviour
         }
     }
 
+    public void getSavedPieces()
+    {
+        numberOfPieces = PlayerPrefs.GetInt("numberOfPieces");
+        /*for(int i=0; i < numberOfPieces; i++)
+        {
+            addPiece();
+        }*/
+    }
+
 
     public void addPiece()
     {

@@ -20,6 +20,10 @@ public class MidNightDreamController : MonoBehaviour
     [SerializeField] PlayableDirector endGameCutscene;
     [Tooltip("Si es true, teletransporta al jugador a este punto al iniciarse esta escena")] public bool warpPlayerHereAtStart;
 
+
+    [SerializeField] BoxCollider entranceLvl2;
+    [SerializeField] List<GameObject> effectsLvl2;
+
     private CinemachineBrain cinemachineBrain;
     private float oldBlendTime;
 
@@ -87,6 +91,14 @@ public class MidNightDreamController : MonoBehaviour
         //    //ToDo: mensaje de 'partida guardada con exito'
         //}
 
+        if(ProgressTracker.PT.numberOfPieces >= 3)
+        {
+            entranceLvl2.enabled = true;
+            foreach(GameObject gm in effectsLvl2)
+            {
+                gm.SetActive(true);
+            }
+        }
     }
 
     public void placePlayerAtStart()

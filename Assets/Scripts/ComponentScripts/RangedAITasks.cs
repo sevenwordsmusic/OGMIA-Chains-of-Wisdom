@@ -32,6 +32,8 @@ public class RangedAITasks : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] PandaBehaviour pandaScript;
 
+    EnemyController enemyController;
+
     float attackTimer = 0;
     bool attacking = false;
     Vector3 fleePlayerPos;
@@ -144,6 +146,9 @@ public class RangedAITasks : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
 
+
+        enemyController = GetComponent<EnemyController>();
+        enemyController.enemyDead += enemyDead;
     }
 
     void enemyDead()
@@ -153,7 +158,7 @@ public class RangedAITasks : MonoBehaviour
         animator.SetTrigger("death");
 
         pandaScript.enabled = false;
-        GetComponent<MeeleAITasks>().enabled = false;
+        GetComponent<RangedAITasks>().enabled = false;
     }
 
     private void Update()

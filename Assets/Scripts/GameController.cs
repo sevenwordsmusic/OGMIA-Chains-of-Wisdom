@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] Vector3 startPos;
 
-    //Comentar On Build
+    /*//Comentar On Build
     [CustomEditor(typeof(GameController))]
     public class ObjectBuilderEditor : Editor
     {
@@ -35,9 +35,9 @@ public class GameController : MonoBehaviour
             if (GUILayout.Button("Save Level 1"))
             {
                 myScript.saveLevel();
-            }*/
+            }
         }
-    }
+    }*/
     //
 
     public void goToHUB()
@@ -103,6 +103,7 @@ public class GameController : MonoBehaviour
             }*/
         }
 
+        UIManager.UIM.generalHUD.SetActive(true);
     }
 
     public void resetInfo()
@@ -174,9 +175,11 @@ public class GameController : MonoBehaviour
 
     public void initializePlayerWhenReady(Vector3 pos, int cRoom, int pRoom)
     {
+        player.GetComponent<CharacterController>().enabled = false;
         player.transform.position = pos;
         player.GetComponent<PlayerTracker>().enabled = true;
         player.GetComponent<PlayerTracker>().initializePlayerTracker(currentLvlController, cRoom, pRoom);
+        player.GetComponent<CharacterController>().enabled = true;
 
 
         UIManager.UIM.generatingLevel1.SetActive(false);

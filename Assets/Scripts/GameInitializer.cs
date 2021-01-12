@@ -49,6 +49,8 @@ public class GameInitializer : MonoBehaviour
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(gameController);
 
+        ProgressTracker.PT.getSavedPieces();
+
 
         if (gameInitialized != null)
             gameInitialized();
