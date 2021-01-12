@@ -9,7 +9,8 @@ public class SoundEvent : MonoBehaviour
 {
     [FMODUnity.EventRef]
     public string stepEvent;
-    private FMOD.Studio.EventInstance eventToPlay;
+    [FMODUnity.EventRef]
+    public string swingEvent;
 
     private bool isIdle=true;
 
@@ -27,9 +28,13 @@ public class SoundEvent : MonoBehaviour
     {
         if (!isIdle)
         {
-            eventToPlay = FMODUnity.RuntimeManager.CreateInstance(stepEvent);
-            eventToPlay.start();
+            FMODUnity.RuntimeManager.CreateInstance(stepEvent).start();
         }
 
+    }
+
+    public void playSwing()
+    {
+        FMODUnity.RuntimeManager.CreateInstance(swingEvent).start();
     }
 }
