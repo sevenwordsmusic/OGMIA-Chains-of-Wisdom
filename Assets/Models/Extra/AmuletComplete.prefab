@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 171448411996318224}
   - component: {fileID: 522624319660428034}
   - component: {fileID: 3851315596413123219}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Esquirla1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5795740864438656348, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: ecce1a1895e37524282423faddfd60c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4322765622187966071}
   - component: {fileID: 131428635931696469}
   - component: {fileID: 6050502804663223787}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Corazon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5795740864438656348, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: ecce1a1895e37524282423faddfd60c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,6 +158,115 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1803885670552986360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7903828222411008580}
+  - component: {fileID: 492144125813616121}
+  - component: {fileID: 8946706773204403560}
+  m_Layer: 11
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7903828222411008580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803885670552986360}
+  m_LocalRotation: {x: 0.014007626, y: -0.71613735, z: 0.0015765761, w: 0.6978171}
+  m_LocalPosition: {x: -0.405, y: 0.391, z: -0.326}
+  m_LocalScale: {x: 10.464378, y: 10.464378, z: 10.464377}
+  m_Children: []
+  m_Father: {fileID: 5702453729396393428}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &492144125813616121
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803885670552986360}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Intensity: 3
+  m_Range: 21
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 2850
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &8946706773204403560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803885670552986360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad222b62fbc29a41aa50af0835f3497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 492144125813616121}
+  minIntensity: 2
+  maxIntensity: 3
+  smoothing: 40
 --- !u!1 &2029440451526340147
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +278,7 @@ GameObject:
   - component: {fileID: 5751059682302812218}
   - component: {fileID: 968827668558372986}
   - component: {fileID: 1223836909302966454}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +325,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6493254205454595255, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: c4b695772e5e6994ba1e32e496c4c51b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -248,7 +357,7 @@ GameObject:
   - component: {fileID: 3640564749586869342}
   - component: {fileID: 7070825040789107247}
   - component: {fileID: 1588106812730620917}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Soporte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +404,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4945944998787625933, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: c4b695772e5e6994ba1e32e496c4c51b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -327,7 +436,7 @@ GameObject:
   - component: {fileID: 9069042661602659872}
   - component: {fileID: 8957739297611996502}
   - component: {fileID: 6632109334318194851}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Esquirla2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +483,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5795740864438656348, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: ecce1a1895e37524282423faddfd60c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -405,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5702453729396393428}
   - component: {fileID: 4929471098060693329}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: AmuletComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,6 +540,7 @@ Transform:
   - {fileID: 3640564749586869342}
   - {fileID: 5235881007279773181}
   - {fileID: 5235881008407729150}
+  - {fileID: 7903828222411008580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 330, y: 2, z: -4}
@@ -462,7 +572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5235881007279773181}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5235881008407729150}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Pivot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +636,7 @@ GameObject:
   - component: {fileID: 5390726558653184528}
   - component: {fileID: 4583726580846810096}
   - component: {fileID: 8850554793174799714}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Luna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +683,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8387972781207378802, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: 68e9a4046689a504ea4852d4d6eb2692, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -605,7 +715,7 @@ GameObject:
   - component: {fileID: 7849999355552848888}
   - component: {fileID: 6812692211374032080}
   - component: {fileID: 6795112345376780209}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Esquirla3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +762,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5795740864438656348, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: ecce1a1895e37524282423faddfd60c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -684,7 +794,7 @@ GameObject:
   - component: {fileID: 273379945089461217}
   - component: {fileID: 795270076679260487}
   - component: {fileID: 8970564007051348496}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Esquirla4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5795740864438656348, guid: 8331d71b8430f5d408b733e9fb12d1b5, type: 3}
+  - {fileID: 2100000, guid: ecce1a1895e37524282423faddfd60c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
