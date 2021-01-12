@@ -31,6 +31,11 @@ public class newGameWarningScript : MonoBehaviour
         } 
         else
         {
+            //AUDIO
+                AudioManager.engine.ChangeSegmentTo(1);
+            //
+
+
             //gameInitializer.initializeGame();
             //UIManager.UIM.HideMenu();
             //UIManager.UIM.generalHUD.SetActive(true);

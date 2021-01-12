@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
 using FMOD.Studio;
-using FMODUnity;
-using System.Collections;
+using UnityEngine;
 
 //@sevenwordsmusic original code :D !!!
 
