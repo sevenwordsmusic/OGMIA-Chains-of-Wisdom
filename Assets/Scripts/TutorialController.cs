@@ -30,6 +30,7 @@ public class TutorialController : MonoBehaviour
         {
             //Play cool ending cutscene for tutorial
             ProgressTracker.PT.addPiece();
+            this.gameObject.SetActive(false);
             //SaveSystem.LoadScene("MidNightsDream");
         }
     }
