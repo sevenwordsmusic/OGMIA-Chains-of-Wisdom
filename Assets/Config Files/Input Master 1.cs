@@ -476,7 +476,7 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8f04a717-35ae-45dc-a5da-65d461180258"",
-                    ""path"": ""<AndroidGamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -8,6 +8,8 @@ public class GeneralHUDController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
     [SerializeField] CombatController combatController;
+    [SerializeField] GameObject mobileRoundAttackButton;
+    [SerializeField] GameObject mobileBlockButton;
     private Animator animator;
     private PlayerInput playerInput;
 
@@ -53,6 +55,7 @@ public class GeneralHUDController : MonoBehaviour
 
             //Activamos la nueva skill
             combatController.roundAttackUpgrade = true;
+            mobileRoundAttackButton.SetActive(true);
 
             ProgressTracker.PT.isNewSkill = false;
         }
@@ -74,6 +77,7 @@ public class GeneralHUDController : MonoBehaviour
 
             //Activamos la nueva skill
             combatController.roundAttackUpgrade = true;
+            mobileRoundAttackButton.SetActive(true);
 
             ProgressTracker.PT.isNewSkill = false;
         }
@@ -94,6 +98,7 @@ public class GeneralHUDController : MonoBehaviour
 
             //Activamos la nueva skill
             combatController.blockUpgrade = true;
+            mobileBlockButton.SetActive(true);
 
             ProgressTracker.PT.isNewSkill = false;
         }
@@ -114,6 +119,7 @@ public class GeneralHUDController : MonoBehaviour
 
             //Activamos la nueva skill
             combatController.blockUpgrade = true;
+            mobileBlockButton.SetActive(true);
 
             ProgressTracker.PT.isNewSkill = false;
         }

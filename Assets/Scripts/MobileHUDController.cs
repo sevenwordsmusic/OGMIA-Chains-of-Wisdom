@@ -17,19 +17,21 @@ public class MobileHUDController : MonoBehaviour
         return false;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-
-
         if (isMobile())
         {
             this.gameObject.SetActive(true);
-        } 
+        }
         else
         {
             this.gameObject.SetActive(false);
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
     }
 
 }
