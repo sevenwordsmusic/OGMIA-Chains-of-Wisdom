@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LevelController : MonoBehaviour
 {
@@ -65,6 +66,8 @@ public class LevelController : MonoBehaviour
     [SerializeField] float debugOffset = 5f;
 
     GameController gameController;
+
+    [SerializeField] NavMeshSurface navMesh;
 
     class spaceComparer : IEqualityComparer<Vector2Int> { 
         public bool Equals(Vector2Int a, Vector2Int b)
@@ -251,6 +254,8 @@ public class LevelController : MonoBehaviour
     IEnumerator levelFinished()
     {
         yield return new WaitForSeconds(1);
+
+        navMesh.BuildNavMesh();
 
         //if optimization is enabled most rooms get disabled
         if (optimization)

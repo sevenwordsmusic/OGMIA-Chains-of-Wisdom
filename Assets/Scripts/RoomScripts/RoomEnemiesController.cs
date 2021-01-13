@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.AI;
 
 [RequireComponent(typeof(RoomCloseDoors))]
 public class RoomEnemiesController : MonoBehaviour
@@ -15,10 +14,10 @@ public class RoomEnemiesController : MonoBehaviour
     public float dificultyOffset = 1;
     int enemiesToDefeat = 0;
 
-    [SerializeField] NavMeshSurface navMesh;
+    //[SerializeField] NavMeshSurface navMesh;
     void Start()
     {
-        navMesh.BuildNavMesh();
+        //navMesh.BuildNavMesh();
         GetComponent<RoomCloseDoors>().doorsclosed += spawnEnemies;
     }
 
