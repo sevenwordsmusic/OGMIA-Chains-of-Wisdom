@@ -187,6 +187,10 @@ public class BossAITasks : MonoBehaviour
 
     private void Start()
     {
+        //AUDIO
+        AudioManager.engine.ChangeSegmentTo(4);
+        //
+
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -197,6 +201,10 @@ public class BossAITasks : MonoBehaviour
 
     void enemyDead()
     {
+        //AUDIO
+        AudioManager.engine.ChangeSegmentTo(1);
+        //
+
         attackDamage = false;
         animator.SetFloat("Blend", (int)Random.Range(0,2));
         animator.SetBool("inCombat", false);
