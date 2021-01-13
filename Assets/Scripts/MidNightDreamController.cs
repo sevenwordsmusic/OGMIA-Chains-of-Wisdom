@@ -30,6 +30,10 @@ public class MidNightDreamController : MonoBehaviour
 
     private void Awake()
     {
+        //AUDIO
+            AudioManager.engine.ChangeSegmentTo(2);
+        //
+
         cutsceneCamera.SetActive(false);
 
         //Escondemos al jugador durante la cutscene introductoria
