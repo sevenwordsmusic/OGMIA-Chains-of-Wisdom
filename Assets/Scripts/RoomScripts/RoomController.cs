@@ -225,19 +225,19 @@ public class RoomController : MonoBehaviour
                     return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     break;
                 case RoomeTypes.Fragment:
-                    if (randomValue <= 0.26f)
+                    if (randomValue <= 0.2f)
                     {
                         return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     }
-                    else if (randomValue <= 0.47f)
+                    else if (randomValue <= 0.4f)
                     {
                         return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
                     }
-                    else if (randomValue <= 0.68f)
+                    else if (randomValue <= 0.6f)
                     {
                         return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
                     }
-                    else if (randomValue <= 0.89f)
+                    else if (randomValue <= 0.9f)
                     {
                         return controller.roomsHealing[controller.randomInt(0, controller.roomsHealing.Count)];
                     }
@@ -279,7 +279,7 @@ public class RoomController : MonoBehaviour
                     {
                         return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     }
-                    else if (randomValue <= 0.65f)
+                    else if (randomValue <= 0.6f)
                     {
                         return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
                     }
@@ -293,7 +293,7 @@ public class RoomController : MonoBehaviour
                     {
                         return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
                     }
-                    else if (randomValue <= 0.65f)
+                    else if (randomValue <= 0.6f)
                     {
                         return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
                     }
