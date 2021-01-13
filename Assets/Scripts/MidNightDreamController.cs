@@ -41,7 +41,7 @@ public class MidNightDreamController : MonoBehaviour
         characterController.enabled = false;
         player.transform.position = hiddenPos.position;
         characterController.enabled = true;
-        player.gameObject.SetActive(false);
+        //player.gameObject.SetActive(false);
 
         //Escondemos la interfaz durante la escena
         UIManager.UIM.HideGeneralHUD();
@@ -108,8 +108,9 @@ public class MidNightDreamController : MonoBehaviour
         characterController.enabled = false;
         player.transform.position = startPos.position;
         characterController.enabled = true;
-        player.gameObject.SetActive(true);
+        //player.gameObject.SetActive(true);
 
+        cinemachineBrain.m_DefaultBlend.m_Time = oldBlendTime;
         cinemaCam.Priority = 0;
         //SAVE THE GAME
         SaveSystem.SaveToSlot(1);
