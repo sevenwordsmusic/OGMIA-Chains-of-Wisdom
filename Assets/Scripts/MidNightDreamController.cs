@@ -21,6 +21,7 @@ public class MidNightDreamController : MonoBehaviour
     [Tooltip("Si es true, teletransporta al jugador a este punto al iniciarse esta escena")] public bool warpPlayerHereAtStart;
 
 
+
     [SerializeField] BoxCollider entranceLvl2;
     [SerializeField] List<GameObject> effectsLvl2;
 
@@ -80,6 +81,11 @@ public class MidNightDreamController : MonoBehaviour
             //endGameCutscene.Play();
         }
 
+        if (ProgressTracker.PT.numberOfPieces == 0)
+        {
+            ProgressTracker.PT.numberOfPieces = 3;
+        }
+
         if (checkAmulet != null)
         {
             checkAmulet();
@@ -105,6 +111,7 @@ public class MidNightDreamController : MonoBehaviour
         //    SaveSystem.SaveToSlot(1);
         //    //ToDo: mensaje de 'partida guardada con exito'
         //}
+        //apaño muy malo pero no hay tiempo
 
         if(ProgressTracker.PT.numberOfPieces >= 3)
         {
@@ -132,6 +139,18 @@ public class MidNightDreamController : MonoBehaviour
         //ToDo: mensaje de 'partida guardada con exito'
 
 
+    }
+
+    private void Update()
+    {
+        if (UIManager.UIM.generatingLevel1.activeSelf)
+        {
+            UIManager.UIM.generatingLevel1.SetActive(false);
+        }
+        if (UIManager.UIM.generatingLevel2.activeSelf)
+        {
+            UIManager.UIM.generatingLevel2.SetActive(false);
+        }
     }
 
 

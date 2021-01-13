@@ -557,6 +557,13 @@ public class CombatController : MonoBehaviour
         healthBar2.setHealth(health);
     }
 
+    public void resetHealth()
+    {
+        health = maxHealth;
+        healthBar1.setHealth(health);
+        healthBar2.setHealth(health);
+    }
+
     /// <summary>
     /// Normalmente, esta función será invocada por eventos desencadenados en las animaciones de ataque. 
     /// En ese momento esta función decide qué animación ejecutar a continuación.

@@ -7,7 +7,7 @@ using UnityEditor;
 public class GameController : MonoBehaviour
 {
     LevelInfoWrapper[] levelInfos;
-    [SerializeField] GameObject player;
+    public GameObject player;
     public int currentLevel = 0;
     LevelController currentLvlController;
 
@@ -45,7 +45,9 @@ public class GameController : MonoBehaviour
         currentLevel = 0;
         currentLvlController = null;
         player.GetComponent<PlayerTracker>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
         player.transform.position = startPos;
+        player.GetComponent<CharacterController>().enabled = true;
     }
 
     public void goToHUBInspector()
@@ -69,14 +71,14 @@ public class GameController : MonoBehaviour
                 case 1:
                     print("generating new Level " + num);
                     //levelInfos[num] = new LevelInfoWrapper(124, true, 30, 0, new Vector3(0, 1.28f, 0));
-                    levelInfos[num] = new LevelInfoWrapper(Random.Range(0,99999), true, 30, 0, new Vector3(0, 1.28f, 0));
+                    levelInfos[num] = new LevelInfoWrapper(Random.Range(0,99999), true, Random.Range(30,40), 0, new Vector3(0, 1.28f, 0));
                     levelInfos[num].printInfo();
                     //SceneManager.LoadScene("level_1");
                     break;
                 case 2:
                     print("generating new Level " + num);
                     //levelInfos[num] = new LevelInfoWrapper(55, true, 40, 0, new Vector3(0, 1.28f, 0));
-                    levelInfos[num] = new LevelInfoWrapper(Random.Range(0, 99999), true, 40, 0, new Vector3(0, 1.28f, 0));
+                    levelInfos[num] = new LevelInfoWrapper(Random.Range(0, 99999), true, Random.Range(40, 50), 0, new Vector3(0, 1.28f, 0));
                     levelInfos[num].printInfo();
                     //SceneManager.LoadScene("level_2");
                     break;

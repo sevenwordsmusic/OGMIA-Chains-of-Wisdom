@@ -400,7 +400,7 @@ public class PlayerController : MonoBehaviour
             var scriptReference = trig.GetComponent<parentReference>();
             if (scriptReference != null)
             {
-                int dmg = (scriptReference.deadly) ? 50 : scriptReference.damage;
+                int dmg = (scriptReference.deadly) ? 30 : scriptReference.damage;
                 GetComponent<CombatController>().takeDamage(dmg, 5, transform.position - trig.transform.position, trig.gameObject);
             }
             else

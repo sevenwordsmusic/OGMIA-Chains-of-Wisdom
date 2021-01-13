@@ -88,6 +88,7 @@ public class ProgressTracker : MonoBehaviour
                 //ensamblado de amuleto
                 AmuletAnimator.SetTrigger("assembleAmulet");
                 isNewSkill = false;
+                GetComponent<GameController>().player.GetComponent<CombatController>().increaseHealth(10000);
                 break;
 
             case 3:
