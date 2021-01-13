@@ -27,7 +27,7 @@ public class RoomController : MonoBehaviour
     public List<GameObject> lights = new List<GameObject>();
     [SerializeField] bool commitChanges = false;
     //[SerializeField] Vector2Int position = new Vector2Int(0, 0);
-    LevelController controller;
+    public LevelController controller;
     [HideInInspector] public bool firstSpawn = true;
 
     bool bossRoomForce = false;
@@ -165,6 +165,18 @@ public class RoomController : MonoBehaviour
 
         enteredRoom += turnOnLights;
         exitedRoom += turnOffLights;
+
+        foreach(Transform cp in centerPoints)
+        {
+            Instantiate(controller.mapPlane, cp.position, Quaternion.identity);
+        }
+        /*foreach(GameObject gate in gates)
+        {
+            if (gate.GetComponent<GateController>().isGate)
+            {
+                Instantiate(controller.mapGate, gate.transform.position, gate.transform.rotation);
+            }
+        }*/
     }
 
 

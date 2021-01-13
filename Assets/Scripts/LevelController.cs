@@ -67,7 +67,16 @@ public class LevelController : MonoBehaviour
 
     GameController gameController;
 
+    [Header("Nav Mesh")]
     [SerializeField] NavMeshSurface navMesh;
+
+
+    [Header("Map Settings")]
+    public GameObject mapPlane;
+    public GameObject mapGate;
+    public GameObject mapSpawn;
+    public GameObject mapCollect;
+    public GameObject mapHealing;
 
     class spaceComparer : IEqualityComparer<Vector2Int> { 
         public bool Equals(Vector2Int a, Vector2Int b)

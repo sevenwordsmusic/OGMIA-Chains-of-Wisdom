@@ -19,6 +19,14 @@ public class RoomCollectController : MonoBehaviour
             if(isFragment)
                 transform.parent.GetComponent<LevelProgressTracker>().addFragmentToCounter();
         }
+        else
+        {
+            foreach (GameObject obj in objects)
+            {
+                Instantiate(GetComponent<RoomController>().controller.mapCollect, obj.transform.position, Quaternion.identity);
+            }
+        }
+
     }
 
 }

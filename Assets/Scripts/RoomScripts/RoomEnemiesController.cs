@@ -19,6 +19,15 @@ public class RoomEnemiesController : MonoBehaviour
     {
         //navMesh.BuildNavMesh();
         GetComponent<RoomCloseDoors>().doorsclosed += spawnEnemies;
+
+        if (!GetComponent<RoomController>().completedBefore)
+        {
+            foreach (BoxCollider spawnArea in spawnAreas)
+            {
+                Instantiate(GetComponent<RoomController>().controller.mapSpawn, spawnArea.transform.position, Quaternion.identity);
+            }
+        }
+
     }
 
     void spawnEnemies()

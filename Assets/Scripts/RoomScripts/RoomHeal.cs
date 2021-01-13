@@ -24,6 +24,9 @@ public class RoomHeal : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         CombatController cController = player.GetComponent<CombatController>();
         intensityTracker = light.GetComponent<FlickerLight>().maxIntensity;
+
+
+        Instantiate(GetComponent<RoomController>().controller.mapHealing, transform.position, Quaternion.identity);
     }
 
 
