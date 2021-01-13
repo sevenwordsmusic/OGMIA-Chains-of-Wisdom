@@ -37,6 +37,7 @@ public class RoomController : MonoBehaviour
     public delegate void ExitedRoom();
     public ExitedRoom exitedRoom;
 
+#if UNITY_EDITOR
     [CustomEditor(typeof(RoomController))]
     public class ObjectBuilderEditor : Editor
     {
@@ -76,6 +77,7 @@ public class RoomController : MonoBehaviour
             }
         }
     }
+#endif
 
     void updateValues()
     {

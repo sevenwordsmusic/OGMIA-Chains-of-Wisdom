@@ -128,11 +128,12 @@ public class GeneralHUDController : MonoBehaviour
     {
         if (ProgressTracker.PT.isNewSkill)
         {
-            DialogueManager.StartConversation("RoundAttack_Skill_Obtained");
+            DialogueManager.StartConversation("Block_Skill_Obtained");
 
             //Activamos la nueva skill
-            combatController.roundAttackUpgrade = true;
-            mobileRoundAttackButton.SetActive(true);
+            combatController.blockUpgrade = true;
+            mobileBlockButton.SetActive(true);
+
 
             ProgressTracker.PT.isNewSkill = false;
         }
@@ -150,11 +151,11 @@ public class GeneralHUDController : MonoBehaviour
     {
         if (ProgressTracker.PT.isNewSkill)
         {
-            DialogueManager.StartConversation("RoundAttack_Skill_Obtained");
+            DialogueManager.StartConversation("Block_Skill_Obtainedd");
 
             //Activamos la nueva skill
-            combatController.roundAttackUpgrade = true;
-            mobileRoundAttackButton.SetActive(true);
+            combatController.blockUpgrade = true;
+            mobileBlockButton.SetActive(true);
 
             ProgressTracker.PT.isNewSkill = false;
         }
@@ -171,11 +172,11 @@ public class GeneralHUDController : MonoBehaviour
     {
         if (ProgressTracker.PT.isNewSkill)
         {
-            DialogueManager.StartConversation("Block_Skill_Obtained");
+            DialogueManager.StartConversation("RoundAttack_Skill_Obtained");
 
             //Activamos la nueva skill
-            combatController.blockUpgrade = true;
-            mobileBlockButton.SetActive(true);
+            combatController.roundAttackUpgrade = true;
+            mobileRoundAttackButton.SetActive(true);
 
             ProgressTracker.PT.isNewSkill = false;
         }
@@ -192,11 +193,13 @@ public class GeneralHUDController : MonoBehaviour
     {
         if (ProgressTracker.PT.isNewSkill)
         {
-            DialogueManager.StartConversation("Block_Skill_Obtained_final");
+            DialogueManager.StartConversation("RoundAttack_Skill_Obtained_final");
+
 
             //Activamos la nueva skill
-            combatController.blockUpgrade = true;
-            mobileBlockButton.SetActive(true);
+            combatController.roundAttackUpgrade = true;
+            mobileRoundAttackButton.SetActive(true);
+
 
             ProgressTracker.PT.isNewSkill = false;
         }
