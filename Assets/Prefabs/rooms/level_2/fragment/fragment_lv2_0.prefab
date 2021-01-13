@@ -6271,6 +6271,7 @@ MonoBehaviour:
   - {fileID: 4080108847860193072}
   - {fileID: 471626689286806854}
   commitChanges: 1
+  controller: {fileID: 0}
   firstSpawn: 1
 --- !u!114 &5560625988648259674
 MonoBehaviour:
@@ -6287,6 +6288,7 @@ MonoBehaviour:
   trapDoors:
   - {fileID: 763675416305241275}
   - {fileID: 6548907358040140028}
+  - {fileID: 6609975794243317001}
   triggers:
   - {fileID: 8762243056774519974}
   - {fileID: 8873614991099555219}
@@ -6433,7 +6435,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6609975794243317001}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.09066, y: 2.151236, z: 0.2095108}
@@ -20437,6 +20439,10 @@ PrefabInstance:
     - target: {fileID: 477762, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962453977, guid: ccb8112539740f54eb26d539f5ab25b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4639549786914066156, guid: ccb8112539740f54eb26d539f5ab25b3,
         type: 3}
