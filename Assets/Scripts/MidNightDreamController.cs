@@ -27,6 +27,9 @@ public class MidNightDreamController : MonoBehaviour
     private CinemachineBrain cinemachineBrain;
     private float oldBlendTime;
 
+    public delegate void MidNightDreamEvent();
+    public static event MidNightDreamEvent checkAmulet; //Evento lanzado cuando el jugador muere, para causar una reacción global
+
 
     private void Awake()
     {
@@ -123,6 +126,10 @@ public class MidNightDreamController : MonoBehaviour
         SaveSystem.SaveToSlot(1);
         //ToDo: mensaje de 'partida guardada con exito'
 
+        if(checkAmulet != null)
+        {
+            checkAmulet();
+        }
     }
 
 
@@ -138,9 +145,4 @@ public class MidNightDreamController : MonoBehaviour
         SceneManager.LoadScene("EndB");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

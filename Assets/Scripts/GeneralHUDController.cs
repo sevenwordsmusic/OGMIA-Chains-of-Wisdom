@@ -13,6 +13,25 @@ public class GeneralHUDController : MonoBehaviour
     private Animator animator;
     private PlayerInput playerInput;
 
+    [Header("Amulet References", order = 0)]
+    [SerializeField] GameObject Base;
+    [SerializeField] GameObject Heart;
+    [SerializeField] GameObject FirstCrystal;
+    [SerializeField] GameObject SecondCrystal;
+    [SerializeField] GameObject ThirdCrystal;
+    [SerializeField] GameObject LastCrystal;
+
+
+    private void OnEnable()
+    {
+        MidNightDreamController.checkAmulet += checkAmuletProgress;
+    }
+
+    private void OnDisable()
+    {
+        MidNightDreamController.checkAmulet -= checkAmuletProgress;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +52,63 @@ public class GeneralHUDController : MonoBehaviour
         playerController.enableMovement();
         combatController.enableAttack();
     }
+
+    private void checkAmuletProgress()
+    {
+        switch(ProgressTracker.PT.numberOfPieces)
+        {
+            case 1:
+                Heart.SetActive(true);
+                break;
+
+            case 2:
+                Base.SetActive(true);
+                Heart.SetActive(true);
+                break;
+
+            case 3:
+                Base.SetActive(true);
+                Heart.SetActive(true);
+                FirstCrystal.SetActive(true);
+                break;
+
+            case 4:
+                Base.SetActive(true);
+                Heart.SetActive(true);
+                FirstCrystal.SetActive(true);
+                SecondCrystal.SetActive(true);
+                break;
+
+            case 5:
+                Base.SetActive(true);
+                Heart.SetActive(true);
+                FirstCrystal.SetActive(true);
+                SecondCrystal.SetActive(true);
+                ThirdCrystal.SetActive(true);
+                break;
+
+            case 6:
+                Base.SetActive(true);
+                Heart.SetActive(true);
+                FirstCrystal.SetActive(true);
+                SecondCrystal.SetActive(true);
+                ThirdCrystal.SetActive(true);
+                LastCrystal.SetActive(true);
+                break;
+
+            default:
+                Base.SetActive(true);
+                Heart.SetActive(true);
+                FirstCrystal.SetActive(true);
+                SecondCrystal.SetActive(true);
+                ThirdCrystal.SetActive(true);
+                LastCrystal.SetActive(true);
+                print("WARNING: " + ProgressTracker.PT.numberOfPieces + " pieces of amulet. Unexpected amount");
+                break;
+
+        }
+    }
+
 
     public void triggerCoreConversation()
     {
