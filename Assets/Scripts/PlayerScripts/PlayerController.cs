@@ -5,6 +5,7 @@ using Cinemachine;
 using UnityEngine.InputSystem;
 using PixelCrushers.DialogueSystem;
 using System.Runtime.InteropServices;
+using PixelCrushers;
 
 public class PlayerController : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool canDash;
     [HideInInspector] public bool canMove;
     private float rotateCameraAmount;
+    private bool isCheating;
 
     public bool DashUpgrade;
     private PlayerAnimationScript playerAnimationScript;
@@ -174,10 +176,13 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump()
     {
-        if (isGrounded)
+        if (isCheating)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //Formula de salto 'realista' basada en físicas y en la elevación deseada del salto
-            animator.SetBool("isJumping", true); //reproduce la animación de salto
+            if (isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //Formula de salto 'realista' basada en físicas y en la elevación deseada del salto
+                animator.SetBool("isJumping", true); //reproduce la animación de salto
+            }
         }
 
     }
@@ -205,6 +210,33 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    public void OnCheatGainCrystal()
+    {
+        print(isCheating);
+        if(isCheating)
+        {
+            if(ProgressTracker.PT.isNewSkill)
+            {
+                ProgressTracker.PT.addPiece();
+                ProgressTracker.PT.isNewSkill = false;
+            } 
+            else
+            {
+                ProgressTracker.PT.addPiece();
+                ProgressTracker.PT.isNewSkill = true;
+            }
+        }
+    }
+
+    public void OnCheatReturnToMD()
+    {
+        if(isCheating)
+        {
+            PixelCrushers.SaveSystem.LoadScene("midnightsDream");
+        }
+    }
+
     //FUNCIONES AUXILIARES
 
     /// <summary>
@@ -232,6 +264,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //CHEATS
+        if(inputActions.Player.enableCheats1.ReadValue<float>() > 0f && inputActions.Player.enableCheats2.ReadValue<float>() > 0f)
+        {
+            handleCheats();
+        }
+
+
         //IF estamos en movil...
         if (isMobile())
         {
@@ -324,6 +363,23 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime); //Finalmente, tras todas las simulaciones necesarias, movemos al jugador en función de la velocidad calculada
         //}
     }
+
+    private void handleCheats()
+    {
+        if(!isCheating)
+        {
+            isCheating = true;
+            GetComponent<CombatController>().handleCheats(isCheating);
+            DialogueManager.StartConversation("cheatsEnabled");
+        } 
+        else
+        {
+            isCheating = false;
+            GetComponent<CombatController>().handleCheats(isCheating);
+            DialogueManager.StartConversation("cheatsDisabled");
+        }
+    }
+
 
     public void disableMovement()
     {

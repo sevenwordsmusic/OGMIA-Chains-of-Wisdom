@@ -116,6 +116,38 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "enableCheats1",
+                    "type": "Button",
+                    "id": "24d95099-a187-4c46-990d-2dd59581c3f9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "enableCheats2",
+                    "type": "Button",
+                    "id": "48437af9-e229-4ca8-9c36-0fb9848e9d81",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CheatGainCrystal",
+                    "type": "Button",
+                    "id": "28b89ffc-fbc1-40c2-ba9a-48eb82134fa7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CheatReturnToMD",
+                    "type": "Button",
+                    "id": "b6505e7c-4ae6-4544-ada8-874f9c5a3926",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -136,7 +168,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "Tap",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -506,6 +538,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7c8a3302-8874-44b8-b9b8-b349952476b6",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a9cb5894-7542-4dbf-9d8e-7b7542191e92",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
@@ -534,6 +577,94 @@
                     "processors": "",
                     "groups": "Keyboard + mouse",
                     "action": "EnableCameraRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "736efa1a-3a2f-4530-9917-77c363bd6401",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "enableCheats1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b78fc484-2fc1-452d-bd52-dd32668be2a9",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "enableCheats1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6999e7e8-1b74-4081-93ed-6a14293798b4",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "enableCheats2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e2ed7014-84bb-4e52-a98e-608965e71e54",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "enableCheats2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b03b658-afe9-4a18-8a53-b10b8d74dfe5",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard + mouse",
+                    "action": "CheatGainCrystal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9fbc6d43-bb19-43a4-ad36-c1ddc83f3c55",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "CheatGainCrystal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b2508e93-5d49-4dd7-8c38-8031bf2fda90",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard + mouse",
+                    "action": "CheatReturnToMD",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7b3fc2c-6c4f-4263-80dd-e22399c2c0b7",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "CheatReturnToMD",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

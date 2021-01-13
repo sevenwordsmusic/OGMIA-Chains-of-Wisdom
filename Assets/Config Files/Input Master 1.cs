@@ -129,6 +129,38 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""enableCheats1"",
+                    ""type"": ""Button"",
+                    ""id"": ""24d95099-a187-4c46-990d-2dd59581c3f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""enableCheats2"",
+                    ""type"": ""Button"",
+                    ""id"": ""48437af9-e229-4ca8-9c36-0fb9848e9d81"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CheatGainCrystal"",
+                    ""type"": ""Button"",
+                    ""id"": ""28b89ffc-fbc1-40c2-ba9a-48eb82134fa7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CheatReturnToMD"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6505e7c-4ae6-4544-ada8-874f9c5a3926"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -149,7 +181,7 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": ""Tap"",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": """",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -519,6 +551,17 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7c8a3302-8874-44b8-b9b8-b349952476b6"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a9cb5894-7542-4dbf-9d8e-7b7542191e92"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
@@ -547,6 +590,94 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard + mouse"",
                     ""action"": ""EnableCameraRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""736efa1a-3a2f-4530-9917-77c363bd6401"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""enableCheats1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b78fc484-2fc1-452d-bd52-dd32668be2a9"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""enableCheats1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6999e7e8-1b74-4081-93ed-6a14293798b4"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""enableCheats2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2ed7014-84bb-4e52-a98e-608965e71e54"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""enableCheats2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b03b658-afe9-4a18-8a53-b10b8d74dfe5"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
+                    ""action"": ""CheatGainCrystal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9fbc6d43-bb19-43a4-ad36-c1ddc83f3c55"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CheatGainCrystal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2508e93-5d49-4dd7-8c38-8031bf2fda90"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + mouse"",
+                    ""action"": ""CheatReturnToMD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7b3fc2c-6c4f-4263-80dd-e22399c2c0b7"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CheatReturnToMD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -610,6 +741,10 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_RotateCamera = m_Player.FindAction("RotateCamera", throwIfNotFound: true);
         m_Player_EnableCameraRotation = m_Player.FindAction("EnableCameraRotation", throwIfNotFound: true);
+        m_Player_enableCheats1 = m_Player.FindAction("enableCheats1", throwIfNotFound: true);
+        m_Player_enableCheats2 = m_Player.FindAction("enableCheats2", throwIfNotFound: true);
+        m_Player_CheatGainCrystal = m_Player.FindAction("CheatGainCrystal", throwIfNotFound: true);
+        m_Player_CheatReturnToMD = m_Player.FindAction("CheatReturnToMD", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -673,6 +808,10 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_RotateCamera;
     private readonly InputAction m_Player_EnableCameraRotation;
+    private readonly InputAction m_Player_enableCheats1;
+    private readonly InputAction m_Player_enableCheats2;
+    private readonly InputAction m_Player_CheatGainCrystal;
+    private readonly InputAction m_Player_CheatReturnToMD;
     public struct PlayerActions
     {
         private @InputMaster1 m_Wrapper;
@@ -691,6 +830,10 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @RotateCamera => m_Wrapper.m_Player_RotateCamera;
         public InputAction @EnableCameraRotation => m_Wrapper.m_Player_EnableCameraRotation;
+        public InputAction @enableCheats1 => m_Wrapper.m_Player_enableCheats1;
+        public InputAction @enableCheats2 => m_Wrapper.m_Player_enableCheats2;
+        public InputAction @CheatGainCrystal => m_Wrapper.m_Player_CheatGainCrystal;
+        public InputAction @CheatReturnToMD => m_Wrapper.m_Player_CheatReturnToMD;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -742,6 +885,18 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 @EnableCameraRotation.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCameraRotation;
                 @EnableCameraRotation.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCameraRotation;
                 @EnableCameraRotation.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCameraRotation;
+                @enableCheats1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCheats1;
+                @enableCheats1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCheats1;
+                @enableCheats1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCheats1;
+                @enableCheats2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCheats2;
+                @enableCheats2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCheats2;
+                @enableCheats2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnableCheats2;
+                @CheatGainCrystal.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatGainCrystal;
+                @CheatGainCrystal.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatGainCrystal;
+                @CheatGainCrystal.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatGainCrystal;
+                @CheatReturnToMD.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatReturnToMD;
+                @CheatReturnToMD.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatReturnToMD;
+                @CheatReturnToMD.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheatReturnToMD;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -788,6 +943,18 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
                 @EnableCameraRotation.started += instance.OnEnableCameraRotation;
                 @EnableCameraRotation.performed += instance.OnEnableCameraRotation;
                 @EnableCameraRotation.canceled += instance.OnEnableCameraRotation;
+                @enableCheats1.started += instance.OnEnableCheats1;
+                @enableCheats1.performed += instance.OnEnableCheats1;
+                @enableCheats1.canceled += instance.OnEnableCheats1;
+                @enableCheats2.started += instance.OnEnableCheats2;
+                @enableCheats2.performed += instance.OnEnableCheats2;
+                @enableCheats2.canceled += instance.OnEnableCheats2;
+                @CheatGainCrystal.started += instance.OnCheatGainCrystal;
+                @CheatGainCrystal.performed += instance.OnCheatGainCrystal;
+                @CheatGainCrystal.canceled += instance.OnCheatGainCrystal;
+                @CheatReturnToMD.started += instance.OnCheatReturnToMD;
+                @CheatReturnToMD.performed += instance.OnCheatReturnToMD;
+                @CheatReturnToMD.canceled += instance.OnCheatReturnToMD;
             }
         }
     }
@@ -835,5 +1002,9 @@ public class @InputMaster1 : IInputActionCollection, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnRotateCamera(InputAction.CallbackContext context);
         void OnEnableCameraRotation(InputAction.CallbackContext context);
+        void OnEnableCheats1(InputAction.CallbackContext context);
+        void OnEnableCheats2(InputAction.CallbackContext context);
+        void OnCheatGainCrystal(InputAction.CallbackContext context);
+        void OnCheatReturnToMD(InputAction.CallbackContext context);
     }
 }

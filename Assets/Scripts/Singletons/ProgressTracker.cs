@@ -75,6 +75,7 @@ public class ProgressTracker : MonoBehaviour
         numberOfPieces++;
         PlayerPrefs.SetInt("numberOfPieces", numberOfPieces);
         print(PlayerPrefs.GetInt("numberOfPieces"));
+        print("es nueva skill: " + isNewSkill);
 
         switch(numberOfPieces)
         {
@@ -86,6 +87,7 @@ public class ProgressTracker : MonoBehaviour
             case 2:
                 //ensamblado de amuleto
                 AmuletAnimator.SetTrigger("assembleAmulet");
+                isNewSkill = false;
                 break;
 
             case 3:

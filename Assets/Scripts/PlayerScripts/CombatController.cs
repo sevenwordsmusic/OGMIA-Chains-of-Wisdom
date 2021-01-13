@@ -30,6 +30,7 @@ public class CombatController : MonoBehaviour
     public int maxHealth = 150;
     public int maxHealthUpgrade1 = 200;
     public int maxHealthUpgrade2 = 250;
+    private int oldHealthValue;
     [HideInInspector] public int health;
     float healthAux;
     private HealthBarController healthBar1;
@@ -53,6 +54,7 @@ public class CombatController : MonoBehaviour
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject lockedCrosshair;
     private int enemyIndex = 0;
+    private bool isCheating;
 
     public delegate void PlayerEvent();
     public static event PlayerEvent playerDeath; //Evento lanzado cuando el jugador muere, para causar una reacción global
@@ -268,18 +270,42 @@ public class CombatController : MonoBehaviour
 
     public void upgradeHealth1()
     {
-        maxHealth = maxHealthUpgrade1;
-        healthBar1.setMaxHealth(maxHealth);
-        healthBar2.setMaxHealth(maxHealth);
-        health = maxHealthUpgrade1;
+        if (!isCheating)
+        {
+            maxHealth = maxHealthUpgrade1;
+            healthBar1.setMaxHealth(maxHealth);
+            healthBar2.setMaxHealth(maxHealth);
+            health = maxHealthUpgrade1;
+        }
     }
 
     public void upgradeHealth2()
     {
-        maxHealth = maxHealthUpgrade2;
-        healthBar1.setMaxHealth(maxHealth);
-        healthBar2.setMaxHealth(maxHealth);
-        health = maxHealthUpgrade2;
+        if (!isCheating)
+        {
+            maxHealth = maxHealthUpgrade2;
+            healthBar1.setMaxHealth(maxHealth);
+            healthBar2.setMaxHealth(maxHealth);
+            health = maxHealthUpgrade2;
+        }
+    }
+
+
+    public void handleCheats(bool cheat)
+    {
+        if(cheat)
+        {
+            isCheating = true;
+            oldHealthValue = maxHealth;
+            maxHealth = 999999;
+            health = maxHealth;
+        } 
+        else
+        {
+            isCheating = false;
+            maxHealth = oldHealthValue;
+            health = maxHealth;
+        }
     }
 
     // Update is called once per frame
@@ -470,7 +496,7 @@ public class CombatController : MonoBehaviour
         //print("player receives " + damage + " points of damage!");
 
         //Check if blocking & vulnerability
-        if (!isBlocking && isVulnerable && !isDead)
+        if (!isBlocking && isVulnerable && !isDead && !isCheating)
         {
             //Reduce health
             health = health - damage;

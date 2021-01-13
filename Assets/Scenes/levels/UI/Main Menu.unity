@@ -1774,10 +1774,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2684,6 +2684,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958089505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3884943292187457473, guid: b359205cf59088c4cb00c82a8c1c8875,
+    type: 3}
+  m_PrefabInstance: {fileID: 4334585862097019012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c17d35c8f845742ae7a6f1e6f9f374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2089732781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8804515012618907609, guid: 1f78f764789674c46b41250f8b777234,
@@ -3192,6 +3204,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 959072171037549730, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
     - target: {fileID: 959072171049435378, guid: b359205cf59088c4cb00c82a8c1c8875,
         type: 3}
       propertyPath: m_Camera
@@ -3362,6 +3379,11 @@ PrefabInstance:
       propertyPath: mobileJoystick
       value: 
       objectReference: {fileID: 7508941}
+    - target: {fileID: 5253662576991358705, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5253662577570343987, guid: b359205cf59088c4cb00c82a8c1c8875,
         type: 3}
       propertyPath: m_Enabled
@@ -3372,6 +3394,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 694135133}
+    - target: {fileID: 6053646644905330003, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1958089505}
+    - target: {fileID: 6053646644905330003, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: checkSavedGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6053646645183188757, guid: b359205cf59088c4cb00c82a8c1c8875,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3426,6 +3458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748367605209794198, guid: b359205cf59088c4cb00c82a8c1c8875,
+        type: 3}
+      propertyPath: m_Name
+      value: continueText
       objectReference: {fileID: 0}
     - target: {fileID: 8946595916967105174, guid: b359205cf59088c4cb00c82a8c1c8875,
         type: 3}
