@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using System.Runtime.InteropServices;
 
 public class CombatController : MonoBehaviour
 {
@@ -55,6 +56,19 @@ public class CombatController : MonoBehaviour
 
     public delegate void PlayerEvent();
     public static event PlayerEvent playerDeath; //Evento lanzado cuando el jugador muere, para causar una reacción global
+
+    //CHEQUEOS DE PLATAFORMA
+    [DllImport("__Internal")]
+    private static extern bool IsMobile();
+
+    public bool isMobile()
+    {
+#if !UNITY_EDITOR && UNITY_WEBGL
+            return IsMobile();
+#endif
+        return false;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -271,16 +285,19 @@ public class CombatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePointer(); //Se deberia optimizar este codigo para que no sea necesario introducir un plano en los pies del jugador.
+        if(!isMobile())
+        {
+            RotatePointer();
 
-        //Muestra el puntero de ataque únicamente si se está utilizando ratón y teclado
-        if (playerInput.currentControlScheme == "Keyboard + mouse" && !isDead)
-        {
-            attackPointer.gameObject.SetActive(true);
-        }
-        else
-        {
-            attackPointer.gameObject.SetActive(false);
+            //Muestra el puntero de ataque únicamente si se está utilizando ratón y teclado
+            if (playerInput.currentControlScheme == "Keyboard + mouse" && !isDead)
+            {
+                attackPointer.gameObject.SetActive(true);
+            }
+            else
+            {
+                attackPointer.gameObject.SetActive(false);
+            }
         }
 
         //////////////////////////////////////////////////
