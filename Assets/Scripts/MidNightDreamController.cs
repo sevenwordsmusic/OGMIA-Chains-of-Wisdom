@@ -77,9 +77,9 @@ public class MidNightDreamController : MonoBehaviour
         } 
         else
         {
-            //normalIntroCutscene.Play();
+            normalIntroCutscene.Play();
             //endGameCutscene.Play();
-            firstTimeIntroCutscene.Play();
+            //firstTimeIntroCutscene.Play();
         }
 
         if (ProgressTracker.PT.numberOfPieces == 0)
