@@ -9,6 +9,10 @@ public class SoundEvent : MonoBehaviour
 {
     [FMODUnity.EventRef]
     public string stepEvent;
+
+    [FMODUnity.EventRef]
+    public string slowStepEvent;
+
     [FMODUnity.EventRef]
     public string swingEvent;
 
@@ -33,8 +37,18 @@ public class SoundEvent : MonoBehaviour
 
     }
 
+    public void slowStep()
+    {
+        if (!isIdle)
+        {
+            FMODUnity.RuntimeManager.CreateInstance(slowStepEvent).start();
+        }
+
+    }
+
     public void playSwing()
     {
         FMODUnity.RuntimeManager.CreateInstance(swingEvent).start();
     }
+
 }

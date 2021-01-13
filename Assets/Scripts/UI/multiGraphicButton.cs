@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class multiGraphicButton : Button
 {
-
     protected Button[] buttons;
 
     protected override void Awake()
@@ -16,6 +16,16 @@ public class multiGraphicButton : Button
 
     protected override void DoStateTransition(SelectionState state, bool instant)
     {
+        //AUDIO
+        if (state.ToString().Equals("Pressed"))
+        {
+            Debug.Log(FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/" + state).start());
+        }
+
+        //
+
+
+
         Color color;
         switch (state)
         {

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using FMOD.Studio;
 using UnityEngine;
+using UnityEditor;
 
 public class EnemyController : MonoBehaviour
 {
@@ -32,7 +33,12 @@ public class EnemyController : MonoBehaviour
 
     public bool tutorialFix = false;
 
+    //AUDIO
+    [FMODUnity.EventRef]
+    public string slashEvent;
 
+
+    //
 
     /*[CustomEditor(typeof(EnemyController))]
     public class ObjectBuilderEditor : Editor
@@ -226,4 +232,11 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(invulnerabilityAfterHitTime);
         isVulnerable = true;
     }
+
+    //AUDIO
+    public void playSlash()
+    {
+        FMODUnity.RuntimeManager.CreateInstance(slashEvent).start();
+    }
+    //
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -30,11 +31,13 @@ public class UIManager : MonoBehaviour
     //EVENTS
     private void OnEnable()
     {
+
         CombatController.playerDeath += showGameOverHUD;
     }
 
     private void OnDisable()
     {
+
         CombatController.playerDeath -= showGameOverHUD;
     }
 
