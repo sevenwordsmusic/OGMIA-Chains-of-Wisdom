@@ -53,6 +53,9 @@ public class MidNightDreamController : MonoBehaviour
 
         cinemaCam.Priority = 9000;
 
+        //HEAL PLAYER
+        player.GetComponent<CombatController>().health = player.GetComponent<CombatController>().maxHealth;
+
         if (PlayerPrefs.GetInt("numberOfPieces") == 2 && PlayerPrefs.GetInt("firstTimeMD") == 0) //Si tiene solo el 'nucleo' y es la primera visita del jugador al sueño de medianoche...
         {
             //Lanzamos la cutscene de introduccion al sueño de medianoche
