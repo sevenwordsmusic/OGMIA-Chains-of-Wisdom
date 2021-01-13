@@ -55,7 +55,8 @@ public class GeneralHUDController : MonoBehaviour
 
     private void checkAmuletProgress()
     {
-        switch(ProgressTracker.PT.numberOfPieces)
+        int numberOfPieces = PlayerPrefs.GetInt("numberOfPieces");
+        switch (numberOfPieces)
         {
             case 1:
                 Heart.SetActive(true);
