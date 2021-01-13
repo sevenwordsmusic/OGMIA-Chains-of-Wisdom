@@ -13,6 +13,12 @@
 		<property name="name">
 			<value>Reverb</value>
 		</property>
+		<relationship name="automators">
+			<destination>{97fa2763-efdb-46d3-984d-1db176a3d1a5}</destination>
+		</relationship>
+		<relationship name="modulators">
+			<destination>{a3833209-490d-41a8-b41e-2b93e914b76f}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{fc7123e7-4efa-45b7-bdd4-174fe5f8e78f}</destination>
 		</relationship>
@@ -22,6 +28,22 @@
 		<relationship name="output">
 			<destination>{e65c3d04-588e-4747-92c1-616b272e10d6}</destination>
 		</relationship>
+	</object>
+	<object class="Automator" id="{97fa2763-efdb-46d3-984d-1db176a3d1a5}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>volume</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{a3833209-490d-41a8-b41e-2b93e914b76f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{fc7123e7-4efa-45b7-bdd4-174fe5f8e78f}">
 		<relationship name="effects">
