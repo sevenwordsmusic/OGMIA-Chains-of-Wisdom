@@ -2541,6 +2541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773346490}
   - component: {fileID: 1773346491}
+  - component: {fileID: 1773346492}
   m_Layer: 10
   m_Name: AUDIO_FMOD_listener
   m_TagString: Untagged
@@ -2576,6 +2577,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &1773346492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773346489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d756e90c18d9d5144a41ffe4984a9502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1810528202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,7 +2618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8c8d53f6e517847b8e360fc9a71683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FMODevent: event:/BGM/mainLoop
+  FMODEvent: 
 --- !u!4 &1810528204
 Transform:
   m_ObjectHideFlags: 0
