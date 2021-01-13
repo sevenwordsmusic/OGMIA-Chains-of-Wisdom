@@ -113,7 +113,7 @@ public class MidNightDreamController : MonoBehaviour
         //    //ToDo: mensaje de 'partida guardada con exito'
         //}
         //apaño muy malo pero no hay tiempo
-
+        
         if(ProgressTracker.PT.numberOfPieces >= 3)
         {
             entranceLvl2.enabled = true;
@@ -131,7 +131,7 @@ public class MidNightDreamController : MonoBehaviour
         characterController.enabled = false;
         player.transform.position = startPos.position;
         characterController.enabled = true;
-        //player.gameObject.SetActive(true);
+        player.gameObject.SetActive(true);
 
         cinemachineBrain.m_DefaultBlend.m_Time = oldBlendTime;
         cinemaCam.Priority = 0;
