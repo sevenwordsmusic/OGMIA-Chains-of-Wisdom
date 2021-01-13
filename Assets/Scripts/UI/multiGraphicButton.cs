@@ -16,16 +16,6 @@ public class multiGraphicButton : Button
 
     protected override void DoStateTransition(SelectionState state, bool instant)
     {
-        //AUDIO
-        if (state.ToString().Equals("Pressed"))
-        {
-            Debug.Log(FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/" + state).start());
-        }
-
-        //
-
-
-
         Color color;
         switch (state)
         {

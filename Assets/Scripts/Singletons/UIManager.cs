@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject creditsPanel;
     public GameObject mobileJoystick;
 
-    public GameObject generalHUD,GameOverHUD;
+    public GameObject generalHUD, GameOverHUD;
 
     public GameObject generatingLevel1;
     public GameObject generatingLevel2;
@@ -75,6 +75,10 @@ public class UIManager : MonoBehaviour
 
     public void ShowCreditsPanel()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Show").start();
+        //
+
         PauseOptionsPanel.SetActive(false);
         menuPanel.SetActive(false);
         creditsPanel.SetActive(true);
@@ -83,12 +87,19 @@ public class UIManager : MonoBehaviour
 
     public void HideCreditsPanel()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Hide").start();
+        //
         creditsPanel.SetActive(false);
     }
 
     //Call this function to activate and display the Options panel during the main menu
     public void ShowOptionsPanel()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Show").start();
+        //
+
         PauseOptionsPanel.SetActive(true);
         //optionsTint.SetActive(true);
         //menuPanel.SetActive(false);
@@ -98,6 +109,10 @@ public class UIManager : MonoBehaviour
 
     public void ShowMenuoptionsPanel()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Show").start();
+        //
+
         MenuOptionsPanel.SetActive(true);
         //optionsTint.SetActive(true);
         menuPanel.SetActive(false);
@@ -106,12 +121,18 @@ public class UIManager : MonoBehaviour
 
     public void HideMenuOptions()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Hide").start();
+        //
         MenuOptionsPanel.SetActive(false);
     }
 
     //Call this function to deactivate and hide the Options panel during the main menu
     public void HideOptionsPanel()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Hide").start();
+        //
         //menuPanel.SetActive(true);
         PauseOptionsPanel.SetActive(false);
     }
@@ -119,6 +140,10 @@ public class UIManager : MonoBehaviour
     //Call this function to activate and display the main menu panel during the main menu
     public void ShowMenu()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Show").start();
+        //
+
         menuPanel.SetActive(true);
         SetSelection(menuPanel);
     }
@@ -132,6 +157,10 @@ public class UIManager : MonoBehaviour
     //Call this function to activate and display the Pause panel during game play
     public void ShowPausePanel()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Show").start();
+        //
+
         pausePanel.SetActive(true);
         SetSelection(pausePanel);
     }
@@ -139,6 +168,9 @@ public class UIManager : MonoBehaviour
     //Call this function to deactivate and hide the Pause panel during game play
     public void HidePausePanel()
     {
+        //AUDIO
+        FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Hide").start();
+        //
         pausePanel.SetActive(false);
     }
 
@@ -150,6 +182,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowGeneralHUD()
     {
+
         generalHUD.SetActive(true);
         mobileJoystick.SetActive(true);
     }
@@ -165,6 +198,9 @@ public class UIManager : MonoBehaviour
     {
         if (goBackToMainMenuEvent != null)
         {
+            //AUDIO
+            FMODUnity.RuntimeManager.CreateInstance("event:/SFX/interface/Show").start();
+            //
             goBackToMainMenuEvent();
             Destroy(this.gameObject);
         }

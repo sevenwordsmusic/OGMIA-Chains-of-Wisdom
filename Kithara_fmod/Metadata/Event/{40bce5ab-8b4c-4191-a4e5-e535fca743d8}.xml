@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{40bce5ab-8b4c-4191-a4e5-e535fca743d8}">
 		<property name="name">
-			<value>Selected</value>
+			<value>Show</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -53,14 +53,10 @@
 			<destination>{e3ccbded-88cf-4564-95b3-7ad5912b4f62}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{e65c3d04-588e-4747-92c1-616b272e10d6}</destination>
+			<destination>{9a042495-f27e-4ac8-a9d9-f28e2f0b1a1f}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{a28370cd-39f2-4336-ac0e-66857f36b43a}">
-		<property name="triggerCooldown">
-			<value>140</value>
-		</property>
-	</object>
+	<object class="EventAutomatableProperties" id="{a28370cd-39f2-4336-ac0e-66857f36b43a}" />
 	<object class="MarkerTrack" id="{4132c2bd-6c46-4524-9723-55aae778dcb8}" />
 	<object class="GroupTrack" id="{c06930fc-2dd7-4a80-8f64-1aea793dd6f6}">
 		<relationship name="modules">
@@ -98,6 +94,9 @@
 		</property>
 		<property name="timelockedOffset">
 			<value>0.044999999999999998</value>
+		</property>
+		<property name="volume">
+			<value>-12</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{bfb7397a-613d-44d1-bdfb-496681ef2d1e}</destination>
