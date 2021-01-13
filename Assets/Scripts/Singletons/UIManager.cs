@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject mobileJoystick;
 
     public GameObject generalHUD, GameOverHUD;
+    private GeneralHUDController generalHUDController;
 
     public GameObject generatingLevel1;
     public GameObject generatingLevel2;
@@ -33,11 +34,12 @@ public class UIManager : MonoBehaviour
     {
 
         CombatController.playerDeath += showGameOverHUD;
+        MidNightDreamController.checkAmulet += checkAmuletState;
     }
 
     private void OnDisable()
     {
-
+        MidNightDreamController.checkAmulet -= checkAmuletState;
         CombatController.playerDeath -= showGameOverHUD;
     }
 
@@ -45,6 +47,8 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         pause = GetComponent<Pause>();
+        generalHUDController = generalHUD.GetComponent<GeneralHUDController>();
+
         if (UIM != null) //Si por algún motivo ya existe un combatManager...
         {
             GameObject.Destroy(UIM); //Este script lo mata. Solo puede haber una abeja reina en la colmena.
@@ -71,6 +75,11 @@ public class UIManager : MonoBehaviour
         {
             activePanelMenuObject.SetFirstSelected();
         }
+    }
+
+    public void checkAmuletState()
+    {
+        generalHUDController.checkAmuletProgress();
     }
 
     public void ShowCreditsPanel()

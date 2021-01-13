@@ -21,10 +21,14 @@ public class GeneralHUDController : MonoBehaviour
     [SerializeField] GameObject ThirdCrystal;
     [SerializeField] GameObject LastCrystal;
 
+    private void Awake()
+    {
+        MidNightDreamController.checkAmulet += checkAmuletProgress;
+    }
 
     private void OnEnable()
     {
-        MidNightDreamController.checkAmulet += checkAmuletProgress;
+        
     }
 
     private void OnDisable()
@@ -53,10 +57,11 @@ public class GeneralHUDController : MonoBehaviour
         combatController.enableAttack();
     }
 
-    private void checkAmuletProgress()
+    public void checkAmuletProgress()
     {
         int numberOfPieces = PlayerPrefs.GetInt("numberOfPieces");
-        switch (numberOfPieces)
+        print(numberOfPieces);
+        switch (ProgressTracker.PT.numberOfPieces)
         {
             case 1:
                 Heart.SetActive(true);
@@ -98,12 +103,6 @@ public class GeneralHUDController : MonoBehaviour
                 break;
 
             default:
-                Base.SetActive(true);
-                Heart.SetActive(true);
-                FirstCrystal.SetActive(true);
-                SecondCrystal.SetActive(true);
-                ThirdCrystal.SetActive(true);
-                LastCrystal.SetActive(true);
                 print("WARNING: " + ProgressTracker.PT.numberOfPieces + " pieces of amulet. Unexpected amount");
                 break;
 

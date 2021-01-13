@@ -80,6 +80,11 @@ public class MidNightDreamController : MonoBehaviour
             //endGameCutscene.Play();
         }
 
+        if (checkAmulet != null)
+        {
+            checkAmulet();
+        }
+
     }
 
     // Start is called before the first frame update
@@ -126,10 +131,7 @@ public class MidNightDreamController : MonoBehaviour
         SaveSystem.SaveToSlot(1);
         //ToDo: mensaje de 'partida guardada con exito'
 
-        if(checkAmulet != null)
-        {
-            checkAmulet();
-        }
+
     }
 
 

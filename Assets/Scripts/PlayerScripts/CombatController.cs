@@ -429,7 +429,7 @@ public class CombatController : MonoBehaviour
             if (lockedEnemy != null)
             {
                 crosshair.SetActive(true);
-                crosshair.transform.position = lockedEnemy.transform.position;
+                crosshair.transform.position = Camera.main.WorldToScreenPoint(new Vector3 (lockedEnemy.transform.position.x, lockedEnemy.transform.position.y + 1.5f, lockedEnemy.transform.position.z));
                 //Ponemos la mirilla en el punto relativo de la pantalla donde está el enemigo.
                 crosshair.transform.Rotate(new Vector3(0, 0, -1)); //Rotamos la mirilla para que mire hacia la camara.
             }
@@ -449,7 +449,7 @@ public class CombatController : MonoBehaviour
 
                 lockedCrosshair.SetActive(true); //Y activamos la mirilla de fijado.
 
-                lockedCrosshair.transform.position = lockedEnemy.transform.position; //Ponemos la mirilla en el punto relativo de la pantalal donde está el enemigo.
+                lockedCrosshair.transform.position = Camera.main.WorldToScreenPoint(lockedEnemy.transform.position); //Ponemos la mirilla en el punto relativo de la pantalal donde está el enemigo.
                 lockedCrosshair.transform.Rotate(new Vector3(0, 0, -1)); //Rotamos la mirilla para que mire hacia la camara.
             }
             else
