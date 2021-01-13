@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform cam;
     [SerializeField] Camera UICamera;
     [SerializeField] CinemachineFreeLook cinemaCam;
+    [SerializeField] Joystick mobileJoystick;
     private Canvas canvas;
 
     [SerializeField] Animator animator;
@@ -234,27 +235,28 @@ public class PlayerController : MonoBehaviour
         //IF estamos en movil...
         if (isMobile())
         {
-            //Recibimos el input del joystick virtual
-            Vector2 movementInput = inputActions.Player.Movement.ReadValue<Vector2>();
-            direction = new Vector3(movementInput.x, 0f, movementInput.y);
+            direction = (Vector3.right * mobileJoystick.Horizontal + Vector3.forward * mobileJoystick.Vertical);
+            ////Recibimos el input del joystick virtual
+            //Vector2 movementInput = inputActions.Player.Movement.ReadValue<Vector2>();
+            //direction = new Vector3(movementInput.x, 0f, movementInput.y);
 
-            //Aplicamos rotacion a la camara, si se ha recibido input para ello:
-            Vector2 delta = inputActions.Player.RotateCamera.ReadValue<Vector2>();
-            cinemaCam.m_XAxis.Value += (delta.x * rotateCameraSpeedMobile * Time.deltaTime);
+            ////Aplicamos rotacion a la camara, si se ha recibido input para ello:
+            //Vector2 delta = inputActions.Player.RotateCamera.ReadValue<Vector2>();
+            //cinemaCam.m_XAxis.Value += (delta.x * rotateCameraSpeedMobile * Time.deltaTime);
         } 
         else
         {
             //En caso de estar en PC, solo necesitamos aplicar aquí la rotación de cámara.
-            if(playerInput.currentControlScheme == "Keyboard + mouse") //Si se está usando teclado,
+            if (playerInput.currentControlScheme == "Keyboard + mouse") //Si se está usando teclado,
             {
                 if (inputActions.Player.EnableCameraRotation.ReadValue<float>() > 0f) //Si el jugador está pulsando el boton que permite el giro de camara...
                     cinemaCam.m_XAxis.Value += (rotateCameraAmount * rotateCameraSpeed * Time.deltaTime); //La gira
-            } 
+            }
             else //En caso de estar usando mando, no necesitamos combinaciones de teclas.
             {
                 cinemaCam.m_XAxis.Value += (rotateCameraAmount * rotateCameraSpeedController * Time.deltaTime); //La gira
             }
- 
+
         }
 
         //DETECCION DE COLISIONES

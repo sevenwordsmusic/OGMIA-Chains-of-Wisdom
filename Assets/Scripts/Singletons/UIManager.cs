@@ -16,8 +16,6 @@ public class UIManager : MonoBehaviour
 
     public GameObject generalHUD,GameOverHUD;
 
-
-
     public GameObject generatingLevel1;
     public GameObject generatingLevel2;
 
