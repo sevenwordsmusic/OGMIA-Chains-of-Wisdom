@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool canMove;
     private float rotateCameraAmount;
     private bool isCheating;
+    private float cheatTimer;
 
     public bool DashUpgrade;
     private PlayerAnimationScript playerAnimationScript;
@@ -219,12 +220,12 @@ public class PlayerController : MonoBehaviour
             if(ProgressTracker.PT.isNewSkill)
             {
                 ProgressTracker.PT.addPiece();
-                ProgressTracker.PT.isNewSkill = false;
+                ProgressTracker.PT.isNewSkill = !ProgressTracker.PT.isNewSkill;
             } 
             else
             {
                 ProgressTracker.PT.addPiece();
-                ProgressTracker.PT.isNewSkill = true;
+                ProgressTracker.PT.isNewSkill = !ProgressTracker.PT.isNewSkill;
             }
         }
     }
@@ -264,10 +265,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        cheatTimer += Time.deltaTime;
         //CHEATS
-        if(inputActions.Player.enableCheats1.ReadValue<float>() > 0f && inputActions.Player.enableCheats2.ReadValue<float>() > 0f)
+        if(inputActions.Player.enableCheats1.ReadValue<float>() > 0f && inputActions.Player.enableCheats2.ReadValue<float>() > 0f && cheatTimer > 3)
         {
             handleCheats();
+            cheatTimer = 0;
         }
 
 

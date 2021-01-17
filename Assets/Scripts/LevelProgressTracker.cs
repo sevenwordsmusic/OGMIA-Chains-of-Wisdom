@@ -57,8 +57,8 @@ public class LevelProgressTracker : MonoBehaviour
 
         if(fragmentsCollected >= numberOfFragments)
         {
-            ProgressTracker.PT.addPiece();
             ProgressTracker.PT.isNewSkill = true;
+            ProgressTracker.PT.addPiece();
         }
     }
 

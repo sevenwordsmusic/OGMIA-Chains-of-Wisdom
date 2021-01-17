@@ -125,7 +125,8 @@ public class GeneralHUDController : MonoBehaviour
 
     public void triggerFirstCrystalConversation()
     {
-        if (ProgressTracker.PT.isNewSkill)
+        print("isNewSkill: " + ProgressTracker.PT.isNewSkill);
+        if (ProgressTracker.PT.isNewSkill == true)
         {
             DialogueManager.StartConversation("Block_Skill_Obtained");
 
@@ -134,7 +135,7 @@ public class GeneralHUDController : MonoBehaviour
             mobileBlockButton.SetActive(true);
 
 
-            ProgressTracker.PT.isNewSkill = false;
+            //ProgressTracker.PT.isNewSkill = false;
         }
         else
         {
@@ -148,18 +149,20 @@ public class GeneralHUDController : MonoBehaviour
 
     public void triggerSecondCrystalConversation()
     {
-        if (ProgressTracker.PT.isNewSkill)
+        print("isNewSkill: " + ProgressTracker.PT.isNewSkill);
+        if (ProgressTracker.PT.isNewSkill == true)
         {
-            DialogueManager.StartConversation("Block_Skill_Obtainedd");
+            DialogueManager.StartConversation("Block_Skill_Obtained");
 
             //Activamos la nueva skill
             combatController.blockUpgrade = true;
             mobileBlockButton.SetActive(true);
 
-            ProgressTracker.PT.isNewSkill = false;
+            //ProgressTracker.PT.isNewSkill = false;
         }
         else
         {
+
             //PLAY INCREASE HEALTH BAR ANIMATION
             animator.SetTrigger("upgrade1");
             //Increase player health
@@ -169,7 +172,8 @@ public class GeneralHUDController : MonoBehaviour
 
     public void triggerThirdCrystalConversation()
     {
-        if (ProgressTracker.PT.isNewSkill)
+        print("isNewSkill: " + ProgressTracker.PT.isNewSkill);
+        if (ProgressTracker.PT.isNewSkill == true)
         {
             DialogueManager.StartConversation("RoundAttack_Skill_Obtained");
 
@@ -177,7 +181,7 @@ public class GeneralHUDController : MonoBehaviour
             combatController.roundAttackUpgrade = true;
             mobileRoundAttackButton.SetActive(true);
 
-            ProgressTracker.PT.isNewSkill = false;
+            //ProgressTracker.PT.isNewSkill = false;
         }
         else
         {
@@ -190,7 +194,8 @@ public class GeneralHUDController : MonoBehaviour
 
     public void triggerLastCrystalConversation()
     {
-        if (ProgressTracker.PT.isNewSkill)
+        print("isNewSkill: " + ProgressTracker.PT.isNewSkill);
+        if (ProgressTracker.PT.isNewSkill == true)
         {
             DialogueManager.StartConversation("RoundAttack_Skill_Obtained_final");
 
@@ -200,7 +205,7 @@ public class GeneralHUDController : MonoBehaviour
             mobileRoundAttackButton.SetActive(true);
 
 
-            ProgressTracker.PT.isNewSkill = false;
+            //ProgressTracker.PT.isNewSkill = false;
         }
         else
         {
@@ -213,12 +218,14 @@ public class GeneralHUDController : MonoBehaviour
 
     public void triggerUpgradeHealth1Conversation()
     {
+        checkAmuletProgress();
         DialogueManager.StartConversation("Health_Upgrade_1");
     }
 
     public void triggerUpgradeHealth2Conversation()
     {
-        if(ProgressTracker.PT.numberOfPieces >= 6)
+        checkAmuletProgress();
+        if (ProgressTracker.PT.numberOfPieces >= 6)
         {
             DialogueManager.StartConversation("Health_Upgrade_2_final");
         } 
