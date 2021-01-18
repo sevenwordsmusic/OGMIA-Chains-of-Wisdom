@@ -1405,7 +1405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 489588321}
   m_Layer: 0
-  m_Name: StartPos
+  m_Name: spawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3379,7 +3379,6 @@ GameObject:
   m_Component:
   - component: {fileID: 627864132}
   - component: {fileID: 627864131}
-  - component: {fileID: 627864130}
   - component: {fileID: 627864129}
   m_Layer: 0
   m_Name: CutsceneCamera
@@ -3422,14 +3421,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!81 &627864130
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627864128}
-  m_Enabled: 1
 --- !u!20 &627864131
 Camera:
   m_ObjectHideFlags: 0
@@ -3453,7 +3444,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.001
+  near clip plane: 0.01
   far clip plane: 5000
   field of view: 60
   orthographic: 0
@@ -3461,7 +3452,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 13079
+    m_Bits: 13078
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3974,6 +3965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813852306}
+  - component: {fileID: 813852307}
   m_Layer: 0
   m_Name: AUDIO
   m_TagString: Untagged
@@ -3997,6 +3989,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813852307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813852305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a7610276167df42b69389f01258a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextCode: 2
 --- !u!1 &827141557
 GameObject:
   m_ObjectHideFlags: 0
@@ -9350,7 +9355,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028025185}
-  m_LocalRotation: {x: 0.12745263, y: 0.66824, z: -0.11772936, w: 0.72343}
+  m_LocalRotation: {x: 0.12745263, y: 0.66824, z: -0.11772937, w: 0.72343}
   m_LocalPosition: {x: -3.30763, y: -169.1133, z: -1.413003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

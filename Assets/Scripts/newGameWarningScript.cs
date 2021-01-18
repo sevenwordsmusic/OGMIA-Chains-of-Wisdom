@@ -32,7 +32,7 @@ public class newGameWarningScript : MonoBehaviour
         else
         {
             //AUDIO
-                AudioManager.engine.ChangeSegmentTo(1);
+                AudioManager.engine.ChangeSegmentTo(3);
             //
 
 

@@ -20,11 +20,6 @@ public class GameInitializer : MonoBehaviour
 
     public void initializeGame()
     {
-        //AUDIO
-            AudioManager.engine.ChangeSegmentTo(1);
-        //
-
-
         UIManager.UIM.generatingLevel1.SetActive(true);
 
         player.SetActive(true);
@@ -45,9 +40,6 @@ public class GameInitializer : MonoBehaviour
 
     public void continueGame()
     {
-        //AUDIO
-            AudioManager.engine.ChangeSegmentTo(1);
-        //
 
         UIManager.UIM.generatingLevel1.SetActive(true);
 

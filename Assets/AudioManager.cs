@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string FMODEvent;
 
+    private static int oldCode=0;
+
     private FMOD.Studio.EventInstance mainMusic;
     private FMOD.Studio.PARAMETER_ID segmentCodeParameterID;
 
@@ -40,9 +42,18 @@ public class AudioManager : MonoBehaviour
         mainMusic.start();
     }
 
-    public void ChangeSegmentTo(int newSegmentCodeID)
+    public virtual void ChangeSegmentTo(int newSegmentCodeID)
     {
-        Debug.Log("AUDIO_ENGINE: music segment changed to: " + newSegmentCodeID);
-        Debug.Log(mainMusic.setParameterByID(segmentCodeParameterID, newSegmentCodeID));
+        if(oldCode!= newSegmentCodeID)
+        {
+            Debug.Log("AUDIO_ENGINE: music segment changed to: " + newSegmentCodeID);
+            Debug.Log(mainMusic.setParameterByID(segmentCodeParameterID, newSegmentCodeID));
+            oldCode = newSegmentCodeID;
+        }
+        else
+        {
+            Debug.Log("AUDIO_ENGINE: already on segment code " + newSegmentCodeID + ".");
+        }
+
     }
 }
