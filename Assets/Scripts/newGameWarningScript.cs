@@ -31,9 +31,7 @@ public class newGameWarningScript : MonoBehaviour
         } 
         else
         {
-            //AUDIO
-                AudioManager.engine.ChangeSegmentTo(3);
-            //
+
 
 
             //gameInitializer.initializeGame();

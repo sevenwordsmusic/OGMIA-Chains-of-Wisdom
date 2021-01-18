@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
         if(oldCode!= newSegmentCodeID)
         {
             Debug.Log("AUDIO_ENGINE: music segment changed to: " + newSegmentCodeID);
-            Debug.Log(mainMusic.setParameterByID(segmentCodeParameterID, newSegmentCodeID));
+            mainMusic.setParameterByID(segmentCodeParameterID, newSegmentCodeID);
             oldCode = newSegmentCodeID;
         }
         else

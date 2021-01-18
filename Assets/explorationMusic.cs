@@ -7,10 +7,9 @@ public class explorationMusicBis : MonoBehaviour
 {
 
 
-    void Start()
+    void Awake()
     {
         //AUDIO
-        Debug.Log("CLICKITY");
             AudioManager.engine.ChangeSegmentTo(3);
         //
     }
