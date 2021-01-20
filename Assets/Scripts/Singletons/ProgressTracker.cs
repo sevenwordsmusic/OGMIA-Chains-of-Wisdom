@@ -11,6 +11,8 @@ public class ProgressTracker : MonoBehaviour
     public int numberOfPieces; //Numero de esquirlas de amuleto que tiene el jugador.
     public Animator AmuletAnimator;
     [HideInInspector] public bool isNewSkill;
+    [HideInInspector] public bool lvl2Fix = false;
+
 
 
     private void Awake()

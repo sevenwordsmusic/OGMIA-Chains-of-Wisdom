@@ -110,7 +110,7 @@ public class MidNightDreamController : MonoBehaviour
         //}
         //apaño muy malo pero no hay tiempo
         
-        if(ProgressTracker.PT.numberOfPieces >= 3)
+        if(ProgressTracker.PT.numberOfPieces >= 3 || ProgressTracker.PT.lvl2Fix)
         {
             entranceLvl2.enabled = true;
             foreach(GameObject gm in effectsLvl2)

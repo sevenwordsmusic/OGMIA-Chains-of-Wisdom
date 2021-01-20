@@ -486,9 +486,10 @@ GameObject:
   - component: {fileID: 7166424858751276831}
   - component: {fileID: 183851246905930701}
   - component: {fileID: 6019188770604356167}
+  - component: {fileID: 810141393934419758}
   m_Layer: 0
   m_Name: Hand_R
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -538,6 +539,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30.7, y: 33.1, z: 27}
   m_Center: {x: 11.51, y: 1.7, z: 0}
+--- !u!114 &810141393934419758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166424858751276830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9668852375271e2438a82fbc5642116b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 7166424859687089047}
+  damage: 0
+  deadly: 0
 --- !u!1 &7166424858828127393
 GameObject:
   m_ObjectHideFlags: 0

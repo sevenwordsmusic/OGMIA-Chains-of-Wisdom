@@ -11,6 +11,8 @@ namespace PixelCrushers.Wrappers
         [SerializeField] Destinations specialDestination = Destinations.None;
         [SerializeField] GameController gameController;
 
+        [SerializeField] bool tryFixLvl2 = false;
+
         void Start()
         {
             gameController = GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>();
@@ -23,6 +25,10 @@ namespace PixelCrushers.Wrappers
             switch (specialDestination)
             {
                 case Destinations.HUB:
+                    if (tryFixLvl2)
+                    {
+                        ProgressTracker.PT.lvl2Fix = true;
+                    }
                     gameController.goToHUB();
                     break;
                 case Destinations.Level1:
