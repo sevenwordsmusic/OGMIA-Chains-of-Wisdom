@@ -31,6 +31,8 @@ public class GameInitializer : MonoBehaviour
 
         gameController.GetComponent<GameController>().resetInfo();
 
+        DungeonMaster.DM.playerDeaths = 0;
+
         if (gameInitialized != null)
             gameInitialized();
 

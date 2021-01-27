@@ -508,6 +508,7 @@ public class CombatController : MonoBehaviour
                 isDead = true;
 
                 DungeonMaster.DM.playerDeaths++;
+                PlayerPrefs.SetInt("playerDeaths", DungeonMaster.DM.playerDeaths);
 
                 //Die & play die animation
                 movementController.canMove = false;

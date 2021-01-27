@@ -40,12 +40,15 @@ public class DungeonMaster : MonoBehaviour
             DM = this; 
         }
 
+        playerDeaths = PlayerPrefs.GetInt("playerDeaths", 0);
     }
 
     private void Start()
     {
         //player = GameObject.FindGameObjectWithTag("Player");
         //bTracker = player.GetComponent<BehaviourTracker>();
+
+        playerDeaths = PlayerPrefs.GetInt("playerDeaths", 0);
 
         enemyTimerAux = Random.Range(spawnEnemyTime - spawnEnemyVariation, spawnEnemyTime + spawnEnemyVariation);
     }
