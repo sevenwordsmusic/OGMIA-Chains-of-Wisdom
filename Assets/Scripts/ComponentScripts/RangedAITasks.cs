@@ -10,6 +10,7 @@ public class RangedAITasks : MonoBehaviour
     [Header("AI Variables")]
     GameObject player;
     NavMeshAgent agent;
+    [Tooltip("Enemy persues player if out of range")] [SerializeField] bool persue = false;
     [Tooltip("Enemy speed while chasing player")] [SerializeField] float attackSpeed = 2;
     [Tooltip("Enemy speed while fleeing")] [SerializeField] float escapeSpeed = 4;
     [Tooltip("Distance at wich enemy starts chasing the player")] [SerializeField] float detectDistance = 10;
@@ -53,6 +54,24 @@ public class RangedAITasks : MonoBehaviour
     [Task]
     bool facingPlayer = false;
 
+
+    [Task]
+    void prepareIdleOrPersue()
+    {
+        if (persue)
+        {
+            animator.SetBool("inCombat", true);
+            animator.SetTrigger("move");
+            agent.speed = attackSpeed;
+        }
+        else
+        {
+            animator.SetBool("inCombat", false);
+        }
+
+        Task.current.Succeed();
+    }
+
     [Task]
     void moveToPlayer()
     {
@@ -60,6 +79,20 @@ public class RangedAITasks : MonoBehaviour
         agent.SetDestination(player.transform.position);
     }
 
+
+    [Task]
+    void succeedOrPersue()
+    {
+        if (persue)
+        {
+            agent.speed = attackSpeed;
+            agent.SetDestination(player.transform.position);
+        }
+        else
+        {
+            Task.current.Succeed();
+        }
+    }
 
     [Task]
     void prepareFlee()
@@ -149,6 +182,17 @@ public class RangedAITasks : MonoBehaviour
 
         enemyController = GetComponent<EnemyController>();
         enemyController.enemyDead += enemyDead;
+    }
+
+    public void dmAdjustParams(float difficulty)
+    {
+        float damageAux = (float)damage * difficulty;
+        damage = Mathf.RoundToInt(damageAux);
+
+        attackSpeed = attackSpeed * difficulty;
+        escapeSpeed = escapeSpeed * difficulty;
+
+        attackWait = Mathf.Min(attackWait / difficulty, 1.1f);
     }
 
     void enemyDead()

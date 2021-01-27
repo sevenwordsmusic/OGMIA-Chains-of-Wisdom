@@ -94,6 +94,8 @@ public class LevelController : MonoBehaviour
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         gameController.readyForInitialization(this);
+
+        DungeonMaster.DM.deactivateTimer();
     }
 
     //Initialize all values with a leveinfowrapper
@@ -289,7 +291,8 @@ public class LevelController : MonoBehaviour
 
         randValues = null;
         completedRooms = null;
-        //DEBUG -> LIBERAR MEMORIA DE RESTO DE ESTRUCTURAS
+
+        DungeonMaster.DM.activateTimer();
     }
 
     //create edge in adjecency matrix
@@ -299,7 +302,7 @@ public class LevelController : MonoBehaviour
         roomMatrix[idB, idA] = value;
     }
 
-    /*//debug method
+    //debug method
     private void OnDrawGizmos()
     {
         if (debug && Application.isPlaying && roomMatrix != null)
@@ -360,5 +363,5 @@ public class LevelController : MonoBehaviour
                 }
             }
         }
-    }*/
+    }
 }

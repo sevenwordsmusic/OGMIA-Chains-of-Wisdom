@@ -20,6 +20,12 @@ public class RoomHeal : MonoBehaviour
 
     void Start()
     {
+
+        GetComponent<RoomController>().enteredRoom += adjustHealing;
+
+
+        amount = amount / DungeonMaster.DM.dynamicDifficulty();
+
         current = amount;
         player = GameObject.FindGameObjectWithTag("Player");
         CombatController cController = player.GetComponent<CombatController>();
@@ -27,6 +33,15 @@ public class RoomHeal : MonoBehaviour
 
 
         Instantiate(GetComponent<RoomController>().controller.mapHealing, transform.position, Quaternion.identity);
+    }
+
+    public void adjustHealing()
+    {
+        if(amount == current)
+        {
+            amount = amount / DungeonMaster.DM.dynamicDifficulty();
+            current = amount;
+        }
     }
 
 

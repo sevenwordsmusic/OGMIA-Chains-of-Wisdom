@@ -23,6 +23,7 @@ public class TrapSpikesController : MonoBehaviour
         isLaunched = false;
         animator.SetTrigger("Hide");
 
+        dmAdjustParams();
         if (isSmart)
         {
             TriggerCollider.enabled = true;
@@ -40,6 +41,18 @@ public class TrapSpikesController : MonoBehaviour
         //{
         //    timer = cycleTime;
         //}
+    }
+
+    public void dmAdjustParams()
+    {
+        float difficulty = DungeonMaster.DM.dynamicDifficulty();
+
+        float damageAux = (float)damage * difficulty;
+        damage = Mathf.RoundToInt(damageAux);
+
+        cycleTime = cycleTime / difficulty;
+        asymmetricLaunchTime = asymmetricLaunchTime / difficulty;
+        asymmetricHideTime = asymmetricHideTime / difficulty;
     }
 
     private void Update()

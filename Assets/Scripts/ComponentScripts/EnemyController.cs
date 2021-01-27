@@ -84,6 +84,39 @@ public class EnemyController : MonoBehaviour
         tutorialFix = true;
     }
 
+    public void dmAdjustParams(float difficulty)
+    {
+        float maxHealthAux = (float)maxHealth * difficulty;
+        maxHealth = Mathf.RoundToInt(maxHealthAux);
+
+        currentHealth = maxHealth;
+        healthBarScript = GetComponentInChildren<HealthBarController>();
+        healthBarObject = healthBarScript.gameObject;
+        healthBarScript.setMaxHealth(maxHealth);
+
+        MeeleAITasks aiScript1 = GetComponent<MeeleAITasks>();
+        if(aiScript1 != null)
+        {
+            aiScript1.dmAdjustParams(difficulty);
+        }
+        else
+        {
+            RangedAITasks aiScript2 = GetComponent<RangedAITasks>();
+            if (aiScript2 != null)
+            {
+                aiScript2.dmAdjustParams(difficulty);
+            }
+            else
+            {
+                BossAITasks aiScript3 = GetComponent<BossAITasks>();
+                if (aiScript3 != null)
+                {
+                    aiScript3.dmAdjustParams(difficulty);
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// Prepara la barra de vida del enemigo haciéndola 'hija' del canvas auxiliar permanente en la escena
     /// </summary>

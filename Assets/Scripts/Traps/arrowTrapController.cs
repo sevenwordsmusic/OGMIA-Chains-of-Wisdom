@@ -23,6 +23,7 @@ public class arrowTrapController : MonoBehaviour
         //animator = GetComponent<Animator>();
         canLaunch = false;
 
+        dmAdjustParams();
         if (isSmart)
         {
             TriggerCollider.enabled = true;
@@ -32,6 +33,17 @@ public class arrowTrapController : MonoBehaviour
             TriggerCollider.enabled = false;
         }
 
+    }
+
+    public void dmAdjustParams()
+    {
+        float difficulty = DungeonMaster.DM.dynamicDifficulty();
+
+        float damageAux = (float)damage * difficulty;
+        damage = Mathf.RoundToInt(damageAux);
+
+        cycleTime = cycleTime / difficulty;
+        speed = speed / difficulty;
     }
 
     private void Update()

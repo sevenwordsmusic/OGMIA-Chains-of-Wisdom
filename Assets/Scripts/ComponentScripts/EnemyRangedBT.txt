@@ -1,15 +1,17 @@
 tree("Root")
 	fallback
-		tree("Idle")
+		tree("IdlePersue")
 		tree("Attack")
 		tree("Flee")
 
-tree("Idle")
-	while
-		sequence
-			not playerNear
-			not playerDetected
-		Succeed
+tree("IdlePersue")
+	sequence
+		prepareIdleOrPersue()
+		while
+			sequence
+				not playerNear
+				not playerDetected
+			succeedOrPersue()
 
 tree("Attack")
 	sequence

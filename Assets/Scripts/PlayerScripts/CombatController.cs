@@ -506,6 +506,9 @@ public class CombatController : MonoBehaviour
             if (health <= 0)
             {
                 isDead = true;
+
+                DungeonMaster.DM.playerDeaths++;
+
                 //Die & play die animation
                 movementController.canMove = false;
                 movementController.canDash = false;

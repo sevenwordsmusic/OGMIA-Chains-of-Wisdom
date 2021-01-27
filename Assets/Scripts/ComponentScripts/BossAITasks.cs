@@ -199,6 +199,17 @@ public class BossAITasks : MonoBehaviour
         enemyController.enemyDead += enemyDead;
     }
 
+    public void dmAdjustParams(float difficulty)
+    {
+        float damageAux = (float)damage * difficulty;
+        damage = Mathf.RoundToInt(damageAux);
+
+        attackSpeed = attackSpeed * difficulty;
+        //escapeSpeed = escapeSpeed * difficulty;
+
+        attackWait = Mathf.Min(attackWait / difficulty, 1.1f);
+    }
+
     void enemyDead()
     {
         //AUDIO

@@ -17,6 +17,8 @@ public class RoomEnemiesController : MonoBehaviour
     //[SerializeField] NavMeshSurface navMesh;
     void Start()
     {
+        GetComponent<RoomController>().enteredRoom += enteredEnemyRoom;
+
         //navMesh.BuildNavMesh();
         GetComponent<RoomCloseDoors>().doorsclosed += spawnEnemies;
 
@@ -30,8 +32,16 @@ public class RoomEnemiesController : MonoBehaviour
 
     }
 
+    void enteredEnemyRoom()
+    {
+        DungeonMaster.DM.deactivateTimer();
+    }
+
     void spawnEnemies()
     {
+        float difficulty = DungeonMaster.DM.dynamicDifficulty();
+
+
         if (!GetComponent<RoomController>().completedBefore)
         {
             print("SPAWNING ENEMIES");
@@ -39,12 +49,14 @@ public class RoomEnemiesController : MonoBehaviour
             {
                 Bounds area = spawnArea.bounds;
                 int enemyAux = Random.Range(defaultEnemyNumber - enemyVariance, defaultEnemyNumber + enemyVariance);
+                enemyAux = Mathf.Max(Mathf.RoundToInt((float)enemyAux*difficulty) , 3);
                 enemiesToDefeat += enemyAux;
                 for (int i = 0; i < enemyAux; i++)
                 {
                     Vector3 enemyPos = new Vector3(Random.Range(area.min.x, area.max.x), 0, Random.Range(area.min.z, area.max.z));
                     var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], enemyPos, Quaternion.identity);
                     enemy.GetComponent<EnemyController>().setRoomEnemyController(this);
+                    enemy.GetComponent<EnemyController>().dmAdjustParams(difficulty);
                 }
                 spawnArea.enabled = false;
             }
@@ -60,6 +72,7 @@ public class RoomEnemiesController : MonoBehaviour
 
     void enemiesDefeated()
     {
+        DungeonMaster.DM.activateTimer();
         GetComponent<RoomCloseDoors>().deactivateTrapDoors();
     }
 

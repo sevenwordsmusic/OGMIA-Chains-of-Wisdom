@@ -8,11 +8,11 @@ public class RoomTrapController : MonoBehaviour
 {
     [SerializeField] float damageInterval = 2f;
     float intervalAux = 0;
-    [SerializeField] List<TrapSpikesController> traps = new List<TrapSpikesController>();
+    [SerializeField] List<GameObject> traps = new List<GameObject>();
     [SerializeField] bool commitChanges = false;
     bool trapsEnabled = false;
 
-    /*[CustomEditor(typeof(RoomTrapController))]
+    [CustomEditor(typeof(RoomTrapController))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -26,13 +26,13 @@ public class RoomTrapController : MonoBehaviour
                 myScript.commitChanges = false;
             }
         }
-    }*/
+    }
 
     void updateTraps(Transform t)
     {
         if (t.tag.Equals("trap"))
         {
-            traps.Add(t.GetComponent<TrapSpikesController>());
+            traps.Add(t.gameObject);
         }
         if (t.childCount > 0)
         {
@@ -53,8 +53,33 @@ public class RoomTrapController : MonoBehaviour
 
     void Start()
     {
+        GetComponent<RoomController>().enteredRoom += enteredTrapRoom;
         GetComponent<RoomController>().enteredRoom += enableTraps;
         GetComponent<RoomController>().exitedRoom += disableTraps;
+    }
+
+
+
+    void enteredTrapRoom()
+    {
+        DungeonMaster.DM.encounteredChallanage();
+
+        foreach(GameObject trap in traps)
+        {
+            var attempt1 = trap.GetComponent<TrapSpikesController>();
+            if(attempt1 != null)
+            {
+                attempt1.dmAdjustParams();
+            }
+            else
+            {
+                var attempt2 = trap.GetComponent<arrowTrapController>();
+                if (attempt2 != null)
+                {
+                    attempt2.dmAdjustParams();
+                }
+            }
+        }
     }
 
     void enableTraps()
@@ -67,7 +92,7 @@ public class RoomTrapController : MonoBehaviour
         trapsEnabled = false;
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (trapsEnabled)
         {
@@ -81,7 +106,7 @@ public class RoomTrapController : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
 
 }

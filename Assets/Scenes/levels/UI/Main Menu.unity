@@ -2353,9 +2353,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 1
-  deathInitialOffset: 0.1
-  deathDynmicOffset: 0.1
-  globalProximityTrackerOffset: 0.1
+  minimumDifficulty: 0.4
+  deathDynamicOffset: 0.1
+  deathMaxOffset: 0.5
+  hpMaxOffset: 0.5
+  spawnEnemyTime: 10
+  spawnEnemyVariation: 2
+  enemy: {fileID: 8197693239081976013, guid: 5ca67db4425612346a3fc49b65a8d555, type: 3}
+  spawnRadius: 10
+  playerDeaths: 0
+  inactiveTimer: 0
+  player: {fileID: 754464942}
 --- !u!4 &929410534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1508627680916055580, guid: 9d62deaafcc60ea42b8a70e06de87984,
