@@ -43,6 +43,9 @@ public class RangedAITasks : MonoBehaviour
     bool inAttackAnimation = false;
 
 
+    //AI TASKS
+
+    //vars
     [Task]
     bool lowHealth = false;
     [Task]
@@ -55,6 +58,7 @@ public class RangedAITasks : MonoBehaviour
     bool facingPlayer = false;
 
 
+    //depending on enemy type, remain iddle or prepare to persue player
     [Task]
     void prepareIdleOrPersue()
     {
@@ -72,6 +76,7 @@ public class RangedAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
+    //move enemy
     [Task]
     void moveToPlayer()
     {
@@ -79,7 +84,7 @@ public class RangedAITasks : MonoBehaviour
         agent.SetDestination(player.transform.position);
     }
 
-
+    //depending on enemy type, do nothing or persue player
     [Task]
     void succeedOrPersue()
     {
@@ -94,6 +99,7 @@ public class RangedAITasks : MonoBehaviour
         }
     }
 
+    //prepare to escape player
     [Task]
     void prepareFlee()
     {
@@ -110,7 +116,7 @@ public class RangedAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
-
+    //escape player
     [Task]
     void fleeFromPlayer()
     {
@@ -125,7 +131,7 @@ public class RangedAITasks : MonoBehaviour
         }
     }
 
-
+    //turn to player (adjust direction)
     [Task]
     void turnToPlayer()
     {
@@ -133,7 +139,7 @@ public class RangedAITasks : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);
     }
 
-
+    //prepare for attack
     [Task]
     void prepareAttack()
     {
@@ -152,6 +158,7 @@ public class RangedAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
+    //execute an attack
     [Task]
     void attack()
     {

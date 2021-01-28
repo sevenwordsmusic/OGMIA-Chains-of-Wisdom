@@ -201,7 +201,7 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    //get random room depending on room type
+    /*//get random room depending on room type
     GameObject fetchRoomPrefab()
     {
         if (bossRoomForce)
@@ -323,6 +323,241 @@ public class RoomController : MonoBehaviour
             }
         }
         return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
+    }*/
+
+    //get local room probabilities (each room gives different results)
+    float[] fetchLocalProbabilities()
+    {
+        /*
+        0 -> connector
+        1 -> empty
+        2 -> enemy
+        3 -> healing
+        4 -> trap
+         */
+        float[] probabilities = new float[5] { 1, -1, -1, -1, -1 };
+        switch (roomType)
+        {
+            case RoomeTypes.Start:
+                probabilities = new float[5] { 1, -1, -1, -1, -1 };
+                break;
+            case RoomeTypes.Fragment:
+                probabilities = new float[5] { 0.2f, 0.3f, 0.5f, 0.8f, 1 };
+                break;
+            case RoomeTypes.Connector:
+                probabilities = new float[5] { -1, 0.1f, 0.55f, -1, 1 };
+                break;
+            case RoomeTypes.Empty:
+                probabilities = new float[5] { 0.1f, -1, 0.55f, -1, 1 };
+                break;
+            case RoomeTypes.Enemy:
+                probabilities = new float[5] { 0.4f, 0.5f, -1, 1, -1 };
+                break;
+            case RoomeTypes.Trap:
+                probabilities = new float[5] { 0.4f, 0.5f, -1, 1, -1 };
+                break;
+            case RoomeTypes.Healing:
+                probabilities = new float[5] { 0.1f, 0.2f, 0.6f, -1, 1 };
+                break;
+            default:
+                probabilities = new float[5] { 1, -1, -1, -1, -1 };
+                break;
+        }
+        for(int i=0; i< probabilities.Length; i++)
+        {
+            probabilities[i] = probabilities[i];
+        }
+        return probabilities;
+    }
+
+
+    //get global room probabilities (depends on room amount)
+    float[] fetchGlobalProbabilities()
+    {
+        /*
+        0 -> connector
+        1 -> empty
+        2 -> enemy
+        3 -> healing
+        4 -> trap
+         */
+        int[] roomTypeAmount = new int[5] { 0,0,0,0,0};
+        for(int i=0; i<controller.roomArray.Length; i++)
+        {
+            if (controller.roomArray[i] != null)
+            {
+                switch (controller.roomArray[i].GetComponent<RoomController>().roomType)
+                {
+                    case RoomeTypes.Connector:
+                        roomTypeAmount[0]++;
+                        break;
+                    case RoomeTypes.Empty:
+                        roomTypeAmount[1]++;
+                        break;
+                    case RoomeTypes.Enemy:
+                        roomTypeAmount[2]++;
+                        break;
+                    case RoomeTypes.Healing:
+                        roomTypeAmount[3]++;
+                        break;
+                    case RoomeTypes.Trap:
+                        roomTypeAmount[4]++;
+                        break;
+                    default:
+                        roomTypeAmount[controller.randomInt(0, 5)]++;
+                        break;
+                }
+            }
+        }
+        int newTotal = 0;
+        for (int i=0; i<roomTypeAmount.Length; i++)
+        {
+            roomTypeAmount[i] = controller.roomArray.Length - roomTypeAmount[i];
+
+            newTotal += roomTypeAmount[i];
+        }
+
+        float[] probabilites = new float[5];
+        for (int i = 0; i < probabilites.Length; i++)
+        {
+            probabilites[i] = (float)roomTypeAmount[i] / (float)newTotal;
+        }
+
+        return probabilites;
+    }
+
+
+    //get global distance room probabilities (depends on room amount and each rooms distance to the new room spawn point)
+    float[] fetchGlobalDistanceProbabilities(Vector3 emptySlotPosition)
+    {
+        /*
+        0 -> connector
+        1 -> empty
+        2 -> enemy
+        3 -> healing
+        4 -> trap
+         */
+        int[] roomTypeAmount = new int[5] { 0, 0, 0, 0, 0 };
+        float[] roomTypeDistanceTotal = new float[5] { 0, 0, 0, 0, 0}; 
+        for (int i = 0; i < controller.roomArray.Length; i++)
+        {
+            if (controller.roomArray[i] != null)
+            {
+                switch (controller.roomArray[i].GetComponent<RoomController>().roomType)
+                {
+                    case RoomeTypes.Connector:
+                        roomTypeAmount[0]++;
+                        roomTypeDistanceTotal[0] += Vector3.Distance(emptySlotPosition, controller.roomArray[i].GetComponent<RoomController>().centerPositionInRoom());
+                        break;
+                    case RoomeTypes.Empty:
+                        roomTypeAmount[1]++;
+                        roomTypeDistanceTotal[1] += Vector3.Distance(emptySlotPosition, controller.roomArray[i].GetComponent<RoomController>().centerPositionInRoom());
+                        break;
+                    case RoomeTypes.Enemy:
+                        roomTypeAmount[2]++;
+                        roomTypeDistanceTotal[2] += Vector3.Distance(emptySlotPosition, controller.roomArray[i].GetComponent<RoomController>().centerPositionInRoom());
+                        break;
+                    case RoomeTypes.Healing:
+                        roomTypeAmount[3]++;
+                        roomTypeDistanceTotal[3] += Vector3.Distance(emptySlotPosition, controller.roomArray[i].GetComponent<RoomController>().centerPositionInRoom());
+                        break;
+                    case RoomeTypes.Trap:
+                        roomTypeAmount[4]++;
+                        roomTypeDistanceTotal[4] += Vector3.Distance(emptySlotPosition, controller.roomArray[i].GetComponent<RoomController>().centerPositionInRoom());
+                        break;
+                    default:
+                        int auxRand = controller.randomInt(0, 5);
+                        roomTypeAmount[auxRand]++;
+                        roomTypeDistanceTotal[auxRand] += Vector3.Distance(emptySlotPosition, controller.roomArray[i].GetComponent<RoomController>().centerPositionInRoom());
+                        break;
+                }
+            }
+        }
+
+        float[] avarageRoomDistances = new float[5];
+        float totalAvarages = 0;
+        for (int i = 0; i < avarageRoomDistances.Length; i++)
+        {
+            if (roomTypeAmount[i] != 0)
+                avarageRoomDistances[i] = roomTypeDistanceTotal[i] / (float)roomTypeAmount[i];
+            else
+                avarageRoomDistances[i] = 0;
+            totalAvarages += avarageRoomDistances[i];
+        }
+
+
+        float newTotalAvarages = 0;
+        for (int i = 0; i < roomTypeAmount.Length; i++)
+        {
+            avarageRoomDistances[i] = totalAvarages - avarageRoomDistances[i];
+
+            newTotalAvarages += avarageRoomDistances[i];
+        }
+
+        float[] probabilites = new float[5];
+        for (int i = 0; i < probabilites.Length; i++)
+        {
+            if (newTotalAvarages != 0)
+                probabilites[i] = avarageRoomDistances[i] / newTotalAvarages;
+            else
+                probabilites[i] = 0;
+        }
+        return probabilites;
+    }
+
+    GameObject fetchRoomPrefab(Vector3 emptySlotPosition)
+    {
+        if (bossRoomForce)
+        {
+            return controller.roomsBoss[0];
+        }
+        if (controller.currentRoomAmount == ((int)(controller.roomAmount / 3)) || controller.currentRoomAmount == ((int)(2 * controller.roomAmount / 3)))
+        {
+            return controller.roomsFragment[controller.randomInt(0, controller.roomsFragment.Count)];
+        }
+        else if (controller.currentRoomAmount == controller.roomAmount - 1)
+        {
+            return controller.roomsBoss[controller.randomInt(0, controller.roomsBoss.Count)];
+        }
+        else
+        {
+            float randomValue = controller.randomValue();
+            float[] probabilitesLocal = fetchLocalProbabilities();
+            float[] probabilitesGlobal1 = fetchGlobalProbabilities();
+            float[] probabilitesGlobal2 = fetchGlobalDistanceProbabilities(emptySlotPosition);
+
+            float[] probabilites = new float[5];
+            for(int i=0; i<probabilites.Length; i++)
+            {
+                probabilites[i] = probabilitesLocal[i] * DungeonMaster.DM.localComparisonWieght + probabilitesGlobal1[i] * DungeonMaster.DM.globalComparisonWieght + probabilitesGlobal2[i] * DungeonMaster.DM.distanceComparisonWieght;
+            }
+
+            if (randomValue <= probabilites[0])
+            {
+                return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
+            }
+            else if (randomValue <= probabilites[1])
+            {
+                return controller.roomsEmpty[controller.randomInt(0, controller.roomsEmpty.Count)];
+            }
+            else if (randomValue <= probabilites[2])
+            {
+                return controller.roomsEnemy[controller.randomInt(0, controller.roomsEnemy.Count)];
+            }
+            else if (randomValue <= probabilites[3])
+            {
+                return controller.roomsHealing[controller.randomInt(0, controller.roomsHealing.Count)];
+            }
+            else if (randomValue <= probabilites[4])
+            {
+                return controller.roomsTrap[controller.randomInt(0, controller.roomsTrap.Count)];
+            }
+            else
+            {
+                return controller.roomsConnector[controller.randomInt(0, controller.roomsConnector.Count)];
+            }
+        }
+
     }
 
     //randomize gates list
@@ -344,7 +579,7 @@ public class RoomController : MonoBehaviour
        
         if (gate.spawnAlways || firstSpawn || controller.randomValue() <= controller.levelShape)
         {
-            GameObject roomPrefab = fetchRoomPrefab();
+            GameObject roomPrefab = fetchRoomPrefab(gate.transform.position);
             spawnRoom(gate, dir, roomPrefab, gate.spawnAlways);
         }
     }
@@ -364,6 +599,8 @@ public class RoomController : MonoBehaviour
                                   transform.parent);
 
         RoomController roomInstanceController = roomInstance.GetComponent<RoomController>();
+
+        roomInstanceController.controller = controller;
 
         int nextRoomAngle = uVecAngle(-dir, roomInstanceController.gates[nextEntranceGate].GetComponent<GateController>().getDirection());
         roomInstanceController.adjustRotation(nextRoomAngle);
@@ -523,6 +760,19 @@ public class RoomController : MonoBehaviour
             }
         }
         return null;
+    }
+
+    Vector3 centerPositionInRoom()
+    {
+        Vector3 total = new Vector3(0, 0, 0);
+        foreach(Transform t in centerPoints)
+        {
+            total = total + t.position;
+        }
+
+        total = total / centerPoints.Count;
+
+        return total;
     }
 
     void turnOnLightsPrefab()

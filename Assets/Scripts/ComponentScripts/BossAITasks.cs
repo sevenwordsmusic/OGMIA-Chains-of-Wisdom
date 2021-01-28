@@ -44,8 +44,9 @@ public class BossAITasks : MonoBehaviour
 
     Vector3 prevPos;
 
+    //AI TASKS
 
-
+    //vars
     [Task]
     bool lowHealth = false;
     [Task]
@@ -57,6 +58,7 @@ public class BossAITasks : MonoBehaviour
     [Task]
     bool facingPlayer = false;
 
+    //prepare to chase player
     [Task]
     void prepareMove()
     {
@@ -68,13 +70,14 @@ public class BossAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
+    //move to target
     [Task]
     void moveToPlayer()
     {
         agent.SetDestination(player.transform.position);
     }
 
-
+    //prepare to flee
     [Task]
     void prepareFlee()
     {
@@ -92,7 +95,7 @@ public class BossAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
-
+    //escape from player
     [Task]
     void fleeFromPlayer()
     {
@@ -120,7 +123,7 @@ public class BossAITasks : MonoBehaviour
         //prevPos = transform.position;
     }
 
-
+    //preapre to attack (chance of being special attack unique to every boss)
     [Task]
     void prepareAttack()
     {
@@ -154,6 +157,7 @@ public class BossAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
+    //face player
     [Task]
     void turnToPlayer()
     {
@@ -161,6 +165,7 @@ public class BossAITasks : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);
     }
 
+    //attack (chance of being special attack unique to every boss)
     [Task]
     void attack()
     {

@@ -11,7 +11,7 @@ public class RoomTrapController : MonoBehaviour
     [SerializeField] List<GameObject> traps = new List<GameObject>();
     [SerializeField] bool commitChanges = false;
     bool trapsEnabled = false;
-
+    /*
     [CustomEditor(typeof(RoomTrapController))]
     public class ObjectBuilderEditor : Editor
     {
@@ -26,7 +26,7 @@ public class RoomTrapController : MonoBehaviour
                 myScript.commitChanges = false;
             }
         }
-    }
+    }*/
 
     void updateTraps(Transform t)
     {

@@ -174,6 +174,7 @@ public class LevelController : MonoBehaviour
         currentRoomAmount++;
 
         var roomAux = Instantiate(initRoom, transform.position, Quaternion.identity, transform);
+        roomAux.GetComponent<RoomController>().controller = this;
         roomAux.GetComponent<RoomController>().adjustId();
         roomAux.GetComponent<RoomController>().completedBefore = completedRooms[roomAux.GetComponent<RoomController>().id];
         //roomAux.GetComponent<RoomController>().levelInitialize();
@@ -302,6 +303,7 @@ public class LevelController : MonoBehaviour
         roomMatrix[idB, idA] = value;
     }
 
+    /*
     //debug method
     private void OnDrawGizmos()
     {
@@ -363,5 +365,5 @@ public class LevelController : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

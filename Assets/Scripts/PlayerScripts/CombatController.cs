@@ -75,6 +75,8 @@ public class CombatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isDead = false;
+
         movementController = GetComponent<PlayerController>();
         playerTransform = GetComponent<Transform>();
         forceApplier = GetComponent<ForceApplier>();
@@ -101,8 +103,9 @@ public class CombatController : MonoBehaviour
     private void OnEnable()
     {
         //playerAnimationScript.comboCheckEvent += comboAttack;
-        
 
+
+        isDead = false;
         canAttack = true;
 
     }
@@ -563,6 +566,7 @@ public class CombatController : MonoBehaviour
 
     public void resetHealth()
     {
+        isDead = false;
         health = maxHealth;
         healthBar1.setHealth(health);
         healthBar2.setHealth(health);

@@ -14,7 +14,6 @@ public class RoomEnemiesController : MonoBehaviour
     public float dificultyOffset = 1;
     int enemiesToDefeat = 0;
 
-    //[SerializeField] NavMeshSurface navMesh;
     void Start()
     {
         GetComponent<RoomController>().enteredRoom += enteredEnemyRoom;

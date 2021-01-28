@@ -40,7 +40,9 @@ public class MeeleAITasks : MonoBehaviour
     Vector3 prevPos;
 
 
+    //AI TASKS
 
+    //vars
     [Task]
     bool lowHealth = false;
     [Task]
@@ -52,6 +54,7 @@ public class MeeleAITasks : MonoBehaviour
     [Task]
     bool facingPlayer = false;
 
+    //prepare to chase player
     [Task]
     void prepareMove()
     {
@@ -65,13 +68,14 @@ public class MeeleAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
+    //move enemy to target
     [Task]
     void moveToPlayer()
     {
         agent.SetDestination(player.transform.position);
     }
 
-
+    //prepare to flee from player
     [Task]
     void prepareFlee()
     {
@@ -89,7 +93,7 @@ public class MeeleAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
-
+    //escape from player
     [Task]
     void fleeFromPlayer()
     {
@@ -117,7 +121,7 @@ public class MeeleAITasks : MonoBehaviour
         //prevPos = transform.position;
     }
 
-
+    //prepare to attack
     [Task]
     void prepareAttack()
     {
@@ -135,6 +139,7 @@ public class MeeleAITasks : MonoBehaviour
         Task.current.Succeed();
     }
 
+    //adjust direction so that enemy is facing player
     [Task]
     void turnToPlayer()
     {
@@ -142,6 +147,7 @@ public class MeeleAITasks : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookrotation), 3 * Time.deltaTime);
     }
 
+    //execute attack
     [Task]
     void attack()
     {
